@@ -40,7 +40,7 @@
 	******** HEADER SECTION *********
 	****************************************/
 	//Logo
-	wp.customize("paralax_one_logo", function(value) {
+	wp.customize("azera_shop_logo", function(value) {
         value.bind(function( to ) {
 			if( to != '' ) {
 				$( '.navbar-brand' ).removeClass( 'paralax_one_only_customizer' );
@@ -71,7 +71,7 @@
 	});
 	
 	//Title
-	wp.customize("parallax_one_header_title", function(value) {
+	wp.customize("azera_shop_header_title", function(value) {
 		
         value.bind(function( to ) {
 			if( to != '' ) {
@@ -86,7 +86,7 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_header_subtitle", function(value) {
+	wp.customize("azera_shop_header_subtitle", function(value) {
 		
         value.bind(function( to ) {
 			if( to != '' ) {
@@ -100,7 +100,7 @@
     });
 	
 	//Button text
-	wp.customize("parallax_one_header_button_text", function(value) {
+	wp.customize("azera_shop_header_button_text", function(value) {
 		
         value.bind(function( to ) {
 
@@ -116,7 +116,7 @@
 
 
 	//Button link
-	wp.customize("parallax_one_header_button_link", function(value) {
+	wp.customize("azera_shop_header_button_link", function(value) {
 		
         value.bind(function( to ) {
 			$( '#parallax_header .button a' ).attr( 'href', to );
@@ -129,7 +129,7 @@
 	************* OUR STORY SECTION ****************
 	*******************************************************/
 	//Title
-	wp.customize("parallax_one_our_story_title", function(value) {
+	wp.customize("azera_shop_our_story_title", function(value) {
 		
         value.bind(function( to ) {
 			
@@ -150,7 +150,7 @@
 		
     });
 	
-	wp.customize("parallax_one_our_story_text",function(value) {
+	wp.customize("azera_shop_our_story_text",function(value) {
 		
 		value.bind(function( to ) {
 			if( to != '' ) {
@@ -191,7 +191,7 @@
 	
 	
 	//Title
-	wp.customize("parallax_one_our_services_title", function(value) {
+	wp.customize("azera_shop_our_services_title", function(value) {
 		
         value.bind(function( to ) {
 			if( to != '' ) {
@@ -203,7 +203,7 @@
 			else {
 				$( '.services .section-header h2' ).addClass( 'paralax_one_only_customizer' );
 				$('.services .section-header .colored-line' ).addClass( 'paralax_one_only_customizer' );
-				if($( '.services .section-header .sub-heading' ).hasClass('paralax_one_only_customizer') && isEmpty($('.parallax_one_grid_column_1')) && isEmpty($('.parallax_one_grid_column_2')) && isEmpty($('.parallax_one_grid_column_3')) ){
+				if($( '.services .section-header .sub-heading' ).hasClass('paralax_one_only_customizer') && isEmpty($('.azera_shop_grid_column_1')) && isEmpty($('.azera_shop_grid_column_2')) && isEmpty($('.azera_shop_grid_column_3')) ){
 					$( '.services' ).addClass( 'paralax_one_only_customizer' );
 				}
 			}
@@ -212,7 +212,7 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_our_services_subtitle", function(value) {
+	wp.customize("azera_shop_our_services_subtitle", function(value) {
 		
         value.bind(function( to ) {
 			if( to != '' ) {
@@ -221,7 +221,7 @@
 				$( '.services .section-header .sub-heading' ).text( to );
 			} else {
 				$( '.services .section-header .sub-heading' ).addClass( 'paralax_one_only_customizer' );
-				if($( '.services .section-header h2' ).hasClass('paralax_one_only_customizer')  && isEmpty($('.parallax_one_grid_column_1')) && isEmpty($('.parallax_one_grid_column_2')) && isEmpty($('.parallax_one_grid_column_3'))){
+				if($( '.services .section-header h2' ).hasClass('paralax_one_only_customizer')  && isEmpty($('.azera_shop_grid_column_1')) && isEmpty($('.azera_shop_grid_column_2')) && isEmpty($('.azera_shop_grid_column_3'))){
 					$( '.services' ).addClass( 'paralax_one_only_customizer' );
 				}
 			}
@@ -234,7 +234,7 @@
 	*********** OUR TEAM SECTION **************
 	*******************************************************/
 	//Title
-	wp.customize("parallax_one_our_team_title", function(value) {
+	wp.customize("azera_shop_our_team_title", function(value) {
 		
         value.bind(function( to ) {
 			
@@ -255,7 +255,7 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_our_team_subtitle", function(value) {
+	wp.customize("azera_shop_our_team_subtitle", function(value) {
 		
         value.bind(function( to ) {
 			if( to != '' ) {
@@ -277,7 +277,7 @@
 	******** HAPPY CUSTOMERS SECTION ***********
 	*******************************************************/
 	//Title
-	wp.customize("parallax_one_happy_customers_title", function(value) {
+	wp.customize("azera_shop_happy_customers_title", function(value) {
 		
         value.bind(function( to ) {
 			
@@ -289,7 +289,7 @@
 			} else {
 				$( '.testimonials .section-header h2' ).addClass( 'paralax_one_only_customizer' );
 				$( '.testimonials .section-header .colored-line' ).addClass( 'paralax_one_only_customizer' );
-				if( $( '.testimonials .section-header .sub-heading').hasClass('paralax_one_only_customizer') && isEmpty($('.testimonials .testimonials-wrap .parallax_one_grid_column_1')) && isEmpty($('.testimonials .testimonials-wrap .parallax_one_grid_column_2')) && isEmpty($('.testimonials .testimonials-wrap .parallax_one_grid_column_3'))){
+				if( $( '.testimonials .section-header .sub-heading').hasClass('paralax_one_only_customizer') && isEmpty($('.testimonials .testimonials-wrap .azera_shop_grid_column_1')) && isEmpty($('.testimonials .testimonials-wrap .azera_shop_grid_column_2')) && isEmpty($('.testimonials .testimonials-wrap .azera_shop_grid_column_3'))){
 					$( '.testimonials' ).addClass( 'paralax_one_only_customizer' );
 				}
 			}
@@ -298,7 +298,7 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_happy_customers_subtitle", function(value) {
+	wp.customize("azera_shop_happy_customers_subtitle", function(value) {
 		
         value.bind(function( to ) {
 			if( to != '' ) {
@@ -307,7 +307,7 @@
 				$( '.testimonials .section-header .sub-heading' ).text( to );
 			} else {
 				$( '.testimonials .section-header .sub-heading' ).addClass( 'paralax_one_only_customizer' );
-				if( $( '.testimonials .section-header h2').hasClass('paralax_one_only_customizer') && isEmpty($('.testimonials .testimonials-wrap .parallax_one_grid_column_1')) && isEmpty($('.testimonials .testimonials-wrap .parallax_one_grid_column_2')) && isEmpty($('.testimonials .testimonials-wrap .parallax_one_grid_column_3')) ){
+				if( $( '.testimonials .section-header h2').hasClass('paralax_one_only_customizer') && isEmpty($('.testimonials .testimonials-wrap .azera_shop_grid_column_1')) && isEmpty($('.testimonials .testimonials-wrap .azera_shop_grid_column_2')) && isEmpty($('.testimonials .testimonials-wrap .azera_shop_grid_column_3')) ){
 					$( '.testimonials' ).addClass( 'paralax_one_only_customizer' );
 				}
 			}
@@ -334,7 +334,7 @@
 	
 	
 	//Title
-	wp.customize("parallax_one_ribbon_title", function(value) {
+	wp.customize("azera_shop_ribbon_title", function(value) {
 		
         value.bind(function( to ) {
 
@@ -354,7 +354,7 @@
 	
 	
 	//Button text
-	wp.customize("parallax_one_button_text", function(value) {
+	wp.customize("azera_shop_button_text", function(value) {
 		
         value.bind(function( to ) {
 
@@ -374,7 +374,7 @@
 
 
 	//Button link
-	wp.customize("parallax_one_button_link", function(value) {
+	wp.customize("azera_shop_button_link", function(value) {
 		
         value.bind(function( to ) {
 			$( '#ribbon button' ).attr( 'onclick', to );
@@ -388,7 +388,7 @@
 	*******************************************************/
 	
 	//Title
-	wp.customize("parallax_one_latest_news_title", function(value) {
+	wp.customize("azera_shop_latest_news_title", function(value) {
 		
         value.bind(function( to ) {
 
@@ -407,15 +407,15 @@
 	******** FOOTER SECTION *********
 	****************************************/
 	//Copyright
-	wp.customize("parallax_one_copyright", function(value) {
+	wp.customize("azera_shop_copyright", function(value) {
         value.bind(function( to ) {
 			if( to != '' ) {
-				$( '.parallax_one_copyright_content' ).removeClass( 'paralax_one_only_customizer' );
+				$( '.azera_shop_copyright_content' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
-				$( '.parallax_one_copyright_content' ).addClass( 'paralax_one_only_customizer' );
+				$( '.azera_shop_copyright_content' ).addClass( 'paralax_one_only_customizer' );
 			}
 			
-			$( '.parallax_one_copyright_content' ).text( to );
+			$( '.azera_shop_copyright_content' ).text( to );
 	    } );
     });
 	

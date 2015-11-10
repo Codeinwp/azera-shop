@@ -7,12 +7,12 @@ var marginTop = 0;
 
 /* LATEST NEWS */
 jQuery(document).ready(function () {
-    parallax_one_latest_news();
+    azera_shop_latest_news();
     jQuery('button.control_prev').click(function () {
-        parallax_one_moveBottom();
+        azera_shop_moveBottom();
     });
     jQuery('button.control_next').click(function () {
-         parallax_one_moveTop();
+         azera_shop_moveTop();
     });
 });
 
@@ -49,7 +49,7 @@ jQuery(window).resize(function() {
 });
 
 /* latest news [start] */
-function parallax_one_latest_news() {
+function azera_shop_latest_news() {
 
      /* maximum height for slides */
     slideHeight = 0;
@@ -70,7 +70,7 @@ function parallax_one_latest_news() {
 
 }
 
-function parallax_one_moveTop() {
+function azera_shop_moveTop() {
     if ( marginTop - slideHeight >= - sliderUlHeight + slideHeight ){
         marginTop = marginTop - slideHeight;
         jQuery('#parallax_slider ul').animate({
@@ -85,7 +85,7 @@ function parallax_one_moveTop() {
     }
 };    
 
-function parallax_one_moveBottom() {
+function azera_shop_moveBottom() {
     if ( marginTop + slideHeight <= 0 ){
         marginTop = marginTop + slideHeight;
         jQuery('#parallax_slider ul').animate({
@@ -161,14 +161,14 @@ jQuery(window).resize(function() {
 ===============================*/
 jQuery(document).ready(function(){
     jQuery('html').click(function(event) {
-        jQuery('.parallax_one_map_overlay').show();
+        jQuery('.azera_shop_map_overlay').show();
     });
     
     jQuery('#container-fluid').click(function(event){
         event.stopPropagation();
     });
     
-    jQuery('.parallax_one_map_overlay').on('click',function(event){
+    jQuery('.azera_shop_map_overlay').on('click',function(event){
         jQuery(this).hide();
     })
 });
@@ -181,8 +181,8 @@ jQuery(document).ready(function() {
 
 jQuery(document).ready(function(){
     if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
-        $parallax_one_header_height = jQuery('.navbar').height();
-        $parallax_one_header_height+=84;
-        jQuery('.header .overlay-layer').css('padding-top',$parallax_one_header_height);
+        $azera_shop_header_height = jQuery('.navbar').height();
+        $azera_shop_header_height+=84;
+        jQuery('.header .overlay-layer').css('padding-top',$azera_shop_header_height);
     }
 });

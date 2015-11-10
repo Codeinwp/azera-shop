@@ -3,22 +3,22 @@
 ============================== -->
 <?php
 
-	$parallax_number_of_posts = get_option('posts_per_page');
-	$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
+	$azera_shop_number_of_posts = get_option('posts_per_page');
+	$args = array( 'post_type' => 'post', 'posts_per_page' => $azera_shop_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) {
-		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title',esc_html__('Latest news','parallax-one'));
-		if($parallax_number_of_posts > 0) {
+		$azera_shop_latest_news_title = get_theme_mod('azera_shop_latest_news_title',esc_html__('Latest news','azera-shop'));
+		if($azera_shop_number_of_posts > 0) {
 		?>
-			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html_e('Latest blog posts','parallax-one'); ?>">
+			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html_e('Latest blog posts','azera-shop'); ?>">
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="row">
 
 							<!-- TIMELINE HEADING / TEXT  -->
 							<?php
-								if(!empty($parallax_one_latest_news_title)){
-									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.esc_attr($parallax_one_latest_news_title).'</h2><div class="colored-line-left"></div></div>';
+								if(!empty($azera_shop_latest_news_title)){
+									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.esc_attr($azera_shop_latest_news_title).'</h2><div class="colored-line-left"></div></div>';
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<div class="col-md-12 timeline-text text-left paralax_one_only_customizer"><h2 class="text-left dark-text "></h2><div class="colored-line-left "></div></div>';
 								}
@@ -26,8 +26,8 @@
 
 							<div class="parallax-slider-whole-wrap">
 								<div class="controls-wrap">
-									<button class="control_next icon icon-arrow-carrot-down"><span class="screen-reader-text"><?php esc_attr_e('Post slider navigation: Down','parallax-one')?></span></button>
-									<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e('Post slider navigation: Up','parallax-one')?></span></button>
+									<button class="control_next icon icon-arrow-carrot-down"><span class="screen-reader-text"><?php esc_attr_e('Post slider navigation: Down','azera-shop')?></span></button>
+									<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e('Post slider navigation: Up','azera-shop')?></span></button>
 								</div>
 								<!-- TIMLEINE SCROLLER -->
 								<div itemscope itemtype="http://schema.org/Blog" id="parallax_slider" class="col-md-12 timeline-section">
@@ -51,8 +51,8 @@
 												}
 										?>
 
-												<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ) ?>">
-													<div datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-published date small-text strong">
+												<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'azera-shop' ), get_the_title() ) ?>">
+													<div datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'azera-shop' ) ); ?>" class="entry-published date small-text strong">
 													<?php echo get_the_date('M, j'); ?>
 													</div>
 													<div itemscope itemprop="image" class="icon-container white-text">
@@ -60,9 +60,9 @@
 															<?php 
 
 																if ( has_post_thumbnail() ) :
-																	the_post_thumbnail('parallax-one-post-thumbnail-latest-news');
+																	the_post_thumbnail('azera-shop-post-thumbnail-latest-news');
 																else: ?>
-																	<img src="<?php echo parallax_get_file('/images/no-thumbnail-latest-news.jpg'); ?>" width="150" height="150" alt="<?php the_title(); ?>">
+																	<img src="<?php echo azera_shop_get_file('/images/no-thumbnail-latest-news.jpg'); ?>" width="150" height="150" alt="<?php the_title(); ?>">
 															<?php 
 																endif; 
 															?>
@@ -76,10 +76,10 @@
 															<div class="entry-meta">
 																<span class="entry-date">
 																	<a href="<?php echo esc_url( get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')) ) ?>" rel="bookmark">
-																		<time itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-date entry-published updated"><?php echo get_the_date('F j, Y'); ?></time>
+																		<time itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'azera-shop' ) ); ?>" class="entry-date entry-published updated"><?php echo get_the_date('F j, Y'); ?></time>
 																	</a>
 																</span>
-																<span> <?php esc_html_e('by','parallax-one');?> </span>
+																<span> <?php esc_html_e('by','azera-shop');?> </span>
 																<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="author-link">
 																	<span  itemprop="name" class="entry-author author vcard">
 																		<a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>

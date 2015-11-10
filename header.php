@@ -27,9 +27,9 @@
 
 	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
 	 
-		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		$azera_shop_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
 		
-		if( isset($parallax_one_disable_preloader) && ($parallax_one_disable_preloader != 1)):
+		if( isset($azera_shop_disable_preloader) && ($azera_shop_disable_preloader != 1)):
 			 
 			echo '<div class="preloader">';
 				echo '<div class="status">&nbsp;</div>';
@@ -86,15 +86,15 @@
 						
 						<?php
 							
-							$parallax_one = get_theme_mod('paralax_one_logo', parallax_get_file('/images/logo-nav.png') );
+							$azera_shop_logo = get_theme_mod('azera_shop_logo', azera_shop_get_file('/images/logo-nav.png') );
 
 							
 							
-							if(!empty($parallax_one)):
+							if(!empty($azera_shop_logo)):
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url($azera_shop_logo).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 
@@ -142,7 +142,7 @@
 										'theme_location'    => 'primary',
 										'menu_class'        => 'primary-menu small-text',
 										'depth'           	=> 4,
-										'fallback_cb'       => 'parallax_one_wp_page_menu'
+										'fallback_cb'       => 'azera_shop_wp_page_menu'
 										 ) 
 								);
 							?>

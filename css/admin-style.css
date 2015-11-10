@@ -2,19 +2,19 @@
 	margin-top: 15px;
 	color: rgb(0, 142, 214);
 }
-.parallax_one_repeater_container, .parallax_one_general_control_repeater_container {
+.azera_shop_repeater_container, .azera_shop_general_control_repeater_container {
 	width: 100%;
 	float: left;
 	padding: 5px 0;
 	cursor:move;
 }
-.parallax_one_repeater_container .parallax-box-content-hidden, .parallax_one_general_control_repeater_container .parallax-box-content-hidden {
+.azera_shop_repeater_container .parallax-box-content-hidden, .azera_shop_general_control_repeater_container .parallax-box-content-hidden {
 	padding: 5px;
 	border: 1px solid #dfdfdf;
 	border-top:0px;
 	padding-top: 0px;
 }
-button.parallax_one_remove_field {
+button.azera_shop_remove_field {
 	display: inline-block;
 	width: 25% !important;
 	height: 57px !important;
@@ -23,29 +23,29 @@ button.parallax_one_remove_field {
 	float: right;
 }
 
-button.parallax_one_general_control_remove_field {
+button.azera_shop_general_control_remove_field {
 	width: 100%;
 	margin-top: 10px!important;
 	 
 }
 
-button.parallax_one_general_control_remove_field:hover{
+button.azera_shop_general_control_remove_field:hover{
 	background-color:#00a0d2!important;
 	color:#FFFFFF!important;
 	border: 0;
 }
 
 
-.parallax_one_repeater_container .parallax_one_icon_link,  .parallax_one_general_control_repeater_container .parallax_one_text_control, .parallax_one_general_control_repeater_container .parallax_one_link_control{
+.azera_shop_repeater_container .azera_shop_icon_link,  .azera_shop_general_control_repeater_container .azera_shop_text_control, .azera_shop_general_control_repeater_container .azera_shop_link_control{
 	width: 100% !important;
 	margin: 3px 0 0 !important;
 }
-.parallax_one_repeater_container .parallax_one_icons, .parallax_one_general_control_repeater_container .parallax_one_icon_control {
+.azera_shop_repeater_container .azera_shop_icons, .azera_shop_general_control_repeater_container .azera_shop_icon_control {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
-#parallax_one_new_field, #parallax_one_general_control_new_field {
+#azera_shop_new_field, #azera_shop_general_control_new_field {
 	width: 100%;
 }
 .customize-control-widget_form .widget-control-save {
@@ -54,15 +54,15 @@ button.parallax_one_general_control_remove_field:hover{
 
 
 
-.parallax_one_our_services_image_control{
+.azera_shop_our_services_image_control{
 	display:none;
 }
 
-.parallax_one_our_services_icon_control{
+.azera_shop_our_services_icon_control{
 	display:none;
 }
 
-.parallax_one_general_control_repeater_container .parallax-box-content-hidden{
+.azera_shop_general_control_repeater_container .parallax-box-content-hidden{
 	display: none;
 }
 
@@ -70,7 +70,7 @@ button.parallax_one_general_control_remove_field:hover{
 	background-color: #FFFFFF;
 }
 
-.parallax-customize-control-title{
+.azera-shop-customize-control-title{
 	border: 1px solid #dfdfdf;
 	cursor: move !important;
 	font-weight: bold;
@@ -95,27 +95,27 @@ button.parallax_one_general_control_remove_field:hover{
 	color:#00a0d2;
 }
 
-.parallax_one_image_control .custom_media_button_parallax_one{
+.azera_shop_image_control .custom_media_button_azera_shop{
 	margin-top: 5px;
 }
 
-#customize-control-parallax_one_contact_form_shortcode{
+#customize-control-azera_shop_contact_form_shortcode{
 	display:none;
 }
 
-.parallax_one_radio_control{
+.azera_shop_radio_control{
     margin-top: 0;
 }
 
-.parallax_one_general_control_repeater_container .parallax-box-content-hidden{
+.azera_shop_general_control_repeater_container .parallax-box-content-hidden{
     padding-top: 5px;
 }
 
-#accordion-section-parallax_one_shop_section .accordion-section-title, #accordion-section-parallax_one_sections_order .accordion-section-title, #accordion-section-parallax_one_features_ribbon_section .accordion-section-title, #accordion-section-parallax_one_portfolio_section .accordion-section-title, #accordion-section-parallax_one_shortcodes_section .accordion-section-title, #accordion-section-parallax_one_new_features .accordion-section-title {
+#accordion-section-azera_shop_shop_section .accordion-section-title, #accordion-section-azera_shop_sections_order .accordion-section-title, #accordion-section-azera_shop_features_ribbon_section .accordion-section-title, #accordion-section-azera_shop_portfolio_section .accordion-section-title, #accordion-section-azera_shop_shortcodes_section .accordion-section-title, #accordion-section-azera_shop_new_features .accordion-section-title {
 	background-image:url(../images/gray-lines.png);
 	background-repeat:repeat;
 }
 
-#accordion-section-parallax_one_shop_section .accordion-section-title:after, #accordion-section-parallax_one_sections_order .accordion-section-title:after, #accordion-section-parallax_one_features_ribbon_section .accordion-section-title:after, #accordion-section-parallax_one_portfolio_section .accordion-section-title:after, #accordion-section-parallax_one_shortcodes_section .accordion-section-title:after, #accordion-section-parallax_one_new_features .accordion-section-title:after {
+#accordion-section-azera_shop_shop_section .accordion-section-title:after, #accordion-section-azera_shop_sections_order .accordion-section-title:after, #accordion-section-azera_shop_features_ribbon_section .accordion-section-title:after, #accordion-section-azera_shop_portfolio_section .accordion-section-title:after, #accordion-section-azera_shop_shortcodes_section .accordion-section-title:after, #accordion-section-azera_shop_new_features .accordion-section-title:after {
 	content: "\f160";	
 }

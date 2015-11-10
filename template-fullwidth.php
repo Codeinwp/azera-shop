@@ -2,7 +2,7 @@
 /**
  * Template name: Full Width
  *
- * @package parallax-one
+ * @package azera-shop
  */
 
 	get_header(); 

@@ -1,20 +1,20 @@
 jQuery(document).ready(function() {
-    var parallax_one_aboutpage = parallaxOneWelcomeScreenCustomizerObject.aboutpage;
-    var parallax_one_nr_actions_required = parallaxOneWelcomeScreenCustomizerObject.nr_actions_required;
+    var azera_shop_aboutpage = azeraShopWelcomeScreenCustomizerObject.aboutpage;
+    var azera_shop_nr_actions_required = azeraShopWelcomeScreenCustomizerObject.nr_actions_required;
 
     /* Number of required actions */
-    if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required != '0')) {
-        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + parallax_one_aboutpage + '"><span class="parallax-one-actions-count">' + parallax_one_nr_actions_required + '</span></a>');
+    if ((typeof azera_shop_aboutpage !== 'undefined') && (typeof azera_shop_nr_actions_required !== 'undefined') && (azera_shop_nr_actions_required != '0')) {
+        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + azera_shop_aboutpage + '"><span class="azera-shop-actions-count">' + azera_shop_nr_actions_required + '</span></a>');
     }
 
     /* Upsell in Customizer (Link to Welcome page) */
-    if ( !jQuery( ".parallax-upsells" ).length ) {
-        jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section parallax-upsells">');
+    if ( !jQuery( ".azera-shops-upsells" ).length ) {
+        jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section azera-shops-upsells">');
     }
-    if (typeof parallax_one_aboutpage !== 'undefined') {
-        jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="' + parallax_one_aboutpage + '" class="button" target="_blank">{themeinfo}</a>'.replace('{themeinfo}', parallaxOneWelcomeScreenCustomizerObject.themeinfo));
+    if (typeof azera_shop_aboutpage !== 'undefined') {
+        jQuery('.azera-shops-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="' + azera_shop_aboutpage + '" class="button" target="_blank">{themeinfo}</a>'.replace('{themeinfo}', azeraShopWelcomeScreenCustomizerObject.themeinfo));
     }
-    if ( !jQuery( ".parallax-upsells" ).length ) {
+    if ( !jQuery( ".azera-shops-upsells" ).length ) {
         jQuery('#customize-theme-controls > ul').prepend('</li>');
     }
 });

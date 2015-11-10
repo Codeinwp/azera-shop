@@ -4,7 +4,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	
 		get_header(); 
 
-		parallax_one_get_template_part( apply_filters("parallax_one_plus_header_layout","/sections/parallax_one_header_section"));
+		azera_shop_get_template_part( apply_filters("azera_shop_plus_header_layout","/sections/azera_shop_header_section"));
 	?>
 		</div>
 		<!-- /END COLOR OVER IMAGE -->
@@ -15,11 +15,11 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 	<?php
 
-		$sections_array = apply_filters("parallax_one_plus_sections_filter",array('sections/parallax_one_logos_section','sections/parallax_one_our_services_section','sections/parallax_one_our_story_section','sections/parallax_one_our_team_section','sections/parallax_one_happy_customers_section','sections/parallax_one_ribbon_section','sections/parallax_one_latest_news_section','sections/parallax_one_contact_info_section','sections/parallax_one_map_section'));
+		$sections_array = apply_filters("azera_shop_plus_sections_filter",array('sections/azera_shop_logos_section','sections/azera_shop_our_services_section','sections/azera_shop_our_story_section','sections/azera_shop_our_team_section','sections/azera_shop_happy_customers_section','sections/azera_shop_ribbon_section','sections/azera_shop_latest_news_section','sections/azera_shop_contact_info_section','sections/azera_shop_map_section'));
 
 		if(!empty($sections_array)){
 			foreach($sections_array as $section){
-				parallax_one_get_template_part($section);
+				azera_shop_get_template_part($section);
 			}
 		}
 	?>

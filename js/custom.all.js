@@ -138,8 +138,8 @@ function mainNav() {
     var topMenuClose    = -70;
     var topMenuOpen     = 0;
     if ( jQuery('.admin-bar').length>0 ) {
-        $parallax_one_header_height = jQuery('.navbar').height();
-        topMenuClose    = $parallax_one_header_height * -1;
+        $azera_shop_header_height = jQuery('.navbar').height();
+        topMenuClose    = $azera_shop_header_height * -1;
         topMenuOpen     = 32;
     }
     if ( top > 40 )
@@ -157,18 +157,18 @@ function mainNav() {
 function scrolled() {
 
     if ( jQuery(window).width() >= 751 ) {
-        var prallax_one_scrollTop = jQuery(window).scrollTop();       // cursor position
+        var parallax_one_scrollTop = jQuery(window).scrollTop();       // cursor position
         var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
         var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
         // for all sections check if the cursor is inside a section
         jQuery("section").each( function() {
             var thisID = '#' + jQuery(this).attr('id');           // section id
-            var parallax_one_offset = jQuery(this).offset().top;         // distance between top and our section
+            var azera_shop_offset = jQuery(this).offset().top;         // distance between top and our section
             var thisHeight  = jQuery(this).outerHeight();         // section height
-            var thisBegin   = parallax_one_offset - headerHeight;                      // where the section begins
-            var thisEnd     = parallax_one_offset + thisHeight - headerHeight;         // where the section ends  
+            var thisBegin   = azera_shop_offset - headerHeight;                      // where the section begins
+            var thisEnd     = azera_shop_offset + thisHeight - headerHeight;         // where the section ends
             // if position of the cursor is inside of the this section
-            if ( prallax_one_scrollTop >= thisBegin && prallax_one_scrollTop <= thisEnd ) {
+            if ( parallax_one_scrollTop >= thisBegin && parallax_one_scrollTop <= thisEnd ) {
                 isInOneSection = 'yes';
                 jQuery('.current').removeClass('current');
                 jQuery('#menu-primary a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
@@ -248,7 +248,7 @@ jQuery(window).resize(function() {
         var self            = this;
             $container      = $(container),
             columns_height  = [],
-            prefix          = 'parallax_one',
+            prefix          = 'azera_shop',
             unique_class    = prefix + '_grid_' + self.make_unique();
             local_class     = prefix + '_grid';
         var classname;

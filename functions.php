@@ -1,8 +1,8 @@
 <?php
 /**
- * parallax-one functions and definitions
+ * azera-shop functions and definitions
  *
- * @package parallax-one
+ * @package azera-shop
  */
 
 
@@ -25,7 +25,7 @@ function azera_shop_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on parallax-one, use a find and replace
+	 * If you're building a theme based on azera-shop, use a find and replace
 	 * to change 'azera-shop' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'azera-shop', get_template_directory() . '/languages' );
@@ -65,7 +65,7 @@ function azera_shop_setup() {
 	) );
 	
 	// Set up the WordPress core custom background feature.
-	add_theme_support('custom-background',apply_filters( 'parallax_one_custom_background_args', array(
+	add_theme_support('custom-background',apply_filters( 'azera_shop_custom_background_args', array(
 		'default-repeat'         => 'no-repeat',
 		'default-position-x'     => 'center',
 		'default-attachment'     => 'fixed'
@@ -77,8 +77,8 @@ function azera_shop_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
 	 */
 	
-	add_theme_support( 'custom-header',apply_filters( 'parallax_one_custom_header_args', array(
-		'default-image' => parallax_get_file('/images/background-images/background.jpg'),
+	add_theme_support( 'custom-header',apply_filters( 'azera_shop_custom_header_args', array(
+		'default-image' => azera_shop_get_file('/images/background-images/background.jpg'),
 		'width'         => 1000,
 		'height'        => 680,
 		'flex-height'   => true,
@@ -87,9 +87,9 @@ function azera_shop_setup() {
 	)));
 	
 	register_default_headers( array(
-		'parallax_one_default_header_image' => array(
-			'url'   => parallax_get_file('/images/background-images/background.jpg'),
-			'thumbnail_url' => parallax_get_file('/images/background-images/background_thumbnail.jpg'),
+		'azera_shop_default_header_image' => array(
+			'url'   => azera_shop_get_file('/images/background-images/background.jpg'),
+			'thumbnail_url' => azera_shop_get_file('/images/background-images/background_thumbnail.jpg'),
 		),
 	));
 	
@@ -104,18 +104,18 @@ function azera_shop_setup() {
 	add_theme_support( 'post-thumbnails' ); 
 
 	/* Set the image size by cropping the image */
-	add_image_size( 'parallax-one-post-thumbnail-big', 730, 340, true );
-	add_image_size( 'parallax-one-post-thumbnail-mobile', 500, 233, true );
+	add_image_size( 'azera-shop-post-thumbnail-big', 730, 340, true );
+	add_image_size( 'azera-shop-post-thumbnail-mobile', 500, 233, true );
 
 	// Latest news Section (homepage)
-	add_image_size( 'parallax-one-post-thumbnail-latest-news', 150, 150, true ); 	
-	add_image_size( 'parallax_one_team', 268, 273, true );
-	add_image_size( 'parallax_one_services',60,62,true );
-	add_image_size( 'parallax_one_customers',75,75,true );
+	add_image_size( 'azera-shop-post-thumbnail-latest-news', 150, 150, true );
+	add_image_size( 'azera_shop_team', 268, 273, true );
+	add_image_size( 'azera_shop_services',60,62,true );
+	add_image_size( 'azera_shop_customers',75,75,true );
 	
 	
-	if( !get_option( 'parallax_one_migrate_translation' ) ) {
-		add_option( 'parallax_one_migrate_translation', false );
+	if( !get_option( 'azera_shop_migrate_translation' ) ) {
+		add_option( 'azera_shop_migrate_translation', false );
 	}
 	
 	/**
@@ -123,7 +123,7 @@ function azera_shop_setup() {
 	*/
 	if ( is_admin() ) {
 		
-		global $parallax_one_required_actions;
+		global $azera_shop_required_actions;
         /*
          * id - unique id; required
          * title
@@ -132,7 +132,7 @@ function azera_shop_setup() {
          * plugin_slug - the plugin's slug (used for installing the plugin)
          *
          */
-        $parallax_one_required_actions = array(
+        $azera_shop_required_actions = array(
 			array(
                 "id" => 'parallax-one-req-ac-install-intergeo-maps',
                 "title" => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'azera-shop' ),
@@ -152,17 +152,17 @@ function azera_shop_setup() {
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 	}
 }
-endif; // parallax_one_setup
+endif; // azera_shop_setup
 add_action( 'after_setup_theme', 'azera_shop_setup' );
 
 
-add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes' );
+add_filter( 'image_size_names_choose', 'azera_shop_media_uploader_custom_sizes' );
 
-function parallax_one_media_uploader_custom_sizes( $sizes ) {
+function azera_shop_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'parallax_one_team' => esc_html__('Parallax One Team Member','azera-shop'),
-		'parallax_one_services' => esc_html__('Parallax One Services','azera-shop'),
-		'parallax_one_customers' => esc_html__('Parallax One Testimonials','azera-shop')
+        'azera_shop_team' => esc_html__('Azera Shop Team Member','azera-shop'),
+		'azera_shop_services' => esc_html__('Azera Shop Services','azera-shop'),
+		'azera_shop_customers' => esc_html__('Azera Shop Testimonials','azera-shop')
     ) );
 }
 
@@ -172,7 +172,7 @@ function parallax_one_media_uploader_custom_sizes( $sizes ) {
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function parallax_one_widgets_init() {
+function azera_shop_widgets_init() {
 	
 	register_sidebar( 
 		array(
@@ -198,7 +198,7 @@ function parallax_one_widgets_init() {
 	);
 	
 }
-add_action( 'widgets_init', 'parallax_one_widgets_init' );
+add_action( 'widgets_init', 'azera_shop_widgets_init' );
 
 
 
@@ -208,7 +208,7 @@ add_action( 'widgets_init', 'parallax_one_widgets_init' );
  *
  * If the menu doesn't exist, the fallback function to use.
  */
-function parallax_one_wp_page_menu()
+function azera_shop_wp_page_menu()
 {
     echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
     wp_list_pages(array('title_li' => '', 'depth' => 1));
@@ -219,17 +219,17 @@ function parallax_one_wp_page_menu()
 /**
  * Enqueue scripts and styles.
  */
-function parallax_one_scripts() {
+function azera_shop_scripts() {
 	
 	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600');
 
-	wp_enqueue_style( 'parallax-one-bootstrap-style', parallax_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
+	wp_enqueue_style( 'parallax-one-bootstrap-style', azera_shop_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
 
 	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
 	
-	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
+	wp_enqueue_script( 'parallax-one-bootstrap', azera_shop_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
 		
-	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
+	wp_enqueue_script( 'parallax-one-custom-all', azera_shop_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
 	
 	wp_localize_script( 'parallax-one-custom-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'azera-shop' ) . '</span>',
@@ -237,155 +237,155 @@ function parallax_one_scripts() {
 	) );
 	
 
-	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
-	if ( !empty($parallax_one_enable_move) && $parallax_one_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
+	if ( !empty($azera_shop_enable_move) && $azera_shop_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-home-plugin', parallax_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
+		wp_enqueue_script( 'parallax-one-home-plugin', azera_shop_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
 
 	}
 
 	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
+		wp_enqueue_script( 'parallax-one-custom-home', azera_shop_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
 	}
 
-	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', parallax_get_file('/js/skip-link-focus-fix.js'), array(), '1.0.0', true );
+	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', azera_shop_get_file('/js/skip-link-focus-fix.js'), array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
+add_action( 'wp_enqueue_scripts', 'azera_shop_scripts' );
 
 
-function parallax_one_add_id(){
-	$migrate = get_option( 'parallax_one_migrate_translation' );
+function azera_shop_add_id(){
+	$migrate = get_option( 'azera_shop_migrate_translation' );
 	if( isset($migrate) && $migrate == false ) {
 		
 		/*Logo*/
-		$parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode(array( array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) )));
-		if(!empty($parallax_one_logos)){
+		$azera_shop_logos = get_theme_mod('azera_shop_logos_content', json_encode(array( array("image_url" => azera_shop_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => azera_shop_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => azera_shop_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => azera_shop_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => azera_shop_get_file('/images/companies/5.png') ,"link" => "#" ) )));
+		if(!empty($azera_shop_logos)){
 			
-			$parallax_one_logos_decoded = json_decode($parallax_one_logos);
-			foreach($parallax_one_logos_decoded as &$it){
+			$azera_shop_logos_decoded = json_decode($azera_shop_logos);
+			foreach($azera_shop_logos_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
-					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
+					$it = (object) array_merge( (array)$it, array( 'id' => 'azera_shop_'.uniqid() ) );
 				}
 			}
-			$parallax_one_logos = json_encode($parallax_one_logos_decoded);
-			set_theme_mod( 'parallax_one_logos_content', $parallax_one_logos );
+			$azera_shop_logos = json_encode($azera_shop_logos_decoded);
+			set_theme_mod( 'azera_shop_logos_content', $azera_shop_logos );
 		}
 		
 		
 		/*Services*/
-		$parallax_one_services = get_theme_mod('parallax_one_services_content', json_encode(
+		$azera_shop_services = get_theme_mod('azera_shop_services_content', json_encode(
 							array(
-									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-webpage-multiple','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-									array('choice'=>'parallax_icon','icon_value' => 'icon-ecommerce-graph3','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-geolocalize-05','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'))
+									array('choice'=>'azera_shop_icon','icon_value' => 'icon-basic-webpage-multiple','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
+									array('choice'=>'azera_shop_icon','icon_value' => 'icon-ecommerce-graph3','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
+									array('choice'=>'azera_shop_icon','icon_value' => 'icon-basic-geolocalize-05','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'))
 							)
 						));
-		if(!empty($parallax_one_services)){
+		if(!empty($azera_shop_services)){
 			
-			$parallax_one_services_decoded = json_decode($parallax_one_services);
-			foreach($parallax_one_services_decoded as &$it){
+			$azera_shop_services_decoded = json_decode($azera_shop_services);
+			foreach($azera_shop_services_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
-					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
+					$it = (object) array_merge( (array)$it, array( 'id' => 'azera_shop_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_services = json_encode($parallax_one_services_decoded);
-			set_theme_mod( 'parallax_one_services_content', $parallax_one_services );
+			$azera_shop_services = json_encode($azera_shop_services_decoded);
+			set_theme_mod( 'azera_shop_services_content', $azera_shop_services );
 		}
 		
 		/*Team*/
-		$parallax_one_team = get_theme_mod('parallax_one_team_content', json_encode(
+		$azera_shop_team = get_theme_mod('azera_shop_team_content', json_encode(
 							array(
-									array('image_url' => parallax_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','azera-shop'),'subtitle' => esc_html__('Founder & CEO','azera-shop')),
-									array('image_url' => parallax_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','azera-shop'),'subtitle' => esc_html__('Account Manager','azera-shop')),
-									array('image_url' => parallax_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','azera-shop'),'subtitle' => esc_html__('Business Development','azera-shop'))
+									array('image_url' => azera_shop_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','azera-shop'),'subtitle' => esc_html__('Founder & CEO','azera-shop')),
+									array('image_url' => azera_shop_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','azera-shop'),'subtitle' => esc_html__('Account Manager','azera-shop')),
+									array('image_url' => azera_shop_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','azera-shop'),'subtitle' => esc_html__('Business Development','azera-shop'))
 							)
 						));
-		if(!empty($parallax_one_team)){
+		if(!empty($azera_shop_team)){
 			
-			$parallax_one_team_decoded = json_decode($parallax_one_team);
-			foreach($parallax_one_team_decoded as &$it){
+			$azera_shop_team_decoded = json_decode($azera_shop_team);
+			foreach($azera_shop_team_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
-					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
+					$it = (object) array_merge( (array)$it, array( 'id' => 'azera_shop_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_team = json_encode($parallax_one_team_decoded);
-			set_theme_mod( 'parallax_one_team_content', $parallax_one_team );
+			$azera_shop_team = json_encode($azera_shop_team_decoded);
+			set_theme_mod( 'azera_shop_team_content', $azera_shop_team );
 		}
 		
 		/*Testimonials*/
-		$parallax_one_testimonials = get_theme_mod('parallax_one_testimonials_content', json_encode(
+		$azera_shop_testimonials = get_theme_mod('azera_shop_testimonials_content', json_encode(
 							array(
-									array('image_url' => parallax_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop')),
-									array('image_url' => parallax_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop')),
-									array('image_url' => parallax_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop'))
+									array('image_url' => azera_shop_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop')),
+									array('image_url' => azera_shop_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop')),
+									array('image_url' => azera_shop_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop'))
 							)
 						));
-		if(!empty($parallax_one_testimonials)){
+		if(!empty($azera_shop_testimonials)){
 			
-			$parallax_one_testimonials_decoded = json_decode($parallax_one_testimonials);
-			foreach($parallax_one_testimonials_decoded as &$it){
+			$azera_shop_testimonials_decoded = json_decode($azera_shop_testimonials);
+			foreach($azera_shop_testimonials_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
-					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
+					$it = (object) array_merge( (array)$it, array( 'id' => 'azera_shop_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_testimonials = json_encode($parallax_one_testimonials_decoded);
-			set_theme_mod( 'parallax_one_testimonials_content', $parallax_one_testimonials );
+			$azera_shop_testimonials = json_encode($azera_shop_testimonials_decoded);
+			set_theme_mod( 'azera_shop_testimonials_content', $azera_shop_testimonials );
 		}
 		
 		/*Contact Info*/
-		$parallax_one_contact_info = get_theme_mod('parallax_one_contact_info_content', json_encode(
+		$azera_shop_contact_info = get_theme_mod('azera_shop_contact_info_content', json_encode(
 			array( 
 					array("icon_value" => "icon-basic-mail" ,"text" => "contact@site.com", "link" => "#" ), 
 					array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Company address", "link" => "#" ), 
 					array("icon_value" => "icon-basic-tablet" ,"text" => "0 332 548 954", "link" => "#" ) 
 			)
 		));
-		if(!empty($parallax_one_contact_info)){
+		if(!empty($azera_shop_contact_info)){
 			
-			$parallax_one_contact_info_decoded = json_decode($parallax_one_contact_info);
-			foreach($parallax_one_contact_info_decoded as &$it){
+			$azera_shop_contact_info_decoded = json_decode($azera_shop_contact_info);
+			foreach($azera_shop_contact_info_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
-					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
+					$it = (object) array_merge( (array)$it, array( 'id' => 'azera_shop_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_contact_info = json_encode($parallax_one_contact_info_decoded);
-			set_theme_mod( 'parallax_one_contact_info_content', $parallax_one_contact_info );
+			$azera_shop_contact_info = json_encode($azera_shop_contact_info_decoded);
+			set_theme_mod( 'azera_shop_contact_info_content', $azera_shop_contact_info );
 		}
 		
 		/*Social Icons*/
-		$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons', json_encode(
+		$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons', json_encode(
 			array(
 				array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
 				array('icon_value' =>'icon-social-twitter' , 'link' => '#'),
 				array('icon_value' =>'icon-social-googleplus' , 'link' => '#')
 			)
 		));
-		if(!empty($parallax_one_social_icons)){
+		if(!empty($azera_shop_social_icons)){
 			
-			$parallax_one_social_icons_decoded = json_decode($parallax_one_social_icons);
-			foreach($parallax_one_social_icons_decoded as &$it){
+			$azera_shop_social_icons_decoded = json_decode($azera_shop_social_icons);
+			foreach($azera_shop_social_icons_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
-					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
+					$it = (object) array_merge( (array)$it, array( 'id' => 'azera_shop_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_social_icons = json_encode($parallax_one_social_icons_decoded);
-			set_theme_mod( 'parallax_one_social_icons', $parallax_one_social_icons );
+			$azera_shop_social_icons = json_encode($azera_shop_social_icons_decoded);
+			set_theme_mod( 'azera_shop_social_icons', $azera_shop_social_icons );
 		}
 		
-		update_option( 'parallax_one_migrate_translation', true );
+		update_option( 'azera_shop_migrate_translation', true );
 	}
 }
-add_action( 'shutdown', 'parallax_one_add_id' );
+add_action( 'shutdown', 'azera_shop_add_id' );
 
 /**
  * Custom template tags for this theme.
@@ -409,14 +409,14 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 function azera_shop_admin_styles() {
-	wp_enqueue_style( 'parallax_admin_stylesheet', parallax_get_file('/css/admin-style.css'),'1.0.0' );
+	wp_enqueue_style( 'parallax_admin_stylesheet', azera_shop_get_file('/css/admin-style.css'),'1.0.0' );
 }
 add_action( 'admin_enqueue_scripts', 'azera_shop_admin_styles', 10 );
 
 // Adding IE-only scripts to header.
 function azera_shop_ie () {
     echo '<!--[if lt IE 9]>' . "\n";
-    echo '<script src="'. parallax_get_file('/js/html5shiv.min.js').'"></script>' . "\n";
+    echo '<script src="'. azera_shop_get_file('/js/html5shiv.min.js').'"></script>' . "\n";
     echo '<![endif]-->' . "\n";
 }
 add_action('wp_head', 'azera_shop_ie');
@@ -523,23 +523,23 @@ function azera_shop_php_style() {
 	
 	echo '<style type="text/css">';
 	
-	$parallax_one_title_color = get_theme_mod('parallax_one_title_color');
-	if(!empty($parallax_one_title_color)){
-		echo '.dark-text { color: '. $parallax_one_title_color .' }';
+	$azera_shop_title_color = get_theme_mod('azera_shop_title_color');
+	if(!empty($azera_shop_title_color)){
+		echo '.dark-text { color: '. $azera_shop_title_color .' }';
 	}
-	$parallax_one_text_color = get_theme_mod('parallax_one_text_color');
-	if(!empty($parallax_one_text_color)){
-		echo 'body{ color: '.$parallax_one_text_color.'}';
+	$azera_shop_text_color = get_theme_mod('azera_shop_text_color');
+	if(!empty($azera_shop_text_color)){
+		echo 'body{ color: '.$azera_shop_text_color.'}';
 	}
 	
-	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
-	$parallax_one_first_layer = get_theme_mod('paralax_one_first_layer', parallax_get_file('/images/background1.png'));
-	$parallax_one_second_layer = get_theme_mod('paralax_one_second_layer',parallax_get_file('/images/background2.png'));
+	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
+	$azera_shop_first_layer = get_theme_mod('paralax_one_first_layer', azera_shop_get_file('/images/background1.png'));
+	$azera_shop_second_layer = get_theme_mod('paralax_one_second_layer',azera_shop_get_file('/images/background2.png'));
 
-	if( ( empty($parallax_one_enable_move) || !$parallax_one_enable_move) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
-		$parallax_one_header_image = get_header_image();
-		if(!empty($parallax_one_header_image)){
-			echo '.header{ background-image: url('.$parallax_one_header_image.');}';
+	if( ( empty($azera_shop_enable_move) || !$azera_shop_enable_move) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+		$azera_shop_header_image = get_header_image();
+		if(!empty($azera_shop_header_image)){
+			echo '.header{ background-image: url('.$azera_shop_header_image.');}';
 		}
 	}
 
@@ -548,13 +548,13 @@ function azera_shop_php_style() {
 
 
 
-$pro_functions_path = parallax_get_file('/pro/functions.php');
+$pro_functions_path = azera_shop_get_file('/pro/functions.php');
 if (file_exists($pro_functions_path)) {
 	require $pro_functions_path;
 }
 
 
-function parallax_get_file($file){
+function azera_shop_get_file($file){
 	$file_parts = pathinfo($file);
 	$accepted_ext = array('jpg','img','png','css','js');
 	if( in_array($file_parts['extension'], $accepted_ext) ){
@@ -585,17 +585,17 @@ function azera_shop_related_products_args( $args ) {
 	return $args;
 }
 
-function parallax_one_responsive_embed($html, $url, $attr, $post_ID) {
+function azera_shop_responsive_embed($html, $url, $attr, $post_ID) {
 	$return = '<div class="parallax-one-video-container">'.$html.'</div>';
 	return $return;
 }
 
-add_filter( 'embed_oembed_html', 'parallax_one_responsive_embed', 10, 4 );
+add_filter( 'embed_oembed_html', 'azera_shop_responsive_embed', 10, 4 );
 
 
 
 /* Comments callback function*/
-function parallax_one_comment($comment, $args, $depth) {
+function azera_shop_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 
 	switch ( $comment->comment_type ) :
@@ -651,13 +651,13 @@ function parallax_one_comment($comment, $args, $depth) {
 if(function_exists('icl_unregister_string') && function_exists('icl_register_string')){
 	
 	/*Services*/
-	$parallax_one_services_pl = get_theme_mod('parallax_one_services_content');
-	if(!empty($parallax_one_services_pl)){
-		$parallax_one_services_pl_decoded = json_decode($parallax_one_services_pl);
-		foreach($parallax_one_services_pl_decoded as $parallax_one_service_box){
-			$title = $parallax_one_service_box->title;
-			$text = $parallax_one_service_box->text;
-			$id = $parallax_one_service_box->id;
+	$azera_shop_services_pl = get_theme_mod('azera_shop_services_content');
+	if(!empty($azera_shop_services_pl)){
+		$azera_shop_services_pl_decoded = json_decode($azera_shop_services_pl);
+		foreach($azera_shop_services_pl_decoded as $azera_shop_service_box){
+			$title = $azera_shop_service_box->title;
+			$text = $azera_shop_service_box->text;
+			$id = $azera_shop_service_box->id;
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Featured Area' , $id.'_services_title' );
@@ -676,13 +676,13 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 	
 	/*Team*/
-	$parallax_one_team_pl = get_theme_mod('parallax_one_team_content');
-	if(!empty($parallax_one_team_pl)){
-		$parallax_one_team_pl_decoded = json_decode($parallax_one_team_pl);
-		foreach($parallax_one_team_pl_decoded as $parallax_one_team_box){
-			$title = $parallax_one_team_box->title;
-			$text = $parallax_one_team_box->subtitle;
-			$id = esc_attr($parallax_one_team_box->id);
+	$azera_shop_team_pl = get_theme_mod('azera_shop_team_content');
+	if(!empty($azera_shop_team_pl)){
+		$azera_shop_team_pl_decoded = json_decode($azera_shop_team_pl);
+		foreach($azera_shop_team_pl_decoded as $azera_shop_team_box){
+			$title = $azera_shop_team_box->title;
+			$text = $azera_shop_team_box->subtitle;
+			$id = esc_attr($azera_shop_team_box->id);
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Team' , $id.'_team_title' );
@@ -701,14 +701,14 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 	
 	/*Testimonials*/
-	$parallax_one_testimonials_pl = get_theme_mod('parallax_one_testimonials_content');
-	if(!empty($parallax_one_testimonials_pl)){
-		$parallax_one_testimonials_pl_decoded = json_decode($parallax_one_testimonials_pl);
-		foreach($parallax_one_testimonials_pl_decoded as $parallax_one_testimonials_box){
-			$title = $parallax_one_testimonials_box->title;
-			$subtitle = $parallax_one_testimonials_box->subtitle;
-			$text = $parallax_one_testimonials_box->text;
-			$id = esc_attr($parallax_one_testimonials_box->id);
+	$azera_shop_testimonials_pl = get_theme_mod('azera_shop_testimonials_content');
+	if(!empty($azera_shop_testimonials_pl)){
+		$azera_shop_testimonials_pl_decoded = json_decode($azera_shop_testimonials_pl);
+		foreach($azera_shop_testimonials_pl_decoded as $azera_shop_testimonials_box){
+			$title = $azera_shop_testimonials_box->title;
+			$subtitle = $azera_shop_testimonials_box->subtitle;
+			$text = $azera_shop_testimonials_box->text;
+			$id = esc_attr($azera_shop_testimonials_box->id);
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Testimonials' , $id.'_testimonials_title' );
@@ -733,12 +733,12 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 	
 	/*Contact*/
-	$parallax_one_contact_pl = get_theme_mod('parallax_one_contact_info_content');
-	if(!empty($parallax_one_contact_pl)){
-		$parallax_one_contact_pl_decoded = json_decode($parallax_one_contact_pl);
-		foreach($parallax_one_contact_pl_decoded as $parallax_one_contact_box){
-			$text = $parallax_one_contact_box->text;
-			$id = esc_attr($parallax_one_contact_box->id);
+	$azera_shop_contact_pl = get_theme_mod('azera_shop_contact_info_content');
+	if(!empty($azera_shop_contact_pl)){
+		$azera_shop_contact_pl_decoded = json_decode($azera_shop_contact_pl);
+		foreach($azera_shop_contact_pl_decoded as $azera_shop_contact_box){
+			$text = $azera_shop_contact_box->text;
+			$id = esc_attr($azera_shop_contact_box->id);
 			if(!empty($id)) {
 				if(!empty($text)){
 					icl_unregister_string ('Contact' , $id.'_contact' );
@@ -752,14 +752,14 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 }
 
 /*Check if Repeater is empty*/
-function parallax_one_general_repeater_is_empty($parallax_one_arr){
-	$parallax_one_services_decoded = json_decode($parallax_one_arr);
-	foreach($parallax_one_services_decoded as $parallax_box){
-		if(!empty($parallax_box->choice) && $parallax_box->choice == 'parallax_none'){
-			$parallax_box->icon_value = '';
-			$parallax_box->image_url = '';
+function azera_shop_general_repeater_is_empty($azera_shop_arr){
+	$azera_shop_services_decoded = json_decode($azera_shop_arr);
+	foreach($azera_shop_services_decoded as $azera_shop_box){
+		if(!empty($azera_shop_box->choice) && $azera_shop_box->choice == 'parallax_none'){
+			$azera_shop_box->icon_value = '';
+			$azera_shop_box->image_url = '';
 		}
-		foreach ($parallax_box as $key => $value){
+		foreach ($azera_shop_box as $key => $value){
 			if(!empty($value) && $key!='choice' && $key!='id' && ($value!='No Icon' && $key=='icon_value') ) {
 				return false;
 			}
@@ -768,14 +768,14 @@ function parallax_one_general_repeater_is_empty($parallax_one_arr){
 	return true;
 }
 
-function parallax_one_get_template_part($template){
+function azera_shop_get_template_part($template){
 
     if(locate_template($template.'.php')) {
 		get_template_part($template);
     } else {
-		if(defined('PARALLAX_ONE_PLUS_PATH')){		
-			if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )){
-				require_once ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' );
+		if(defined('AZERA_SHOP_PLUS_PATH')){
+			if(file_exists ( AZERA_SHOP_PLUS_PATH.'public/templates/'.$template.'.php' )){
+				require_once ( AZERA_SHOP_PLUS_PATH.'public/templates/'.$template.'.php' );
 			}
 		}
 	}

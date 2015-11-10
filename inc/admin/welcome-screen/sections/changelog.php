@@ -3,27 +3,27 @@
  * Changelog
  */
 
-$parallax_one = wp_get_theme( 'parallax-one' );
+$azera_shop = wp_get_theme( 'azera-shop' );
 
 ?>
-<div class="parallax-one-tab-pane" id="changelog">
+<div class="azera-shop-tab-pane" id="changelog">
 
-	<div class="prallax-one-tab-pane-center">
+	<div class="azera-shop-tab-pane-center">
 	
-		<h1>Parallax One <?php if( !empty($parallax_one['Version']) ): ?> <sup id="parallax-one-theme-version"><?php echo esc_attr( $parallax_one['Version'] ); ?> </sup><?php endif; ?></h1>
+		<h1>Azera Shop <?php if( !empty($azera_shop['Version']) ): ?> <sup id="azera-shop-theme-version"><?php echo esc_attr( $azera_shop['Version'] ); ?> </sup><?php endif; ?></h1>
 
 	</div>
 
 	<?php
 	WP_Filesystem();
 	global $wp_filesystem;
-	$parallax_one_changelog = $wp_filesystem->get_contents( get_template_directory().'/CHANGELOG.md' );
-	$parallax_one_changelog_lines = explode(PHP_EOL, $parallax_one_changelog);
-	foreach($parallax_one_changelog_lines as $parallax_one_changelog_line){
-		if(substr( $parallax_one_changelog_line, 0, 3 ) === "###"){
-			echo '<hr /><h1>'.substr($parallax_one_changelog_line,3).'</h1>';
+	$azera_shop_changelog = $wp_filesystem->get_contents( get_template_directory().'/CHANGELOG.md' );
+	$azera_shop_changelog_lines = explode(PHP_EOL, $azera_shop_changelog);
+	foreach($azera_shop_changelog_lines as $azera_shop_changelog_line){
+		if(substr( $azera_shop_changelog_line, 0, 3 ) === "###"){
+			echo '<hr /><h1>'.substr($azera_shop_changelog_line,3).'</h1>';
 		} else {
-			echo $parallax_one_changelog_line,'<br/>';
+			echo $azera_shop_changelog_line,'<br/>';
 		}
 	}
 

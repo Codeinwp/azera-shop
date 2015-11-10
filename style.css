@@ -13,7 +13,7 @@ Tags:black, blue, gray, white, light, responsive-layout, one-column, two-columns
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Parallax One is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Azera Shop is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -107,7 +107,7 @@ body {
 	margin: auto !important;
 }
 
-.parallax_one_only_customizer {
+.azera_shop_only_customizer {
 	display: none !important;
 }
 
@@ -1519,44 +1519,44 @@ header .navbar-brand {
 	display: none !important;
 }
 
-.parallax_one_grid_col_4 > div,
-.parallax_one_grid_col_3 > div,
-.parallax_one_grid_col_2 > div,
-.parallax_one_grid_col_1 > div {
+.azera_shop_grid_col_4 > div,
+.azera_shop_grid_col_3 > div,
+.azera_shop_grid_col_2 > div,
+.azera_shop_grid_col_1 > div {
 	margin-bottom: 30px;
 	text-align: center;
 }
 
-.parallax_one_grid_col_4 {
+.azera_shop_grid_col_4 {
 	float: left;
 	width: 23%;
 	margin: 0 1.25% 0 1.25%;
 }
 
-.parallax_one_grid_col_3 {
+.azera_shop_grid_col_3 {
     float: left;
     width: 31.5%;
     margin: 0 1.25% 0 1.25%;
 	min-height: 1px;
 }
 
-.parallax_one_grid_col_2 {
+.azera_shop_grid_col_2 {
 	float: left;
 	width: 48%;
 	margin: 0 1.75% 0 1.75%;
 }
 
-.parallax_one_grid_col_1 {
+.azera_shop_grid_col_1 {
 	float: left;
 	width: 100%;
 }
 
-.parallax_one_grid_first {
+.azera_shop_grid_first {
 	margin-left: 0;
 	padding-left: 0;
 }
 
-.parallax_one_grid_last {
+.azera_shop_grid_last {
 	margin-right: 0;
 	padding-right: 0;
 }
@@ -2497,7 +2497,7 @@ button.control_next.fade-btn {
 	color: #ffffff;
 }
 
-.parallax_one_map_overlay{
+.azera_shop_map_overlay{
     position: absolute;
     width: 100%;
     height:100%;
@@ -2577,14 +2577,14 @@ div.wpcf7-mail-sent-ng {
 	width: 100%;
 }
 
-.parallax_one_contact_form input:not([type="submit"]){
+.azera_shop_contact_form input:not([type="submit"]){
 	width: 100%;
 }
-.parallax_one_contact_form input[type="text"],
-.parallax_one_contact_form input[type="email"],
-.parallax_one_contact_form input[type="url"],
-.parallax_one_contact_form input[type="password"],
-.parallax_one_contact_form input[type="search"] {
+.azera_shop_contact_form input[type="text"],
+.azera_shop_contact_form input[type="email"],
+.azera_shop_contact_form input[type="url"],
+.azera_shop_contact_form input[type="password"],
+.azera_shop_contact_form input[type="search"] {
 	padding: 10px;
 }
 

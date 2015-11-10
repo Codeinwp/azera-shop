@@ -22,17 +22,17 @@ function media_upload(button_class) {
 							display_field.val(attachment.sizes.thumbnail.url);
                             display_field.trigger('change');
 							break;
-						case 'parallax_one_team':
+						case 'azera_shop_team':
 							console.log(attachment.sizes);
-							display_field.val(attachment.sizes.parallax_one_team.url);
+							display_field.val(attachment.sizes.azera_shop_team.url);
                             display_field.trigger('change');
 							break
-						case 'parallax_one_services':
-							display_field.val(attachment.sizes.parallax_one_services.url);
+						case 'azera_shop_services':
+							display_field.val(attachment.sizes.azera_shop_services.url);
                             display_field.trigger('change');
 							break
-						case 'parallax_one_customers':
-							display_field.val(attachment.sizes.parallax_one_customers.url);
+						case 'azera_shop_customers':
+							display_field.val(attachment.sizes.azera_shop_customers.url);
                             display_field.trigger('change');
 							break;
 						default:
@@ -56,7 +56,7 @@ function media_upload(button_class) {
 /********************************************
 *** Generate uniq id ***
 *********************************************/
-function parallax_one_uniqid(prefix, more_entropy) {
+function azera_shop_uniqid(prefix, more_entropy) {
 
   if (typeof prefix === 'undefined') {
     prefix = '';
@@ -104,20 +104,20 @@ function parallax_one_uniqid(prefix, more_entropy) {
 /********************************************
 *** General Repeater ***
 *********************************************/
-function parallax_one_refresh_general_control_values(){
-	jQuery(".parallax_one_general_control_repeater").each(function(){
+function azera_shop_refresh_general_control_values(){
+	jQuery(".azera_shop_general_control_repeater").each(function(){
 		var values = [];
 		var th = jQuery(this);
-		th.find(".parallax_one_general_control_repeater_container").each(function(){
-			var icon_value = jQuery(this).find('.parallax_one_icon_control').val();
-			var text = jQuery(this).find(".parallax_one_text_control").val();
-			var link = jQuery(this).find(".parallax_one_link_control").val();
+		th.find(".azera_shop_general_control_repeater_container").each(function(){
+			var icon_value = jQuery(this).find('.azera_shop_icon_control').val();
+			var text = jQuery(this).find(".azera_shop_text_control").val();
+			var link = jQuery(this).find(".azera_shop_link_control").val();
 			var image_url = jQuery(this).find(".custom_media_url").val();
-			var choice = jQuery(this).find(".parallax_one_image_choice").val();
-			var title = jQuery(this).find(".parallax_one_title_control").val();
-			var subtitle = jQuery(this).find(".parallax_one_subtitle_control").val();
-			var id = jQuery(this).find(".parallax_one_box_id").val();
-            var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
+			var choice = jQuery(this).find(".azera_shop_image_choice").val();
+			var title = jQuery(this).find(".azera_shop_title_control").val();
+			var subtitle = jQuery(this).find(".azera_shop_subtitle_control").val();
+			var id = jQuery(this).find(".azera_shop_box_id").val();
+            var shortcode = jQuery(this).find(".azera_shop_shortcode_control").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
@@ -133,113 +133,113 @@ function parallax_one_refresh_general_control_values(){
             }
 
         });
-        th.find('.parallax_one_repeater_colector').val(JSON.stringify(values));
-        th.find('.parallax_one_repeater_colector').trigger('change');
+        th.find('.azera_shop_repeater_colector').val(JSON.stringify(values));
+        th.find('.azera_shop_repeater_colector').trigger('change');
     });
 }
 
 
 
 jQuery(document).ready(function(){
-    jQuery('#customize-theme-controls').on('click','.parallax-customize-control-title',function(){
+    jQuery('#customize-theme-controls').on('click','.azera-shop-customize-control-title',function(){
         jQuery(this).next().slideToggle('medium', function() {
             if (jQuery(this).is(':visible'))
                 jQuery(this).css('display','block');
         });
     });
     
-    jQuery('#customize-theme-controls').on('change','.parallax_one_image_choice',function() {
+    jQuery('#customize-theme-controls').on('change','.azera_shop_image_choice',function() {
         if(jQuery(this).val() == 'parallax_image'){
-            jQuery(this).parent().parent().find('.parallax_one_general_control_icon').hide();
-            jQuery(this).parent().parent().find('.parallax_one_image_control').show();
+            jQuery(this).parent().parent().find('.azera_shop_general_control_icon').hide();
+            jQuery(this).parent().parent().find('.azera_shop_image_control').show();
         }
-        if(jQuery(this).val() == 'parallax_icon'){
-            jQuery(this).parent().parent().find('.parallax_one_general_control_icon').show();
-            jQuery(this).parent().parent().find('.parallax_one_image_control').hide();
+        if(jQuery(this).val() == 'azera_shop_icon'){
+            jQuery(this).parent().parent().find('.azera_shop_general_control_icon').show();
+            jQuery(this).parent().parent().find('.azera_shop_image_control').hide();
         }
         if(jQuery(this).val() == 'parallax_none'){
-            jQuery(this).parent().parent().find('.parallax_one_general_control_icon').hide();
-            jQuery(this).parent().parent().find('.parallax_one_image_control').hide();
+            jQuery(this).parent().parent().find('.azera_shop_general_control_icon').hide();
+            jQuery(this).parent().parent().find('.azera_shop_image_control').hide();
         }
         
-        parallax_one_refresh_general_control_values();
+        azera_shop_refresh_general_control_values();
         return false;        
     });
-    media_upload('.custom_media_button_parallax_one');
+    media_upload('.custom_media_button_azera_shop');
     jQuery(".custom_media_url").live('change',function(){
-        parallax_one_refresh_general_control_values();
+        azera_shop_refresh_general_control_values();
         return false;
     });
     
 
-	jQuery("#customize-theme-controls").on('change', '.parallax_one_icon_control',function(){
-		parallax_one_refresh_general_control_values();
+	jQuery("#customize-theme-controls").on('change', '.azera_shop_icon_control',function(){
+		azera_shop_refresh_general_control_values();
 		return false; 
 	});
 
-	jQuery(".parallax_one_general_control_new_field").on("click",function(){
+	jQuery(".azera_shop_general_control_new_field").on("click",function(){
 	 
 		var th = jQuery(this).parent();
-		var id = 'parallax_one_'+parallax_one_uniqid();
+		var id = 'azera_shop_'+azera_shop_uniqid();
 		if(typeof th != 'undefined') {
 			
-            var field = th.find(".parallax_one_general_control_repeater_container:first").clone();
+            var field = th.find(".azera_shop_general_control_repeater_container:first").clone();
             if(typeof field != 'undefined'){
-                field.find(".parallax_one_image_choice").val('parallax_icon');
-                field.find('.parallax_one_general_control_icon').show();
-				if(field.find('.parallax_one_general_control_icon').length > 0){
-                	field.find('.parallax_one_image_control').hide();
+                field.find(".azera_shop_image_choice").val('azera_shop_icon');
+                field.find('.azera_shop_general_control_icon').show();
+				if(field.find('.azera_shop_general_control_icon').length > 0){
+                	field.find('.azera_shop_image_control').hide();
 				}
-                field.find(".parallax_one_general_control_remove_field").show();
-                field.find(".parallax_one_icon_control").val('');
-                field.find(".parallax_one_text_control").val('');
-                field.find(".parallax_one_link_control").val('');
-				field.find(".parallax_one_box_id").val(id);
+                field.find(".azera_shop_general_control_remove_field").show();
+                field.find(".azera_shop_icon_control").val('');
+                field.find(".azera_shop_text_control").val('');
+                field.find(".azera_shop_link_control").val('');
+				field.find(".azera_shop_box_id").val(id);
                 field.find(".custom_media_url").val('');
-                field.find(".parallax_one_title_control").val('');
-                field.find(".parallax_one_subtitle_control").val('');
-                field.find(".parallax_one_shortcode_control").val('');
-                th.find(".parallax_one_general_control_repeater_container:first").parent().append(field);
-                parallax_one_refresh_general_control_values();
+                field.find(".azera_shop_title_control").val('');
+                field.find(".azera_shop_subtitle_control").val('');
+                field.find(".azera_shop_shortcode_control").val('');
+                th.find(".azera_shop_general_control_repeater_container:first").parent().append(field);
+                azera_shop_refresh_general_control_values();
             }
 			
 		}
 		return false;
 	 });
 	 
-	jQuery("#customize-theme-controls").on("click", ".parallax_one_general_control_remove_field",function(){
+	jQuery("#customize-theme-controls").on("click", ".azera_shop_general_control_remove_field",function(){
 		if( typeof	jQuery(this).parent() != 'undefined'){
 			jQuery(this).parent().parent().remove();
-			parallax_one_refresh_general_control_values();
+			azera_shop_refresh_general_control_values();
 		}
 		return false;
 	});
 
 
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_title_control',function(){
-		 parallax_one_refresh_general_control_values();
+	jQuery("#customize-theme-controls").on('keyup', '.azera_shop_title_control',function(){
+		 azera_shop_refresh_general_control_values();
 	});
 
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_subtitle_control',function(){
-		 parallax_one_refresh_general_control_values();
+	jQuery("#customize-theme-controls").on('keyup', '.azera_shop_subtitle_control',function(){
+		 azera_shop_refresh_general_control_values();
 	});
     
-    jQuery("#customize-theme-controls").on('keyup', '.parallax_one_shortcode_control',function(){
-		 parallax_one_refresh_general_control_values();
+    jQuery("#customize-theme-controls").on('keyup', '.azera_shop_shortcode_control',function(){
+		 azera_shop_refresh_general_control_values();
 	});
     
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_text_control',function(){
-		 parallax_one_refresh_general_control_values();
+	jQuery("#customize-theme-controls").on('keyup', '.azera_shop_text_control',function(){
+		 azera_shop_refresh_general_control_values();
 	});
 	
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_link_control',function(){
-		parallax_one_refresh_general_control_values();
+	jQuery("#customize-theme-controls").on('keyup', '.azera_shop_link_control',function(){
+		azera_shop_refresh_general_control_values();
 	});
 	
 	/*Drag and drop to change icons order*/
-	jQuery(".parallax_one_general_control_droppable").sortable({
+	jQuery(".azera_shop_general_control_droppable").sortable({
 		update: function( event, ui ) {
-			parallax_one_refresh_general_control_values();
+			azera_shop_refresh_general_control_values();
 		}
 	});	
 
@@ -292,28 +292,27 @@ jQuery(document).ready(function(){
 
 jQuery(document).ready(function() {
 
-	var parallax_one_aboutpage = parallaxOneCustomizerObject.aboutpage;
-    var parallax_one_nr_actions_required = parallaxOneCustomizerObject.nr_actions_required;
+	var azera_shop_aboutpage = azeraShopCustomizerObject.aboutpage;
+    var azera_shop_nr_actions_required = azeraShopCustomizerObject.nr_actions_required;
 
     /* Number of required actions */
-    if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required != '0')) {
-        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + parallax_one_aboutpage + '"><span class="parallax-one-actions-count">' + parallax_one_nr_actions_required + '</span></a>');
+    if ((typeof azera_shop_aboutpage !== 'undefined') && (typeof azera_shop_nr_actions_required !== 'undefined') && (azera_shop_nr_actions_required != '0')) {
+        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + azera_shop_aboutpage + '"><span class="azera-shop-actions-count">' + azera_shop_nr_actions_required + '</span></a>');
     }
 
     /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
-	if( !jQuery( ".parallax-upsells" ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section parallax-upsells">');
+	if( !jQuery( ".azera-shops-upsells" ).length ) {
+		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section azera-shops-upsells">');
 	}
 
-	if( jQuery( ".parallax-upsells" ).length ) {
+	if( jQuery( ".azera-shops-upsells" ).length ) {
 
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-parallax-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', parallaxOneCustomizerObject.documentation));
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/parallax-one/" class="button" target="_blank">{github}</a>'.replace('{github}', parallaxOneCustomizerObject.support));
+		jQuery('.azera-shops-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-azera-shop/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', azeraShopCustomizerObject.documentation));
+		jQuery('.azera-shops-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/azera-shop/" class="button" target="_blank">{github}</a>'.replace('{github}', azeraShopCustomizerObject.support));
 
 	}
-	jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',parallaxOneCustomizerObject.pro));
 
-	if ( !jQuery( ".parallax-upsells" ).length ) {
+	if ( !jQuery( ".azera-shops-upsells" ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
 	}
 });	

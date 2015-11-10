@@ -15,8 +15,8 @@
 					?>
 						<?php 
 							$image_id = get_post_thumbnail_id();
-							$image_url_big = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-big', true);
-							$image_url_mobile = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-mobile', true);
+							$image_url_big = wp_get_attachment_image_src($image_id,'azera-shop-post-thumbnail-big', true);
+							$image_url_mobile = wp_get_attachment_image_src($image_id,'azera-shop-post-thumbnail-mobile', true);
 						?>
 				 		<picture itemscope itemprop="image">
 							<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
@@ -26,8 +26,8 @@
 						} else {
 					?>
 				 		<picture itemscope itemprop="image">
-							<source media="(max-width: 600px)" srcset="<?php echo parallax_get_file('/images/no-thumbnail-mobile.jpg');?> ">
-							<img src="<?php echo parallax_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
+							<source media="(max-width: 600px)" srcset="<?php echo azera_shop_get_file('/images/no-thumbnail-mobile.jpg');?> ">
+							<img src="<?php echo azera_shop_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php } ?>
 

@@ -4,34 +4,34 @@
  */
 ?>
 
-<div id="actions_required" class="parallax-one-tab-pane">
+<div id="actions_required" class="azera-shop-tab-pane">
 
-    <h1><?php esc_html_e( 'Keep up with Parallax One\'s latest news' ,'parallax-one' ); ?></h1>
+    <h1><?php esc_html_e( 'Keep up with Azera Shop\'s latest news' ,'azera-shop' ); ?></h1>
 
     <!-- NEWS -->
     <hr />
 	
 	<?php
-	global $parallax_one_required_actions;
+	global $azera_shop_required_actions;
 	
-	if( !empty($parallax_one_required_actions) ):
+	if( !empty($azera_shop_required_actions) ):
 	
-		/* $parallax_one_required_actions is an array of true/false for each required action that was dismissed */
+		/* $azera_shop_required_actions is an array of true/false for each required action that was dismissed */
 		
-		$parallax_one_show_required_actions = get_option("parallax_one_show_required_actions");
+		$azera_shop_show_required_actions = get_option("azera_shop_show_required_actions");
 		
-		foreach( $parallax_one_required_actions as $parallax_one_required_action_key => $parallax_one_required_action_value ):
+		foreach( $azera_shop_required_actions as $azera_shop_required_action_key => $azera_shop_required_action_value ):
 		
-			if(@$parallax_one_show_required_actions[$parallax_one_required_action_value['id']] === false) continue;
-			if(@$parallax_one_required_action_value['check']) continue;
+			if(@$azera_shop_show_required_actions[$azera_shop_required_action_value['id']] === false) continue;
+			if(@$azera_shop_required_action_value['check']) continue;
 			?>
-			<div class="parallax-one-action-required-box">
-				<span class="dashicons dashicons-no-alt parallax-one-dismiss-required-action" id="<?php echo $parallax_one_required_action_value['id']; ?>"></span>
-				<h4><?php echo $parallax_one_required_action_key + 1; ?>. <?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></h4>
-				<p><?php if( !empty($parallax_one_required_action_value['description']) ): echo $parallax_one_required_action_value['description']; endif; ?></p>
+			<div class="azera-shop-action-required-box">
+				<span class="dashicons dashicons-no-alt azera-shop-dismiss-required-action" id="<?php echo $azera_shop_required_action_value['id']; ?>"></span>
+				<h4><?php echo $azera_shop_required_action_key + 1; ?>. <?php if( !empty($azera_shop_required_action_value['title']) ): echo $azera_shop_required_action_value['title']; endif; ?></h4>
+				<p><?php if( !empty($azera_shop_required_action_value['description']) ): echo $azera_shop_required_action_value['description']; endif; ?></p>
 				<?php
-					if( !empty($parallax_one_required_action_value['plugin_slug']) ):
-						?><p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin='.$parallax_one_required_action_value['plugin_slug'] ), 'install-plugin_'.$parallax_one_required_action_value['plugin_slug'] ) ); ?>" class="button button-primary"><?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></a></p><?php
+					if( !empty($azera_shop_required_action_value['plugin_slug']) ):
+						?><p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin='.$azera_shop_required_action_value['plugin_slug'] ), 'install-plugin_'.$azera_shop_required_action_value['plugin_slug'] ) ); ?>" class="button button-primary"><?php if( !empty($azera_shop_required_action_value['title']) ): echo $azera_shop_required_action_value['title']; endif; ?></a></p><?php
 					endif;
 				?>
 
@@ -42,20 +42,20 @@
 	endif;
 	$nr_actions_required = 0;
 	/* get number of required actions */
-	if( get_option('parallax_one_show_required_actions') ):
-		$parallax_one_show_required_actions = get_option('parallax_one_show_required_actions');
+	if( get_option('azera_shop_show_required_actions') ):
+		$azera_shop_show_required_actions = get_option('azera_shop_show_required_actions');
 	else:
-		$parallax_one_show_required_actions = array();
+		$azera_shop_show_required_actions = array();
 	endif;
-	if( !empty($parallax_one_required_actions) ):
-		foreach( $parallax_one_required_actions as $parallax_one_required_action_value ):
-			if(( !isset( $parallax_one_required_action_value['check'] ) || ( isset( $parallax_one_required_action_value['check'] ) && ( $parallax_one_required_action_value['check'] == false ) ) ) && ((isset($parallax_one_show_required_actions[$parallax_one_required_action_value['id']]) && ($parallax_one_show_required_actions[$parallax_one_required_action_value['id']] == true)) || !isset($parallax_one_show_required_actions[$parallax_one_required_action_value['id']]) )) :
+	if( !empty($azera_shop_required_actions) ):
+		foreach( $azera_shop_required_actions as $azera_shop_required_action_value ):
+			if(( !isset( $azera_shop_required_action_value['check'] ) || ( isset( $azera_shop_required_action_value['check'] ) && ( $azera_shop_required_action_value['check'] == false ) ) ) && ((isset($azera_shop_show_required_actions[$azera_shop_required_action_value['id']]) && ($azera_shop_show_required_actions[$azera_shop_required_action_value['id']] == true)) || !isset($azera_shop_show_required_actions[$azera_shop_required_action_value['id']]) )) :
 				$nr_actions_required++;
 			endif;
 		endforeach;
 	endif;
 	if( $nr_actions_required == 0 ):
-		echo '<p>'.__( 'Hooray! There are no required actions for you right now.','parallax-one' ).'</p>';
+		echo '<p>'.__( 'Hooray! There are no required actions for you right now.','azera-shop' ).'</p>';
 	endif;
 	?>
 

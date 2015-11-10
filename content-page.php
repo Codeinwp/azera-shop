@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package parallax-one
+ * @package azera-shop
  */
 ?>
 
@@ -17,13 +17,13 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'azera-shop' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( esc_html__( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'azera-shop' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .fentry-footer -->
 </article><!-- #post-## -->

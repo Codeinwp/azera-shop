@@ -317,7 +317,7 @@ a.control_prev span{
 #cd-google-map address{
     right:0;
 }
-.parallax_one_map_overlay{
+.azera_shop_map_overlay{
     right:0;
 }
 .page-template-template-contact-php #primary{
@@ -775,40 +775,40 @@ footer.footer ul{
 .widget .post-date{
     padding-right:10px;
 }
-.parallax_one_grid_col_1,
-.parallax_one_grid_col_2,
-.parallax_one_grid_col_3,
-.parallax_one_grid_col_4 {
+.azera_shop_grid_col_1,
+.azera_shop_grid_col_2,
+.azera_shop_grid_col_3,
+.azera_shop_grid_col_4 {
     float: right;
 }
-.parallax_one_grid_first {
+.azera_shop_grid_first {
     margin-right: 0;
 }
-.parallax_one_grid_last {
+.azera_shop_grid_last {
     margin-left: 0;
 }
-.parallax_one_grid_col_1.parallax_one_grid_first {
+.azera_shop_grid_col_1.azera_shop_grid_first {
     margin-left: 0;
 }
-.parallax_one_grid_col_2.parallax_one_grid_first {
+.azera_shop_grid_col_2.azera_shop_grid_first {
     margin-left: 1.75%;
 }
-.parallax_one_grid_col_3.parallax_one_grid_first {
+.azera_shop_grid_col_3.azera_shop_grid_first {
     margin-left: 1.25%;
 }
-.parallax_one_grid_col_4.parallax_one_grid_first {
+.azera_shop_grid_col_4.azera_shop_grid_first {
     margin-left: 1.25%;
 }
-.parallax_one_grid_col_1.parallax_one_grid_last {
+.azera_shop_grid_col_1.azera_shop_grid_last {
     margin-right: 0;
 }
-.parallax_one_grid_col_2.parallax_one_grid_last {
+.azera_shop_grid_col_2.azera_shop_grid_last {
     margin-right: 1.75%;
 }
-.parallax_one_grid_col_3.parallax_one_grid_last {
+.azera_shop_grid_col_3.azera_shop_grid_last {
     margin-right: 1.25%;
 }
-.parallax_one_grid_col_4.parallax_one_grid_last {
+.azera_shop_grid_col_4.azera_shop_grid_last {
     margin-right: 1.25%;
 }
 

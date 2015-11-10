@@ -1,6 +1,6 @@
 <?php
 /**
- * @package parallax-one
+ * @package azera-shop
  */
 ?>
 
@@ -20,7 +20,7 @@
 				<i class="icon-clock-alt"></i><?php the_time('F j, Y'); ?>
 			</time>
 			<a href="<?php comments_link(); ?>" class="post-comments">
-				<i class="icon-comment-alt"></i><?php comments_number( esc_html__('No comments','parallax-one'), esc_html__('One comment','parallax-one'), esc_html__('% comments','parallax-one') ); ?>
+				<i class="icon-comment-alt"></i><?php comments_number( esc_html__('No comments','azera-shop'), esc_html__('One comment','azera-shop'), esc_html__('% comments','azera-shop') ); ?>
 			</a>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
@@ -29,13 +29,13 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'azera-shop' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php parallax_one_entry_footer(); ?>
+		<?php azera_shop_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
