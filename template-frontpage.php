@@ -1,8 +1,11 @@
 <?php
+/**
+ * Template name: Frontpage
+ *
+ * @package azera-shop
+ */
 
-if ( 'posts' == get_option( 'show_on_front' ) ) {
-	
-		get_header(); 
+        get_header();
 
 		azera_shop_get_template_part( apply_filters("azera_shop_plus_header_layout","/sections/azera_shop_header_section"));
 	?>
@@ -11,7 +14,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	</header>
 	<!-- /END HOME / HEADER  -->
 
-	<div itemprop id="content" class="content-warp" role="main">
+<div itemprop id="content" class="content-warp" role="main">
 
 	<?php
 
@@ -24,13 +27,10 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		}
 	?>
 
-	</div><!-- .content-wrap -->
+</div><!-- .content-wrap -->
 
-	<?php 
+<?php
 
 	get_footer();
-} else {
 
-	include( get_page_template() );
-}
 ?>

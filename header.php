@@ -25,7 +25,7 @@
 		
 	 global $wp_customize;
 
-	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
+	 if( !isset( $wp_customize ) && is_page_template('template-frontpage.php') ):
 	 
 		$azera_shop_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
 		
@@ -52,7 +52,7 @@
 			if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
 				$fixedheader = 'sticky-navigation-open';
 			} else {
-				if( !is_front_page() ){
+				if( !is_page_template('template-frontpage.php') ){
 					$fixedheader = 'sticky-navigation-open';
 				}else{
 					$fixedheader = '';
@@ -98,7 +98,7 @@
 
 								echo '</a>';
 
-								echo '<div class="header-logo-wrap text-header paralax_one_only_customizer">';
+								echo '<div class="header-logo-wrap text-header azera_shop_only_customizer">';
 
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 								
@@ -110,7 +110,7 @@
 							
 								if( isset( $wp_customize ) ):
 								
-									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand paralax_one_only_customizer" title="'.get_bloginfo('title').'">';
+									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand azera_shop_only_customizer" title="'.get_bloginfo('title').'">';
 
 										echo '<img src="" alt="'.get_bloginfo('title').'">';
 

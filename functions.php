@@ -238,13 +238,13 @@ function azera_shop_scripts() {
 	
 
 	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
-	if ( !empty($azera_shop_enable_move) && $azera_shop_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if ( !empty($azera_shop_enable_move) && $azera_shop_enable_move && is_page_template('template-frontpage.php') ) {
 
 		wp_enqueue_script( 'parallax-one-home-plugin', azera_shop_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
 
 	}
 
-	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if ( is_page_template('template-frontpage.php') ) {
 
 		wp_enqueue_script( 'parallax-one-custom-home', azera_shop_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
 	}
@@ -536,7 +536,7 @@ function azera_shop_php_style() {
 	$azera_shop_first_layer = get_theme_mod('paralax_one_first_layer', azera_shop_get_file('/images/background1.png'));
 	$azera_shop_second_layer = get_theme_mod('paralax_one_second_layer',azera_shop_get_file('/images/background2.png'));
 
-	if( ( empty($azera_shop_enable_move) || !$azera_shop_enable_move) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if( ( empty($azera_shop_enable_move) || !$azera_shop_enable_move) && is_page_template('template-frontpage.php') ) {
 		$azera_shop_header_image = get_header_image();
 		if(!empty($azera_shop_header_image)){
 			echo '.header{ background-image: url('.$azera_shop_header_image.');}';

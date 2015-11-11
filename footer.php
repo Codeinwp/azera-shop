@@ -65,7 +65,7 @@
 					if( !empty($paralax_one_copyright) ){
 						echo '<span class="azera_shop_copyright_content">'.esc_attr($paralax_one_copyright).'</span>';
 					} elseif ( isset( $wp_customize )   ) {
-						echo '<span class="azera_shop_copyright_content paralax_one_only_customizer"></span>';
+						echo '<span class="azera_shop_copyright_content azera_shop_only_customizer"></span>';
 					}
 				
 					/* OPTIONAL FOOTER LINKS */

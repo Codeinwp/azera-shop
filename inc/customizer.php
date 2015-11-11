@@ -441,7 +441,7 @@ function azera_shop_customize_register( $wp_customize ) {
 		'priority' => 3,
         'azera_shop_image_control' => true,
 		'azera_shop_title_control' => true,
-		'parallax_subtitle_control' => true
+		'azera_shop_subtitle_control' => true
 	) ) );
 	
 	/********************************************************/
@@ -500,7 +500,7 @@ function azera_shop_customize_register( $wp_customize ) {
 		'priority' => 30,
         'azera_shop_image_control' => true,
 		'azera_shop_title_control' => true,
-		'parallax_subtitle_control' => true,
+		'azera_shop_subtitle_control' => true,
 		'azera_shop_text_control' => true
 	) ) );
 
@@ -897,12 +897,9 @@ function azera_shop_customizer_script() {
 add_action( 'customize_controls_enqueue_scripts', 'azera_shop_customizer_script' );
 
 function azera_shop_is_contact_page() {
-		return is_page_template('template-contact.php');
+	return is_page_template('template-contact.php');
 };
 
 function azera_shop_show_on_front(){
-	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ){
-		return true;
-	}
-	return false;
+	return is_page_template('template-frontpage.php');
 }

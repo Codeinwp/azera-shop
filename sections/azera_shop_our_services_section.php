@@ -27,7 +27,7 @@
 							if( !empty($azera_shop_our_services_title) ){
 								echo '<h2 class="dark-text">'.esc_attr($azera_shop_our_services_title).'</h2><div class="colored-line"></div>';
 							} elseif ( isset( $wp_customize )   ) {
-								echo '<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>';
+								echo '<h2 class="dark-text azera_shop_only_customizer"></h2><div class="colored-line azera_shop_only_customizer"></div>';
 							}
 						?>
 
@@ -35,7 +35,7 @@
 							if( !empty($azera_shop_our_services_subtitle) ){
 								echo '<div class="sub-heading">'.esc_attr($azera_shop_our_services_subtitle).'</div>';
 							} elseif ( isset( $wp_customize )   ) {
-								echo '<div class="sub-heading paralax_one_only_customizer"></div>';
+								echo '<div class="sub-heading azera_shop_only_customizer"></div>';
 							}
 						?>
 					</div>
@@ -46,9 +46,9 @@
 							$azera_shop_services_decoded = json_decode($azera_shop_services);
 							echo '<div id="our_services_wrap" class="services-wrap">';
 								foreach($azera_shop_services_decoded as $azera_shop_service_box){
-									if( (!empty($azera_shop_service_box->icon_value) && $azera_shop_service_box->icon_value!='No Icon' && $azera_shop_service_box->choice == 'azera_shop_icon')  || (!empty($azera_shop_service_box->image_url)  && $azera_shop_service_box->choice == 'parallax_image') || !empty($azera_shop_service_box->title) || !empty($azera_shop_service_box->text) ){
+									if( (!empty($azera_shop_service_box->icon_value) && $azera_shop_service_box->icon_value!='No Icon' && $azera_shop_service_box->choice == 'azera_shop_icon')  || (!empty($azera_shop_service_box->image_url)  && $azera_shop_service_box->choice == 'azera_shop_image') || !empty($azera_shop_service_box->title) || !empty($azera_shop_service_box->text) ){
 										echo '<div class="service-box"><div class="single-service border-bottom-hover">';
-											if( !empty($azera_shop_service_box->choice) && $azera_shop_service_box->choice !== 'parallax_none'  ){
+											if( !empty($azera_shop_service_box->choice) && $azera_shop_service_box->choice !== 'azera_shop_none'  ){
 												if ( $azera_shop_service_box->choice == 'azera_shop_icon' ){
 													if( !empty($azera_shop_service_box->icon_value) ) {
 														if( !empty($azera_shop_service_box->link) ){
@@ -58,7 +58,7 @@
 														}
 													}
 												}
-												if( $azera_shop_service_box->choice == 'parallax_image' ){
+												if( $azera_shop_service_box->choice == 'azera_shop_image' ){
 													if( !empty($azera_shop_service_box->image_url)){
 														if( !empty($azera_shop_service_box->link) ){
 															if(!empty($azera_shop_service_box->title)){
@@ -113,12 +113,12 @@
 	} else {
 		if( isset( $wp_customize ) ) {
 ?>
-			<section class="services paralax_one_only_customizer" id="services" role="region" aria-label="<?php esc_html_e('Services','azera-shop') ?>">
+			<section class="services azera_shop_only_customizer" id="services" role="region" aria-label="<?php esc_html_e('Services','azera-shop') ?>">
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="section-header">
-							<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
-							<div class="sub-heading paralax_one_only_customizer"></div>
+							<h2 class="dark-text azera_shop_only_customizer"></h2><div class="colored-line azera_shop_only_customizer"></div>
+							<div class="sub-heading azera_shop_only_customizer"></div>
 						</div>
 					</div>
 				</div>

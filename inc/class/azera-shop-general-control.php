@@ -122,14 +122,14 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                                 <?php   }
                                     }
                         
-                                    if($azera_shoptitle_control==true){
+                                    if($azera_shop_title_control==true){
                                 ?>
                                         <span class="customize-control-title"><?php esc_html_e('Title','azera-shop')?></span>
                                         <input type="text" class="azera_shop_title_control" placeholder="<?php esc_html_e('Title','azera-shop'); ?>"/>
                                 <?php
                                     }
                         
-                                    if($azera_shopsubtitle_control==true){
+                                    if($azera_shop_subtitle_control==true){
                                 ?>
                                         <span class="customize-control-title"><?php esc_html_e('Subtitle','azera-shop')?></span>
                                         <input type="text" class="azera_shop_subtitle_control" placeholder="<?php esc_html_e('Subtitle','azera-shop'); ?>"/>
@@ -137,16 +137,16 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                                     }
  
 
-                                    if($azera_shoptext_control==true){?>
+                                    if($azera_shop_text_control==true){?>
                                         <span class="customize-control-title"><?php esc_html_e('Text','azera-shop')?></span>
                                         <textarea class="azera_shop_text_control" placeholder="<?php esc_html_e('Text','azera-shop'); ?>"></textarea>
                                 <?php }
 
-                                    if($azera_shoplink_control==true){ ?>
+                                    if($azera_shop_link_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Link','azera-shop')?></span>
                                         <input type="text" class="azera_shop_link_control" placeholder="<?php esc_html_e('Link','azera-shop'); ?>"/>
                                 <?php } 
-                                    if($azera_shopshortcode_control==true){
+                                    if($azera_shop_shortcode_control==true){
                                     ?>
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','azera-shop')?></span>
                                         <input type="text" class="azera_shop_shortcode_control" placeholder="<?php esc_html_e('Shortcode','azera-shop'); ?>"/>
@@ -170,18 +170,18 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                                             if($azera_shop_image_control == true && $azera_shop_icon_control == true){ ?>
                                                 <span class="customize-control-title"><?php esc_html_e('Image type','azera-shop');?></span>
                                                 <select class="azera_shop_image_choice">
-                                                    <option value="azera_shopicon" <?php selected($icon->choice,'azera_shopicon');?>><?php esc_html_e('Icon','azera-shop');?></option>
-                                                    <option value="azera_shopimage" <?php selected($icon->choice,'azera_shopimage');?>><?php esc_html_e('Image','azera-shop');?></option>
-                                                    <option value="azera_shopnone" <?php selected($icon->choice,'azera_shopnone');?>><?php esc_html_e('None','azera-shop');?></option>
+                                                    <option value="azera_shop_icon" <?php selected($icon->choice,'azera_shop_icon');?>><?php esc_html_e('Icon','azera-shop');?></option>
+                                                    <option value="azera_shop_image" <?php selected($icon->choice,'azera_shop_image');?>><?php esc_html_e('Image','azera-shop');?></option>
+                                                    <option value="azera_shop_none" <?php selected($icon->choice,'azera_shop_none');?>><?php esc_html_e('None','azera-shop');?></option>
                                                 </select>
 
-                                                <p class="azera_shop_image_control"  <?php if(!empty($icon->choice) && $icon->choice!='azera_shopimage'){ echo 'style="display:none"';}?>>
+                                                <p class="azera_shop_image_control"  <?php if(!empty($icon->choice) && $icon->choice != 'azera_shop_image'){ echo 'style="display:none"';}?>>
                                                     <span class="customize-control-title"><?php esc_html_e('Image','azera-shop');?></span>
                                                     <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
                                                     <input type="button" class="button button-primary custom_media_button_azera_shop" value="<?php esc_html_e('Upload Image','azera-shop'); ?>" />
                                                 </p>
 
-                                                <div class="azera_shop_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='azera_shopicon'){ echo 'style="display:none"';}?>>
+                                                <div class="azera_shop_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='azera_shop_icon'){ echo 'style="display:none"';}?>>
                                                     <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop');?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
                                                         <?php
@@ -215,29 +215,29 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                                         <?php
                                                 }
                                             }
-                                                if($azera_shoptitle_control==true){
+                                                if($azera_shop_title_control==true){
                                         ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Title','azera-shop')?></span>
                                                     <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="azera_shop_title_control" placeholder="<?php esc_html_e('Title','azera-shop'); ?>"/>
                                         <?php
                                                 }
 
-                                                if($azera_shopsubtitle_control==true){
+                                                if($azera_shop_subtitle_control==true){
                                         ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Subtitle','azera-shop')?></span>
                                                     <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="azera_shop_subtitle_control" placeholder="<?php esc_html_e('Subtitle','azera-shop'); ?>"/>
                                         <?php
                                                 }
  
-                                                if($azera_shoptext_control==true){ ?>
+                                                if($azera_shop_text_control==true){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Text','azera-shop')?></span>
                                                     <textarea placeholder="<?php esc_html_e('Text','azera-shop'); ?>" class="azera_shop_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                                         <?php	}
-                                                if($azera_shoplink_control){ ?>
+                                                if($azera_shop_link_control){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Link','azera-shop')?></span>
                                                     <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="azera_shop_link_control" placeholder="<?php esc_html_e('Link','azera-shop'); ?>"/>
                                         <?php	}
-                                                if($azera_shopshortcode_control==true){ ?>
+                                                if($azera_shop_shortcode_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Shortcode','azera-shop')?></span>
                                         <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="azera_shop_shortcode_control" placeholder="<?php esc_html_e('Shortcode','azera-shop'); ?>"/>
                                   <?php  }
@@ -261,19 +261,19 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                                     if($azera_shop_image_control == true && $azera_shop_icon_control == true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Image type','azera-shop');?></span>
                                         <select class="azera_shop_image_choice">
-                                            <option value="azera_shopicon" <?php selected($icon->choice,'azera_shopicon');?>><?php esc_html_e('Icon','azera-shop');?></option>
-                                            <option value="azera_shopimage" <?php selected($icon->choice,'azera_shopimage');?>><?php esc_html_e('Image','azera-shop');?></option>
-                                            <option value="azera_shopnone" <?php selected($icon->choice,'azera_shopnone');?>><?php esc_html_e('None','azera-shop');?></option>
+                                            <option value="azera_shop_icon" <?php selected($icon->choice,'azera_shop_icon');?>><?php esc_html_e('Icon','azera-shop');?></option>
+                                            <option value="azera_shop_image" <?php selected($icon->choice,'azera_shop_image');?>><?php esc_html_e('Image','azera-shop');?></option>
+                                            <option value="azera_shop_none" <?php selected($icon->choice,'azera_shop_none');?>><?php esc_html_e('None','azera-shop');?></option>
                                         </select>
 
 
-                                        <p class="azera_shop_image_control" <?php if(!empty($icon->choice) && $icon->choice!='azera_shopimage'){ echo 'style="display:none"';}?>>
+                                        <p class="azera_shop_image_control" <?php if(!empty($icon->choice) && $icon->choice!='azera_shop_image'){ echo 'style="display:none"';}?>>
                                             <span class="customize-control-title"><?php esc_html_e('Image','azera-shop');?></span>
                                             <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
                                             <input type="button" class="button button-primary custom_media_button_azera_shop" value="<?php esc_html_e('Upload Image','azera-shop'); ?>" />
                                         </p>
 
-                                        <div class="azera_shop_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='azera_shopicon'){ echo 'style="display:none"';}?>>
+                                        <div class="azera_shop_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='azera_shop_icon'){ echo 'style="display:none"';}?>>
                                             <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop');?></span>
                                             <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
                                             <?php
@@ -308,31 +308,31 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                                         <?php
                                             }
                                         }
-                                        if($azera_shoptitle_control==true){
+                                        if($azera_shop_title_control==true){
                                         ?>
                                             <span class="customize-control-title"><?php esc_html_e('Title','azera-shop')?></span>
                                             <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="azera_shop_title_control" placeholder="<?php esc_html_e('Title','azera-shop'); ?>"/>
                                         <?php
                                                 }
 
-                                        if($azera_shopsubtitle_control==true){
+                                        if($azera_shop_subtitle_control==true){
                                         ?>
                                             <span class="customize-control-title"><?php esc_html_e('Subtitle','azera-shop')?></span>
                                             <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="azera_shop_subtitle_control" placeholder="<?php esc_html_e('Subtitle','azera-shop'); ?>"/>
                                         <?php
                                         }
-                                        if($azera_shoptext_control==true ){?>
+                                        if($azera_shop_text_control==true ){?>
                                             <span class="customize-control-title"><?php esc_html_e('Text','azera-shop')?></span>
                                             <textarea class="azera_shop_text_control" placeholder="<?php esc_html_e('Text','azera-shop'); ?>"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                                         <?php }
 
-                                        if($azera_shoplink_control){ ?>
+                                        if($azera_shop_link_control){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Link','azera-shop')?></span>
                                             <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="azera_shop_link_control" placeholder="<?php esc_html_e('Link','azera-shop'); ?>"/>
                                         <?php }
                                         
                                 
-                                        if($azera_shopshortcode_control==true){ ?>
+                                        if($azera_shop_shortcode_control==true){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Shortcode','azera-shop')?></span>
                                             <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="azera_shop_shortcode_control" placeholder="<?php esc_html_e('Shortcode','azera-shop'); ?>"/>
                                   <?php  }
