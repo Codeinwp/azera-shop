@@ -401,10 +401,48 @@
 		} );
 		
     });
-    
+
+	/********************************************************
+	 ******************** SHOP SECTION **********************
+	 *******************************************************/
+	
+	//Title
+	wp.customize("azera_shop_shop_section_title", function(value) {
+
+		value.bind(function( to ) {
+			if( to != '' ) {
+				$( '.shop' ).removeClass( 'azera_shop_only_customizer' );
+				$( '.shop .section-header h2' ).removeClass( 'azera_shop_only_customizer' );
+				$('.shop .section-header .colored-line' ).removeClass( 'azera_shop_only_customizer' );
+				$( '.shop .section-header h2' ).text( to );
+			}
+			else {
+				$( '.shop .section-header h2' ).addClass( 'azera_shop_only_customizer' );
+				$('.shop .section-header .colored-line' ).addClass( 'azera_shop_only_customizer' );
+			}
+		} );
+
+	});
+
+
+	//Subtitle
+	wp.customize("azera_shop_shop_section_subtitle", function(value) {
+
+		value.bind(function( to ) {
+			if( to != '' ) {
+				$( '.shop' ).removeClass( 'azera_shop_only_customizer' );
+				$( '.shop .section-header .sub-heading' ).removeClass( 'azera_shop_only_customizer' );
+				$( '.shop .section-header .sub-heading' ).text( to );
+			} else {
+				$( '.shop .section-header .sub-heading' ).addClass( 'azera_shop_only_customizer' );
+			}
+		} );
+
+	});
+
 	
 	/***************************************
-	******** FOOTER SECTION *********
+	******** FOOTER SECTION ****************
 	****************************************/
 	//Copyright
 	wp.customize("azera_shop_copyright", function(value) {

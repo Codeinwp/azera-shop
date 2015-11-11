@@ -270,6 +270,70 @@ function azera_shop_customize_register( $wp_customize ) {
 	      	'section'  => 'header_image',
 			'priority'    => 5,
 	)));
+
+	/********************************************************/
+	/****************** SHOP SECTION  ***********************/
+	/********************************************************/
+	$wp_customize->add_section( 'azera_shop_shop_section' , array(
+		'title'       => esc_html__( 'Shop section', 'azera-shop' ),
+		'priority'    => 39,
+	));
+	/* Header title */
+	$wp_customize->add_setting( 'azera_shop_shop_section_title', array(
+		'default' => esc_html__('Shop','azera-shop'),
+		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control( 'azera_shop_shop_section_title', array(
+		'label'    => esc_html__( 'Main title', 'azera-shop' ),
+		'section'  => 'azera_shop_shop_section',
+		'active_callback' => 'azera_shop_show_on_front',
+		'priority'    => 20
+	));
+
+	/* Header subtitle */
+	$wp_customize->add_setting( 'azera_shop_shop_section_subtitle', array(
+		'default' => esc_html__('Showcase your work effectively and in an attractive form that your prospective clients will love.','azera-shop'),
+		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'transport' => 'postMessage'
+	));
+	$wp_customize->add_control( 'azera_shop_shop_section_subtitle', array(
+		'label'    => esc_html__( 'Subtitle', 'azera-shop' ),
+		'section'  => 'azera_shop_shop_section',
+		'active_callback' => 'azera_shop_show_on_front',
+		'priority'    => 30
+	));
+
+	$wp_customize->add_setting( 'azera_shop_number_of_products', array(
+		'default' => 3
+	));
+	$wp_customize->add_control( 'azera_shop_number_of_products',
+		array(
+			'type' => 'number',
+			'label' => __('Number of products','azera-shop'),
+			'section' => 'azera_shop_shop_section',
+			'active_callback' => 'azera_shop_show_on_front',
+			'priority'    => 40,
+		)
+	);
+
+	//require_once ( 'class/parallax-one-plus-woocommerce-categories.php');
+
+	/*$wp_customize->add_setting( 'parallax_one_plus_woocomerce_categories', array(
+		'default'        => 'all',
+		//	'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+
+	$wp_customize->add_control( new Parallax_One_Plus_Woocommerce_Categories( $wp_customize, 'parallax_one_plus_woocomerce_categories',
+		array(
+			'label'   => __('Display products from','azera-shop'),
+			'section' => 'azera_shop_shop_section',
+			'active_callback' => 'parallax_one_show_on_front',
+			'priority' => 50
+		)
+	));
+	*/
+
 	/********************************************************/
 	/****************** SERVICES OPTIONS  *******************/
 	/********************************************************/
