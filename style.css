@@ -1910,15 +1910,6 @@ header .navbar-brand {
 /*---------------------------------------
    3.9 VERTICAL TIMELINE
 -----------------------------------------*/
-.latest-news {
-	background-color: #F7F8FA;
-	border-bottom: 1px solid #eaebec;
-}
-
-.latest-news .section-overlay-layer {
-	padding-top: 80px;
-	padding-bottom: 80px;
-}
 
 .vertical-timeline {
 	padding: 0;
@@ -2605,7 +2596,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce .products .product .button {
 	background-image: url(images/tr-btn.png);
 	background-repeat: repeat-x;
-	background-color: #00a5f9;
+	background-color: #313131;
 	background-size: contain;
 	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
@@ -5647,14 +5638,6 @@ h2.screen-reader-text {
 		content: "";
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	#latestnews .timeline-text .text-left {
-		text-align: left;
-	}
-
-	#latestnews .timeline-text .colored-line-left {
-		float: left;
 	}
 
 	.brief .section-overlay-layer {

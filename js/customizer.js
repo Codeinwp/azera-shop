@@ -380,26 +380,6 @@
 			$( '#ribbon button' ).attr( 'onclick', to );
 		} );
 		
-    });	
-	
-	
-	/******************************************************
-	************ LATEST NEWS SECTION ***************
-	*******************************************************/
-	
-	//Title
-	wp.customize("azera_shop_latest_news_title", function(value) {
-		
-        value.bind(function( to ) {
-
-			if( to != '' ) {
-				$( '.timeline .timeline-text' ).removeClass( 'azera_shop_only_customizer' );
-			} else {
-				$( '.timeline .timeline-text' ).addClass( 'azera_shop_only_customizer' );
-			}
-			$( '#latestnews .timeline-text h2' ).text( to );
-		} );
-		
     });
 
 	/********************************************************

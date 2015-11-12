@@ -315,4 +315,12 @@ jQuery(document).ready(function() {
 	if ( !jQuery( ".azera-shops-upsells" ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
 	}
+
+	/* WooCommerce category select */
+	jQuery(document).on('change', '.azera_shop_cat_select', function () {
+		var th = jQuery(this).parent().parent();
+		var chosed_option = jQuery(this).val();
+		th.find(".azera-shop-woocommerce-cat").val(chosed_option);
+		th.find(".azera-shop-woocommerce-cat").trigger('change');
+	})
 });	

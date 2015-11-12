@@ -8,7 +8,7 @@
 	padding: 5px 0;
 	cursor:move;
 }
-.azera_shop_repeater_container .parallax-box-content-hidden, .azera_shop_general_control_repeater_container .parallax-box-content-hidden {
+.azera_shop_repeater_container .azera-shop-box-content-hidden, .azera_shop_general_control_repeater_container .azera-shop-box-content-hidden {
 	padding: 5px;
 	border: 1px solid #dfdfdf;
 	border-top:0px;
@@ -62,11 +62,11 @@ button.azera_shop_general_control_remove_field:hover{
 	display:none;
 }
 
-.azera_shop_general_control_repeater_container .parallax-box-content-hidden{
+.azera_shop_general_control_repeater_container .azera-shop-box-content-hidden{
 	display: none;
 }
 
-.parallax-box-content-hidden{
+.azera-shop-box-content-hidden{
 	background-color: #FFFFFF;
 }
 
@@ -107,6 +107,6 @@ button.azera_shop_general_control_remove_field:hover{
     margin-top: 0;
 }
 
-.azera_shop_general_control_repeater_container .parallax-box-content-hidden{
+.azera_shop_general_control_repeater_container .azera-shop-box-content-hidden{
     padding-top: 5px;
 }

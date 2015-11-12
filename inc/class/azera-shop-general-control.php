@@ -72,7 +72,7 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                 ?>
                         <div class="azera_shop_general_control_repeater_container">
                             <div class="azera-shop-customize-control-title"><?php esc_html_e('Azera Shop','azera-shop')?></div>
-                            <div class="parallax-box-content-hidden">
+                            <div class="azera-shop-box-content-hidden">
                                 <?php
                                     if($azera_shop_image_control == true && $azera_shop_icon_control == true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Image type','azera-shop');?></span>
@@ -165,7 +165,7 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                 ?>
                                 <div class="azera_shop_general_control_repeater_container azera_shop_draggable">
                                     <div class="azera-shop-customize-control-title"><?php esc_html_e('Azera Shop','azera-shop')?></div>
-                                    <div class="parallax-box-content-hidden">
+                                    <div class="azera-shop-box-content-hidden">
                                          <?php
                                             if($azera_shop_image_control == true && $azera_shop_icon_control == true){ ?>
                                                 <span class="customize-control-title"><?php esc_html_e('Image type','azera-shop');?></span>
@@ -256,7 +256,7 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                     ?>
                                 <div class="azera_shop_general_control_repeater_container azera_shop_draggable">
                                     <div class="azera-shop-customize-control-title"><?php esc_html_e('Azera Shop','azera-shop')?></div>
-                                    <div class="parallax-box-content-hidden">
+                                    <div class="azera-shop-box-content-hidden">
                                     <?php
                                     if($azera_shop_image_control == true && $azera_shop_icon_control == true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Image type','azera-shop');?></span>

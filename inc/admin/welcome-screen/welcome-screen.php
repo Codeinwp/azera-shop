@@ -179,7 +179,6 @@ class azera_shop_Welcome {
 			<li role="presentation" class="azera-shop-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','azera-shop'); ?></a></li>
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','azera-shop'); ?></a></li>
 			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','azera-shop'); ?></a></li>
-			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','azera-shop'); ?></a></li>
 		</ul>
 
 		<div class="azera-shop-tab-content">

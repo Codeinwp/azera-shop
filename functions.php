@@ -107,8 +107,6 @@ function azera_shop_setup() {
 	add_image_size( 'azera-shop-post-thumbnail-big', 730, 340, true );
 	add_image_size( 'azera-shop-post-thumbnail-mobile', 500, 233, true );
 
-	// Latest news Section (homepage)
-	add_image_size( 'azera-shop-post-thumbnail-latest-news', 150, 150, true );
 	add_image_size( 'azera_shop_team', 268, 273, true );
 	add_image_size( 'azera_shop_services',60,62,true );
 	add_image_size( 'azera_shop_customers',75,75,true );

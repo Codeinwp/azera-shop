@@ -257,36 +257,7 @@ li.galcolumn{
 .timeline-box-wrap .info .entry-meta{ 
     float:right;
 }
-.parallax-slider-whole-wrap{
-    float:right;
-}
-#parallax_slider{
-    margin:20px auto 0 auto;
-}
-#parallax_slider ul li{
-    float:right;
-}
-a.control_next{
-    left:60px;
-    right:auto;
-}
-a.control_prev {
-    left:0;
-    right:auto;
-}
-a.control_next span{
-    float:right;
-}
-a.control_prev{
-    left:0;
-    -webkit-border-radius:2px 0 0 2px;
-    -moz-border-radius:2px 0 0 2px;
-    border-radius:2px 0 0 2px;
-}
-a.control_prev span{
-    margin-left:1em;
-    float:right;
-}
+
 .team-member .social-icons li{
     padding-right:5px;
     padding-left:5px;
@@ -843,9 +814,6 @@ footer.footer ul{
     }
     .timeline h2{
         padding-left:0;
-    }
-    #parallax_slider{
-        margin:0px auto 0 auto;
     }
     #sidebar-secondary{
         border-right:0;
