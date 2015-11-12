@@ -19,6 +19,10 @@
 			<key name="azera_shop_contact_form_shortcode" />
 			<key name="azera_shop_contact_map_shortcode" />
 			<key name="azera_shop_copyright" />
+			<key name="azera_shop_shop_section_title" />
+			<key name="azera_shop_shop_section_subtitle" />
+			<key name="azera_shop_blog_header_title" />
+			<key name="azera_shop_blog_header_subtitle" />
 		</key>
 	</admin-texts>
 </wpml-config>
