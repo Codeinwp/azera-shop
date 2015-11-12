@@ -2579,6 +2579,38 @@ div.wpcf7-mail-sent-ng {
 	padding: 10px;
 }
 
+/* Header blog */
+.archive-top {
+	background-position: center 30%;
+	background-size: cover;
+}
+
+.archive-top .section-overlay-layer {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background: rgba(13, 60, 85, 0.6);
+}
+
+.archive-top {
+	text-align: center;
+	color: #FFF;
+}
+
+.archive-top-big-title {
+	margin-bottom: 20px;
+ 	margin-top: 10px;
+ 	font-size: 2.4rem;
+ 	line-height: 3.125rem;
+ 	font-weight: 300;
+ 	text-transform: uppercase;
+}
+
+.archive-top-text {
+	margin-top: 30px;
+	font-size: 16px;
+	font-weight: 300;
+}
+
 /*---------------------------------------
    3.16 WOOCOMMERCE STYLE
 -----------------------------------------*/

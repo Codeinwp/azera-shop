@@ -420,7 +420,24 @@
 
 	});
 
-	
+	/* Blog header */
+	wp.customize("azera_shop_blog_header_title", function(value) {
+		value.bind(function( to ) {
+			$( '.archive-top-big-title' ).html( to );
+		} );
+	});
+	wp.customize("azera_shop_blog_header_subtitle", function(value) {
+		value.bind(function( to ) {
+			$( '.archive-top-text' ).html( to );
+		} );
+	});
+	wp.customize("azera_shop_blog_header_image", function(value) {
+		value.bind(function( to ) {
+			$(".archive-top").css('background-image', 'url(' + to + ')');
+		} );
+	});
+
+
 	/***************************************
 	******** FOOTER SECTION ****************
 	****************************************/

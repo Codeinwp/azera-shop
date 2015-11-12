@@ -464,6 +464,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize -> add_control (new Azera_Shop_General_Repeater ( $wp_customize , 'azera_shop_shortcodes_settings' , array(
 		'label' => esc_html__('Edit the shortcode options','azera-shop'),
 		'section' => 'azera_shop_shortcodes_section',
+		'active_callback' => 'azera_shop_show_on_front',
 		'priority' => 1,
 		'azera_shop_title_control'     => true,
 		'azera_shop_subtitle_control'  => true,
@@ -853,6 +854,52 @@ function azera_shop_customize_register( $wp_customize ) {
 				'priority'    => 7,
 			) 
 	);
+
+	/* BLOG HEADER */
+	
+	$wp_customize->add_section( 'azera_shop_blog_header_section' , array(
+		'title'		=> esc_html__( 'Blog header', 'azera-shop' ),
+		'priority'	=> 86,
+		'panel'     => 'panel_1'
+	));
+
+	/* Blog Header title */
+	$wp_customize->add_setting( 'azera_shop_blog_header_title', array(
+		'default' 			=> esc_html__('BLOG','azera-shop'),
+		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'transport' 		=> 'postMessage'
+	));
+
+	$wp_customize->add_control( 'azera_shop_blog_header_title', array(
+		'label'    			=> esc_html__( 'Title', 'azera-shop' ),
+		'section'  			=> 'azera_shop_blog_header_section',
+		'priority'    		=> 1
+	));
+
+	/* Blog Header subtitle */
+	$wp_customize->add_setting( 'azera_shop_blog_header_subtitle', array(
+		'default' 			=> esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.','azera-shop'),
+		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'transport' 		=> 'postMessage'
+	));
+	$wp_customize->add_control( 'azera_shop_blog_header_subtitle', array(
+		'label'    			=> esc_html__( 'Subtitle', 'azera-shop' ),
+		'section'  			=> 'azera_shop_blog_header_section',
+		'priority'    		=> 2
+	));
+
+	/* Blog Header image	*/
+	$wp_customize->add_setting( 'azera_shop_blog_header_image', array(
+		'default' => azera_shop_get_file('/images/background-images/background.jpg'),
+		'sanitize_callback' => 'esc_url',
+		'transport' => 'postMessage'
+	));
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_blog_header_image', array(
+		'label'    => esc_html__( 'Image', 'azera-shop' ),
+	 	'section'  => 'azera_shop_blog_header_section',
+		'priority'    => 3,
+	)));
 	
 }
 add_action( 'customize_register', 'azera_shop_customize_register' );
