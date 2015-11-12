@@ -1,0 +1,28 @@
+<wpml-config>
+	<admin-texts>
+		<key name="theme_mods_azera-shop">
+			<key name="azera_shop_header_title" />
+			<key name="azera_shop_header_subtitle" />
+			<key name="azera_shop_header_button_text" />
+			<key name="azera_shop_header_button_link" />
+			<key name="azera_shop_our_services_title" />
+			<key name="azera_shop_our_services_subtitle" />
+			<key name="azera_shop_our_story_title" />
+			<key name="azera_shop_our_story_text" />
+			<key name="azera_shop_our_team_title" />
+			<key name="azera_shop_our_team_subtitle" />
+			<key name="azera_shop_happy_customers_title" />
+			<key name="azera_shop_happy_customers_subtitle" />
+			<key name="azera_shop_ribbon_title" />
+			<key name="azera_shop_button_text" />
+			<key name="azera_shop_button_link" />
+			<key name="azera_shop_contact_form_shortcode" />
+			<key name="azera_shop_contact_map_shortcode" />
+			<key name="azera_shop_copyright" />
+			<key name="azera_shop_shop_section_title" />
+			<key name="azera_shop_shop_section_subtitle" />
+			<key name="azera_shop_blog_header_title" />
+			<key name="azera_shop_blog_header_subtitle" />
+		</key>
+	</admin-texts>
+</wpml-config>

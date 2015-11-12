@@ -1,0 +1,120 @@
+.azera-shop-nav-tabs {
+    margin-bottom: 0;
+}
+.azera-shop-nav-tabs:after {
+    clear: both;
+    display: table;
+    content: " ";
+}
+.azera-shop-nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+    display: block;
+}
+.azera-shop-nav-tabs > li > a {
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    display: block;
+    padding: 10px 15px;
+	text-decoration: none;
+}
+.azera-shop-nav-tabs > li.active > a, .azera-shop-nav-tabs > li.active > a:focus, .azera-shop-nav-tabs > li.active > a:hover {
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.azera-shop-nav-tabs > li.azera-shop-w-red-tab > a {
+    color: red;
+    font-weight: bold;
+}
+.azera-shop-tab-content {
+	background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    width: 960px;
+    float: left;
+}
+.azera-shop-tab-content > .tab-pane {
+    display: none;
+}
+.azera-shop-tab-content > .active {
+    display: block;
+}
+
+.azera-shop-tab-pane {
+	padding: 30px;
+}
+.azera-shop-tab-pane {
+    display: none;
+}
+.azera-shop-tab-pane.active {
+    display: block;
+}
+
+#azera-shop-theme-version {
+    font-size: 50%;
+    padding: 10px;
+    background: #ccc;
+}
+.azera-shop-w-activated {
+    cursor:not-allowed !important;
+}
+.azera-shop-tab-pane-half {
+    width: 45%;
+    float:left;
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+    margin-top: 15px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+.azera-shop-tab-content img {
+    max-width: 100%;
+}
+.azera-shop-tab-pane-first-half {
+    border-left: none;
+}
+.azera-shop-tab-pane-center {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.azera-shop-welcome-title {
+    font-size: 32px;
+}
+.azera-shop-clear {
+    clear: both;
+}
+.azera-shop-actions-count {
+    padding: 0 6px;
+    display: inline-block;
+    background-color: #d54e21;
+    color: #fff;
+    font-size: 9px;
+    line-height: 17px;
+    font-weight: 600;
+    margin: 1px 0 0 2px;
+    vertical-align: top;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: 26;
+}
+.azera-shop-action-required-box {
+    position: relative;
+}
+.azera-shop-dismiss-required-action {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    background-color: #D24A4A;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+}
+.azera-shop-dismiss-required-action:hover {
+    background-color: #CC8C8C;
+}
