@@ -44,11 +44,11 @@
 			<div class="entry-meta list-post-entry-meta">
 				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
 					<span  itemprop="name" class="entry-author author vcard">
-					<i class="icon-man-people-streamline-user"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+					<i class="icon-man-people-streamline-user" aria-hidden="true"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
 					</span>
 				</span>
 				<span class="posted-in entry-terms-categories" itemprop="articleSection">
-					<i class="icon-basic-elaboration-folder-check"></i>Posted in 
+					<i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i><?php _e('Posted in','azera-shop'); ?> 
 					<?php
 						/* translators: used between list items, there is a space after the comma */
 						$categories_list = get_the_category_list( esc_html__( ', ', 'azera-shop' ) );
@@ -61,7 +61,7 @@
 					?>
 				</span>
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<i class="icon-comment-alt"></i><?php comments_number( esc_html__('No comments','azera-shop'), esc_html__('One comment','azera-shop'), esc_html__('% comments','azera-shop') ); ?>
+					<i class="icon-comment-alt" aria-hidden="true"></i><?php comments_number( esc_html__('No comments','azera-shop'), esc_html__('One comment','azera-shop'), esc_html__('% comments','azera-shop') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
 
