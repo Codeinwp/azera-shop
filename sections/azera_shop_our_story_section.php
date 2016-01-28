@@ -3,10 +3,10 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', azera_shop_get_file('/images/about-us.png'));
+	$azera_shop_our_story_image = get_theme_mod('azera_shop_our_story_image', azera_shop_get_file('/images/about-us.png'));
 	$azera_shop_our_story_title = get_theme_mod('azera_shop_our_story_title',esc_html__('Our Story','azera-shop'));
 	$azera_shop_our_story_text = get_theme_mod('azera_shop_our_story_text',esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','azera-shop'));
-	if(!empty($paralax_one_our_story_image) || !empty($azera_shop_our_story_title) || !empty($azera_shop_our_story_content)){
+	if(!empty($azera_shop_our_story_image) || !empty($azera_shop_our_story_title) || !empty($azera_shop_our_story_content)){
 ?>
 		<section class="brief text-left brief-design-one brief-left" id="story" role="region" aria-label="<?php esc_html_e('About','azera-shop') ?>">
 			<div class="section-overlay-layer">
@@ -14,11 +14,11 @@
 					<div class="row">
 						<!-- BRIEF IMAGE -->
 						<?php
-							if( !empty($paralax_one_our_story_image) ){
+							if( !empty($azera_shop_our_story_image) ){
 								if( !empty($azera_shop_our_story_title) ){
-									echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($paralax_one_our_story_image).'" alt="'.esc_attr($azera_shop_our_story_title).'"></div></div>';
+									echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($azera_shop_our_story_image).'" alt="'.esc_attr($azera_shop_our_story_title).'"></div></div>';
 								} else {
-									echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($paralax_one_our_story_image).'" alt="'.esc_html__('About','azera-shop').'"></div></div>';
+									echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($azera_shop_our_story_image).'" alt="'.esc_html__('About','azera-shop').'"></div></div>';
 								}
 							} elseif ( isset( $wp_customize )   ) {
 								echo '<div class="col-md-6 brief-content-two azera_shop_only_customizer"><img src="" alt=""><div class="brief-image-right"></div></div>';

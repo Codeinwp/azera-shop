@@ -74,7 +74,7 @@
 						echo '<h1 class="screen-reader-text">'.esc_html__( 'Secondary Menu', 'azera-shop' ).'</h1>';
 						wp_nav_menu( 
 							array( 
-								'theme_location'    => 'parallax_footer_menu',
+								'theme_location'    => 'azera_shop_footer_menu',
 								'container'         => false,
 								'menu_class'        => 'footer-links small-text',
 								'depth' 			=> 1,
@@ -94,7 +94,7 @@
 							
 								foreach($azera_shop_social_icons_decoded as $azera_shop_social_icon){
 									
-									echo '<li><a href="'.esc_url($azera_shop_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($azera_shop_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></span><span class="screen-reader-text">'.esc_attr(explode("-",$azera_shop_social_icon->icon_value)[2]).'</span></a></li>';
+									echo '<li><a href="'.esc_url($azera_shop_social_icon->link).'"><span class="azera-shop-footer-icons '.esc_attr($azera_shop_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></span><span class="screen-reader-text">'.esc_attr(explode("-",$azera_shop_social_icon->icon_value)[2]).'</span></a></li>';
 
 								}
 						
@@ -107,7 +107,7 @@
 	        </div><!-- .footer-bottom-wrap -->
 
 	        <div class="powered-by">
-	            <a class="" href="https://themeisle.com/themes/azera-shop/" target="_blank" rel="nofollow">Azera Shop </a> <?php esc_html_e('powered by','azera-shop'); ?> <a class="" href="http://wordpress.org/" target="_blank" rel="nofollow"><?php esc_html_e('WordPress','azera-shop'); ?></a>
+	            <a class="" href="https://themeisle.com/themes/azera-shop/" rel="nofollow">Azera Shop </a> <?php esc_html_e('powered by','azera-shop'); ?> <a class="" href="http://wordpress.org/" rel="nofollow"><?php esc_html_e('WordPress','azera-shop'); ?></a>
 	        </div>
 
 	    </div><!-- container -->

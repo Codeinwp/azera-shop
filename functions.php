@@ -45,7 +45,7 @@ function azera_shop_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'azera-shop' ),
-		'parallax_footer_menu' => esc_html__('Footer Menu', 'azera-shop'),
+		'azera_shop_footer_menu' => esc_html__('Footer Menu', 'azera-shop'),
 	) );
 
 	
@@ -235,7 +235,7 @@ function azera_shop_scripts() {
 	) );
 	
 
-	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
+	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
 	if ( !empty($azera_shop_enable_move) && $azera_shop_enable_move && is_page_template('template-frontpage.php') ) {
 
 		wp_enqueue_script( 'parallax-one-home-plugin', azera_shop_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
@@ -530,9 +530,9 @@ function azera_shop_php_style() {
 		echo 'body{ color: '.$azera_shop_text_color.'}';
 	}
 	
-	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
-	$azera_shop_first_layer = get_theme_mod('paralax_one_first_layer', azera_shop_get_file('/images/background1.png'));
-	$azera_shop_second_layer = get_theme_mod('paralax_one_second_layer',azera_shop_get_file('/images/background2.png'));
+	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
+	$azera_shop_first_layer = get_theme_mod('azera_shop_first_layer', azera_shop_get_file('/images/background1.png'));
+	$azera_shop_second_layer = get_theme_mod('azera_shop_second_layer',azera_shop_get_file('/images/background2.png'));
 
 	if( ( empty($azera_shop_enable_move) || !$azera_shop_enable_move) && is_page_template('template-frontpage.php') ) {
 		$azera_shop_header_image = get_header_image();
@@ -656,6 +656,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			$title = $azera_shop_service_box->title;
 			$text = $azera_shop_service_box->text;
 			$id = $azera_shop_service_box->id;
+			$link = $azera_shop_service_box->link;
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Featured Area' , $id.'_services_title' );
@@ -669,6 +670,12 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				} else {
 					icl_unregister_string ('Featured Area' , $id.'_services_text' );
 				}
+				if(!empty($link)){
+ 					icl_unregister_string ('Featured Area' , $id.'_services_link' );
+ 					icl_register_string( 'Featured Area' , $id.'_services_link' , $link );
+ 				} else {
+ 					icl_unregister_string ('Featured Area' , $id.'_services_link' );
+ 				}
 			}
 		}
 	}
@@ -753,7 +760,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 function azera_shop_general_repeater_is_empty($azera_shop_arr){
 	$azera_shop_services_decoded = json_decode($azera_shop_arr);
 	foreach($azera_shop_services_decoded as $azera_shop_box){
-		if(!empty($azera_shop_box->choice) && $azera_shop_box->choice == 'parallax_none'){
+		if(!empty($azera_shop_box->choice) && $azera_shop_box->choice == 'azera_shop_none'){
 			$azera_shop_box->icon_value = '';
 			$azera_shop_box->image_url = '';
 		}

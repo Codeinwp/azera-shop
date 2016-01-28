@@ -58,7 +58,7 @@
 
 
 	//Show Header Logo
-	wp.customize('paralax_one_header_logo', function( value ){
+	wp.customize('azera_shop_header_logo', function( value ){
 		value.bind(function( to ) {
 			if( to != '' ) {
 				$('#parallax_header .only-logo').removeClass( 'azera_shop_only_customizer' );
@@ -168,7 +168,7 @@
 		
 	});
 	
-	wp.customize("paralax_one_our_story_image",function(value) {
+	wp.customize("azera_shop_our_story_image",function(value) {
 		
 		value.bind(function( to ) {
 			if( to != '' ) {
@@ -186,7 +186,7 @@
 	});
 
 	/******************************************************
-	*********** OUR SERVICES SECTION **************
+	*********** OUR SERVICES SECTION ***********************
 	*******************************************************/
 	
 	
@@ -319,7 +319,7 @@
 	**************** RIBBON SECTION *****************
 	*******************************************************/
 	
-	wp.customize( 'paralax_one_ribbon_background', function( value ) {
+	wp.customize( 'azera_shop_ribbon_background', function( value ) {
 		value.bind( function( to ) {
 			
 			if ( '' != to ) {

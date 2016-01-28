@@ -3,7 +3,7 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$ribbon_background = get_theme_mod('paralax_one_ribbon_background', azera_shop_get_file('/images/background-images/parallax-img/parallax-img1.jpg'));
+	$ribbon_background = get_theme_mod('azera_shop_ribbon_background', azera_shop_get_file('/images/background-images/parallax-img/parallax-img1.jpg'));
 	$azera_shop_ribbon_title = get_theme_mod('azera_shop_ribbon_title',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','azera-shop'));
 	$azera_shop_button_text = get_theme_mod('azera_shop_button_text',esc_html__('GET STARTED','azera-shop'));
 	$azera_shop_button_link = get_theme_mod('azera_shop_button_link','#');

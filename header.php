@@ -27,7 +27,7 @@
 
 	 if( !isset( $wp_customize ) && is_page_template('template-frontpage.php') ):
 	 
-		$azera_shop_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		$azera_shop_disable_preloader = get_theme_mod('azera_shop_disable_preloader');
 		
 		if( isset($azera_shop_disable_preloader) && ($azera_shop_disable_preloader != 1)):
 			 
@@ -48,8 +48,8 @@
 
         <!-- COLOR OVER IMAGE -->
         <?php
-			$paralax_one_sticky_header = get_theme_mod('paralax_one_sticky_header','azera-shop');
-			if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+			$azera_shop_sticky_header = get_theme_mod('azera_shop_sticky_header','azera-shop');
+			if( isset($azera_shop_sticky_header) && ($azera_shop_sticky_header != 1)){
 				$fixedheader = 'sticky-navigation-open';
 			} else {
 				if( !is_page_template('template-frontpage.php') ){
@@ -57,7 +57,7 @@
 				}else{
 					$fixedheader = '';
 					if ( 'posts' != get_option( 'show_on_front' ) ) {
-						if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+						if( isset($azera_shop_sticky_header) && ($azera_shop_sticky_header != 1)){
 							$fixedheader = 'sticky-navigation-open';
 						} else {
 							$fixedheader = '';

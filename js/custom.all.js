@@ -157,7 +157,7 @@ function mainNav() {
 function scrolled() {
 
     if ( jQuery(window).width() >= 751 ) {
-        var parallax_one_scrollTop = jQuery(window).scrollTop();       // cursor position
+        var azera_shop_scrollTop = jQuery(window).scrollTop();       // cursor position
         var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
         var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
         // for all sections check if the cursor is inside a section
@@ -168,7 +168,7 @@ function scrolled() {
             var thisBegin   = azera_shop_offset - headerHeight;                      // where the section begins
             var thisEnd     = azera_shop_offset + thisHeight - headerHeight;         // where the section ends
             // if position of the cursor is inside of the this section
-            if ( parallax_one_scrollTop >= thisBegin && parallax_one_scrollTop <= thisEnd ) {
+            if ( azera_shop_scrollTop >= thisBegin && azera_shop_scrollTop <= thisEnd ) {
                 isInOneSection = 'yes';
                 jQuery('.current').removeClass('current');
                 jQuery('#menu-primary a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
@@ -198,14 +198,14 @@ var window_width_old;
 jQuery(document).ready(function(){
     window_width_old = jQuery('.container').width();
     if( window_width_old <= 462 ) {
-        jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
-        jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
+        jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
+        jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
     } else if( window_width_old <= 750  ){
-        jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
-        jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
+        jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
+        jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
     } else {
-        jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product', calcMin: false});
-        jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
+        jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 4,selector: '.product', calcMin: false});
+        jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
     }
 });
 
@@ -213,14 +213,14 @@ jQuery(window).resize(function() {
     if( window_width_old != jQuery('.container').outerWidth() ){
         window_width_old = jQuery('.container').outerWidth();
         if( window_width_old <= 462 ) {
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
-            jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
+            jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
+            jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
         } else if( window_width_old <= 750  ){
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
-            jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
+            jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
+            jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
         } else {
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product', calcMin: false});
-            jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
+            jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 4,selector: '.product', calcMin: false});
+            jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
         }
     }
 });
@@ -232,19 +232,19 @@ jQuery(window).resize(function() {
             excludeParentClass:     '',
             calcMin:                true
         };
-    function ParallaxOneGridPinterest(element, options) {
+    function AzeraShopGridPinterest(element, options) {
         this.element    = element;
         this.options    = $.extend({}, defaults, options);
         this.defaults   = defaults;
         this.init();
     }
-    ParallaxOneGridPinterest.prototype.init = function () {
+    AzeraShopGridPinterest.prototype.init = function () {
         var self            = this,
             $container      = $(this.element);
             $select_options = $(this.element).children();
         self.make_magic( $container, $select_options );
     };
-    ParallaxOneGridPinterest.prototype.make_magic = function (container) {
+    AzeraShopGridPinterest.prototype.make_magic = function (container) {
         var self            = this;
             $container      = $(container),
             columns_height  = [],
@@ -313,7 +313,7 @@ jQuery(window).resize(function() {
         $container.remove();
     }
     
-    ParallaxOneGridPinterest.prototype.make_unique = function () {
+    AzeraShopGridPinterest.prototype.make_unique = function () {
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         for( var i=0; i<10; i++ )
@@ -321,7 +321,7 @@ jQuery(window).resize(function() {
         return text;
     }
     
-    ParallaxOneGridPinterest.prototype.allValuesSame = function(arr) {
+    AzeraShopGridPinterest.prototype.allValuesSame = function(arr) {
         for(var i = 1; i < arr.length; i++){
             if(arr[i] !== arr[0])
                 return false;
@@ -329,11 +329,11 @@ jQuery(window).resize(function() {
         return true;
     }
     
-    $.fn.parallaxonegridpinterest = function (options) {
+    $.fn.AzeraShopGridPinterest = function (options) {
         return this.each(function () {
             var value = '';
             if (!$.data(this, value)) {
-                $.data(this, value, new ParallaxOneGridPinterest(this, options) );
+                $.data(this, value, new AzeraShopGridPinterest(this, options) );
             }
         });
     }
