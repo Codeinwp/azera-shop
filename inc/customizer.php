@@ -74,7 +74,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'azera_shop_appearance_general' , array(
 		'title'       => esc_html__( 'General options', 'azera-shop' ),
       	'priority'    => 3,
-      	'description' => esc_html__('Paralax One theme general appearance options','azera-shop'),
+      	'description' => esc_html__('Azera Shop theme general appearance options','azera-shop'),
 		'panel'		  => 'panel_2'
 	));
 	
@@ -92,11 +92,11 @@ function azera_shop_customize_register( $wp_customize ) {
 	)));
 	
 	/* Sticky header */
-	$wp_customize->add_setting( 'paralax_one_sticky_header', array(
+	$wp_customize->add_setting( 'azera_shop_sticky_header', array(
 		'sanitize_callback' => 'azera_shop_sanitize_text',
 	));
 	$wp_customize->add_control(
-			'paralax_one_sticky_header',
+			'azera_shop_sticky_header',
 			array(
 				'type' => 'checkbox',
 				'label' => esc_html__('Header visibility','azera-shop'),
@@ -126,12 +126,12 @@ function azera_shop_customize_register( $wp_customize ) {
 	));
 	
 	/* Header Logo	*/
-	$wp_customize->add_setting( 'paralax_one_header_logo', array(
+	$wp_customize->add_setting( 'azera_shop_header_logo', array(
 		'default' => azera_shop_get_file('/images/logo-2.png'),
 		'sanitize_callback' => 'esc_url',
 		'transport' => 'postMessage'
 	));
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_header_logo', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_header_logo', array(
 	      	'label'    => esc_html__( 'Header Logo', 'azera-shop' ),
 	      	'section'  => 'azera_shop_header_content',
 			'active_callback' => 'azera_shop_show_on_front',
@@ -229,13 +229,14 @@ function azera_shop_customize_register( $wp_customize ) {
 	
 	$wp_customize->get_section('header_image')->panel='panel_1';
 	$wp_customize->get_section('header_image')->title=esc_html__( 'Background', 'azera-shop' );
+	$wp_customize->get_section('header_image')->active_callback = 'azera_shop_show_on_front';
 	
 	/* Enable parallax effect*/
-	$wp_customize->add_setting( 'paralax_one_enable_move', array(
+	$wp_customize->add_setting( 'azera_shop_enable_move', array(
 		'sanitize_callback' => 'azera_shop_sanitize_text',
 	));
 	$wp_customize->add_control(
-			'paralax_one_enable_move',
+			'azera_shop_enable_move',
 			array(
 				'type' => 'checkbox',
 				'label' => esc_html__('Parallax effect','azera-shop'),
@@ -246,24 +247,24 @@ function azera_shop_customize_register( $wp_customize ) {
 	);
 	
 	/* Layer one */
-	$wp_customize->add_setting( 'paralax_one_first_layer', array(
+	$wp_customize->add_setting( 'azera_shop_first_layer', array(
 		'default' => azera_shop_get_file('/images/background1.png'),
 		'sanitize_callback' => 'esc_url',
 	));
 	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_first_layer', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_first_layer', array(
 	      	'label'    => esc_html__( 'First layer', 'azera-shop' ),
 	      	'section'  => 'header_image',
 			'priority'    => 4,
 	)));
 	
 	/* Layer two */
-	$wp_customize->add_setting( 'paralax_one_second_layer', array(
+	$wp_customize->add_setting( 'azera_shop_second_layer', array(
 		'default' => azera_shop_get_file('/images/background2.png'),
 		'sanitize_callback' => 'esc_url',
 	));
 	
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_second_layer', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_second_layer', array(
 	      	'label'    => esc_html__( 'Second layer', 'azera-shop' ),
 	      	'section'  => 'header_image',
 			'priority'    => 5,
@@ -437,12 +438,12 @@ function azera_shop_customize_register( $wp_customize ) {
 	);
 	
 	/* About Image	*/
-	$wp_customize->add_setting( 'paralax_one_our_story_image', array(
+	$wp_customize->add_setting( 'azera_shop_our_story_image', array(
 		'default' => azera_shop_get_file('/images/about-us.png'),
 		'sanitize_callback' => 'esc_url',
 		'transport' => 'postMessage'
 	));
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_our_story_image', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_our_story_image', array(
 	      	'label'    => esc_html__( 'Image', 'azera-shop' ),
 	      	'section'  => 'azera_shop_about_section',
 			'active_callback' => 'azera_shop_show_on_front',
@@ -603,12 +604,12 @@ function azera_shop_customize_register( $wp_customize ) {
 	
 
 	/* Ribbon Background	*/
-	$wp_customize->add_setting( 'paralax_one_ribbon_background', array(
+	$wp_customize->add_setting( 'azera_shop_ribbon_background', array(
 		'default' => azera_shop_get_file('/images/background-images/parallax-img/parallax-img1.jpg'),
 		'sanitize_callback' => 'esc_url',
 		'transport' => 'postMessage'
 	));
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_ribbon_background', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_ribbon_background', array(
 	      	'label'    => esc_html__( 'Ribbon Background', 'azera-shop' ),
 	      	'section'  => 'azera_shop_ribbon_section',
 			'active_callback' => 'azera_shop_show_on_front',
@@ -748,7 +749,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	));	
 	
 	/* Footer Menu */
-	$nav_menu_locations_footer = $wp_customize->get_control('nav_menu_locations[parallax_footer_menu]');
+	$nav_menu_locations_footer = $wp_customize->get_control('nav_menu_locations[azera_shop_footer_menu]');
 	if(!empty($nav_menu_locations_footer)){
 		$nav_menu_locations_footer->section = 'azera_shop_footer_section';
 		$nav_menu_locations_footer->priority = 1;
@@ -797,7 +798,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'azera_shop_general_section' , array(
 		'title'       => esc_html__( 'Advanced options', 'azera-shop' ),
       	'priority'    => 85,
-      	'description' => esc_html__('Paralax One theme general options','azera-shop'),
+      	'description' => esc_html__('Azera Shop theme general options','azera-shop'),
 	));
 	
 	$blogname = $wp_customize->get_control('blogname');
@@ -841,11 +842,11 @@ function azera_shop_customize_register( $wp_customize ) {
 	}
 	
 	/* Disable preloader */
-	$wp_customize->add_setting( 'paralax_one_disable_preloader', array(
+	$wp_customize->add_setting( 'azera_shop_disable_preloader', array(
 		'sanitize_callback' => 'azera_shop_sanitize_text'
 	));
 	$wp_customize->add_control(
-			'paralax_one_disable_preloader',
+			'azera_shop_disable_preloader',
 			array(
 				'type' => 'checkbox',
 				'label' => esc_html__('Disable preloader?','azera-shop'),

@@ -4,7 +4,8 @@
  */
 ?>
 
-<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'azera-shop' ), get_the_title() )?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class('border-bottom-hover'); ?> itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting">
+
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
@@ -33,7 +34,7 @@
 
 				</a>
 				<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'azera-shop' ) ); ?>">
-					<?php echo get_the_date('F j, Y');?>
+					<?php the_time( get_option('date_format') ); ?>
 				</div>
 				<div class="post-date entry-published updated">
 					<span class="post-date-day"><?php the_time('d'); ?></span>
@@ -44,11 +45,11 @@
 			<div class="entry-meta list-post-entry-meta">
 				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
 					<span  itemprop="name" class="entry-author author vcard">
-					<i class="icon-man-people-streamline-user"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+					<i class="icon-man-people-streamline-user" aria-hidden="true"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
 					</span>
 				</span>
-				<span class="posted-in entry-terms-categories" itemprop="articleSection">
-					<i class="icon-basic-elaboration-folder-check"></i>Posted in 
+				<span class="posted-in entry-terms-categories">
+					<i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i><?php _e('Posted in','azera-shop'); ?> 
 					<?php
 						/* translators: used between list items, there is a space after the comma */
 						$categories_list = get_the_category_list( esc_html__( ', ', 'azera-shop' ) );
@@ -61,7 +62,7 @@
 					?>
 				</span>
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<i class="icon-comment-alt"></i><?php comments_number( esc_html__('No comments','azera-shop'), esc_html__('One comment','azera-shop'), esc_html__('% comments','azera-shop') ); ?>
+					<i class="icon-comment-alt" aria-hidden="true"></i><?php comments_number( esc_html__('No comments','azera-shop'), esc_html__('One comment','azera-shop'), esc_html__('% comments','azera-shop') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
 

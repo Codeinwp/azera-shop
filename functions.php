@@ -45,7 +45,7 @@ function azera_shop_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'azera-shop' ),
-		'parallax_footer_menu' => esc_html__('Footer Menu', 'azera-shop'),
+		'azera_shop_footer_menu' => esc_html__('Footer Menu', 'azera-shop'),
 	) );
 
 	
@@ -132,14 +132,20 @@ function azera_shop_setup() {
          */
         $azera_shop_required_actions = array(
 			array(
-                "id" => 'parallax-one-req-ac-install-intergeo-maps',
+				"id" => 'azera-shop-req-ac-check-front-page',
+                "title" => esc_html__( 'Switch "Front page displays" to "A static page" ' ,'azera-shop' ),
+                "description" => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','azera-shop' ),
+                "check" => azera_shop_is_not_static_page()
+			),
+			array(
+                "id" => 'azera-shop-req-ac-install-intergeo-maps',
                 "title" => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'azera-shop' ),
                 "description"=> esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','azera-shop' ),
                 "check" => defined('INTERGEO_PLUGIN_NAME'),
                 "plugin_slug" => 'intergeo-maps'
             ),
             array(
-                "id" => 'parallax-one-req-ac-install-pirate-forms',
+                "id" => 'azera-shop-req-ac-install-pirate-forms',
                 "title" => esc_html__( 'Install Pirate Forms' ,'azera-shop' ),
                 "description"=> esc_html__( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.','azera-shop' ),
                 "check" => defined('PIRATE_FORMS_VERSION'),
@@ -152,6 +158,23 @@ function azera_shop_setup() {
 }
 endif; // azera_shop_setup
 add_action( 'after_setup_theme', 'azera_shop_setup' );
+
+function azera_shop_is_not_static_page() {
+	
+	$azera_shop_is_not_static = 1;
+	
+	if( 'page' == get_option( 'show_on_front' ) ):
+		
+		$azera_shop_front_page_id = get_option( 'page_on_front' );
+		$azera_shop_template_name = get_page_template_slug( $azera_shop_front_page_id );
+		if ( !empty($azera_shop_template_name) && ( $azera_shop_template_name == 'template-frontpage.php' ) ):
+			$azera_shop_is_not_static = 0;
+		endif;
+		
+	endif;
+	
+	return (!$azera_shop_is_not_static ? true : false);
+}
 
 
 add_filter( 'image_size_names_choose', 'azera_shop_media_uploader_custom_sizes' );
@@ -235,7 +258,7 @@ function azera_shop_scripts() {
 	) );
 	
 
-	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
+	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
 	if ( !empty($azera_shop_enable_move) && $azera_shop_enable_move && is_page_template('template-frontpage.php') ) {
 
 		wp_enqueue_script( 'parallax-one-home-plugin', azera_shop_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
@@ -530,9 +553,9 @@ function azera_shop_php_style() {
 		echo 'body{ color: '.$azera_shop_text_color.'}';
 	}
 	
-	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
-	$azera_shop_first_layer = get_theme_mod('paralax_one_first_layer', azera_shop_get_file('/images/background1.png'));
-	$azera_shop_second_layer = get_theme_mod('paralax_one_second_layer',azera_shop_get_file('/images/background2.png'));
+	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
+	$azera_shop_first_layer = get_theme_mod('azera_shop_first_layer', azera_shop_get_file('/images/background1.png'));
+	$azera_shop_second_layer = get_theme_mod('azera_shop_second_layer',azera_shop_get_file('/images/background2.png'));
 
 	if( ( empty($azera_shop_enable_move) || !$azera_shop_enable_move) && is_page_template('template-frontpage.php') ) {
 		$azera_shop_header_image = get_header_image();
@@ -656,6 +679,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			$title = $azera_shop_service_box->title;
 			$text = $azera_shop_service_box->text;
 			$id = $azera_shop_service_box->id;
+			$link = $azera_shop_service_box->link;
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Featured Area' , $id.'_services_title' );
@@ -669,6 +693,12 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				} else {
 					icl_unregister_string ('Featured Area' , $id.'_services_text' );
 				}
+				if(!empty($link)){
+ 					icl_unregister_string ('Featured Area' , $id.'_services_link' );
+ 					icl_register_string( 'Featured Area' , $id.'_services_link' , $link );
+ 				} else {
+ 					icl_unregister_string ('Featured Area' , $id.'_services_link' );
+ 				}
 			}
 		}
 	}
@@ -753,7 +783,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 function azera_shop_general_repeater_is_empty($azera_shop_arr){
 	$azera_shop_services_decoded = json_decode($azera_shop_arr);
 	foreach($azera_shop_services_decoded as $azera_shop_box){
-		if(!empty($azera_shop_box->choice) && $azera_shop_box->choice == 'parallax_none'){
+		if(!empty($azera_shop_box->choice) && $azera_shop_box->choice == 'azera_shop_none'){
 			$azera_shop_box->icon_value = '';
 			$azera_shop_box->image_url = '';
 		}

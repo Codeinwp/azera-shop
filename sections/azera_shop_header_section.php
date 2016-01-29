@@ -1,14 +1,14 @@
 <!-- CONTAINER -->
 <?php
-	$paralax_one_header_logo = get_theme_mod('paralax_one_header_logo', azera_shop_get_file('/images/logo-2.png'));
+	$azera_shop_header_logo = get_theme_mod('azera_shop_header_logo', azera_shop_get_file('/images/logo-2.png'));
 	$azera_shop_header_title = get_theme_mod('azera_shop_header_title',esc_html__('AZERA SHOP','azera-shop'));
 	$azera_shop_header_subtitle = get_theme_mod('azera_shop_header_subtitle',esc_html__('From the creators of the popular Zerif Lite meet the new ecommerce theme','azera-shop'));
 	$azera_shop_header_button_text = get_theme_mod('azera_shop_header_button_text',esc_html__('GET STARTED','azera-shop'));
 	$azera_shop_header_button_link = get_theme_mod('azera_shop_header_button_link','#');
-	$azera_shop_enable_move = get_theme_mod('paralax_one_enable_move');
-	$azera_shop_first_layer = get_theme_mod('paralax_one_first_layer', azera_shop_get_file('/images/background1.png'));
-	$azera_shop_second_layer = get_theme_mod('paralax_one_second_layer',azera_shop_get_file('/images/background2.png'));
-	if(!empty($paralax_one_header_logo) || !empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){
+	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
+	$azera_shop_first_layer = get_theme_mod('azera_shop_first_layer', azera_shop_get_file('/images/background1.png'));
+	$azera_shop_second_layer = get_theme_mod('azera_shop_second_layer',azera_shop_get_file('/images/background2.png'));
+	if(!empty($azera_shop_header_logo) || !empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){
 ?>
 
 <?php
@@ -43,8 +43,8 @@
 
 			<!-- ONLY LOGO ON HEADER -->
 			<?php
-				if( !empty($paralax_one_header_logo) ){
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($paralax_one_header_logo).'"   alt=""></div></div></div>';
+				if( !empty($azera_shop_header_logo) ){
+					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($azera_shop_header_logo).'"   alt=""></div></div></div>';
 				} elseif ( isset( $wp_customize )   ) {
 					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="" alt=""></div></div></div>';
 				}
@@ -56,7 +56,7 @@
 
 					<!-- HEADING AND BUTTONS -->
 					<?php 
-					if(!empty($paralax_one_header_logo) || !empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){?>
+					if(!empty($azera_shop_header_logo) || !empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){?>
 						<div id="intro-section" class="intro-section">
 
 							<!-- WELCOM MESSAGE -->

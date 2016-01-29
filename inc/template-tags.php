@@ -79,13 +79,13 @@ function azera_shop_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'azera-shop' ) );
 		if ( $categories_list && azera_shop_categorized_blog() ) {
-			printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i>' . esc_html__( 'Posted in %1$s', 'azera-shop' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i>' . esc_html__( 'Posted in %1$s', 'azera-shop' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'azera-shop' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i>' . esc_html__( 'Tagged %1$s', 'azera-shop' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i>' . esc_html__( 'Tagged %1$s', 'azera-shop' ) . '</span>', $tags_list );
 		}
 	}
 
