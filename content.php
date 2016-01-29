@@ -4,7 +4,8 @@
  */
 ?>
 
-<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'azera-shop' ), get_the_title() )?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class('border-bottom-hover'); ?> itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting">
+
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
@@ -47,7 +48,7 @@
 					<i class="icon-man-people-streamline-user" aria-hidden="true"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
 					</span>
 				</span>
-				<span class="posted-in entry-terms-categories" itemprop="articleSection">
+				<span class="posted-in entry-terms-categories">
 					<i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i><?php _e('Posted in','azera-shop'); ?> 
 					<?php
 						/* translators: used between list items, there is a space after the comma */
