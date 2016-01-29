@@ -132,14 +132,20 @@ function azera_shop_setup() {
          */
         $azera_shop_required_actions = array(
 			array(
-                "id" => 'parallax-one-req-ac-install-intergeo-maps',
+				"id" => 'azera-shop-req-ac-check-front-page',
+                "title" => esc_html__( 'Switch "Front page displays" to "A static page" ' ,'azera-shop' ),
+                "description" => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','azera-shop' ),
+                "check" => azera_shop_is_not_static_page()
+			),
+			array(
+                "id" => 'azera-shop-req-ac-install-intergeo-maps',
                 "title" => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'azera-shop' ),
                 "description"=> esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','azera-shop' ),
                 "check" => defined('INTERGEO_PLUGIN_NAME'),
                 "plugin_slug" => 'intergeo-maps'
             ),
             array(
-                "id" => 'parallax-one-req-ac-install-pirate-forms',
+                "id" => 'azera-shop-req-ac-install-pirate-forms',
                 "title" => esc_html__( 'Install Pirate Forms' ,'azera-shop' ),
                 "description"=> esc_html__( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.','azera-shop' ),
                 "check" => defined('PIRATE_FORMS_VERSION'),
@@ -152,6 +158,23 @@ function azera_shop_setup() {
 }
 endif; // azera_shop_setup
 add_action( 'after_setup_theme', 'azera_shop_setup' );
+
+function azera_shop_is_not_static_page() {
+	
+	$azera_shop_is_not_static = 1;
+	
+	if( 'page' == get_option( 'show_on_front' ) ):
+		
+		$azera_shop_front_page_id = get_option( 'page_on_front' );
+		$azera_shop_template_name = get_page_template_slug( $azera_shop_front_page_id );
+		if ( !empty($azera_shop_template_name) && ( $azera_shop_template_name == 'template-frontpage.php' ) ):
+			$azera_shop_is_not_static = 0;
+		endif;
+		
+	endif;
+	
+	return (!$azera_shop_is_not_static ? true : false);
+}
 
 
 add_filter( 'image_size_names_choose', 'azera_shop_media_uploader_custom_sizes' );

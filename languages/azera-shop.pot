@@ -1,0 +1,957 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Azera Shop\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-29 15:10+0200\n"
+"PO-Revision-Date: 2016-01-29 15:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: Themeisle <friends@themeisle.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: sections\n"
+"X-Poedit-SearchPath-2: inc\n"
+
+#: archive.php:20
+msgid "BLOG"
+msgstr ""
+
+#: archive.php:21
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:333
+#: functions.php:517
+msgid "Install Required Plugins"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:334
+#: functions.php:518
+msgid "Install Plugins"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:335
+#: functions.php:519
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:336
+#: functions.php:520
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:397
+#: functions.php:531
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:399
+#: class-tgm-plugin-activation.php:3029
+#: functions.php:532
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:400
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:401
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:402
+#, php-format
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:403
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:635
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:828
+#: class-tgm-plugin-activation.php:3438
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:935
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:935
+#: class-tgm-plugin-activation.php:938
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:938
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2167
+msgid "Required"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2170
+msgid "Recommended"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2186
+msgid "WordPress Repository"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2189
+msgid "External Source"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2192
+msgid "Pre-Packaged"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2209
+msgid "Not Installed"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2213
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2215
+msgid "Active"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2221
+msgid "Required Update not Available"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2224
+msgid "Requires Update"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2227
+msgid "Update recommended"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2379
+msgid "Installed version:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2387
+msgid "Minimum required version:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2399
+msgid "Available version:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2422
+#, php-format
+msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2436
+msgid "Plugin"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2437
+msgid "Source"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2438
+msgid "Type"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2442
+msgid "Version"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2443
+msgid "Status"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2570
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2603
+msgid "Install"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2609
+msgid "Update"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2612
+msgid "Activate"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2643
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2645
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2681
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2683
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2788
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2814
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3028
+msgid "Plugin activation failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3362
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3364
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3365
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3369
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3370
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3370
+#: class-tgm-plugin-activation.php:3376
+msgid "Show Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3370
+#: class-tgm-plugin-activation.php:3376
+msgid "Hide Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3371
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3372
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3375
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3376
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3377
+msgid "All installations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:3378
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: comments.php:38
+#: comments.php:61
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:39
+#: comments.php:62
+msgid "Newer Comments"
+msgstr ""
+
+#: content-contact.php:33
+#: content-page.php:27
+msgid "Edit"
+msgstr ""
+
+#: content-none.php:19
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-page.php:20
+#: content-search.php:90
+#: content-single-download.php:28
+#: content-single.php:32
+#: content.php:84
+msgid "Pages:"
+msgstr ""
+
+#: content-search.php:52
+#: content.php:55
+msgid ", "
+msgstr ""
+
+#: content-search.php:71
+#: content-single.php:23
+#: content.php:65
+msgid "No comments"
+msgstr ""
+
+#: content-search.php:71
+#: content-single.php:23
+#: content.php:65
+msgid "One comment"
+msgstr ""
+
+#: content-search.php:71
+#: content-single.php:23
+#: content.php:65
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: content.php:52
+msgid "Posted in"
+msgstr ""
+
+#: content.php:77
+#, php-format
+msgid "Read more %s ..."
+msgstr ""
+
+#: content.php:77
+msgid "about "
+msgstr ""
+
+#: footer.php:73
+#: footer.php:74
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:48
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:136
+msgid "Switch \"Front page displays\" to \"A static page\" "
+msgstr ""
+
+#: functions.php:137
+msgid "In order to have the one page look for your website, please go to Customize -> Static Front Page and switch \"Front page displays\" to \"A static page\". Then select the template \"Frontpage\" for that selected page."
+msgstr ""
+
+#: functions.php:142
+msgid "Install Intergeo Maps - Google Maps Plugin"
+msgstr ""
+
+#: functions.php:143
+msgid "In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode"
+msgstr ""
+
+#: functions.php:149
+msgid "Install Pirate Forms"
+msgstr ""
+
+#: functions.php:150
+msgid "Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier."
+msgstr ""
+
+#: functions.php:184
+msgid "Azera Shop Team Member"
+msgstr ""
+
+#: functions.php:185
+msgid "Azera Shop Services"
+msgstr ""
+
+#: functions.php:186
+msgid "Azera Shop Testimonials"
+msgstr ""
+
+#: functions.php:200
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:212
+#, php-format
+msgid "Footer area %d"
+msgstr ""
+
+#: functions.php:256
+msgid "expand child menu"
+msgstr ""
+
+#: functions.php:257
+msgid "collapse child menu"
+msgstr ""
+
+#: functions.php:304
+#: functions.php:305
+#: functions.php:306
+msgid "Lorem Ipsum"
+msgstr ""
+
+#: functions.php:304
+#: functions.php:305
+#: functions.php:306
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo."
+msgstr ""
+
+#: functions.php:325
+msgid "Albert Jacobs"
+msgstr ""
+
+#: functions.php:325
+msgid "Founder & CEO"
+msgstr ""
+
+#: functions.php:326
+msgid "Tonya Garcia"
+msgstr ""
+
+#: functions.php:326
+msgid "Account Manager"
+msgstr ""
+
+#: functions.php:327
+msgid "Linda Guthrie"
+msgstr ""
+
+#: functions.php:327
+msgid "Business Development"
+msgstr ""
+
+#: functions.php:346
+#: functions.php:347
+#: functions.php:348
+msgid "Happy Customer"
+msgstr ""
+
+#: functions.php:346
+#: functions.php:347
+#: functions.php:348
+msgid "Lorem ipsum"
+msgstr ""
+
+#: functions.php:346
+#: functions.php:347
+#: functions.php:348
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet."
+msgstr ""
+
+#: functions.php:533
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: functions.php:629
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:629
+#: functions.php:653
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:641
+#, php-format
+msgid "<span itemprop=\"name\">%s </span><span class=\"says\">says:</span>"
+msgstr ""
+
+#: functions.php:644
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:650
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: header.php:80
+msgid "Toggle Menu"
+msgstr ""
+
+#: search.php:25
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "Appearance"
+msgstr ""
+
+#: inc/customizer.php:49
+msgid "Text color"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Title color"
+msgstr ""
+
+#: inc/customizer.php:75
+msgid "General options"
+msgstr ""
+
+#: inc/customizer.php:77
+msgid "Azera Shop theme general appearance options"
+msgstr ""
+
+#: inc/customizer.php:89
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Header visibility"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "If this box is checked, the header will toggle on frontpage."
+msgstr ""
+
+#: inc/customizer.php:117
+msgid "Header section"
+msgstr ""
+
+#: inc/customizer.php:123
+#: inc/customizer.php:433
+msgid "Content"
+msgstr ""
+
+#: inc/customizer.php:135
+msgid "Header Logo"
+msgstr ""
+
+#: inc/customizer.php:143
+msgid "AZERA SHOP"
+msgstr ""
+
+#: inc/customizer.php:148
+#: inc/customizer.php:287
+#: inc/customizer.php:355
+#: inc/customizer.php:414
+#: inc/customizer.php:492
+#: inc/customizer.php:551
+#: inc/customizer.php:625
+msgid "Main title"
+msgstr ""
+
+#: inc/customizer.php:156
+msgid "From the creators of the popular Zerif Lite meet the new ecommerce theme"
+msgstr ""
+
+#: inc/customizer.php:161
+#: inc/customizer.php:300
+#: inc/customizer.php:368
+#: inc/customizer.php:505
+#: inc/customizer.php:564
+#: inc/customizer.php:887
+msgid "Subtitle"
+msgstr ""
+
+#: inc/customizer.php:170
+#: inc/customizer.php:633
+msgid "GET STARTED"
+msgstr ""
+
+#: inc/customizer.php:175
+#: inc/customizer.php:638
+msgid "Button label"
+msgstr ""
+
+#: inc/customizer.php:183
+#: inc/customizer.php:646
+msgid "#"
+msgstr ""
+
+#: inc/customizer.php:188
+#: inc/customizer.php:651
+msgid "Button link"
+msgstr ""
+
+#: inc/customizer.php:198
+msgid "Logos Bar"
+msgstr ""
+
+#: inc/customizer.php:220
+#: inc/customizer.php:785
+msgid "Add new social icon"
+msgstr ""
+
+#: inc/customizer.php:231
+msgid "Background"
+msgstr ""
+
+#: inc/customizer.php:242
+msgid "Parallax effect"
+msgstr ""
+
+#: inc/customizer.php:243
+msgid "If this box is checked, the parallax effect is enabled."
+msgstr ""
+
+#: inc/customizer.php:256
+msgid "First layer"
+msgstr ""
+
+#: inc/customizer.php:268
+msgid "Second layer"
+msgstr ""
+
+#: inc/customizer.php:277
+msgid "Shop section"
+msgstr ""
+
+#: inc/customizer.php:282
+msgid "Shop"
+msgstr ""
+
+#: inc/customizer.php:295
+msgid "Showcase your work effectively and in an attractive form that your prospective clients will love."
+msgstr ""
+
+#: inc/customizer.php:313
+msgid "Number of products"
+msgstr ""
+
+#: inc/customizer.php:329
+msgid "Display products from"
+msgstr ""
+
+#: inc/customizer.php:344
+msgid "Services section"
+msgstr ""
+
+#: inc/customizer.php:350
+msgid "Our Services"
+msgstr ""
+
+#: inc/customizer.php:363
+#: inc/customizer.php:500
+#: inc/customizer.php:620
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr ""
+
+#: inc/customizer.php:387
+msgid "Add new service box"
+msgstr ""
+
+#: inc/customizer.php:403
+msgid "About section"
+msgstr ""
+
+#: inc/customizer.php:409
+msgid "Our Story"
+msgstr ""
+
+#: inc/customizer.php:423
+msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+msgstr ""
+
+#: inc/customizer.php:447
+#: inc/customizer.php:900
+msgid "Image"
+msgstr ""
+
+#: inc/customizer.php:458
+msgid "Shortcodes section"
+msgstr ""
+
+#: inc/customizer.php:466
+msgid "Edit the shortcode options"
+msgstr ""
+
+#: inc/customizer.php:481
+msgid "Team section"
+msgstr ""
+
+#: inc/customizer.php:487
+msgid "Our Team"
+msgstr ""
+
+#: inc/customizer.php:524
+msgid "Add new team member"
+msgstr ""
+
+#: inc/customizer.php:539
+msgid "Testimonial section"
+msgstr ""
+
+#: inc/customizer.php:546
+msgid "Happy Customers"
+msgstr ""
+
+#: inc/customizer.php:559
+msgid "Cloud computing subscription model out of the box proactive solution."
+msgstr ""
+
+#: inc/customizer.php:583
+msgid "Add new testimonial"
+msgstr ""
+
+#: inc/customizer.php:601
+msgid "Ribbon section"
+msgstr ""
+
+#: inc/customizer.php:613
+msgid "Ribbon Background"
+msgstr ""
+
+#: inc/customizer.php:664
+msgid "Contact section"
+msgstr ""
+
+#: inc/customizer.php:680
+msgid "Add new contact field"
+msgstr ""
+
+#: inc/customizer.php:697
+#: inc/customizer.php:734
+msgid "Map shortcode"
+msgstr ""
+
+#: inc/customizer.php:698
+#: inc/customizer.php:735
+msgid "To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated"
+msgstr ""
+
+#: inc/customizer.php:711
+msgid "Contact page"
+msgstr ""
+
+#: inc/customizer.php:721
+msgid "Contact form shortcode"
+msgstr ""
+
+#: inc/customizer.php:722
+msgid "Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
+msgstr ""
+
+#: inc/customizer.php:746
+msgid "Footer options"
+msgstr ""
+
+#: inc/customizer.php:748
+msgid "The main content of this section is customizable in: Customize -> Widgets -> Footer area. "
+msgstr ""
+
+#: inc/customizer.php:764
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer.php:799
+msgid "Advanced options"
+msgstr ""
+
+#: inc/customizer.php:801
+msgid "Azera Shop theme general options"
+msgstr ""
+
+#: inc/customizer.php:852
+msgid "Disable preloader?"
+msgstr ""
+
+#: inc/customizer.php:853
+msgid "If this box is checked, the preloader will be disabled from homepage."
+msgstr ""
+
+#: inc/customizer.php:862
+msgid "Blog header"
+msgstr ""
+
+#: inc/customizer.php:875
+msgid "Title"
+msgstr ""
+
+#: inc/customizer.php:1001
+msgid "Documentation"
+msgstr ""
+
+#: inc/customizer.php:1002
+msgid "Support Forum"
+msgstr ""
+
+#: inc/customizer.php:1003
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: inc/extras.php:52
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:26
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:82
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:88
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:94
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:94
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:94
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:115
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:117
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:119
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:121
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:123
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:125
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:147
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:151
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgid "Archives"
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:61
+#, php-format
+msgid "Welcome! Thank you for choosing Azera Shop! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s."
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:62
+msgid "Get started with Azera Shop"
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:97
+msgid "Hooray! There are no required actions for you right now."
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:129
+msgid "View Theme Info"
+msgstr ""
+
+#: inc/class/azera-shop-woocommerce-categories.php:39
+msgid "All Categories"
+msgstr ""
+
+#: sections/azera_shop_header_section.php:86
+#: sections/azera_shop_header_section.php:89
+#: sections/azera_shop_header_section.php:91
+msgid "Header button label:"
+msgstr ""
+
+#: sections/azera_shop_logos_section.php:18
+msgid "Affiliates Logos"
+msgstr ""
+
+#: sections/azera_shop_our_services_section.php:95
+#: sections/azera_shop_our_services_section.php:99
+#: sections/azera_shop_our_services_section.php:107
+msgid "Featured Image"
+msgstr ""
+
+#: sections/azera_shop_our_story_section.php:21
+msgid "About"
+msgstr ""
+
+#: sections/azera_shop_our_team_section.php:62
+#: sections/azera_shop_our_team_section.php:66
+msgid "Avatar"
+msgstr ""
+
+#: sections/azera_shop_ribbon_section.php:14
+#: sections/azera_shop_ribbon_section.php:16
+#: sections/azera_shop_ribbon_section.php:54
+#: sections/azera_shop_ribbon_section.php:56
+msgid "Ribbon"
+msgstr ""
+
+#: sections/azera_shop_ribbon_section.php:35
+#: sections/azera_shop_ribbon_section.php:37
+msgid "Ribbon button label:"
+msgstr ""
+

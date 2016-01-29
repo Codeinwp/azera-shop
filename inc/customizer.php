@@ -229,6 +229,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	
 	$wp_customize->get_section('header_image')->panel='panel_1';
 	$wp_customize->get_section('header_image')->title=esc_html__( 'Background', 'azera-shop' );
+	$wp_customize->get_section('header_image')->active_callback = 'azera_shop_show_on_front';
 	
 	/* Enable parallax effect*/
 	$wp_customize->add_setting( 'azera_shop_enable_move', array(
