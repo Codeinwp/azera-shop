@@ -196,17 +196,18 @@ jQuery(window).scroll(function(){
 
 var window_width_old;
 jQuery(document).ready(function(){
-    window_width_old = jQuery('.container').width();
-    if( window_width_old <= 462 ) {
-        jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
-        jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
-    } else if( window_width_old <= 750  ){
-        jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
-        jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
-    } else {
-        jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 4,selector: '.product', calcMin: false});
-        jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
-    }
+	window_width_old = jQuery('.container').width();
+	if( window_width_old <= 462 ) {
+		jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
+		jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
+	} else if( window_width_old <= 750  ){
+		jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
+		jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
+	} else {
+		jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 4,selector: '.product', calcMin: false});
+		jQuery('.cart-collaterals .products').azerashopgridpinterest({columns: 2,selector: '.product', calcMin: false});
+	}
+	
 });
 
 jQuery(window).resize(function() {
@@ -329,7 +330,7 @@ jQuery(window).resize(function() {
         return true;
     }
     
-    $.fn.AzeraShopGridPinterest = function (options) {
+    $.fn.azerashopgridpinterest = function (options) {
         return this.each(function () {
             var value = '';
             if (!$.data(this, value)) {
