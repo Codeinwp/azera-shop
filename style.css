@@ -2628,7 +2628,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce .products .product .button {
 	background-image: url(images/tr-btn.png);
 	background-repeat: repeat-x;
-	background-color: #313131;
+	background-color: rgba(255,162,0,1.00);
 	background-size: contain;
 	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
@@ -2679,7 +2679,7 @@ div.wpcf7-mail-sent-ng {
 	min-height: 50px;
 	line-height: 50px;
 	padding: 0;
-	background-color: rgba(0,142,214,0.9);
+	background-color: rgba(0,0,0,0.8);
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
@@ -2964,7 +2964,7 @@ div.wpcf7-mail-sent-ng {
 	min-height: 70px;
 	line-height: 70px;
 	padding: 0;
-	background-color: rgba(0,142,214,0.9);
+	background-color: rgba(0,0,0,0.8);
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
@@ -3268,7 +3268,7 @@ div.wpcf7-mail-sent-ng {
 
 .woocommerce .woocommerce-message .button {
 	float: right;
-	background-color: rgb(0, 142, 214);
+	background-color: rgba(0, 0, 0, 0.9);
 	color: #fff;
 	font-weight: normal;
 	font-size: 13px;
@@ -3280,7 +3280,7 @@ div.wpcf7-mail-sent-ng {
 
 .woocommerce .woocommerce-message .button:hover {
 	color: rgba(255,162,0,1.00);
-	background: rgba(255,255,255,0.9);
+	background: #fff;
 }
 
 .woocommerce a.remove {
@@ -6862,7 +6862,7 @@ p.edd-alert-error,
 }
 
 .edd_download_inner:hover {
-    border-bottom-color: #008ed6;
+    border-bottom-color: rgba(255,162,0,1.00);
 }
 
 .edd_download_title a,
