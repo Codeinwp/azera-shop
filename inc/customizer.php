@@ -394,61 +394,6 @@ function azera_shop_customize_register( $wp_customize ) {
         'azera_shop_text_control' => true,
 		'azera_shop_link_control' => true
 	) ) );
-	/********************************************************/
-	/******************** ABOUT OPTIONS  ********************/
-	/********************************************************/
-
-	
-	$wp_customize->add_section( 'azera_shop_about_section' , array(
-			'title'       => esc_html__( 'About section', 'azera-shop' ),
-			'priority'    => 45,
-	));
-	
-	/* About title */
-	$wp_customize->add_setting( 'azera_shop_our_story_title', array(
-		'default' => esc_html__('Our Story','azera-shop'),
-		'sanitize_callback' => 'azera_shop_sanitize_text',
-		'transport' => 'postMessage'
-	));
-	$wp_customize->add_control( 'azera_shop_our_story_title', array(
-		'label'    => esc_html__( 'Main title', 'azera-shop' ),
-		'section'  => 'azera_shop_about_section',
-		'active_callback' => 'azera_shop_show_on_front',
-		'priority'    => 10,
-	));
-
-	/* About Content */
-	
-	$wp_customize->add_setting( 'azera_shop_our_story_text', array(
-		'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','azera-shop'),
-		'sanitize_callback' => 'azera_shop_sanitize_html',
-		'transport' => 'postMessage'
-		
-	));
-	
-	$wp_customize->add_control(
-			'azera_shop_our_story_text',
-			array(
-				'type' => 'textarea',
-				'label'   => esc_html__( 'Content', 'azera-shop' ),
-				'section' => 'azera_shop_about_section',
-				'active_callback' => 'azera_shop_show_on_front',
-				'priority'    => 20,
-			)
-	);
-	
-	/* About Image	*/
-	$wp_customize->add_setting( 'azera_shop_our_story_image', array(
-		'default' => azera_shop_get_file('/images/about-us.png'),
-		'sanitize_callback' => 'esc_url',
-		'transport' => 'postMessage'
-	));
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_our_story_image', array(
-	      	'label'    => esc_html__( 'Image', 'azera-shop' ),
-	      	'section'  => 'azera_shop_about_section',
-			'active_callback' => 'azera_shop_show_on_front',
-			'priority'    => 30,
-	)));
 
 	/********************************************************/
 	/***************** SHORTCODES SECTION  ******************/
@@ -470,64 +415,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'azera_shop_title_control'     => true,
 		'azera_shop_subtitle_control'  => true,
 		'azera_shop_shortcode_control' => true
-	) ) );
-
-	/********************************************************/
-	/*******************  TEAM OPTIONS  *********************/
-	/********************************************************/
-
-	
-	$wp_customize->add_section( 'azera_shop_team_section' , array(
-			'title'       => esc_html__( 'Team section', 'azera-shop' ),
-			'priority'    => 50,
-	));
-	
-	/* Team title */
-	$wp_customize->add_setting( 'azera_shop_our_team_title', array(
-		'default' => esc_html__('Our Team','azera-shop'),
-		'sanitize_callback' => 'azera_shop_sanitize_text',
-		'transport' => 'postMessage'
-	));
-	$wp_customize->add_control( 'azera_shop_our_team_title', array(
-		'label'    => esc_html__( 'Main title', 'azera-shop' ),
-		'section'  => 'azera_shop_team_section',
-		'active_callback' => 'azera_shop_show_on_front',
-		'priority'    => 10,
-	));
-	
-	/* Team subtitle */
-	$wp_customize->add_setting( 'azera_shop_our_team_subtitle', array(
-		'default' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','azera-shop'),
-		'sanitize_callback' => 'azera_shop_sanitize_text',
-		'transport' => 'postMessage'
-	));
-	$wp_customize->add_control( 'azera_shop_our_team_subtitle', array(
-		'label'    => esc_html__( 'Subtitle', 'azera-shop' ),
-		'section'  => 'azera_shop_team_section',
-		'active_callback' => 'azera_shop_show_on_front',
-		'priority'    => 20,
-	));
-	
-	
-    /* Team content */
-	$wp_customize->add_setting( 'azera_shop_team_content', array(
-		'sanitize_callback' => 'azera_shop_sanitize_repeater',
-		'default' => json_encode(
-							array(
-									array('image_url' => azera_shop_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','azera-shop'),'subtitle' => esc_html__('Founder & CEO','azera-shop')),
-									array('image_url' => azera_shop_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','azera-shop'),'subtitle' => esc_html__('Account Manager','azera-shop')),
-									array('image_url' => azera_shop_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','azera-shop'),'subtitle' => esc_html__('Business Development','azera-shop'))
-							)
-						)
-	));
-	$wp_customize->add_control( new azera_shop_General_Repeater( $wp_customize, 'azera_shop_team_content', array(
-		'label'   => esc_html__('Add new team member','azera-shop'),
-		'section' => 'azera_shop_team_section',
-		'active_callback' => 'azera_shop_show_on_front',
-		'priority' => 3,
-        'azera_shop_image_control' => true,
-		'azera_shop_title_control' => true,
-		'azera_shop_subtitle_control' => true
 	) ) );
 	
 	/********************************************************/
