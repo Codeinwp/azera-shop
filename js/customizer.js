@@ -123,67 +123,6 @@
 		} );
 		
     });	
-	
-
-	/******************************************************
-	************* OUR STORY SECTION ****************
-	*******************************************************/
-	//Title
-	wp.customize("azera_shop_our_story_title", function(value) {
-		
-        value.bind(function( to ) {
-			
-			if( to != '' ) {
-				$( '.brief' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.brief .content-section h2' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.brief .content-section .colored-line-left').removeClass(  'azera_shop_only_customizer' );
-				$( '.brief .content-section h2' ).text( to );
-			}
-			else {
-				$( '.brief .content-section h2' ).addClass( 'azera_shop_only_customizer' );
-				$( '.brief .content-section .colored-line-left').addClass(  'azera_shop_only_customizer' );
-				if( $('.brief .brief-content-two').hasClass('azera_shop_only_customizer') && $('.brief .content-section .brief-content-text').hasClass('azera_shop_only_customizer') ){
-					$( '.brief' ).addClass( 'azera_shop_only_customizer' );
-				}
-			}
-	    } );
-		
-    });
-	
-	wp.customize("azera_shop_our_story_text",function(value) {
-		
-		value.bind(function( to ) {
-			if( to != '' ) {
-				$( '.brief' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.brief .content-section .brief-content-text' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.brief .content-section .brief-content-text' ).html( to );
-			} else {
-				$( '.brief .content-section .brief-content-text' ).addClass( 'azera_shop_only_customizer' );
-				if( $( '.brief .content-section h2' ).hasClass('azera_shop_only_customizer') && $('.brief .brief-content-two').hasClass('azera_shop_only_customizer') ){
-					$( '.brief' ).addClass( 'azera_shop_only_customizer' );
-				}
-			}
-			
-		});
-		
-	});
-	
-	wp.customize("azera_shop_our_story_image",function(value) {
-		
-		value.bind(function( to ) {
-			if( to != '' ) {
-				$( '.brief' ).removeClass( 'azera_shop_only_customizer' );
-				$('.brief .brief-content-two').removeClass( 'azera_shop_only_customizer' );
-				$( '.brief .brief-content-two .brief-image-right img' ).attr('src', to);
-			} else {
-				$('.brief .brief-content-two').addClass( 'azera_shop_only_customizer' );
-				if( $( '.brief .content-section h2' ).hasClass('azera_shop_only_customizer') && $('.brief .content-section .brief-content-text').hasClass('azera_shop_only_customizer') ){
-					$( '.brief' ).addClass( 'azera_shop_only_customizer' );
-				}
-			}
-		});
-		
-	});
 
 	/******************************************************
 	*********** OUR SERVICES SECTION ***********************
@@ -228,50 +167,6 @@
 		} );
 		
     });
-
-	
-	/******************************************************
-	*********** OUR TEAM SECTION **************
-	*******************************************************/
-	//Title
-	wp.customize("azera_shop_our_team_title", function(value) {
-		
-        value.bind(function( to ) {
-			
-			if( to != '' ) {
-				$( '.team' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.team .section-header h2' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.team .section-header .colored-line' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.team .section-header h2' ).text( to );
-			} else {
-				$( '.team .section-header h2' ).addClass( 'azera_shop_only_customizer' );
-				$( '.team .section-header .colored-line' ).addClass( 'azera_shop_only_customizer' );
-				if( $( '.team .section-header .sub-heading' ).hasClass( 'azera_shop_only_customizer' ) && isEmpty($('.team .team-member-wrap')) ){
-					$( '.team' ).addClass( 'azera_shop_only_customizer' );
-				}
-			}
-	    } );
-		
-    });
-	
-	//Subtitle
-	wp.customize("azera_shop_our_team_subtitle", function(value) {
-		
-        value.bind(function( to ) {
-			if( to != '' ) {
-				$( '.team' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.team .section-header .sub-heading' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.team .section-header .sub-heading' ).text( to );
-			} else {
-				$( '.team .section-header .sub-heading' ).addClass( 'azera_shop_only_customizer' );
-				if( $( '.team .section-header h2' ).hasClass('azera_shop_only_customizer') && isEmpty($('.team .team-member-wrap')) ){
-					$( '.team' ).addClass( 'azera_shop_only_customizer' );
-				}
-			}
-		} );
-		
-    });
-	
 
 	/******************************************************
 	******** HAPPY CUSTOMERS SECTION ***********

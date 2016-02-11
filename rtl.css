@@ -149,29 +149,7 @@ li.galcolumn{
 .woocommerce ul.products li.galcolumn:nth-child(4){
     margin-right: 0 !important;
 }
-.brief .brief-image-right img{float:left;}
-.brief .brief-image-left img{float:right;}
-.feature-list li{padding-right:20px;}
-.feature-list li:before{right:0;}
-.feature-list li span{margin-left:10px;}
-.text-left{
-    text-align: right;
-}
-.brief-content-one{
-    float:left;
-}
-.brief-left .brief-content-one{
-    float:right;
-}
-.brief-left .brief-content-two{
-    float:left;
-}
-.brief-right .brief-content-one{
-    float:left;
-}
-.brief-right .brief-content-two{
-    float:right;
-}
+
 .panel-default{
     text-align:right;
 }
@@ -183,23 +161,7 @@ li.galcolumn{
 .single-stats{
     margin-left:-4px;
 }
-.feature{
-    padding-right:10px;
-    padding-left:0;
-}
-.feature .icon-container{
-    margin-left:10px;
-    float:right;
-}
-.feature .description{
-    float:left;
-}
-.unique-features-cols-one .feature .description{
-    padding-right:110px;
-}
-.unique-features-cols-one .icon-container{
-    right:0;
-}
+
 .pricing-table{
     padding-right:30px;
     padding-left:30px;
@@ -212,62 +174,6 @@ li.galcolumn{
 }
 .right-side .single-feature{
     padding-right:18px;
-}
-.timeline-section{
-    padding-right:180px;
-    padding-left:0;
-}
-.timeline h2{
-    padding-left:110px;
-    padding-right:0;
-}
-.timeline-box-wrap{
-    padding:1em 0 1em 1em;
-    border-right:2px solid #eaeaea !important;
-    float:right;
-    border-left:none !important;
-}
-.timeline-box-wrap .date{
-    float:right;
-    margin-right:-100px;
-    right:-50px;
-}
-.timeline-box-wrap .icon-container{
-    float:right;
-    margin-right:-75px;
-}
-.timeline-box-wrap .icon-container img{
-    float:right;
-}
-.timeline-box-wrap .info{
-    text-align:right;
-    margin-right:0;
-    padding-right:100px;
-    border-right:none;
-    -webkit-border-radius:3px 0 0 3px;
-    -moz-border-radius:3px 0 0 3px;
-    border-radius:3px 0 0 3px;
-}
-.timeline-box-wrap .info h1{
-    float:right;
-}
-.timeline-box-wrap .info .entry-content p{
-    float:right;
-}
-.timeline-box-wrap .info .entry-meta{ 
-    float:right;
-}
-
-.team-member .social-icons li{
-    padding-right:5px;
-    padding-left:5px;
-}
-.member-details{
-    right:0;
-    left:auto;
-}
-.team-member-wrap .team-member-box{
-    margin-left:-4px;
 }
 .testimonials-wrap .testimonials-box{
     padding-right:15px;
