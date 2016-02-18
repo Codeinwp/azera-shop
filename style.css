@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/azera-shop/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Azera Shop is an elegant free WordPress theme, perfect for building an online store. Azera Shop is ecommerce (WooCommerce) Compatible, WPML, RTL, SEO Friendly and with parallax effect, full screen image is one of the best e-commerce themes.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azera-shop
@@ -196,6 +196,16 @@ a:focus {
 
 .navbar-inverse .navbar-nav > li.not-active {
 	color: rgba(255,162,0,1.00);
+}
+
+.navbar-inverse button#menu-toggle:hover,
+.navbar-inverse button#menu-toggle:focus {
+	background-color: rgba(255,162,0,1.00);
+}
+
+.navbar-inverse button#menu-toggle:hover .icon-bar,
+.navbar-inverse button#menu-toggle:focus .icon-bar {
+	background-color: #fff;
 }
 
 .mailchimp-success,
@@ -3550,6 +3560,7 @@ footer.footer #wp-calendar td {
 footer.footer #wp-calendar caption {
 	font-size: 14px;
 	margin: 0;
+	color: #464444;
 }
 
 footer.footer #wp-calendar th,
@@ -3714,7 +3725,7 @@ footer.footer .team-member-box .team-member {
 }
 
 a {
-	color: rgba(255,162,0,1.00);
+	color: #c60;
 }
 
 a:hover {
@@ -3780,7 +3791,7 @@ a:hover {
 }
 
 .colored-text {
-	color: rgba(255,162,0,1.00);
+	color: #c60;
 }
 
 /* COLORED BORDERS AND LINES */
@@ -4232,6 +4243,10 @@ h2.screen-reader-text {
 	min-width: 50%;
 }
 
+.comment-form input:focus, .comment-form textarea:focus {
+	border:1px dotted rgba(255, 162, 0, 1.00);
+}
+
 .comment-form textarea {
 	font-size: 14px;
 	font-weight: 500;
@@ -4268,7 +4283,7 @@ h2.screen-reader-text {
 	margin-top: 10px
 }
 
-.comment-form .form-submit input:hover, #recaptcha-submit-btn-area input:hover {
+.comment-form .form-submit input:hover, #recaptcha-submit-btn-area input:hover,.comment-form .form-submit input:focus, #recaptcha-submit-btn-area input:focus {
 	background: #F7F8FA;
 	border: 1px solid #eaebec;
 	color: rgba(255,162,0,1.00);
@@ -4667,6 +4682,7 @@ h2.screen-reader-text {
 .widget_calendar caption {
 	font-size: 14px;
 	margin: 0;
+	color: #464444;
 }
 
 .widget_calendar th,
@@ -4725,6 +4741,9 @@ h2.screen-reader-text {
 	padding: 10px 50px 10px 5px;
 	font-weight: 300;
 }
+.widget_search input:focus {
+	border:1px dotted rgba(255, 162, 0, 1.00);
+}	
 
 .widget_search form {
 	position: relative;

@@ -23,9 +23,9 @@ $azera_shop_blog_header_subtitle = get_theme_mod( 'azera_shop_blog_header_subtit
 if( !empty($azera_shop_blog_header_image) || !empty($azera_shop_blog_header_title) || !empty($azera_shop_blog_header_subtitle) ):
 
 	if( !empty($azera_shop_blog_header_image) ):
-		echo '<div class="archive-top" style="background-image: url('.$azera_shop_blog_header_image.');">';
+		echo '<div class="archive-top" style="background-image: url('.$azera_shop_blog_header_image.');" role="banner">';
 	else:
-		echo '<div class="archive-top">';
+		echo '<div class="archive-top" role="banner">';
 	endif;
 	echo '<div class="section-overlay-layer">';
 	echo '<div class="container">';
