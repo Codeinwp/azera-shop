@@ -74,6 +74,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'azera-shop' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form(array('title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">','title_reply_after' => '</h2>')); ?>
 
 </div><!-- #comments -->
