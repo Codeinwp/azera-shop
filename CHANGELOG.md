@@ -1,5 +1,13 @@
 
 
+### 1.0.4 - 18/02/2016
+
+ Changes: 
+
+
+ * Accessibility ready
+
+
 ### 1.0.3 - 11/02/2016
 
  Changes: 
