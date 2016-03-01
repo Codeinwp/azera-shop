@@ -23,11 +23,11 @@ function azera_shop_posts_navigation() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><span class="meta-nav"><span class="icon icon-arrows-slim-left"></span></span><?php next_posts_link( esc_html__( 'Older posts', 'azera-shop' ) ); ?></div>
+			<div class="nav-previous"><span class="meta-nav"><i class="fa fa-arrow-left"></i></span><?php next_posts_link( esc_html__( 'Older posts', 'azera-shop' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'azera-shop' ) ); ?><span class="meta-nav"><span class="icon icon-arrows-slim-right"></span></span></div>
+			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'azera-shop' ) ); ?><span class="meta-nav"><i class="fa fa-arrow-right"></span></span></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -79,13 +79,13 @@ function azera_shop_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'azera-shop' ) );
 		if ( $categories_list && azera_shop_categorized_blog() ) {
-			printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i>' . esc_html__( 'Posted in %1$s', 'azera-shop' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links"><i class="fa fa-folder-open-o" aria-hidden="true"></i>' . esc_html__( 'Posted in %1$s', 'azera-shop' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'azera-shop' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i>' . esc_html__( 'Tagged %1$s', 'azera-shop' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="fa fa-folder-open-o" aria-hidden="true"></i>' . esc_html__( 'Tagged %1$s', 'azera-shop' ) . '</span>', $tags_list );
 		}
 	}
 

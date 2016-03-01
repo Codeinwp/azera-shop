@@ -82,7 +82,7 @@
 					echo '</div>';
 					/* SOCIAL ICONS */
 				
-					$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons',json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#'))));
+					$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons',json_encode(array(array('icon_value' =>'fa-facebook' , 'link' => '#'),array('icon_value' =>'fa-twitter' , 'link' => '#'),array('icon_value' =>'fa-google-plus-square' , 'link' => '#'))));
 
 					if( !empty( $azera_shop_social_icons ) ){
 						
@@ -94,7 +94,16 @@
 							
 								foreach($azera_shop_social_icons_decoded as $azera_shop_social_icon){
 									
-									echo '<li><a href="'.esc_url($azera_shop_social_icon->link).'"><span class="azera-shop-footer-icons '.esc_attr($azera_shop_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></span><span class="screen-reader-text">'.esc_attr(explode("-",$azera_shop_social_icon->icon_value)[2]).'</span></a></li>';
+									if( !empty($azera_shop_social_icon->icon_value) ){
+										
+										explode("-",$azera_shop_social_icon->icon_value);
+										
+										if( !empty($azera_shop_social_icon->icon_value[2]) ) {
+									
+											echo '<li><a href="'.esc_url($azera_shop_social_icon->link).'"><i class="azera-shop-footer-icons fa '.esc_attr($azera_shop_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></i><span class="screen-reader-text">'.esc_attr($azera_shop_social_icon->icon_value[2]).'</span></a></li>';
+									
+										}
+									}
 
 								}
 						

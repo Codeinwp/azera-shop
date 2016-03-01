@@ -5,9 +5,9 @@
 	$azera_shop_contact_info_item = get_theme_mod('azera_shop_contact_info_content',
 		json_encode(
 			array( 
-					array("icon_value" => "icon-basic-mail" ,"text" => "contact@site.com", "link" => "#" ), 
-					array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Company address", "link" => "#" ), 
-					array("icon_value" => "icon-basic-tablet" ,"text" => "0 332 548 954", "link" => "#" ) 
+					array("icon_value" => "fa-envelope-o" ,"text" => "contact@site.com", "link" => "#" ), 
+					array("icon_value" => "fa-map-o" ,"text" => "Company address", "link" => "#" ), 
+					array("icon_value" => "fa-phone" ,"text" => "0 332 548 954", "link" => "#" )
 				)
 		)
 	);
@@ -30,7 +30,7 @@
 											if(!empty($azera_shop_contact_item->link)){
 												echo '<div class="col-sm-4 contact-link-box col-xs-12">';
 												if(!empty($azera_shop_contact_item->icon_value)){
-													echo '<div class="icon-container"><span class="'.esc_attr($azera_shop_contact_item->icon_value).' colored-text"></span></div>';
+													echo '<div class="icon-container"><i class="fa '.esc_attr($azera_shop_contact_item->icon_value).' colored-text"></i></div>';
 												}
 												if(!empty($azera_shop_contact_item->text)){
 													echo '<a href="'.$azera_shop_contact_item->link.'" class="strong">'.html_entity_decode($azera_shop_contact_item->text).'</a>';
@@ -40,7 +40,7 @@
 
 												echo '<div class="col-sm-4 contact-link-box  col-xs-12">';
 												if(!empty($azera_shop_contact_item->icon_value)){
-													echo '<div class="icon-container"><span class="'.esc_attr($azera_shop_contact_item->icon_value).' colored-text"></span></div>';
+													echo '<div class="icon-container"><i class="fa '.esc_attr($azera_shop_contact_item->icon_value).' colored-text"></i></div>';
 												}
 												if(!empty($azera_shop_contact_item->text)){
 													if(function_exists('icl_t')){

@@ -44,7 +44,7 @@
 
 			<div class="entry-meta list-post-entry-meta">
 				<span class="post-author">
-					<i class="icon-man-people-streamline-user" aria-hidden="true"></i><?php the_author_posts_link(); ?>
+					<i class="fa fa-user" aria-hidden="true"></i><?php the_author_posts_link(); ?>
 				</span>
 				
 					<?php
@@ -53,7 +53,7 @@
                         if(!empty($categories_list)){
                         ?>
                             <span class="posted-in">
-                                <i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i>
+                                <i class="fa fa-folder-open-o" aria-hidden="true"></i>
                         <?php
                             esc_html_e('Posted in ','azera-shop');
                         
@@ -68,7 +68,7 @@
 					?>
 				
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<i class="icon-comment-alt" aria-hidden="true"></i><?php comments_number( esc_html__('No comments','azera-shop'), esc_html__('One comment','azera-shop'), esc_html__('% comments','azera-shop') ); ?>
+					<i class="fa fa-comment-o" aria-hidden="true"></i><?php comments_number( esc_html__('No comments','azera-shop'), esc_html__('One comment','azera-shop'), esc_html__('% comments','azera-shop') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
 
