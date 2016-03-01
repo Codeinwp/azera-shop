@@ -8,9 +8,9 @@
 	$azera_shop_services = get_theme_mod('azera_shop_services_content',
 		json_encode(
 			array(
-					array('choice'=>'azera_shop_icon','icon_value' => 'fa-diamond','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-					array('choice'=>'azera_shop_icon','icon_value' => 'fa-line-chart','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-					array('choice'=>'azera_shop_icon','icon_value' => 'fa-map-marker','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'))
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-diamond','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb37'),
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-line-chart','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb38'),
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-map-marker','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb39')
 			)
 		)
 	);

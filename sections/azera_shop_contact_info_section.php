@@ -5,9 +5,9 @@
 	$azera_shop_contact_info_item = get_theme_mod('azera_shop_contact_info_content',
 		json_encode(
 			array( 
-					array("icon_value" => "fa-envelope-o" ,"text" => "contact@site.com", "link" => "#" ), 
-					array("icon_value" => "fa-map-o" ,"text" => "Company address", "link" => "#" ), 
-					array("icon_value" => "fa-phone" ,"text" => "0 332 548 954", "link" => "#" )
+					array("icon_value" => "fa-envelope-o" ,"text" => "contact@site.com", "link" => "#", 'id' => 'azera_shop_56d450842cb33' ), 
+					array("icon_value" => "fa-map-o" ,"text" => "Company address", "link" => "#", 'id' => 'azera_shop_56d450842cb32' ), 
+					array("icon_value" => "fa-phone" ,"text" => "0 332 548 954", "link" => "#", 'id' => 'azera_shop_56d450842cb31' )
 				)
 		)
 	);

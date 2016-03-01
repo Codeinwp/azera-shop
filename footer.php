@@ -82,7 +82,7 @@
 					echo '</div>';
 					/* SOCIAL ICONS */
 				
-					$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons',json_encode(array(array('icon_value' =>'fa-facebook' , 'link' => '#'),array('icon_value' =>'fa-twitter' , 'link' => '#'),array('icon_value' =>'fa-google-plus-square' , 'link' => '#'))));
+					$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons',json_encode(array(array('icon_value' =>'fa-facebook' , 'link' => '#','id' => 'azera_shop_56d069bb8cb71'),array('icon_value' =>'fa-twitter' , 'link' => '#','id' => 'azera_shop_56d069bb8cb72'),array('icon_value' =>'fa-google-plus-square' , 'link' => '#','id' => 'azera_shop_56d069bb8cb73'))));
 
 					if( !empty( $azera_shop_social_icons ) ){
 						
@@ -100,8 +100,12 @@
 										
 										if( !empty($azera_shop_social_icon->icon_value[2]) ) {
 									
-											echo '<li><a href="'.esc_url($azera_shop_social_icon->link).'"><i class="azera-shop-footer-icons fa '.esc_attr($azera_shop_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></i><span class="screen-reader-text">'.esc_attr($azera_shop_social_icon->icon_value[2]).'</span></a></li>';
-									
+											if(function_exists('icl_t')){
+												echo '<li><a href="'.esc_url(icl_t('Footer Social Link',$azera_shop_social_icon->id.'_footer_social_link',$azera_shop_social_icon->link)).'"><i class="fa azera-shop-footer-icons '.icl_t('Footer Social Icon',$azera_shop_social_icon->id.'_footer_social_icon',esc_attr($azera_shop_social_icon->icon_value)).' transparent-text-dark" aria-hidden="true"></i><span class="screen-reader-text">'.esc_attr($azera_shop_social_icon->icon_value[2]).'</span></a></li>';
+											} else {
+												echo '<li><a href="'.esc_url($azera_shop_social_icon->link).'"><i class="azera-shop-footer-icons fa '.esc_attr($azera_shop_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></i><span class="screen-reader-text">'.esc_attr($azera_shop_social_icon->icon_value[2]).'</span></a></li>';
+											}
+
 										}
 									}
 

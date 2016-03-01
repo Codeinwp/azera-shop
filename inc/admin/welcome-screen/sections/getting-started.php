@@ -104,9 +104,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 		}
 
 		?>
-		
-		<hr/>
-		<!-- WP Product Review -->
+	</div>
+
+
+	
+	<div class="azera-shop-tab-pane-half">
+
+		<!-- Pirate Forms -->
 		<h4><?php esc_html_e( 'Pirate Forms', 'azera-shop' ); ?></h4>
 		<p><?php esc_html_e( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.', 'azera-shop' ); ?></p>
 
@@ -123,30 +127,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<?php
 		}
 
-		?>
-
-	</div>
-
-
-	
-	<div class="azera-shop-tab-pane-half">
-
-		<!-- ShortPixel Image Optimizer -->
-		<h4><?php esc_html_e( 'ShortPixel Image Optimizer', 'azera-shop' ); ?></h4>
-		<p><?php esc_html_e( 'Fast, easy-to-use and lightweight plugin that optimizes images & PDFs. Preserve a high visual quality of images and make your website load faster!', 'azera-shop' ); ?></p>
-
-		<?php if ( is_plugin_active( 'shortpixel-image-optimiser/wp-shortpixel.php' ) ) { ?>
-
-				<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
-
-			<?php
-		}
-		else { ?>
-
-			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'themes.php?page=tgmpa-install-plugins&plugin=shortpixel-image-optimiser' ), 'install-plugin_shortpixel-image-optimiser' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install ShortPixel Image Optimizer', 'azera-shop' ); ?></a></p>
-
-			<?php
-		}
 		?>
 
 	</div>

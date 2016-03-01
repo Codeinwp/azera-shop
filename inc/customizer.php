@@ -377,9 +377,9 @@ function azera_shop_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
 		'default' => json_encode(
 							array(
-									array('choice'=>'azera_shop_icon','icon_value' => 'fa-diamond','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-									array('choice'=>'azera_shop_icon','icon_value' => 'fa-line-chart','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-									array('choice'=>'azera_shop_icon','icon_value' => 'fa-map-marker','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'))
+									array('choice'=>'azera_shop_icon','icon_value' => 'fa-diamond','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb37'),
+									array('choice'=>'azera_shop_icon','icon_value' => 'fa-line-chart','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb38'),
+									array('choice'=>'azera_shop_icon','icon_value' => 'fa-map-marker','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb39')
 							)
 						)
 	));
@@ -460,9 +460,9 @@ function azera_shop_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
 		'default' => json_encode(
 							array(
-									array('image_url' => azera_shop_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop')),
-									array('image_url' => azera_shop_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop')),
-									array('image_url' => azera_shop_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop'))
+									array('image_url' => azera_shop_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop'), 'id' => 'azera_shop_56d450842cb36'),
+									array('image_url' => azera_shop_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop'), 'id' => 'azera_shop_56d450842cb35'),
+									array('image_url' => azera_shop_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','azera-shop'),'subtitle' => esc_html__('Lorem ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','azera-shop'), 'id' => 'azera_shop_56d450842cb34')
 							)
 						)
 	));
@@ -557,9 +557,9 @@ function azera_shop_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
 		'default' => json_encode(
 			array( 
-					array("icon_value" => "fa-envelope-o" ,"text" => "contact@site.com", "link" => "#" ), 
-					array("icon_value" => "fa-map-o" ,"text" => "Company address", "link" => "#" ), 
-					array("icon_value" => "fa-phone" ,"text" => "0 332 548 954", "link" => "#" ) 
+					array("icon_value" => "fa-envelope-o" ,"text" => "contact@site.com", "link" => "#", 'id' => 'azera_shop_56d450842cb33' ), 
+					array("icon_value" => "fa-map-o" ,"text" => "Company address", "link" => "#", 'id' => 'azera_shop_56d450842cb32' ), 
+					array("icon_value" => "fa-phone" ,"text" => "0 332 548 954", "link" => "#", 'id' => 'azera_shop_56d450842cb31' ) 
 			)
 		)
 	));
@@ -655,15 +655,13 @@ function azera_shop_customize_register( $wp_customize ) {
 	
 	
 	/* Socials icons */
-	
-	
 	$wp_customize->add_setting( 'azera_shop_social_icons', array(
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
 		'default' => json_encode(
 			array(
-				array('icon_value' =>'fa-facebook' , 'link' => '#'),
-				array('icon_value' =>'fa-twitter' , 'link' => '#'),
-				array('icon_value' =>'fa-google-plus-square' , 'link' => '#')
+				array('icon_value' =>'fa-facebook' , 'link' => '#' , 'id' => 'azera_shop_56d069bb8cb71'),
+				array('icon_value' =>'fa-twitter' , 'link' => '#' , 'id' => 'azera_shop_56d069bb8cb72'),
+				array('icon_value' =>'fa-google-plus-square' , 'link' => '#' , 'id' => 'azera_shop_56d069bb8cb73')
 			)
 		)
 
