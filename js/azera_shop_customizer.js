@@ -22,11 +22,6 @@ function media_upload(button_class) {
 							display_field.val(attachment.sizes.thumbnail.url);
                             display_field.trigger('change');
 							break;
-						case 'azera_shop_team':
-							console.log(attachment.sizes);
-							display_field.val(attachment.sizes.azera_shop_team.url);
-                            display_field.trigger('change');
-							break
 						case 'azera_shop_services':
 							display_field.val(attachment.sizes.azera_shop_services.url);
                             display_field.trigger('change');

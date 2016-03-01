@@ -8,9 +8,9 @@
 	$azera_shop_services = get_theme_mod('azera_shop_services_content',
 		json_encode(
 			array(
-					array('choice'=>'azera_shop_icon','icon_value' => 'icon-basic-webpage-multiple','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-					array('choice'=>'azera_shop_icon','icon_value' => 'icon-ecommerce-graph3','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop')),
-					array('choice'=>'azera_shop_icon','icon_value' => 'icon-basic-geolocalize-05','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'))
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-diamond','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb37'),
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-line-chart','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb38'),
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-map-marker','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb39')
 			)
 		)
 	);
@@ -57,14 +57,14 @@
 																
 																$azera_shop_link_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
 																
-																echo '<div class="service-icon colored-text"><a href="'.esc_url($azera_shop_link_services).'"><span class="'.esc_attr($azera_shop_service_box->icon_value).'"></span></a></div>';
+																echo '<div class="service-icon colored-text"><a href="'.esc_url($azera_shop_link_services).'"><i class="fa '.esc_attr($azera_shop_service_box->icon_value).'"></i></a></div>';
 															} else {
 															
-																echo '<div class="service-icon colored-text"><a href="'.esc_url($azera_shop_service_box->link).'"><span class="'.esc_attr($azera_shop_service_box->icon_value).'"></span></a></div>';
+																echo '<div class="service-icon colored-text"><a href="'.esc_url($azera_shop_service_box->link).'"><i class="fa '.esc_attr($azera_shop_service_box->icon_value).'"></i></a></div>';
 															}
 
 														} else {
-															echo '<div class="service-icon colored-text"><span class="'.esc_attr($azera_shop_service_box->icon_value).'"></span></div>';
+															echo '<div class="service-icon colored-text"><i class="fa '.esc_attr($azera_shop_service_box->icon_value).'"></i></div>';
 														}
 													}
 												}
