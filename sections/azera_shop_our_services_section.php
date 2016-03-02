@@ -8,9 +8,9 @@
 	$azera_shop_services = get_theme_mod('azera_shop_services_content',
 		json_encode(
 			array(
-					array('choice'=>'azera_shop_icon','icon_value' => 'fa-diamond','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb37'),
-					array('choice'=>'azera_shop_icon','icon_value' => 'fa-line-chart','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb38'),
-					array('choice'=>'azera_shop_icon','icon_value' => 'fa-map-marker','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d450842cb39')
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-diamond','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d6b20a454bf'),
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-line-chart','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d6b208454be'),
+					array('choice'=>'azera_shop_icon','icon_value' => 'fa-map-marker','title' => esc_html__('Lorem Ipsum','azera-shop'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','azera-shop'), 'id' => 'azera_shop_56d6b206454bd')
 			)
 		)
 	);
@@ -55,16 +55,21 @@
 															
 															if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
 																
-																$azera_shop_link_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
-																
-																echo '<div class="service-icon colored-text"><a href="'.esc_url($azera_shop_link_services).'"><i class="fa '.esc_attr($azera_shop_service_box->icon_value).'"></i></a></div>';
+																$azera_shop_link_services = icl_t('Featured Area Link',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
+																$azera_shop_icon_services = icl_t('Featured Area Icon',$azera_shop_service_box->id.'_services_icon',$azera_shop_service_box->icon_value);
+																echo '<div class="service-icon colored-text"><a href="'.esc_url($azera_shop_link_services).'"><i class="fa '.esc_attr($azera_shop_icon_services).'"></i></a></div>';
 															} else {
 															
 																echo '<div class="service-icon colored-text"><a href="'.esc_url($azera_shop_service_box->link).'"><i class="fa '.esc_attr($azera_shop_service_box->icon_value).'"></i></a></div>';
 															}
 
 														} else {
-															echo '<div class="service-icon colored-text"><i class="fa '.esc_attr($azera_shop_service_box->icon_value).'"></i></div>';
+															if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
+																$azera_shop_icon_services = icl_t('Featured Area Icon',$azera_shop_service_box->id.'_services_icon',$azera_shop_service_box->icon_value);
+																echo '<div class="service-icon colored-text"><i class="fa '.esc_attr($azera_shop_icon_services).'"></i></div>';
+															} else {
+																echo '<div class="service-icon colored-text"><i class="fa '.esc_attr($azera_shop_service_box->icon_value).'"></i></div>';
+															}
 														}
 													}
 												}
@@ -75,14 +80,14 @@
 																
 																if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
 																
-																	$azera_shop_title_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_title',$azera_shop_service_box->title);
-																	$azera_shop_link_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
-														
-																	echo '<a href="'.esc_url($azera_shop_link_services).'"><img src="'.esc_url($azera_shop_service_box->image_url).'" alt="'.$azera_shop_title_services.'"/></a>';
+																	$azera_shop_title_services = icl_t('Featured Area Title',$azera_shop_service_box->id.'_services_title',$azera_shop_service_box->title);
+																	$azera_shop_link_services = icl_t('Featured Area Link',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
+																	$azera_shop_image_services = icl_t('Featured Area Image',$azera_shop_service_box->id.'_services_image',$azera_shop_service_box->image_url);
+																	echo '<a href="'.esc_url($azera_shop_link_services).'"><img src="'.esc_url($azera_shop_image_services).'" alt="'.esc_html($azera_shop_title_services).'"/></a>';
 																	
 																} else {
 																	
-																	echo '<a href="'.esc_url($azera_shop_service_box->link).'"><img src="'.esc_url($azera_shop_service_box->image_url).'" alt="'.$azera_shop_service_box->title.'"/></a>';
+																	echo '<a href="'.esc_url($azera_shop_service_box->link).'"><img src="'.esc_url($azera_shop_service_box->image_url).'" alt="'.esc_html($azera_shop_service_box->title).'"/></a>';
 																}	
 																
 																
@@ -90,9 +95,10 @@
 																
 																if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
 																	
-																	$azera_shop_link_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
-																	
-																	echo '<a href="'.esc_url($azera_shop_link_services).'"><img src="'.esc_url($azera_shop_service_box->image_url).'" alt="'.esc_html__('Featured Image','azera-shop').'"/></a>';
+																	$azera_shop_link_services = icl_t('Featured Area Link',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
+																	$azera_shop_image_services = icl_t('Featured Area Image',$azera_shop_service_box->id.'_services_image',$azera_shop_service_box->image_url);
+
+																	echo '<a href="'.esc_url($azera_shop_link_services).'"><img src="'.esc_url($azera_shop_image_services).'" alt="'.esc_html__('Featured Image','azera-shop').'"/></a>';
 																	
 																} else {
 																	
@@ -102,9 +108,19 @@
 															}
 														} else {
 															if(!empty($azera_shop_service_box->title)){
-																echo '<img src="'.esc_url($azera_shop_service_box->image_url).'" alt="'.$azera_shop_service_box->title.'"/>';
+
+																if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
+																	echo '<img src="'.esc_url($icl_t('Featured Area Image', $azera_shop_service_box->id.'_services_image',$azera_shop_service_box->image_url)).'" alt="'.esc_html(icl_t('Featured Area Title',$azera_shop_service_box->id.'_services_title',$azera_shop_service_box->title)).'"/>';
+																} else {
+																	echo '<img src="'.$azera_shop_service_box->image_url.'" alt="'.esc_html($azera_shop_service_box->title).'"/>';
+																}
 															} else {
-																echo '<img src="'.esc_url($azera_shop_service_box->image_url).'" alt="'.esc_html__('Featured Image','azera-shop').'"/>';
+																if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
+																	$azera_shop_image_services = icl_t('Featured Area Image',$azera_shop_service_box->id.'_services_image',$azera_shop_service_box->image_url);
+																	echo '<img src="'.esc_url($azera_shop_image_services).'" alt="'.esc_html__('Featured Image','azera-shop').'"/>';
+																} else {
+																	echo '<img src="'.esc_url($azera_shop_service_box->image_url).'" alt="'.esc_html__('Featured Image','azera-shop').'"/>';
+																}
 															}
 														}
 													}
@@ -113,15 +129,15 @@
 											if(!empty($azera_shop_service_box->title)){
 												if( !empty($azera_shop_service_box->link) ){
 													if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
-														$azera_shop_title_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_title',$azera_shop_service_box->title);
-														$azera_shop_link_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
+														$azera_shop_title_services = icl_t('Featured Area Title',$azera_shop_service_box->id.'_services_title',$azera_shop_service_box->title);
+														$azera_shop_link_services = icl_t('Featured Area Link',$azera_shop_service_box->id.'_services_link',$azera_shop_service_box->link);
 														echo '<h3 class="colored-text"><a href="'.esc_url($azera_shop_link_services).'">'.esc_attr($azera_shop_title_services).'</a></h3>';
 													} else {
 														echo '<h3 class="colored-text"><a href="'.esc_url($azera_shop_service_box->link).'">'.esc_attr($azera_shop_service_box->title).'</a></h3>';
 													}
 												} else {
 													if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
-														$azera_shop_title_services = icl_t('Featured Area',$azera_shop_service_box->id.'_services_title',$azera_shop_service_box->title);
+														$azera_shop_title_services = icl_t('Featured Area Title',$azera_shop_service_box->id.'_services_title',$azera_shop_service_box->title);
 														echo '<h3 class="colored-text">'.esc_attr($azera_shop_title_services).'</h3>';
 													} else {
 														echo '<h3 class="colored-text">'.esc_attr($azera_shop_service_box->title).'</h3>';
@@ -130,7 +146,7 @@
 											}
 											if(!empty($azera_shop_service_box->text)){
 												if (function_exists ( 'icl_t' ) && !empty($azera_shop_service_box->id)){
-													echo '<p>'.icl_t('Featured Area',$azera_shop_service_box->id.'_services_text',html_entity_decode($azera_shop_service_box->text)).'</p>';
+													echo '<p>'.icl_t('Featured Area Text',$azera_shop_service_box->id.'_services_text',html_entity_decode($azera_shop_service_box->text)).'</p>';
 												} else {
 													echo '<p>'.html_entity_decode($azera_shop_service_box->text).'</p>';
 												}
