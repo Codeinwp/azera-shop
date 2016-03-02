@@ -5,11 +5,11 @@
 	$azera_shop_logos = get_theme_mod('azera_shop_logos_content',
 		json_encode(
 			array( 
-				array("image_url" => azera_shop_get_file('/images/companies/1.png') ,"link" => "#" ),
-				array("image_url" => azera_shop_get_file('/images/companies/2.png') ,"link" => "#" ),
-				array("image_url" => azera_shop_get_file('/images/companies/3.png') ,"link" => "#" ),
-				array("image_url" => azera_shop_get_file('/images/companies/4.png') ,"link" => "#" ),
-				array("image_url" => azera_shop_get_file('/images/companies/5.png') ,"link" => "#" )
+				array("image_url" => azera_shop_get_file('/images/companies/1.png') ,"link" => "#", "id" => "azera_shop_56d450842cb37" ),
+				array("image_url" => azera_shop_get_file('/images/companies/2.png') ,"link" => "#", "id" => "azera_shop_56d6b175454b8" ),
+				array("image_url" => azera_shop_get_file('/images/companies/3.png') ,"link" => "#", "id" => "azera_shop_56d6b17a454b9" ),
+				array("image_url" => azera_shop_get_file('/images/companies/4.png') ,"link" => "#", "id" => "azera_shop_56d6b17b454ba" ),
+				array("image_url" => azera_shop_get_file('/images/companies/5.png') ,"link" => "#", "id" => "azera_shop_56d6b17d454bb" )
 			)
 		)
 	);
@@ -22,11 +22,21 @@
 			
 					echo '<li>';
 					if(!empty($azera_shop_logo->link)){
-						echo '<a href="'.$azera_shop_logo->link.'" title="">';
-							echo '<img src="'.$azera_shop_logo->image_url.'" alt="'. esc_html__('Logo','azera-shop') .'">';
-						echo '</a>';
+						if(function_exists('icl_t')){
+							echo '<a href="'.esc_url( icl_t('Logo link', $azera_shop_logo->id.'_logo_link', $azera_shop_logo->link) ).'" title="">';
+								echo '<img src="'.esc_url( icl_t('Logo image', $azera_shop_logo->id.'_logo_image', $azera_shop_logo->image_url) ).'" alt="'. esc_html__('Logo','azera-shop') .'">';
+							echo '</a>';
+						} else {
+							echo '<a href="'.esc_url( $azera_shop_logo->link ).'" title="">';
+								echo '<img src="'.esc_url( $azera_shop_logo->image_url ).'" alt="'. esc_html__('Logo','azera-shop') .'">';
+							echo '</a>';
+						}
 					} else {
-						echo '<img src="'.esc_url($azera_shop_logo->image_url).'" alt="'.esc_html__('Logo','azera-shop').'">';
+						if(function_exists('icl_t')){
+							echo '<img src="'.esc_url( icl_t('Logo image', $azera_shop_logo->id.'_logo_image', $azera_shop_logo->image_url) ).'" alt="'.esc_html__('Logo','azera-shop').'">';
+						} else {
+							echo '<img src="'.esc_url( $azera_shop_logo->image_url ).'" alt="'.esc_html__('Logo','azera-shop').'">';
+						}
 					}
 					echo '</li>';
 

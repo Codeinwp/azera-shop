@@ -550,6 +550,33 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 		}
 	}
 	
+	/*Logos*/
+	$azera_shop_logos_pl = get_theme_mod('azera_shop_logos_content');
+	if(!empty($azera_shop_logos_pl)){
+		$azera_shop_logos_pl_decoded = json_decode($azera_shop_logos_pl);
+		foreach($azera_shop_logos_pl_decoded as $azera_shop_logo_box){
+			$azera_shop_logos_icon = $azera_shop_logo_box->image_url;
+			$azera_shop_logos_id = $azera_shop_logo_box->id;
+			$azera_shop_logos_link = $azera_shop_logo_box->link;
+			if(!empty($azera_shop_logos_id)) {
+				if(!empty($azera_shop_logos_icon)){
+					icl_unregister_string ('Logo image' , $azera_shop_logos_id.'_logo_image' );
+					icl_register_string( 'Logo image' , $azera_shop_logos_id.'_logo_image' , $azera_shop_logos_icon );
+				} else {
+					icl_unregister_string ('Logo image' , $azera_shop_logos_id.'_logo_image' );
+				}
+	
+				if(!empty($azera_shop_logos_link)){
+ 					icl_unregister_string ('Logo link' , $azera_shop_logos_id.'_logo_link' );
+ 					icl_register_string( 'Logo link' , $azera_shop_logos_id.'_logo_link' , $azera_shop_logos_link );
+ 				} else {
+ 					icl_unregister_string ('Logo link' , $azera_shop_logos_id.'_logo_link' );
+ 				}
+			}
+		}
+	}
+
+
 	/*Services*/
 	$azera_shop_services_pl = get_theme_mod('azera_shop_services_content');
 	if(!empty($azera_shop_services_pl)){
@@ -559,24 +586,44 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			$azera_shop_services_content_text = $azera_shop_service_box->text;
 			$azera_shop_services_content_id = $azera_shop_service_box->id;
 			$azera_shop_services_content_link = $azera_shop_service_box->link;
+			$azera_shop_services_content_image = $azera_shop_service_box->image_url;
+			$azera_shop_services_content_icon = $azera_shop_service_box->icon_value;
+			$azera_shop_services_content_choice = $azera_shop_service_box->choice;
+			
 			if(!empty($azera_shop_services_content_id)) {
-				if(!empty($azera_shop_services_content_title)){
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_title' );
-					icl_register_string( 'Featured Area' , $azera_shop_services_content_id.'_services_title' , $azera_shop_services_content_title );
+
+				if( $azera_shop_services_content_choice == 'azera_shop_image' ){
+					if(!empty($azera_shop_services_content_image)){
+						icl_unregister_string ('Featured Area Image' , $azera_shop_services_content_id.'_services_image' );
+						icl_register_string( 'Featured Area Image' , $azera_shop_services_content_id.'_services_image' , $azera_shop_services_content_image );
+					} else {
+						icl_unregister_string ('Featured Area Image' , $azera_shop_services_content_id.'_services_image' );
+					}
 				} else {
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_title' );
+					if(!empty($azera_shop_services_content_icon)){
+						icl_unregister_string ('Featured Area Icon' , $azera_shop_services_content_id.'_services_icon' );
+						icl_register_string( 'Featured Area Icon' , $azera_shop_services_content_id.'_services_icon' , $azera_shop_services_content_icon );
+					} else {
+						icl_unregister_string ('Featured Area Icon' , $azera_shop_services_content_id.'_services_icon' );
+					}
+				}
+				if(!empty($azera_shop_services_content_title)){
+					icl_unregister_string ('Featured Area Title' , $azera_shop_services_content_id.'_services_title' );
+					icl_register_string( 'Featured Area Title' , $azera_shop_services_content_id.'_services_title' , $azera_shop_services_content_title );
+				} else {
+					icl_unregister_string ('Featured Area Title' , $azera_shop_services_content_id.'_services_title' );
 				}
 				if(!empty($azera_shop_services_content_text)){
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_text' );
-					icl_register_string( 'Featured Area' , $azera_shop_services_content_id.'_services_text' , $azera_shop_services_content_text );
+					icl_unregister_string ('Featured Area Text' , $azera_shop_services_content_id.'_services_text' );
+					icl_register_string( 'Featured Area Text' , $azera_shop_services_content_id.'_services_text' , $azera_shop_services_content_text );
 				} else {
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_text' );
+					icl_unregister_string ('Featured Area Text' , $azera_shop_services_content_id.'_services_text' );
 				}
 				if(!empty($azera_shop_services_content_link)){
- 					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_link' );
- 					icl_register_string( 'Featured Area' , $azera_shop_services_content_id.'_services_link' , $azera_shop_services_content_link );
+ 					icl_unregister_string ('Featured Area Link' , $azera_shop_services_content_id.'_services_link' );
+ 					icl_register_string( 'Featured Area Link' , $azera_shop_services_content_id.'_services_link' , $azera_shop_services_content_link );
  				} else {
- 					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_link' );
+ 					icl_unregister_string ('Featured Area Link' , $azera_shop_services_content_id.'_services_link' );
  				}
 			}
 		}
@@ -591,24 +638,31 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			$azera_shop_testimonials_content_subtitle = $azera_shop_testimonials_box->subtitle;
 			$azera_shop_testimonials_content_text = $azera_shop_testimonials_box->text;
 			$azera_shop_testimonials_content_id = esc_attr($azera_shop_testimonials_box->id);
+			$azera_shop_testimonials_content_image = $azera_shop_testimonials_box->image_url;
 			if(!empty($azera_shop_testimonials_content_id)) {
 				if(!empty($azera_shop_testimonials_content_title)){
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_title' );
-					icl_register_string( 'Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_title' , $azera_shop_testimonials_content_title );
+					icl_unregister_string ('Testimonial Title' , $azera_shop_testimonials_content_id.'_testimonial_title' );
+					icl_register_string( 'Testimonial Title' , $azera_shop_testimonials_content_id.'_testimonial_title' , $azera_shop_testimonials_content_title );
 				} else {
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_title' );
+					icl_unregister_string ('Testimonial Title' , $azera_shop_testimonials_content_id.'_testimonial_title' );
 				}
 				if(!empty($azera_shop_testimonials_content_subtitle)){
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_subtitle' );
-					icl_register_string( 'Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_subtitle' , $azera_shop_testimonials_content_subtitle );
+					icl_unregister_string ('Testimonial Subtitle' , $azera_shop_testimonials_content_id.'_testimonial_subtitle' );
+					icl_register_string( 'Testimonial Subtitle' , $azera_shop_testimonials_content_id.'_testimonial_subtitle' , $azera_shop_testimonials_content_subtitle );
 				} else {
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_subtitle' );
+					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonial_subtitle' );
 				}
 				if(!empty($azera_shop_testimonials_content_text)){
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_text' );
-					icl_register_string( 'Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_text' , $azera_shop_testimonials_content_text );
+					icl_unregister_string ('Testimonial Text' , $azera_shop_testimonials_content_id.'_testimonial_text' );
+					icl_register_string( 'Testimonial Text' , $azera_shop_testimonials_content_id.'_testimonial_text' , $azera_shop_testimonials_content_text );
 				} else {
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_text' );
+					icl_unregister_string ('Testimonial Text' , $azera_shop_testimonials_content_id.'_testimonial_text' );
+				}
+				if(!empty($azera_shop_testimonials_content_image)){
+					icl_unregister_string ('Testimonial image' , $azera_shop_testimonials_content_id.'_testimonial_image' );
+					icl_register_string( 'Testimonial image' , $azera_shop_testimonials_content_id.'_testimonial_image' , $azera_shop_testimonials_content_image );
+				} else {
+					icl_unregister_string ('Testimonial image' , $azera_shop_testimonials_content_id.'_testimonial_image' );
 				}
 			}
 		}
@@ -626,23 +680,23 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			
 			if(!empty($azera_shop_contact_info_content_id)) {
 				if(!empty($azera_shop_contact_info_content_text)){
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
-					icl_register_string( 'Contact info' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_text );
+					icl_unregister_string ('Contact Text' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_register_string( 'Contact Text' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_text );
 				} else {
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_unregister_string ('Contact Text' , $azera_shop_contact_info_content_id.'_contact' );
 				}
 				
 				if(!empty($azera_shop_contact_info_content_icon)){
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
-					icl_register_string( 'Contact info' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_icon );
+					icl_unregister_string ('Contact Icon' , $azera_shop_contact_info_content_id.'_contact_icon' );
+					icl_register_string( 'Contact Icon' , $azera_shop_contact_info_content_id.'_contact_icon' , $azera_shop_contact_info_content_icon );
 				} else {
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_unregister_string ('Contact Icon' , $azera_shop_contact_info_content_id.'_contact_icon' );
 				}
 				if(!empty($azera_shop_contact_info_content_link)){
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
-					icl_register_string( 'Contact info' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_link );
+					icl_unregister_string ('Contact Link' , $azera_shop_contact_info_content_id.'_contact_link' );
+					icl_register_string( 'Contact Link' , $azera_shop_contact_info_content_id.'_contact_link' , $azera_shop_contact_info_content_link );
 				} else {
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_unregister_string ('Contact Link' , $azera_shop_contact_info_content_id.'_contact_link' );
 				}
 			}
 			
