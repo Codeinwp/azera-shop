@@ -49,7 +49,12 @@ $cat = get_theme_mod('azera_shop_woocomerce_categories','all');
                             <div class="col-md-4 col-sm-6 home-shop-product-wrap-all">
                                 <div class="home-shop-product-wrap">
                                     <div class="home-shop-product-img">
-                                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" />'; ?>
+                                        <?php 
+                                        if (has_post_thumbnail( $loop->post->ID )) 
+                                            echo get_the_post_thumbnail($loop->post->ID,'azera_shop_home_prod'); 
+                                        else 
+                                            echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" />'; 
+                                        ?>
                                     </div>
                                     <p class="home-shop-product-price">
                                         <?php echo $product->get_price_html(); ?>
@@ -60,9 +65,9 @@ $cat = get_theme_mod('azera_shop_woocomerce_categories','all');
                                                 <h3><?php the_title(); ?></h3>
                                             </div>
                                         </a>
-                                        <p class="home-shop-product-content">
+                                        <div class="home-shop-product-content">
                                             <?php the_excerpt(); ?>
-                                        </p>
+                                        </div>
                                         <div class="home-add-to-cart-wrap">
                                             <?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
                                         </div>

@@ -108,6 +108,7 @@ function azera_shop_setup() {
 	add_image_size( 'azera-shop-post-thumbnail-mobile', 500, 233, true );
 	add_image_size( 'azera_shop_services',60,62,true );
 	add_image_size( 'azera_shop_customers',75,75,true );
+	add_image_size( 'azera_shop_home_prod',350,350,true );
 	
 	/**
 	* Welcome screen
