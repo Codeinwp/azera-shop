@@ -735,9 +735,28 @@ function azera_shop_get_template_part($template){
 		}
 	}
 }
+
 function azera_shop_excerpt_more($more) {
  	global $post;
  	return '<a class="moretag" href="'. get_permalink($post->ID) . '"><span class="screen-reader-text">'.esc_html__('Read more about ', 'azera-shop').get_the_title().'</span>[...]</a>';
 }
 
 add_filter('excerpt_more', 'azera_shop_excerpt_more');
+
+// Ensure cart contents update when products are added to the cart via AJAX )
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+
+		<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents">
+			<span class="fa fa-shopping-cart"></span>
+			<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
+		</a>
+
+	<?php
+	
+	$fragments['a.cart-contents'] = ob_get_clean();
+	
+	return $fragments;
+}
