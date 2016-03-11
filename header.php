@@ -145,8 +145,8 @@
 									<div class="fa fa-search header-search-button"></div>
 									<div class="header-search-input">
 										<form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-											<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search Products&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
-											<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" />
+											<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search Products&hellip;', 'placeholder', 'azera-shop' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'azera-shop' ); ?>" />
+											<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'azera-shop' ); ?>" />
 											<input type="hidden" name="post_type" value="product" />
 										</form>
 									</div>
@@ -154,7 +154,7 @@
 
 								<?php if( function_exists( 'WC' ) ): ?>
 									<div class="navbar-cart-inner">
-										<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents">
+										<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
 											<span class="fa fa-shopping-cart"></span>
 											<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 										</a>

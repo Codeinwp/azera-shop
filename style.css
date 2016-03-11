@@ -1404,6 +1404,9 @@ Search form Header
     right: 0;
     top: 100%;
     background: rgba(26, 26, 26, .9);
+	-webkit-backface-visibility: hidden;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.08);
+    box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.08);
 }
 .header-search.header-search-open .header-search-input {
     display: block;
@@ -5661,6 +5664,9 @@ h2.screen-reader-text {
 	    overflow: hidden;
 	    padding-top: 0;
 	    padding-bottom: 0;
+		-webkit-backface-visibility: hidden;
+		-webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+		box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.08);
 	}
 	.nav > li {
 		margin-left: 0;
@@ -5780,6 +5786,7 @@ h2.screen-reader-text {
 	    width: 100%;
 	    left: 0;
 	    top: 100%;
+		border-top: 1px solid rgba(49, 49, 49, 0.1);
 	}
 	.header-search {
 		position: initial;
