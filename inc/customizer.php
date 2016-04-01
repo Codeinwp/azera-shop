@@ -80,7 +80,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	
 		/* Logo	*/
 	$wp_customize->add_setting( 'azera_shop_logo', array(
-		'default' => azera_shop_get_file('/images/logo-nav.png'),
 		'sanitize_callback' => 'esc_url',
 		'transport' => 'postMessage'
 	));
