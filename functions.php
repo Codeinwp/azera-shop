@@ -290,7 +290,7 @@ require get_template_directory() . '/inc/jetpack.php';
 function azera_shop_admin_styles() {
 	wp_enqueue_style( 'azera-shop-admin-stylesheet', azera_shop_get_file('/css/admin-style.css'),'1.0.0' );
 }
-add_action( 'admin_enqueue_scripts', 'azera_shop_admin_styles', 10 );
+add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_styles', 10 );
 
 // Adding IE-only scripts to header.
 function azera_shop_ie () {

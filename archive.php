@@ -18,30 +18,32 @@
 <?php
 $azera_shop_blog_header_image = get_theme_mod( 'azera_shop_blog_header_image', azera_shop_get_file('/images/background-images/background.jpg') );
 $azera_shop_blog_header_title = get_theme_mod( 'azera_shop_blog_header_title', esc_html__('BLOG','azera-shop')  );
-$azera_shop_blog_header_subtitle = get_theme_mod( 'azera_shop_blog_header_subtitle', esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.','azera-shop') );
+$azera_shop_blog_header_subtitle = get_theme_mod( 'azera_shop_blog_header_subtitle' );
 
-if( !empty($azera_shop_blog_header_image) || !empty($azera_shop_blog_header_title) || !empty($azera_shop_blog_header_subtitle) ):
+if( !empty($azera_shop_blog_header_image) || !empty($azera_shop_blog_header_title) || !empty($azera_shop_blog_header_subtitle) ) {
 
-	if( !empty($azera_shop_blog_header_image) ):
+	if( !empty($azera_shop_blog_header_image) ) {
 		echo '<div class="archive-top" style="background-image: url('.$azera_shop_blog_header_image.');" role="banner">';
-	else:
+	} else {
 		echo '<div class="archive-top" role="banner">';
-	endif;
-	echo '<div class="section-overlay-layer">';
-	echo '<div class="container">';
-	if( !empty($azera_shop_blog_header_title) ):
-		echo '<p class="archive-top-big-title">'.$azera_shop_blog_header_title.'</p>';
-		echo '<p class="colored-line"></p>';
-	endif;
+	}
+		echo '<div class="section-overlay-layer">';
+		
+			echo '<div class="container">';
+			
+				if( !empty($azera_shop_blog_header_title) ) {
+					echo '<p class="archive-top-big-title">'.$azera_shop_blog_header_title.'</p>';
+					echo '<p class="colored-line"></p>';
+				}
 
-	if( !empty($azera_shop_blog_header_subtitle) ):
-		echo '<p class="archive-top-text">'.$azera_shop_blog_header_subtitle.'</p>';
-	endif;
-	echo '</div>';
-	echo '</div>';
-	echo '</div>';
+				if( !empty($azera_shop_blog_header_subtitle) ) {
+					echo '<p class="archive-top-text">'.$azera_shop_blog_header_subtitle.'</p>';
+				}
+			echo '</div><!-- .container -->';
+		echo '</div><!-- .section-overlay-layer -->';
+	echo '</div><!-- .archive-top -->';
 
-endif;
+}
 
 ?>
 
@@ -90,4 +92,3 @@ endif;
 </div><!-- .content-wrap -->
 
 <?php get_footer(); ?>
-

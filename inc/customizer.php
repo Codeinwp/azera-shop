@@ -640,7 +640,6 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	/* Blog Header subtitle */
 	$wp_customize->add_setting( 'azera_shop_blog_header_subtitle', array(
-		'default' 			=> esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.','azera-shop'),
 		'sanitize_callback' => 'azera_shop_sanitize_text',
 		'transport' 		=> 'postMessage'
 	));
