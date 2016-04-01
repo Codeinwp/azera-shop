@@ -2,7 +2,7 @@
 
 Contributors: codeinwp, themeisle
 
-Tags: black, orange, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Tags: black, orange, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready
 
 Requires at least:	3.3.0
 
@@ -42,9 +42,7 @@ The exceptions to this license are as follows:
 			Source: https://download.unsplash.com/31/8jLdwLg6TLKIQfJcZgDb_Freedom_5.jpg
 	* images/background-images/parallax-img/parallax-img1.jpg
 			Source: https://download.unsplash.com/photo-1434626881859-194d67b2b86f
-	* images/clients/1.jpg
-			Source: https://download.unsplash.com/photo-1433615988899-12bdf1bd42b6
-	* images/clients/2.jpg
-			Source: https://download.unsplash.com/photo-1427096105551-15e2512fd2dc
-	* images/clients/3.jpg
-			Source: https://download.unsplash.com/photo-1427088625471-da8a7193afd3
+	* images/about-us.png
+		Source: https://download.unsplash.com/reserve/ysPfhVSzSP2m629CW0mw_selfPortrait.jpg
+		Source: https://download.unsplash.com/photo-1435536949628-9954f4e829cd
+		Source: https://download.unsplash.com/photo-1432921481493-3d589756af70	

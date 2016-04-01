@@ -10,11 +10,12 @@
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
 				<?php 
-					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-					the_post_thumbnail();
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail();
 					}
+					
+					the_title( '<h3 itemprop="name" class="edd_download_title">', '</h3>' ); 
 				?>
-				<?php the_title( '<h3 itemprop="name" class="edd_download_title">', '</h3>' ); ?>
 			</a>
 		</div>
 		

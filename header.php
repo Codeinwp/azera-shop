@@ -25,19 +25,19 @@
 		
 	 global $wp_customize;
 
-	 if( !isset( $wp_customize ) && is_page_template('template-frontpage.php') ):
+	 if( !isset( $wp_customize ) && is_page_template('template-frontpage.php') ) {
 	 
 		$azera_shop_disable_preloader = get_theme_mod('azera_shop_disable_preloader');
 		
-		if( isset($azera_shop_disable_preloader) && ($azera_shop_disable_preloader != 1)):
+		if( isset($azera_shop_disable_preloader) && ($azera_shop_disable_preloader != 1)) {
 			 
 			echo '<div class="preloader">';
 				echo '<div class="status">&nbsp;</div>';
 			echo '</div>';
 			
-		endif;	
+		}
 
-	endif; ?>
+	} ?>
 
 
 	<!-- =========================
@@ -83,7 +83,7 @@
 	                        <div class="header-logo-wrap">
 								<?php
 									$azera_shop_logo = get_theme_mod('azera_shop_logo');
-									if(!empty($azera_shop_logo)):
+									if(!empty($azera_shop_logo)) {
 										echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 											echo '<img src="'.esc_url($azera_shop_logo).'" alt="'.get_bloginfo('title').'">';
 										echo '</a>';
@@ -91,17 +91,17 @@
 											echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 											echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 										echo '</div>';	
-									else:
-										if( isset( $wp_customize ) ):
+									} else {
+										if( isset( $wp_customize ) ) {
 											echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand azera_shop_only_customizer" title="'.get_bloginfo('title').'">';
 												echo '<img src="" alt="'.get_bloginfo('title').'">';
 											echo '</a>';
-										endif;
+										}
 										echo '<div class="header-logo-wrap text-header">';
 											echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 											echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 										echo '</div>';							
-									endif;	
+									}	
 								?>
 							</div>
 
@@ -138,7 +138,7 @@
 		                    </div><!-- .navbar-collapse -->
 		                </div><!-- .header-nav-wrap -->
 
-						<?php if( class_exists( 'WooCommerce' ) ): ?>
+						<?php if( class_exists( 'WooCommerce' ) ) { ?>
 							<div class="header-icons-wrap">
 								
 								<div class="header-search">
@@ -152,17 +152,17 @@
 									</div>
 								</div>
 
-								<?php if( function_exists( 'WC' ) ): ?>
+								<?php if( function_exists( 'WC' ) ) { ?>
 									<div class="navbar-cart-inner">
 										<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
 											<span class="fa fa-shopping-cart"></span>
 											<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 										</a>
 									</div>
-								<?php endif; ?>
+								<?php } ?>
 
 							</div>
-						<?php endif; ?>
+						<?php } ?>
 
 					</div><!--  -->
 

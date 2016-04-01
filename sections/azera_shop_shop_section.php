@@ -19,9 +19,7 @@ $cat = get_theme_mod('azera_shop_woocomerce_categories','all');
                     } elseif ( isset( $wp_customize )   ) {
                         echo '<h2 class="dark-text azera_shop_only_customizer"></h2><div class="colored-line azera_shop_only_customizer"></div>';
                     }
-                    ?>
-
-                    <?php
+                    
                     if( !empty($azera_shop_shop_section_subtitle) ){
                         echo '<div class="sub-heading">'.esc_attr($azera_shop_shop_section_subtitle).'</div>';
                     } elseif ( isset( $wp_customize )   ) {

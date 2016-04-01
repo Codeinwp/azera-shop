@@ -69,8 +69,6 @@
 						<div id="intro-section" class="intro-section">
 
 							<!-- WELCOM MESSAGE -->
-							
-
 
 							<?php
 								if( !empty($azera_shop_header_subtitle) ){
@@ -78,18 +76,13 @@
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<h5 id="intro_section_text_2" class="white-text azera_shop_only_customizer"></h5>';
 								}
-							?>
 							
-							<?php
 								if( !empty($azera_shop_header_title) ){
 									echo '<h1 id="intro_section_text_1" class="intro white-text">'.esc_attr($azera_shop_header_title).'</h1>';
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<h1 id="intro_section_text_1" class="intro white-text azera_shop_only_customizer"></h1>';
 								}
-							?>
-
-							<!-- BUTTON -->
-							<?php
+							
 								if( !empty($azera_shop_header_button_text) ){
 									if( empty($azera_shop_header_button_link) ){
 										echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll"><span class="screen-reader-text">'.esc_html__('Header button label:','azera-shop').$azera_shop_header_button_text.'</span>'.$azera_shop_header_button_text.'</button>';
