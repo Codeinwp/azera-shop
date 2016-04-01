@@ -8,6 +8,9 @@
 	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
 	$azera_shop_first_layer = get_theme_mod('azera_shop_first_layer', azera_shop_get_file('/images/background1.png'));
 	$azera_shop_second_layer = get_theme_mod('azera_shop_second_layer',azera_shop_get_file('/images/background2.png'));
+	$azera_shop_header_right_image = get_theme_mod('azera_shop_header_right_image','');
+	$azera_shop_header_layout = get_theme_mod('azera_shop_header_layout','layout2');
+	
 	if(!empty($azera_shop_header_logo) || !empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){
 ?>
 
@@ -52,7 +55,13 @@
 			<!-- /END ONLY LOGO ON HEADER -->
 
 			<div class="row">
-				<div class="col-md-12 intro-section-text-wrap">
+				<?php
+				if( !empty($azera_shop_header_layout) && ($azera_shop_header_layout == 'layout2') ) {
+					echo '<div class="col-md-6 text-left">';
+				} else {
+					echo '<div class="col-md-12 intro-section-text-wrap">';
+				}	
+				?>	
 
 					<!-- HEADING AND BUTTONS -->
 					<?php 
@@ -102,7 +111,18 @@
 					<?php
 					}
 					?>
-				</div>
+				</div><!-- .col-md-12 or .col-md-6 -->
+				
+				<?php
+				if(!empty($azera_shop_header_right_image) && !empty($azera_shop_header_layout) && ($azera_shop_header_layout == 'layout2') ) { ?>
+					<div class="col-md-6 text-right">
+						<div class=" pull-right hidden-sm hidden-xs">
+							<img src="<?php echo $azera_shop_header_right_image; ?>" alt="">
+						</div>
+					</div>
+				<?php
+				} ?>
+				
 			</div>
 			</div>
 		</div>

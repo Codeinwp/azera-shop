@@ -303,3 +303,39 @@ jQuery(document).ready(function() {
 		th.find(".azera-shop-woocommerce-cat").trigger('change');
 	})
 });	
+
+/* Change header layout */
+
+jQuery(document).ready(function () {
+	
+	var was_clicked = false;
+	if (jQuery('.azera-shop-layout').val() == 'layout1') {
+		jQuery('#customize-control-azera_shop_header_right_image').css('visibility', 'hidden');
+		jQuery('#customize-control-azera_shop_header_right_image').css('position', 'absolute');
+		was_clicked = false;
+	} else {
+		jQuery('#customize-control-azera_shop_header_right_image').css('visibility', 'visible');
+		jQuery('#customize-control-azera_shop_header_right_image').css('position', 'relative');
+		was_clicked = true;
+	}
+
+	jQuery(document).on('click', '.azera-shop-image-picker li', function () {
+		var th = jQuery(this).parent().parent();
+		var chosed_layout = jQuery(this).attr('id');
+		if (chosed_layout == 'layout1') {
+			jQuery('#customize-control-azera_shop_header_right_image').slideUp();
+			was_clicked = false;
+		} else if (chosed_layout == 'layout2') {
+			if (was_clicked == false) {
+				jQuery('#customize-control-azera_shop_header_right_image').css('visibility', 'visible');
+				jQuery('#customize-control-azera_shop_header_right_image').css('position', 'relative');
+				jQuery('#customize-control-azera_shop_header_right_image').hide();
+				jQuery('#customize-control-azera_shop_header_right_image').slideDown();
+			}
+			was_clicked = true;
+		}
+		th.find(".azera-shop-layout").val(chosed_layout);
+		th.find(".azera-shop-layout").trigger('change');
+	});
+	
+});
