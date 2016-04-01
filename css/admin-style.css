@@ -110,3 +110,13 @@ button.azera_shop_general_control_remove_field:hover{
 .azera_shop_general_control_repeater_container .azera-shop-box-content-hidden{
     padding-top: 5px;
 }
+
+.azera-shop-image-picker li {
+	display: inline-block;
+	margin-right: 7px;
+	cursor: pointer;
+}
+
+.azera-shop-image-picker li:nth-child(even) {
+	margin-right: 0px
+}
