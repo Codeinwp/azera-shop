@@ -25,7 +25,8 @@ class azera_shop_Welcome {
 		add_action( 'azera_shop_welcome', array( $this, 'azera_shop_welcome_getting_started' ), 	    10 );
 		add_action( 'azera_shop_welcome', array($this, 'azera_shop_welcome_actions_required' ),         20 );
 		add_action( 'azera_shop_welcome', array( $this, 'azera_shop_welcome_github' ), 		            30 );
-		add_action( 'azera_shop_welcome', array( $this, 'azera_shop_welcome_changelog' ), 				40 );
+		add_action( 'azera_shop_welcome', array( $this, 'azera_shop_welcome_support' ), 	            40 );
+		add_action( 'azera_shop_welcome', array( $this, 'azera_shop_welcome_changelog' ), 				50 );
 		
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_azera_shop_dismiss_required_action', array( $this, 'azera_shop_dismiss_required_action_callback') );
@@ -125,8 +126,7 @@ class azera_shop_Welcome {
 		wp_localize_script( 'azera-shop-welcome-screen-customizer-js', 'azeraShopWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
 			'aboutpage' => esc_url( admin_url( 'themes.php?page=azera-shop-welcome#actions_required' ) ),
-			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) ),
-			'themeinfo' => __('View Theme Info','azera-shop'),
+			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) )
 		) );
 	}
 	
@@ -176,8 +176,9 @@ class azera_shop_Welcome {
 
 		<ul class="azera-shop-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','azera-shop'); ?></a></li>
-			<li role="presentation" class="azera-shop-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','azera-shop'); ?></a></li>
+			<li role="presentation" class="azera-shop-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions recommended','azera-shop'); ?></a></li>
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','azera-shop'); ?></a></li>
+			<li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab"><?php esc_html_e( 'Support','azera-shop'); ?></a></li>
 			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','azera-shop'); ?></a></li>
 		</ul>
 
@@ -188,8 +189,8 @@ class azera_shop_Welcome {
 			 * @hooked azera_shop_welcome_getting_started - 10
 			 * @hooked azera_shop_welcome_actions_required - 20
 			 * @hooked azera_shop_welcome_github - 30
-			 * @hooked azera_shop_welcome_changelog - 40
-			 * @hooked azera_shop_welcome_free_pro - 50
+			 * @hooked azera_shop_welcome_support - 40
+			 * @hooked azera_shop_welcome_changelog - 50
 			 */
 			do_action( 'azera_shop_welcome' ); ?>
 
@@ -211,12 +212,18 @@ class azera_shop_Welcome {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php' );
 	}
 
-
 	/**
 	 * Contribute
 	 */
 	public function azera_shop_welcome_github() {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/github.php' );
+	}
+	
+	/**
+	 * Support
+	 */
+	public function azera_shop_welcome_support() {
+		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/support.php' );
 	}
 
 	/**

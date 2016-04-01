@@ -118,3 +118,58 @@
 .azera-shop-dismiss-required-action:hover {
     background-color: #CC8C8C;
 }
+
+#github.azera-shop-tab-pane {
+  text-align: center;
+}
+
+#github.azera-shop-tab-pane .azera-shop-tab-pane-half {
+  min-height: 160px;
+}
+
+#github.azera-shop-tab-pane .translate-button, #github .github-button {
+  margin-top: 20px;
+}
+
+#github.azera-shop-tab-pane .dashicons {
+  color: #0073aa;
+  font-size: 12px;
+  width: auto;
+}
+
+#github.azera-shop-tab-pane h4 {
+  margin:10px;;
+}
+
+#github.azera-shop-tab-pane p.review-link {
+  margin:0;
+}
+
+#github.azera-shop-tab-pane .azera-shop-tab-pane-half hr {
+  display: none;
+}
+
+/*Breakpoints*/
+
+@media (max-width: 1200px) {
+	.azera-shop-tab-content {
+		width: 98%;
+	}
+	.azera-shop-tab-pane-half {
+		width: 43%;
+	}
+}
+
+@media (max-width: 782px) {
+	#github.azera-shop-tab-pane .azera-shop-tab-pane-half hr {
+		display:block;
+	}
+	.azera-shop-tab-pane-half {
+		width: auto;
+		float: none;
+		border-left: none;
+	}
+	.azera-shop-welcome-title, .azera-shop-tab-content h1 {
+		line-height: 30px;
+	}
+}

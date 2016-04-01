@@ -295,22 +295,6 @@ jQuery(document).ready(function() {
         jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + azera_shop_aboutpage + '"><span class="azera-shop-actions-count">' + azera_shop_nr_actions_required + '</span></a>');
     }
 
-    /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
-	if( !jQuery( ".azera-shops-upsells" ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section azera-shops-upsells">');
-	}
-
-	if( jQuery( ".azera-shops-upsells" ).length ) {
-
-		jQuery('.azera-shops-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-azera-shop/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', azeraShopCustomizerObject.documentation));
-		jQuery('.azera-shops-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/azera-shop/" class="button" target="_blank">{github}</a>'.replace('{github}', azeraShopCustomizerObject.support));
-
-	}
-
-	if ( !jQuery( ".azera-shops-upsells" ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('</li>');
-	}
-
 	/* WooCommerce category select */
 	jQuery(document).on('change', '.azera_shop_cat_select', function () {
 		var th = jQuery(this).parent().parent();

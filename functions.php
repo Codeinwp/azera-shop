@@ -137,14 +137,7 @@ function azera_shop_setup() {
                 "description"=> esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','azera-shop' ),
                 "check" => defined('INTERGEO_PLUGIN_NAME'),
                 "plugin_slug" => 'intergeo-maps'
-            ),
-            array(
-                "id" => 'azera-shop-req-ac-install-pirate-forms',
-                "title" => esc_html__( 'Install Pirate Forms' ,'azera-shop' ),
-                "description"=> esc_html__( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.','azera-shop' ),
-                "check" => defined('PIRATE_FORMS_VERSION'),
-                "plugin_slug" => 'pirate-forms'
-            ),
+            )
 		);
 		
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
