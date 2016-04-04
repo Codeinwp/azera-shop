@@ -9,22 +9,15 @@
 
 	if( !empty($azera_shop_our_story_image) || !empty($azera_shop_our_story_title) || !empty($azera_shop_our_story_text) ) {
 	?>
-			<section class="brief text-left brief-design-one brief-left" id="story" role="region" aria-label="<?php esc_html_e('About','azera-shop') ?>">
-				<div class="section-overlay-layer">
+			<section class="brief text-left brief-design-one brief-left" id="story" role="region" aria-label="<?php esc_html_e('About','azera-shop') ?>" >
+				<?php if(!empty($azera_shop_our_story_image)) { ?>
+					<div class="section-overlay-layer" style="background-image: url('<?php echo esc_url($azera_shop_our_story_image); ?>');">
+				<?php } else {  ?>
+					<div class="section-overlay-layer">
+				<?php } ?>
+
 					<div class="container">
 						<div class="row">
-							<!-- BRIEF IMAGE -->
-							<?php
-								if( !empty($azera_shop_our_story_image) ){
-									if( !empty($azera_shop_our_story_title) ){
-										echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($azera_shop_our_story_image).'" alt="'.esc_attr($azera_shop_our_story_title).'"></div></div>';
-									} else {
-										echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($azera_shop_our_story_image).'" alt="'.esc_html__('About','azera-shop').'"></div></div>';
-									}
-								} elseif ( isset( $wp_customize ) ) {
-									echo '<div class="col-md-6 brief-content-two azera_shop_only_customizer"><img src="" alt=""><div class="brief-image-right"></div></div>';
-								}
-							?>
 
 							<!-- BRIEF HEADING -->
 							<div class="col-md-6 content-section brief-content-one">
