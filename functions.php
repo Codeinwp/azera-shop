@@ -106,8 +106,7 @@ function azera_shop_setup() {
 	/* Set the image size by cropping the image */
 	add_image_size( 'azera-shop-post-thumbnail-big', 730, 340, true );
 	add_image_size( 'azera-shop-post-thumbnail-mobile', 500, 233, true );
-	add_image_size( 'azera_shop_services',60,62,true );
-	add_image_size( 'azera_shop_customers',75,75,true );
+	add_image_size( 'azera_shop_home_prod',350,350,true );
 	
 	/**
 	* Welcome screen
@@ -127,7 +126,7 @@ function azera_shop_setup() {
 			array(
 				"id" => 'azera-shop-req-ac-check-front-page',
                 "title" => esc_html__( 'Switch "Front page displays" to "A static page" ' ,'azera-shop' ),
-                "description" => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','azera-shop' ),
+                "description" => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Advanced Options -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','azera-shop' ),
                 "check" => azera_shop_is_not_static_page()
 			),
 			array(
@@ -136,14 +135,7 @@ function azera_shop_setup() {
                 "description"=> esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','azera-shop' ),
                 "check" => defined('INTERGEO_PLUGIN_NAME'),
                 "plugin_slug" => 'intergeo-maps'
-            ),
-            array(
-                "id" => 'azera-shop-req-ac-install-pirate-forms',
-                "title" => esc_html__( 'Install Pirate Forms' ,'azera-shop' ),
-                "description"=> esc_html__( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.','azera-shop' ),
-                "check" => defined('PIRATE_FORMS_VERSION'),
-                "plugin_slug" => 'pirate-forms'
-            ),
+            )
 		);
 		
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
@@ -156,29 +148,18 @@ function azera_shop_is_not_static_page() {
 	
 	$azera_shop_is_not_static = 1;
 	
-	if( 'page' == get_option( 'show_on_front' ) ):
+	if( 'page' == get_option( 'show_on_front' ) ) {
 		
 		$azera_shop_front_page_id = get_option( 'page_on_front' );
 		$azera_shop_template_name = get_page_template_slug( $azera_shop_front_page_id );
-		if ( !empty($azera_shop_template_name) && ( $azera_shop_template_name == 'template-frontpage.php' ) ):
+		if ( !empty($azera_shop_template_name) && ( $azera_shop_template_name == 'template-frontpage.php' ) ) {
 			$azera_shop_is_not_static = 0;
-		endif;
+		}
 		
-	endif;
+	}
 	
 	return (!$azera_shop_is_not_static ? true : false);
 }
-
-
-add_filter( 'image_size_names_choose', 'azera_shop_media_uploader_custom_sizes' );
-
-function azera_shop_media_uploader_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-		'azera_shop_services' => esc_html__('Azera Shop Services','azera-shop'),
-		'azera_shop_customers' => esc_html__('Azera Shop Testimonials','azera-shop')
-    ) );
-}
-
 
 /**
  * Register widget area.
@@ -213,18 +194,14 @@ function azera_shop_widgets_init() {
 }
 add_action( 'widgets_init', 'azera_shop_widgets_init' );
 
-
-
-
 /**
  * Fallback Menu
  *
  * If the menu doesn't exist, the fallback function to use.
  */
-function azera_shop_wp_page_menu()
-{
+function azera_shop_wp_page_menu() {
     echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
-    wp_list_pages(array('title_li' => '', 'depth' => 1));
+		wp_list_pages(array('title_li' => '', 'depth' => 1));
     echo '</ul>';
 }
 
@@ -296,7 +273,7 @@ require get_template_directory() . '/inc/jetpack.php';
 function azera_shop_admin_styles() {
 	wp_enqueue_style( 'azera-shop-admin-stylesheet', azera_shop_get_file('/css/admin-style.css'),'1.0.0' );
 }
-add_action( 'admin_enqueue_scripts', 'azera_shop_admin_styles', 10 );
+add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_styles', 10 );
 
 // Adding IE-only scripts to header.
 function azera_shop_ie () {
@@ -306,58 +283,42 @@ function azera_shop_ie () {
 }
 add_action('wp_head', 'azera_shop_ie');
 
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'azera_shop_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'azera_shop_wrapper_end', 10);
 
+function azera_shop_wrapper_start() {
+	echo '</div> </header>';
+	echo '<div class="content-wrap">
+		<div class="container">
+			<div id="primary" class="content-area col-md-12">';
+}
 
+function azera_shop_wrapper_end() {
+	echo '</div></div></div>';
+}
 
-	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-	add_action('woocommerce_before_main_content', 'azera_shop_wrapper_start', 10);
-	add_action('woocommerce_after_main_content', 'azera_shop_wrapper_end', 10);
-	function azera_shop_wrapper_start() {
-		echo '</div> </header>';
-		echo '<div class="content-wrap">
-				<div class="container">
-					<div id="primary" class="content-area col-md-12">';
-	}
-	function azera_shop_wrapper_end() {
-		echo '</div></div></div>';
-	}
-
-
-// add this code directly, no action needed
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
-
 
 /* tgm-plugin-activation */
 require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
-
 add_action( 'tgmpa_register', 'azera_shop_register_required_plugins' );
 function azera_shop_register_required_plugins() {
 	
-		$plugins = array(
-			array(
-	 
-				'name'      => 'Intergeo Maps - Google Maps Plugin',
-	 
-				'slug'      => 'intergeo-maps',
-	 
-				'required'  => false
-	 
-			),
-			
-			array(
-			
-				'name'     => 'Pirate Forms',
-			
-				'slug' 	   => 'pirate-forms',
-
-				'required' => false
-			
-			)
-			
-			
-		);
+	$plugins = array(
+		array(
+			'name'      => 'Intergeo Maps - Google Maps Plugin',
+			'slug'      => 'intergeo-maps',
+			'required'  => false
+		),
+		array(
+			'name'     => 'Pirate Forms',
+			'slug' 	   => 'pirate-forms',
+			'required' => false
+		)
+	);
 	
 	$config = array(
         'default_path' => '',                      
@@ -394,6 +355,7 @@ function azera_shop_register_required_plugins() {
 }
 
 add_action('wp_footer','azera_shop_php_style', 100);
+
 function azera_shop_php_style() {
 	
 	echo '<style type="text/css">';
@@ -421,13 +383,10 @@ function azera_shop_php_style() {
 	echo '</style>';
 }
 
-
-
 $pro_functions_path = azera_shop_get_file('/pro/functions.php');
 if (file_exists($pro_functions_path)) {
 	require $pro_functions_path;
 }
-
 
 function azera_shop_get_file($file){
 	$file_parts = pathinfo($file);
@@ -441,7 +400,6 @@ function azera_shop_get_file($file){
 		}
 	}
 }
-
 
 /**
  * WooCommerce Extra Feature
@@ -466,8 +424,6 @@ function azera_shop_responsive_embed($html, $url, $attr, $post_ID) {
 }
 
 add_filter( 'embed_oembed_html', 'azera_shop_responsive_embed', 10, 4 );
-
-
 
 /* Comments callback function*/
 function azera_shop_comment($comment, $args, $depth) {
@@ -550,66 +506,28 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 		}
 	}
 	
-	/*Services*/
-	$azera_shop_services_pl = get_theme_mod('azera_shop_services_content');
-	if(!empty($azera_shop_services_pl)){
-		$azera_shop_services_pl_decoded = json_decode($azera_shop_services_pl);
-		foreach($azera_shop_services_pl_decoded as $azera_shop_service_box){
-			$azera_shop_services_content_title = $azera_shop_service_box->title;
-			$azera_shop_services_content_text = $azera_shop_service_box->text;
-			$azera_shop_services_content_id = $azera_shop_service_box->id;
-			$azera_shop_services_content_link = $azera_shop_service_box->link;
-			if(!empty($azera_shop_services_content_id)) {
-				if(!empty($azera_shop_services_content_title)){
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_title' );
-					icl_register_string( 'Featured Area' , $azera_shop_services_content_id.'_services_title' , $azera_shop_services_content_title );
+	/*Logos*/
+	$azera_shop_logos_pl = get_theme_mod('azera_shop_logos_content');
+	if(!empty($azera_shop_logos_pl)){
+		$azera_shop_logos_pl_decoded = json_decode($azera_shop_logos_pl);
+		foreach($azera_shop_logos_pl_decoded as $azera_shop_logo_box){
+			$azera_shop_logos_icon = $azera_shop_logo_box->image_url;
+			$azera_shop_logos_id = $azera_shop_logo_box->id;
+			$azera_shop_logos_link = $azera_shop_logo_box->link;
+			if(!empty($azera_shop_logos_id)) {
+				if(!empty($azera_shop_logos_icon)){
+					icl_unregister_string ('Logo image' , $azera_shop_logos_id.'_logo_image' );
+					icl_register_string( 'Logo image' , $azera_shop_logos_id.'_logo_image' , $azera_shop_logos_icon );
 				} else {
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_title' );
+					icl_unregister_string ('Logo image' , $azera_shop_logos_id.'_logo_image' );
 				}
-				if(!empty($azera_shop_services_content_text)){
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_text' );
-					icl_register_string( 'Featured Area' , $azera_shop_services_content_id.'_services_text' , $azera_shop_services_content_text );
-				} else {
-					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_text' );
-				}
-				if(!empty($azera_shop_services_content_link)){
- 					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_link' );
- 					icl_register_string( 'Featured Area' , $azera_shop_services_content_id.'_services_link' , $azera_shop_services_content_link );
- 				} else {
- 					icl_unregister_string ('Featured Area' , $azera_shop_services_content_id.'_services_link' );
- 				}
-			}
-		}
-	}
 	
-	/*Testimonials*/
-	$azera_shop_testimonials_pl = get_theme_mod('azera_shop_testimonials_content');
-	if(!empty($azera_shop_testimonials_pl)){
-		$azera_shop_testimonials_pl_decoded = json_decode($azera_shop_testimonials_pl);
-		foreach($azera_shop_testimonials_pl_decoded as $azera_shop_testimonials_box){
-			$azera_shop_testimonials_content_title = $azera_shop_testimonials_box->title;
-			$azera_shop_testimonials_content_subtitle = $azera_shop_testimonials_box->subtitle;
-			$azera_shop_testimonials_content_text = $azera_shop_testimonials_box->text;
-			$azera_shop_testimonials_content_id = esc_attr($azera_shop_testimonials_box->id);
-			if(!empty($azera_shop_testimonials_content_id)) {
-				if(!empty($azera_shop_testimonials_content_title)){
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_title' );
-					icl_register_string( 'Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_title' , $azera_shop_testimonials_content_title );
-				} else {
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_title' );
-				}
-				if(!empty($azera_shop_testimonials_content_subtitle)){
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_subtitle' );
-					icl_register_string( 'Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_subtitle' , $azera_shop_testimonials_content_subtitle );
-				} else {
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_subtitle' );
-				}
-				if(!empty($azera_shop_testimonials_content_text)){
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_text' );
-					icl_register_string( 'Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_text' , $azera_shop_testimonials_content_text );
-				} else {
-					icl_unregister_string ('Testimonials' , $azera_shop_testimonials_content_id.'_testimonials_text' );
-				}
+				if(!empty($azera_shop_logos_link)){
+ 					icl_unregister_string ('Logo link' , $azera_shop_logos_id.'_logo_link' );
+ 					icl_register_string( 'Logo link' , $azera_shop_logos_id.'_logo_link' , $azera_shop_logos_link );
+ 				} else {
+ 					icl_unregister_string ('Logo link' , $azera_shop_logos_id.'_logo_link' );
+ 				}
 			}
 		}
 	}
@@ -626,23 +544,23 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			
 			if(!empty($azera_shop_contact_info_content_id)) {
 				if(!empty($azera_shop_contact_info_content_text)){
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
-					icl_register_string( 'Contact info' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_text );
+					icl_unregister_string ('Contact Text' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_register_string( 'Contact Text' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_text );
 				} else {
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_unregister_string ('Contact Text' , $azera_shop_contact_info_content_id.'_contact' );
 				}
 				
 				if(!empty($azera_shop_contact_info_content_icon)){
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
-					icl_register_string( 'Contact info' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_icon );
+					icl_unregister_string ('Contact Icon' , $azera_shop_contact_info_content_id.'_contact_icon' );
+					icl_register_string( 'Contact Icon' , $azera_shop_contact_info_content_id.'_contact_icon' , $azera_shop_contact_info_content_icon );
 				} else {
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_unregister_string ('Contact Icon' , $azera_shop_contact_info_content_id.'_contact_icon' );
 				}
 				if(!empty($azera_shop_contact_info_content_link)){
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
-					icl_register_string( 'Contact info' , $azera_shop_contact_info_content_id.'_contact' , $azera_shop_contact_info_content_link );
+					icl_unregister_string ('Contact Link' , $azera_shop_contact_info_content_id.'_contact_link' );
+					icl_register_string( 'Contact Link' , $azera_shop_contact_info_content_id.'_contact_link' , $azera_shop_contact_info_content_link );
 				} else {
-					icl_unregister_string ('Contact info' , $azera_shop_contact_info_content_id.'_contact' );
+					icl_unregister_string ('Contact Link' , $azera_shop_contact_info_content_id.'_contact_link' );
 				}
 			}
 			
@@ -680,9 +598,28 @@ function azera_shop_get_template_part($template){
 		}
 	}
 }
+
 function azera_shop_excerpt_more($more) {
  	global $post;
  	return '<a class="moretag" href="'. get_permalink($post->ID) . '"><span class="screen-reader-text">'.esc_html__('Read more about ', 'azera-shop').get_the_title().'</span>[...]</a>';
 }
 
 add_filter('excerpt_more', 'azera_shop_excerpt_more');
+
+// Ensure cart contents update when products are added to the cart via AJAX )
+add_filter( 'woocommerce_add_to_cart_fragments', 'azera_shop_woocommerce_header_add_to_cart_fragment' );
+function azera_shop_woocommerce_header_add_to_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+
+		<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
+			<span class="fa fa-shopping-cart"></span>
+			<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
+		</a>
+
+	<?php
+	
+	$fragments['a.cart-contents'] = ob_get_clean();
+	
+	return $fragments;
+}

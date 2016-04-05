@@ -6,7 +6,7 @@
 
 <div id="actions_required" class="azera-shop-tab-pane">
 
-    <h1><?php esc_html_e( 'Keep up with Azera Shop\'s latest news' ,'azera-shop' ); ?></h1>
+    <h1><?php esc_html_e( 'Keep up with Azera Shop\'s recommended actions' ,'azera-shop' ); ?></h1>
 
     <!-- NEWS -->
     <hr />

@@ -14,9 +14,7 @@ if(!empty($azera_shop_shortcodes_section) && (!empty($azera_shop_shortcodes_sect
                         if( !empty($section->title) ){
                             echo '<h2 class="dark-text">'.esc_attr($section->title).'</h2><div class="colored-line"></div>';
                         }
-                        ?>
-
-                        <?php
+                        
                         if( !empty($section->subtitle) ){
                             echo '<div class="sub-heading">'.esc_attr($section->subtitle).'</div>';
                         }

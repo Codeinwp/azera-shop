@@ -1,41 +1,9 @@
 jQuery(window).load(function(){ 
     fixFooterBottom();
-    callback_menu_align();
 });
 jQuery(window).resize(function(){
     fixFooterBottom();
-    callback_menu_align();
 });
-
-
-/* CENTERED MENU */
-var callback_menu_align = function () {
-    var headerWrap      = jQuery('header.header');
-    var navWrap         = jQuery('.main-navigation');
-    var logoWrap        = jQuery('.navbar-header');
-    var containerWrap   = jQuery('.container');
-    var classToAdd      = 'menu-align-center';
-    if ( headerWrap.hasClass(classToAdd) ) {
-        headerWrap.removeClass(classToAdd);
-    }
-    var logoWidth       = logoWrap.outerWidth();
-    var menuWidth       = navWrap.outerWidth();
-    var containerWidth  = containerWrap.width();
-    if ( menuWidth + logoWidth > containerWidth ) {
-        headerWrap.addClass(classToAdd);
-    } else {
-        if ( headerWrap.hasClass(classToAdd) ) {
-            headerWrap.removeClass(classToAdd);
-        }
-    }
-    jQuery('.sticky-navigation-open').css('min-height','70');
-    var headerHeight = jQuery('.sticky-navigation').outerHeight();
-    if ( headerHeight > 70 ) {
-        jQuery('.sticky-navigation-open').css('min-height', headerHeight);
-    } else {
-        jQuery('.sticky-navigation-open').css('min-height', 70);
-    }
-}
 
 /* STICKY FOOTER */
 function fixFooterBottom(){
@@ -86,7 +54,7 @@ jQuery(document).ready(function($) {
 ===  SMOOTH SCROLL NAVIGATION     ====
 =================================== */
 jQuery(document).ready(function(){
-  jQuery('#menu-primary a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
+  jQuery('#menu-primary a[href*="#"]:not([href="#"]), a.woocommerce-review-link[href*="#"]:not([href="#"]), a.post-comments[href*="#"]:not([href="#"])').bind('click',function () {
     var headerHeight;
     var hash    = this.hash;
     var idName  = hash.substring(1);    // get id name
@@ -518,3 +486,56 @@ function fixed_responsive_bg_body() {
     }
 }
 
+
+
+/*
+ * Shopping cart
+ */
+( function($) {
+
+    $( '.woocommerce-page-title' ).unwrap();
+
+    /* footer fixed  */
+    $( window ).load( fixFooterBottom );
+    $( window ).resize( fixFooterBottom );
+
+    function fixFooterBottom(){
+        var pageWidth = window.innerWidth;
+        /* if page is less than 768px */
+        if (pageWidth > 768){
+            var bodyH   = $( 'div.main' ).outerHeight();
+            var windowH = $( window ).outerHeight();
+            if ( bodyH < windowH ){
+                $( '.bottom-page-wrap' ).css({
+                    'position'  : 'absolute',
+                    'bottom'    : '0',
+                    'width'     : '100%',
+                    'z-index'   : '9'
+                });
+                $( 'div.main' ).height( windowH );
+            }
+        }else{
+            $( '.bottom-page-wrap' ).css({
+                'position'  : 'relative'
+            });
+            $( 'div.main' ).height( 'auto' );
+        }
+    }
+
+    $( '.header-search-button' ).click( function(event) {
+        $( '.header-search' ).toggleClass( 'header-search-open' );
+            $( '.navbar-collapse').removeClass( 'in' ).attr( 'aria-expanded', 'false' ).css( 'height', '1px' );
+            $( '.navbar-toggle').attr( 'aria-expanded', 'false' );
+            $( '.navbar-toggle').addClass( 'collapsed' );
+    } );
+
+    $( '.header-search' ).click( function(event) {    
+        event.stopPropagation();
+    } );
+
+    $( 'html' ).click( function() {
+        $( '.header-search' ).removeClass( 'header-search-open' );
+    } );
+
+
+} )(jQuery,window);

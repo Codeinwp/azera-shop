@@ -15,7 +15,7 @@
 			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
 					<?php 
-						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+						if ( has_post_thumbnail() ) {
 					?>
 						<?php 
 							$image_id = get_post_thumbnail_id();
