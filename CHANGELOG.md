@@ -1,5 +1,29 @@
 
 
+### 1.0.6 - 05/04/2016
+
+ Changes: 
+
+
+ * Merge pull request #14 from cristian-ungureanu/development
+
+!!!this fixes translations issues
+ * Fixed #9 Woocommerce issues
+ * Fixed #7 Added cart icon in header
+ * Fixed #17 #18 Woocommerce Compare list and Yith wishlist compatibility
+ * Option to change the header layout #22
+ * About us section #23
+ * Merge pull request #27 from abaicus/development
+
+Development
+ * Merge pull request #28 from abaicus/development
+
+!!!Restyled Header. New images defaults.
+ * Merge pull request #29 from abaicus/development
+
+!!!Changed Screenshot
+
+
 ### 1.0.4 - 18/02/2016
 
  Changes: 
