@@ -11,30 +11,41 @@
 	?>
 			<section class="brief text-left brief-design-one brief-left" id="story" role="region" aria-label="<?php esc_html_e('About','azera-shop') ?>" >
 				<?php if(!empty($azera_shop_our_story_image)) { ?>
+
 					<div class="section-overlay-layer" style="background-image: url('<?php echo esc_url($azera_shop_our_story_image); ?>');">
+
 				<?php } else {  ?>
+
 					<div class="section-overlay-layer">
+
 				<?php } ?>
 
 					<div class="container">
-						<div class="row">
 
 							<!-- BRIEF HEADING -->
-							<div class="col-md-6 content-section brief-content-one">
+
+            <div class="row">
+							<div class="col-md-12 section-header brief-content-one">
 								<?php
 									if( !empty($azera_shop_our_story_title) ){
-										echo '<h2 class="text-left dark-text">'.esc_attr($azera_shop_our_story_title).'</h2><div class="colored-line-left"></div>';
+										echo '<h2 class="text-center transparent-text">'.esc_attr($azera_shop_our_story_title).'</h2><div class="colored-line"></div>';
 									} elseif ( isset( $wp_customize )   ) {
-										echo '<h2 class="text-left dark-text azera_shop_only_customizer"></h2><div class="colored-line-left azera_shop_only_customizer"></div>';
-									}
-									if( !empty($azera_shop_our_story_text) ){
-										echo '<div class="brief-content-text">'.$azera_shop_our_story_text.'</div>';
+										echo '<h2 class="text-center transparent-text azera_shop_only_customizer"></h2><div class="colored-line azera_shop_only_customizer"></div>';
+									} ?>
+                </div> <!-- .section-header -->
+              </div> <!-- .row -->
+
+              <div class="row">
+                <div class="col-md-7 content-section brief-content-one">
+
+    							<?php if( !empty($azera_shop_our_story_text) ){
+										echo '<div class="brief-content-text transparent-text">'.$azera_shop_our_story_text.'</div>';
 									} elseif ( isset( $wp_customize )   ) {
-										echo '<div class="brief-content-text azera_shop_only_customizer"></div>';
+										echo '<div class="brief-content-text transparent-text azera_shop_only_customizer"></div>';
 									}
 								?>
 							</div><!-- .brief-content-one-->
-						</div>
+            </div><!-- .row -->
 					</div>
 				</div>
 			</section><!-- .brief-design-one -->
