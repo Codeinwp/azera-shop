@@ -33,16 +33,14 @@ The exceptions to this license are as follows:
 * Html5shiv
 	HTML5 Shiv 3.7.2
 	Licensed under the MIT/GPL2 license.
-	
-* Images	 
-	 
-	License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	  
-	 
-	* images/background-images/background.jpg, images/background-images/background_thumbnail.jpg
-			Source: https://download.unsplash.com/31/8jLdwLg6TLKIQfJcZgDb_Freedom_5.jpg
+
+* Images
+
+	License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
 	* images/background-images/parallax-img/parallax-img1.jpg
-			Source: https://download.unsplash.com/photo-1434626881859-194d67b2b86f
-	* images/about-us.png
-		Source: https://download.unsplash.com/reserve/ysPfhVSzSP2m629CW0mw_selfPortrait.jpg
-		Source: https://download.unsplash.com/photo-1435536949628-9954f4e829cd
-		Source: https://download.unsplash.com/photo-1432921481493-3d589756af70	
+			Source: http://tumblr.unsplash.com/post/51495156548/download-by-alejandro-escamilla
+
+
+  License: All pexels.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+	* images/about-us-background.jpg
+		Source: https://static.pexels.com/photos/9051/pexels-photo.jpg
