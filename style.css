@@ -892,7 +892,7 @@ label{
 
 .header .overlay-layer {
     padding-top: 84px;
-    padding-bottom: 195px;
+    padding-bottom: 90px;
     height: auto;
 }
 
@@ -1266,6 +1266,8 @@ header .navbar-brand {
 }
 
 /* INTRO */
+
+
 .intro-section {
     margin-top: 130px;
     text-align: center;
@@ -1279,6 +1281,12 @@ header .navbar-brand {
 	font-size: 18px;
 	line-height: 28px;
 	font-weight: bold;
+}
+
+.second-header-layout>.intro-section,
+.second-header-layout>.intro-section>h1,
+.second-header-layout>.intro-section>h5 {
+	text-align: left;
 }
 
 .imac-image img {
@@ -1788,7 +1796,7 @@ Header Cart
 .call-to-action .section-overlay-layer {
 	padding-top: 100px;
 	padding-bottom: 100px;
-	background: rgba(0, 5, 8, 0.80);
+	background: rgba(65,92,135,0.75);
 }
 
 .call-to-action h2 {
@@ -3858,12 +3866,11 @@ footer.footer .team-member-box .team-member {
 3.18 ABOUT US
 -----------------------------------------*/
 .brief > .section-overlay-layer {
-	padding-bottom: 60px;
+	padding-bottom: 90px;
+	background-size: cover;
 }
 
-.brief .section-header {
-	margin-top: 60px;
-}
+
 /*---------------------------------------
    4. DEFAULT COLORS
 -----------------------------------------*/
@@ -5152,6 +5159,13 @@ h2.screen-reader-text {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+
+	.second-header-layout>.intro-section,
+	.second-header-layout>.intro-section>h1,
+	.second-header-layout>.intro-section>h5 {
+		text-align: center;
+	}
+
 
 	.pricing-table {
 		padding-left: 0;
