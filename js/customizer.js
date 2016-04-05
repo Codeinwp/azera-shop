@@ -37,24 +37,8 @@
 	
 	
 	/***************************************
-	******** HEADER SECTION *********
+	******** HEADER SECTION ****************
 	****************************************/
-	//Logo
-	wp.customize("azera_shop_logo", function(value) {
-        value.bind(function( to ) {
-			if( to != '' ) {
-				$( '.navbar-brand' ).removeClass( 'azera_shop_only_customizer' );
-				$( '.header-logo-wrap' ).addClass( 'azera_shop_only_customizer' );
-			}
-			else {
-				$( '.navbar-brand' ).addClass( 'azera_shop_only_customizer' );
-				$( '.header-logo-wrap' ).removeClass( 'azera_shop_only_customizer' );
-			}
-				
-            $(".navbar-brand img").attr( "src", to );
-			
-        } );
-    });
 
 
 	//Show Header Logo
