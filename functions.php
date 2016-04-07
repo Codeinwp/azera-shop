@@ -317,6 +317,11 @@ function azera_shop_register_required_plugins() {
 			'name'     => 'Pirate Forms',
 			'slug' 	   => 'pirate-forms',
 			'required' => false
+		),
+		array(
+			'name'     => 'WooCommerce',
+			'slug' 	   => 'woocommerce',
+			'required' => false
 		)
 	);
 	
