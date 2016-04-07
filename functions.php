@@ -606,7 +606,7 @@ function azera_shop_get_template_part($template){
 
 function azera_shop_excerpt_more($more) {
  	global $post;
- 	return '<a class="moretag" href="'. get_permalink($post->ID) . '"><span class="screen-reader-text">'.esc_html__('Read more about ', 'azera-shop').get_the_title().'</span>[...]</a>';
+ 	return '<a class="moretag" href="'. get_permalink($post->ID) . '"><span class="screen-reader-text">'.esc_html__('Read more about ', 'azera-shop').get_the_title().'</span>[&#8230;]</a>';
 }
 
 add_filter('excerpt_more', 'azera_shop_excerpt_more');
