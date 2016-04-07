@@ -272,7 +272,7 @@ h5 {
 }
 
 h1.intro {
-	font-size: 4.5rem;
+	font-size: 3.75rem;
 	line-height: 5rem;
 	text-align: center;
 	font-weight: bold;
@@ -1283,12 +1283,6 @@ header .navbar-brand {
 	font-weight: bold;
 }
 
-.second-header-layout>.intro-section,
-.second-header-layout>.intro-section>h1,
-.second-header-layout>.intro-section>h5 {
-	text-align: left;
-}
-
 .imac-image img {
     width: 85%;
     margin-top: 70px;
@@ -1303,8 +1297,8 @@ header .navbar-brand {
     margin-top: 70px;
 }
 .header-style-one .intro-section h1 {
-	margin-top: 13px;
-	margin-bottom: 70px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 /* header style [2] */
@@ -1516,6 +1510,22 @@ Header Cart
     padding-left: 30px;
 }
 
+/**********
+** Restyle intro section
+**********/
+.second-header-layout .intro-section h1.intro,
+.second-header-layout .intro-section h5,
+.second-header-layout .intro-section {
+	font-weight: normal;
+	text-align: left;
+}
+
+.header-style-one .intro-section h5,
+.second-header-layout .intro-section h5 {
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 16px;
+  font-weight: 300;
+}
 /*---------------------------------------
    3.2 SECTION: CLIENTS LIST
 -----------------------------------------*/
@@ -3886,7 +3896,7 @@ footer.footer .team-member-box .team-member {
 
 /* THE OVERLAY COLORS WHICH WILL SHOW IN FRONT OF BACKGROUND IMAGES*/
 .overlay-layer-wrap {
-	background: rgba(0, 5, 8, 0.6);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .overlay-layer-2 {
@@ -5163,9 +5173,8 @@ h2.screen-reader-text {
 	.second-header-layout>.intro-section,
 	.second-header-layout>.intro-section>h1,
 	.second-header-layout>.intro-section>h5 {
-		text-align: center;
+		text-align: left;
 	}
-
 
 	.pricing-table {
 		padding-left: 0;
