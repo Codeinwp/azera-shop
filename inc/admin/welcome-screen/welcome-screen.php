@@ -41,7 +41,7 @@ class azera_shop_Welcome {
 	public function azera_shop_welcome_register_menu() {
 		$theme_name = wp_get_theme();
 		$page_menu_title = esc_html__('About', 'azera-shop').' '.$theme_name->get( 'Name' );
-		add_theme_page( $page_menu_title, $page_menu_title, 'activate_plugins', 'azera-shop-welcome', array( $this, 'azera_shop_welcome_screen' ) );
+		add_theme_page( $page_menu_title, $page_menu_title, 'edit_theme_options', 'azera-shop-welcome', array( $this, 'azera_shop_welcome_screen' ) );
 	}
 
 	/**
