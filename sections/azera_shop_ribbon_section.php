@@ -3,10 +3,29 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$ribbon_background = get_theme_mod('azera_shop_ribbon_background', azera_shop_get_file('/images/background-images/parallax-img/parallax-img1.jpg'));
-	$azera_shop_ribbon_title = get_theme_mod('azera_shop_ribbon_title',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','azera-shop'));
-	$azera_shop_button_text = get_theme_mod('azera_shop_button_text',esc_html__('GET STARTED','azera-shop'));
-	$azera_shop_button_link = get_theme_mod('azera_shop_button_link','#');
+	$ribbon_background_default = get_theme_mod('azera_shop_ribbon_background', azera_shop_get_file('/images/background-images/parallax-img/parallax-img1.jpg'));
+	$ribbon_background = get_theme_mod('azera_shop_ribbon_background');
+	
+	$azera_shop_ribbon_title_default = get_theme_mod('azera_shop_ribbon_title',esc_html__('In order to edit the text here you should go to customizer.','azera-shop'));
+	$azera_shop_ribbon_title = get_theme_mod('azera_shop_ribbon_title');
+	
+	$azera_shop_button_text_default = get_theme_mod('azera_shop_button_text',esc_html__('EDIT THIS','azera-shop'));
+	$azera_shop_button_text = get_theme_mod('azera_shop_button_text');
+	
+	$azera_shop_button_link_default = get_theme_mod('azera_shop_button_link', admin_url( 'customize.php?autofocus[control]=azera_shop_button_text' ) );
+	$azera_shop_button_link = get_theme_mod('azera_shop_button_link');
+
+	$azera_shop_ribbon_title_have_default = ( empty( $azera_shop_ribbon_title ) ? true : false );
+
+	if( $azera_shop_ribbon_title_have_default == true ){
+
+		if( current_user_can( 'edit_theme_options') ){
+			$azera_shop_ribbon_title = $azera_shop_ribbon_title_default;
+			$azera_shop_button_link = $azera_shop_button_link_default;
+			$azera_shop_button_text = $azera_shop_button_text_default;
+			$ribbon_background = $ribbon_background_default;
+		}
+	}
 
 	if(!empty($azera_shop_ribbon_title) || !empty($azera_shop_button_text)){
 		
@@ -14,10 +33,8 @@
 			echo '<section class="call-to-action ribbon-wrap" id="ribbon" style="background-image:url('.$ribbon_background.');" role="region" aria-label="'.esc_html__('Ribbon','azera-shop').'">';
 		} else {
 			echo '<section class="call-to-action ribbon-wrap" id="ribbon" role="region" aria-label="'.esc_html__('Ribbon','azera-shop').'">';
-		}
-	
-	
-?>
+		} ?>
+
 		<div class="section-overlay-layer">
 			<div class="container">
 				<div class="row">
@@ -34,7 +51,7 @@
 								if( empty($azera_shop_button_link) ){
 									echo '<button class="btn btn-primary standard-button azera_shop_only_customizer" type="button" data-toggle="modal" data-target="#stamp-modal"><span class="screen-reader-text">'.esc_html__('Ribbon button label:','azera-shop').$azera_shop_button_text.'</span>'.$azera_shop_button_text.'</button>';
 								} else {
-									echo '<button onclick="window.location=\''.esc_url($azera_shop_button_link).'\'" class="btn btn-primary standard-button" type="button" data-toggle="modal" data-target="#stamp-modal"><span class="screen-reader-text">'.esc_html__('Ribbon button label:','azera-shop').$azera_shop_button_text.'</span>'.esc_attr($azera_shop_button_text).'</button>';
+									echo '<button onclick="window.location=\''.( $azera_shop_button_link != admin_url( 'customize.php?autofocus[control]=azera_shop_button_text' ) ? esc_url( $azera_shop_button_link ) : '').'\'" class="btn btn-primary standard-button" type="button" data-toggle="modal" data-target="#stamp-modal"><span class="screen-reader-text">'.esc_html__('Ribbon button label:','azera-shop').$azera_shop_button_text.'</span>'.esc_attr($azera_shop_button_text).'</button>';
 								}
 							} elseif ( isset( $wp_customize )   ) {
 								echo '<button class="btn btn-primary standard-button azera_shop_only_customizer" type="button" data-toggle="modal" data-target="#stamp-modal"></button>';
@@ -70,4 +87,4 @@
 <?php
 		}
 	}
-?>
+	?>

@@ -567,22 +567,6 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 }
 
-/*Check if Repeater is empty*/
-function azera_shop_general_repeater_is_empty($azera_shop_arr){
-	$azera_shop_services_decoded = json_decode($azera_shop_arr);
-	foreach($azera_shop_services_decoded as $azera_shop_box){
-		if(!empty($azera_shop_box->choice) && $azera_shop_box->choice == 'azera_shop_none'){
-			$azera_shop_box->icon_value = '';
-			$azera_shop_box->image_url = '';
-		}
-		foreach ($azera_shop_box as $key => $value){
-			if(!empty($value) && $key!='choice' && $key!='id' && ($value!='No Icon' && $key=='icon_value') ) {
-				return false;
-			}
-		}
-	}
-	return true;
-}
 
 function azera_shop_get_template_part($template){
 
