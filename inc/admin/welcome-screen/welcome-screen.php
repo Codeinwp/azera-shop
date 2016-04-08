@@ -39,7 +39,9 @@ class azera_shop_Welcome {
 	 * @see  add_theme_page()
 	 */
 	public function azera_shop_welcome_register_menu() {
-		add_theme_page( 'About Azera Shop', 'About Azera Shop', 'activate_plugins', 'azera-shop-welcome', array( $this, 'azera_shop_welcome_screen' ) );
+		$theme_name = wp_get_theme();
+		$page_menu_title = esc_html__('About', 'azera-shop').' '.$theme_name->get( 'Name' );
+		add_theme_page( $page_menu_title, $page_menu_title, 'activate_plugins', 'azera-shop-welcome', array( $this, 'azera_shop_welcome_screen' ) );
 	}
 
 	/**
