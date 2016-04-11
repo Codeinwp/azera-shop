@@ -10,8 +10,16 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<div class="azera-shop-tab-pane-center">
 		<?php
-		$theme_name = wp_get_theme(); ?>
-		<h1 class="azera-shop-welcome-title"><?php printf( __( 'Welcome to %1$s!', 'azera-shop' ), $theme_name->get( 'Name' ) ); ?> <?php if( !empty($azera_shop['Version']) ): ?> <sup id="azera-shop-theme-version"><?php echo esc_attr( $azera_shop['Version'] ); ?> </sup><?php endif; ?></h1>
+		$azera_shop_theme = wp_get_theme(); 
+		$azera_shop_version = $azera_shop_theme->get('Version'); ?>
+		<h1 class="azera-shop-welcome-title">
+			<?php printf( __( 'Welcome to %1$s!', 'azera-shop' ), $azera_shop_theme->get( 'Name' ) ); ?> 
+			<?php if( !empty( $azera_shop_version ) ): ?> 
+				<sup id="azera-shop-theme-version">
+					<?php echo esc_attr( $azera_shop_version ); ?> 
+				</sup>
+			<?php endif; ?>
+		</h1>
 
 		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','azera-shop'); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Azera Shop and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Azera Shop, as much as we enjoy creating great products.', 'azera-shop' ); ?>
