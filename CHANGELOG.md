@@ -1,5 +1,18 @@
 
 
+### 1.0.7 - 11/04/2016
+
+ Changes: 
+
+
+ * #42 - fix elipsis
+ * #38 - internationalize date format on content.php
+ * Merge pull request #47 from abaicus/development
+
+!!!Changed header section, images, screenshot.png
+ * Merge branch 'cristian-ungureanu-development' into development
+
+
 ### 1.0.6 - 05/04/2016
 
  Changes: 
