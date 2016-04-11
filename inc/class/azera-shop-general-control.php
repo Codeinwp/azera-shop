@@ -90,13 +90,15 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
 
                                         <div class="azera_shop_general_control_icon">
                                             <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop');?></span>
-                                            <select class="azera_shop_icon_control">
-                                            <?php
-                                                foreach($icons_array as $contact_icon) {
-                                                    echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                }
-                                            ?>
-                                            </select>
+                                            <div class="azera-shop-dd">
+                                                <select class="azera_shop_icon_control">
+                                                <?php
+                                                    foreach($icons_array as $contact_icon) {
+                                                        echo '<option value="'.esc_attr($contact_icon).'" data-iconclass="'.$contact_icon.'">'.esc_attr($contact_icon).'</option>';
+                                                    }
+                                                ?>
+                                                </select>
+                                            </div>
                                         </div>
                                 <?php
                                     } else {
@@ -112,13 +114,15 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
                                        if($azera_shop_icon_control ==true){
                                 ?>
                                             <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop')?></span>
-                                            <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
-                                                <?php
-                                                    foreach($icons_array as $contact_icon) {
-                                                        echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                    }
-                                                ?>
-                                            </select>
+                                            <div class="azera-shop-dd">
+                                                <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
+                                                    <?php
+                                                        foreach($icons_array as $contact_icon) {
+                                                            echo '<option value="'.esc_attr($contact_icon).'" data-iconclass="'.$contact_icon.'">'.esc_attr($contact_icon).'</option>';
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
                                 <?php   }
                                     }
                         
@@ -183,13 +187,15 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
 
                                                 <div class="azera_shop_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='azera_shop_icon'){ echo 'style="display:none"';}?>>
                                                     <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop');?></span>
-                                                    <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
-                                                        <?php
-                                                            foreach($icons_array as $contact_icon) {
-                                                                echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                            }
-                                                        ?>
-                                                    </select>
+                                                    <div class="azera-shop-dd">
+                                                        <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
+                                                            <?php
+                                                                foreach($icons_array as $contact_icon) {
+                                                                    echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'" data-iconclass="'.$contact_icon.'">'.esc_attr($contact_icon).'</option>';
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
                                                 </div>
 
                                         <?php
@@ -205,13 +211,15 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
 
                                                 if($azera_shop_icon_control==true){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop')?></span>
-                                                    <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
-                                                        <?php
-                                                            foreach($icons_array as $contact_icon) {
-                                                                echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                            }
-                                                        ?>
-                                                    </select>
+                                                    <div class="azera-shop-dd">
+                                                        <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
+                                                            <?php
+                                                                foreach($icons_array as $contact_icon) {
+                                                                    echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'" data-iconclass="'.$contact_icon.'">'.esc_attr($contact_icon).'</option>';
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                    </div>
                                         <?php
                                                 }
                                             }
@@ -275,13 +283,15 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
 
                                         <div class="azera_shop_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='azera_shop_icon'){ echo 'style="display:none"';}?>>
                                             <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop');?></span>
-                                            <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
-                                            <?php
-                                                foreach($icons_array as $contact_icon) {
-                                                    echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                }
-                                            ?>
-                                            </select>
+                                            <div class="azera-shop-dd">
+                                                <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
+                                                <?php
+                                                    foreach($icons_array as $contact_icon) {
+                                                        echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'" data-iconclass="'.$contact_icon.'">'.esc_attr($contact_icon).'</option>';
+                                                    }
+                                                ?>
+                                                </select>
+                                            </div>
                                         </div>
                                     <?php
 
@@ -298,13 +308,15 @@ class azera_shop_General_Repeater extends WP_Customize_Control {
 
                                             if($azera_shop_icon_control==true){ ?>
                                                 <span class="customize-control-title"><?php esc_html_e('Icon','azera-shop')?></span>
-                                                <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
-                                                <?php
-                                                    foreach($icons_array as $contact_icon) {
-                                                        echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                    }
-                                                ?>
-                                                </select>
+                                                <div class="azera-shop-dd">
+                                                    <select name="<?php echo esc_attr($this->id); ?>" class="azera_shop_icon_control">
+                                                    <?php
+                                                        foreach($icons_array as $contact_icon) {
+                                                            echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'" data-iconclass="'.$contact_icon.'">'.esc_attr($contact_icon).'</option>';
+                                                        }
+                                                    ?>
+                                                    </select>
+                                                </div>
                                         <?php
                                             }
                                         }

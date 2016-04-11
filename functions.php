@@ -263,10 +263,22 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-function azera_shop_admin_styles() {
+function azera_shop_admin_scripts() {
+	wp_enqueue_style( 'azera-shop-admin-fontawesome', azera_shop_get_file( '/css/font-awesome.min.css' ),array(), '4.5.0');
 	wp_enqueue_style( 'azera-shop-admin-stylesheet', azera_shop_get_file('/css/admin-style.css'),'1.0.0' );
+
+	wp_register_script( 'azera-shop-lite-ddslick', get_template_directory_uri() .'/js/jquery.ddslick.js', array("jquery"), '1.0.1');
+	wp_enqueue_script( 'azera-shop-customizer-script', azera_shop_get_file('/js/azera_shop_customizer.js'), array("jquery","jquery-ui-draggable","azera-shop-lite-ddslick"),'1.0.0', true  );
+
+	wp_localize_script( 'azera-shop-customizer-script', 'azeraShopCustomizerObject', array(
+
+		'documentation' => esc_html__( 'Documentation', 'azera-shop' ),
+		'support' => esc_html__('Support Forum','azera-shop'),
+		'pro' => __('Upgrade to PRO','azera-shop'),
+
+	) );
 }
-add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_styles', 10 );
+add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_scripts', 10 );
 
 // Adding IE-only scripts to header.
 function azera_shop_ie () {
