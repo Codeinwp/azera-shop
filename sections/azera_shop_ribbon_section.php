@@ -8,7 +8,7 @@ $azera_shop_button_link = get_theme_mod('azera_shop_button_link');
 if(current_user_can( 'edit_theme_options')){
 	$ribbon_background = get_theme_mod('azera_shop_ribbon_background', azera_shop_get_file('/images/background-images/parallax-img/parallax-img1.jpg'));
 	$azera_shop_ribbon_title = get_theme_mod('azera_shop_ribbon_title',esc_html__('In order to edit the text here you should go to customizer.','azera-shop'));
-	$azera_shop_button_text = get_theme_mod('azera_shop_button_text',esc_html__('Edit this in customizer','azera-shop'));
+	$azera_shop_button_text = get_theme_mod('azera_shop_button_text',esc_html__('Text from customizer.','azera-shop'));
 } else {
 	$ribbon_background = get_theme_mod('azera_shop_ribbon_background');
 	$azera_shop_ribbon_title = get_theme_mod('azera_shop_ribbon_title');

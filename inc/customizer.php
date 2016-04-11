@@ -402,7 +402,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'azera_shop_button_text', array(
-		'default' => esc_html__('Edit this in customizer','azera-shop'),
+		'default' => esc_html__('Text from customizer','azera-shop'),
 		'sanitize_callback' => 'azera_shop_sanitize_text',
 		'transport' => 'postMessage'
 	));
