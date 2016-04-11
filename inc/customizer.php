@@ -422,7 +422,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'azera_shop_button_text', array(
-		'default' => esc_html__('EDIT THIS','azera-shop'),
+		'default' => esc_html__('Edit this in customizer','azera-shop'),
 		'sanitize_callback' => 'azera_shop_sanitize_text',
 		'transport' => 'postMessage'
 	));
@@ -477,14 +477,13 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'azera_shop_contact_info_content', array(
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
-		'default' => json_encode(
-			array(
-					array("icon_value" => "fa-envelope-o" ,"text" => esc_html__('Click here to edit.','azera-shop'), "link" => admin_url( 'customize.php?autofocus[control]=azera_shop_contact_info_content' ), 'id' => 'azera_shop_56d6b291454c3' ), 
-					array("icon_value" => "fa-map-o" ,"text" => esc_html__('Click here to edit.','azera-shop'), "link" => admin_url( 'customize.php?autofocus[control]=azera_shop_contact_info_content' ), 'id' => 'azera_shop_56d6b293454c4' ), 
-					array("icon_value" => "fa-phone" ,"text" => esc_html__('Click here to edit.','azera-shop'), "link" => admin_url( 'customize.php?autofocus[control]=azera_shop_contact_info_content' ), 'id' => 'azera_shop_56d6b295454c5' ) 
-			)
-		)
-	));
+		'default' => json_encode( array(
+			array("icon_value" => "fa-envelope-o" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b291454c3' ), 
+			array("icon_value" => "fa-map-o" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b293454c4' ), 
+			array("icon_value" => "fa-phone" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b295454c5' ) 
+		) )
+	) );
+	
 	$wp_customize->add_control( new azera_shop_General_Repeater( $wp_customize, 'azera_shop_contact_info_content', array(
 		'label'   => esc_html__('Add new contact field','azera-shop'),
 		'section' => 'azera_shop_contact_section',
