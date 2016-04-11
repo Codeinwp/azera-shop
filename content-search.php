@@ -37,8 +37,8 @@
 
 				</a>
 				<div class="post-date">
-					<span class="post-date-day"><?php the_time('d'); ?></span>
-					<span class="post-date-month"><?php the_time('M'); ?></span>
+					<span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop') ); ?></span>
+					<span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop') ); ?></span>
 				</div>
 			</div>
 
