@@ -85,9 +85,9 @@
 					$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons',
 						json_encode(
 							array(
-								array('icon_value' =>'fa-facebook' , 'link' => '#' , 'id' => 'azera_shop_56d6b2cc454c8'),
-								array('icon_value' =>'fa-twitter' , 'link' => '#' , 'id' => 'azera_shop_56d6b2cb454c7'),
-								array('icon_value' =>'fa-google-plus-square' , 'link' => '#' , 'id' => 'azera_shop_56d6b2c9454c6')
+								array('icon_value' =>'fa-facebook' , 'link' => get_site_url(), 'id' => 'azera_shop_56d6b2cc454c8'),
+								array('icon_value' =>'fa-twitter' , 'link' => get_site_url(), 'id' => 'azera_shop_56d6b2cb454c7'),
+								array('icon_value' =>'fa-google-plus-square' , 'link' => get_site_url(), 'id' => 'azera_shop_56d6b2c9454c6')
 								)
 							)
 						);
@@ -128,7 +128,11 @@
 	        </div><!-- .footer-bottom-wrap -->
 
 	        <div class="powered-by">
-	            <a class="" href="https://themeisle.com/themes/azera-shop/" rel="nofollow">Azera Shop </a> <?php esc_html_e('powered by','azera-shop'); ?> <a class="" href="http://wordpress.org/" rel="nofollow"><?php esc_html_e('WordPress','azera-shop'); ?></a>
+	        	<?php printf(
+					__( '%1$s powered by %2$s', 'azera-shop' ),
+					sprintf( '<a href="https://themeisle.com/themes/azera-shop/" rel="nofollow">%s</a>', esc_html__( 'Azera Shop', 'azera-shop' ) ),
+					sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )
+				); ?>
 	        </div>
 
 	    </div><!-- container -->

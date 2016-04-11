@@ -9,8 +9,17 @@ $customizer_url = admin_url() . 'customize.php' ;
 <div id="getting_started" class="azera-shop-tab-pane active">
 
 	<div class="azera-shop-tab-pane-center">
-
-		<h1 class="azera-shop-welcome-title">Welcome to Azera Shop! <?php if( !empty($azera_shop['Version']) ): ?> <sup id="azera-shop-theme-version"><?php echo esc_attr( $azera_shop['Version'] ); ?> </sup><?php endif; ?></h1>
+		<?php
+		$azera_shop_theme = wp_get_theme(); 
+		$azera_shop_version = $azera_shop_theme->get('Version'); ?>
+		<h1 class="azera-shop-welcome-title">
+			<?php printf( __( 'Welcome to %1$s!', 'azera-shop' ), $azera_shop_theme->get( 'Name' ) ); ?> 
+			<?php if( !empty( $azera_shop_version ) ): ?> 
+				<sup id="azera-shop-theme-version">
+					<?php echo esc_attr( $azera_shop_version ); ?> 
+				</sup>
+			<?php endif; ?>
+		</h1>
 
 		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','azera-shop'); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Azera Shop and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Azera Shop, as much as we enjoy creating great products.', 'azera-shop' ); ?>
@@ -80,57 +89,61 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<hr />
 
-	<div class="azera-shop-tab-pane-center">
-		<h1><?php esc_html_e( 'Recommended plugins', 'azera-shop' ); ?></h1>
-	</div>
+	<?php if( current_user_can( 'activate_plugins' ) ){ ?> 
 
-	<div class="azera-shop-tab-pane-half azera-shop-tab-pane-first-half">
+		<div class="azera-shop-tab-pane-center">
+			<h1><?php esc_html_e( 'Recommended plugins', 'azera-shop' ); ?></h1>
+		</div>
 
-		<!-- WP Product Review -->
-		<h4><?php esc_html_e( 'Intergeo Maps - Google Maps Plugin', 'azera-shop' ); ?></h4>
-		<p><?php esc_html_e( 'The Intergeo Google Maps plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder.', 'azera-shop' ); ?></p>
+		<div class="azera-shop-tab-pane-half azera-shop-tab-pane-first-half">
 
-		<?php if ( is_plugin_active( 'intergeo-maps/index.php' ) ) { ?>
+			<!-- WP Product Review -->
+			<h4><?php esc_html_e( 'Intergeo Maps - Google Maps Plugin', 'azera-shop' ); ?></h4>
+			<p><?php esc_html_e( 'The Intergeo Google Maps plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder.', 'azera-shop' ); ?></p>
 
-				<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
+			<?php if ( is_plugin_active( 'intergeo-maps/index.php' ) ) { ?>
 
-			<?php
-		}
-		else { ?>
+					<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
 
-				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=intergeo-maps' ), 'install-plugin_intergeo-maps' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Intergeo Maps', 'azera-shop' ); ?></a></p>
+				<?php
+			}
+			else { ?>
 
-			<?php
-		}
+					<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=intergeo-maps' ), 'install-plugin_intergeo-maps' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Intergeo Maps', 'azera-shop' ); ?></a></p>
 
-		?>
-	</div>
+				<?php
+			}
+
+			?>
+		</div>
 
 
-	
-	<div class="azera-shop-tab-pane-half">
+		
+		<div class="azera-shop-tab-pane-half">
 
-		<!-- Pirate Forms -->
-		<h4><?php esc_html_e( 'Pirate Forms', 'azera-shop' ); ?></h4>
-		<p><?php esc_html_e( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.', 'azera-shop' ); ?></p>
+			<!-- Pirate Forms -->
+			<h4><?php esc_html_e( 'Pirate Forms', 'azera-shop' ); ?></h4>
+			<p><?php esc_html_e( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.', 'azera-shop' ); ?></p>
 
-		<?php if ( is_plugin_active( 'pirate-forms/pirate-forms.php' ) ) { ?>
+			<?php if ( is_plugin_active( 'pirate-forms/pirate-forms.php' ) ) { ?>
 
-				<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
+					<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
 
-			<?php
-		}
-		else { ?>
+				<?php
+			}
+			else { ?>
 
-				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Pirate Forms', 'azera-shop' ); ?></a></p>
+					<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Pirate Forms', 'azera-shop' ); ?></a></p>
 
-			<?php
-		}
+				<?php
+			}
 
-		?>
+			?>
 
-	</div>
-
+		</div>
+	<?php
+	}
+	?>
 	<div class="azera-shop-clear"></div>
 
 </div>

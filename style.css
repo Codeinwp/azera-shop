@@ -3940,6 +3940,10 @@ a:hover {
 }
 
 /* BUTTONS*/
+.no-link{
+	color: rgba(255,162,0,1.00);
+}
+
 .standard-button,
 .navbar-register-button {
 	background-image: url(images/tr-btn.png);

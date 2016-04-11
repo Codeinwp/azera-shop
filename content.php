@@ -37,8 +37,8 @@
 					<?php the_time( get_option('date_format') ); ?>
 				</div>
 				<div class="post-date entry-published updated">
-					<span class="post-date-day"><?php the_time('d'); ?></span>
-					<span class="post-date-month"><?php the_time('M'); ?></span>
+					<span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop') ); ?></span>
+					<span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop') ); ?></span>
 				</div>
 			</div>
 			
@@ -74,7 +74,7 @@
 	<div itemprop="description" class="entry-content entry-summary">
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
-			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','azera-shop'), '<span class="screen-reader-text">'.esc_html__('about ', 'azera-shop').get_the_title().'</span>' ) );
+			if($ismore) : the_content( sprintf( esc_html__('Read more %s &#8230;','azera-shop'), '<span class="screen-reader-text">' . esc_html__('about ', 'azera-shop') . esc_html( get_the_title() ) .'</span>' ) );
 			else : the_excerpt();
 			endif;
 		?>

@@ -337,4 +337,5 @@
 		return ($.trim(el.html()) === '' ? true : false);
 	}
 	
+
 } )( jQuery );
