@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Azera Shop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-01 15:25+0200\n"
-"PO-Revision-Date: 2016-04-01 15:25+0200\n"
+"POT-Creation-Date: 2016-04-11 18:43+0200\n"
+"PO-Revision-Date: 2016-04-11 18:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: Themeisle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;_x:1,2c\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: inc\n"
@@ -28,28 +28,28 @@ msgid "BLOG"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:333
-#: functions.php:332
+#: functions.php:342
 msgid "Install Required Plugins"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:334
-#: functions.php:333
+#: functions.php:343
 msgid "Install Plugins"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:335
-#: functions.php:334
+#: functions.php:344
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:336
-#: functions.php:335
+#: functions.php:345
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:397
-#: functions.php:346
+#: functions.php:356
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgstr ""
 
 #: class-tgm-plugin-activation.php:399
 #: class-tgm-plugin-activation.php:3029
-#: functions.php:347
+#: functions.php:357
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -116,6 +116,12 @@ msgstr ""
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
+#: class-tgm-plugin-activation.php:1881
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
 #: class-tgm-plugin-activation.php:2167
 msgid "Required"
 msgstr ""
@@ -160,6 +166,17 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
+#: class-tgm-plugin-activation.php:2235
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2371
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
 #: class-tgm-plugin-activation.php:2379
 msgid "Installed version:"
 msgstr ""
@@ -195,6 +212,24 @@ msgstr ""
 
 #: class-tgm-plugin-activation.php:2443
 msgid "Status"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2491
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2495
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2500
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:2570
@@ -351,6 +386,18 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#: content-search.php:40
+#: content.php:40
+msgctxt "post day fomat"
+msgid "d"
+msgstr ""
+
+#: content-search.php:41
+#: content.php:41
+msgctxt "post month fomat"
+msgid "M"
+msgstr ""
+
 #: content-search.php:52
 #: content.php:55
 msgid ", "
@@ -379,13 +426,18 @@ msgstr ""
 msgid "% comments"
 msgstr ""
 
+#: content.php:36
+msgctxt "post time format"
+msgid "l, F j, Y, g:i a"
+msgstr ""
+
 #: content.php:52
 msgid "Posted in"
 msgstr ""
 
 #: content.php:77
 #, php-format
-msgid "Read more %s ..."
+msgid "Read more %s &#8230;"
 msgstr ""
 
 #: content.php:77
@@ -413,11 +465,16 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: footer.php:131
-msgid "powered by"
+#: footer.php:132
+#, php-format
+msgid "%1$s powered by %2$s"
 msgstr ""
 
-#: footer.php:131
+#: footer.php:133
+msgid "Azera Shop"
+msgstr ""
+
+#: footer.php:134
 msgid "WordPress"
 msgstr ""
 
@@ -430,72 +487,89 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:121
 msgid "Switch \"Front page displays\" to \"A static page\" "
 msgstr ""
 
-#: functions.php:129
+#: functions.php:122
 msgid "In order to have the one page look for your website, please go to Customize -> Advanced Options -> Static Front Page and switch \"Front page displays\" to \"A static page\". Then select the template \"Frontpage\" for that selected page."
 msgstr ""
 
-#: functions.php:134
+#: functions.php:127
 msgid "Install Intergeo Maps - Google Maps Plugin"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:128
 msgid "In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:166
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:178
 #, php-format
 msgid "Footer area %d"
 msgstr ""
 
-#: functions.php:227
+#: functions.php:220
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:221
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:348
+#: functions.php:275
+msgid "Documentation"
+msgstr ""
+
+#: functions.php:276
+msgid "Support Forum"
+msgstr ""
+
+#: functions.php:277
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: functions.php:358
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: functions.php:439
+#: functions.php:449
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:439
-#: functions.php:463
+#: functions.php:449
+#: functions.php:473
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:451
+#: functions.php:461
 #, php-format
 msgid "<span itemprop=\"name\">%s </span><span class=\"says\">says:</span>"
 msgstr ""
 
-#: functions.php:454
+#: functions.php:464
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:460
+#: functions.php:469
+msgctxt "comment time format"
+msgid "l, F j, Y, g:i a"
+msgstr ""
+
+#: functions.php:470
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:604
+#: functions.php:665
 msgid "Read more about "
 msgstr ""
 
-#: functions.php:615
+#: functions.php:676
 #: header.php:157
 msgid "View your shopping cart"
 msgstr ""
@@ -570,7 +644,6 @@ msgid "Header section"
 msgstr ""
 
 #: inc/customizer.php:127
-#: inc/customizer.php:337
 msgid "Content"
 msgstr ""
 
@@ -578,218 +651,187 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:155
-#: inc/customizer.php:168
-msgid "Header Logo"
-msgstr ""
-
-#: inc/customizer.php:176
-msgid "AZERA SHOP"
-msgstr ""
-
-#: inc/customizer.php:181
-#: inc/customizer.php:322
-#: inc/customizer.php:370
-#: inc/customizer.php:472
+#: inc/customizer.php:156
+#: inc/customizer.php:295
+#: inc/customizer.php:397
 msgid "Main title"
 msgstr ""
 
-#: inc/customizer.php:189
-msgid "From the creators of the popular Zerif Lite meet the new ecommerce theme"
-msgstr ""
-
-#: inc/customizer.php:194
-#: inc/customizer.php:383
-#: inc/customizer.php:748
+#: inc/customizer.php:169
+#: inc/customizer.php:308
+#: inc/customizer.php:671
 msgid "Subtitle"
 msgstr ""
 
-#: inc/customizer.php:203
-#: inc/customizer.php:480
+#: inc/customizer.php:178
 msgid "GET STARTED"
 msgstr ""
 
-#: inc/customizer.php:208
-#: inc/customizer.php:485
+#: inc/customizer.php:183
+#: inc/customizer.php:410
 msgid "Button label"
 msgstr ""
 
-#: inc/customizer.php:216
-#: inc/customizer.php:493
+#: inc/customizer.php:191
 msgid "#"
 msgstr ""
 
-#: inc/customizer.php:221
-#: inc/customizer.php:498
+#: inc/customizer.php:196
+#: inc/customizer.php:422
 msgid "Button link"
 msgstr ""
 
-#: inc/customizer.php:231
+#: inc/customizer.php:206
 msgid "Logos Bar"
 msgstr ""
 
-#: inc/customizer.php:253
-#: inc/customizer.php:647
+#: inc/customizer.php:228
+#: inc/customizer.php:570
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:239
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:250
 msgid "Parallax effect"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:251
 msgid "If this box is checked, the parallax effect is enabled."
 msgstr ""
 
-#: inc/customizer.php:289
+#: inc/customizer.php:264
 msgid "First layer"
 msgstr ""
 
-#: inc/customizer.php:301
+#: inc/customizer.php:276
 msgid "Second layer"
 msgstr ""
 
-#: inc/customizer.php:311
-msgid "About section"
-msgstr ""
-
-#: inc/customizer.php:317
-msgid "Our Story"
-msgstr ""
-
-#: inc/customizer.php:330
-msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-msgstr ""
-
-#: inc/customizer.php:350
-#: inc/customizer.php:761
-msgid "Image"
-msgstr ""
-
-#: inc/customizer.php:360
+#: inc/customizer.php:285
 msgid "Shop section"
 msgstr ""
 
-#: inc/customizer.php:365
+#: inc/customizer.php:290
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:378
+#: inc/customizer.php:303
 msgid "Showcase your work effectively and in an attractive form that your prospective clients will love."
 msgstr ""
 
-#: inc/customizer.php:396
+#: inc/customizer.php:321
 msgid "Number of products"
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:337
 msgid "Display products from"
 msgstr ""
 
-#: inc/customizer.php:424
+#: inc/customizer.php:349
 msgid "Shortcodes section"
 msgstr ""
 
-#: inc/customizer.php:432
+#: inc/customizer.php:357
 msgid "Edit the shortcode options"
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:373
 msgid "Ribbon section"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:385
 msgid "Ribbon Background"
 msgstr ""
 
-#: inc/customizer.php:467
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+#: inc/customizer.php:392
+msgid "In order to edit the text here you should go to customizer."
 msgstr ""
 
-#: inc/customizer.php:509
+#: inc/customizer.php:405
+msgid "Text from customizer"
+msgstr ""
+
+#: inc/customizer.php:433
 msgid "Frontpage settings"
 msgstr ""
 
-#: inc/customizer.php:528
+#: inc/customizer.php:452
 msgid "Contact section"
 msgstr ""
 
-#: inc/customizer.php:544
+#: inc/customizer.php:460
+#: inc/customizer.php:461
+#: inc/customizer.php:462
+msgid "Text from customizer."
+msgstr ""
+
+#: inc/customizer.php:467
 msgid "Add new contact field"
 msgstr ""
 
-#: inc/customizer.php:561
-#: inc/customizer.php:598
+#: inc/customizer.php:484
+#: inc/customizer.php:521
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer.php:562
-#: inc/customizer.php:599
+#: inc/customizer.php:485
+#: inc/customizer.php:522
 msgid "To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:575
+#: inc/customizer.php:498
 msgid "Contact page"
 msgstr ""
 
-#: inc/customizer.php:585
+#: inc/customizer.php:508
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer.php:586
+#: inc/customizer.php:509
 msgid "Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer.php:610
+#: inc/customizer.php:533
 msgid "Footer options"
 msgstr ""
 
-#: inc/customizer.php:612
+#: inc/customizer.php:535
 msgid "The main content of this section is customizable in: Customize -> Widgets -> Footer area. "
 msgstr ""
 
-#: inc/customizer.php:628
+#: inc/customizer.php:551
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:584
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer.php:663
+#: inc/customizer.php:586
 msgid "Azera Shop theme general options"
 msgstr ""
 
-#: inc/customizer.php:714
+#: inc/customizer.php:637
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer.php:715
+#: inc/customizer.php:638
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
-#: inc/customizer.php:724
+#: inc/customizer.php:647
 msgid "Blog header"
 msgstr ""
 
-#: inc/customizer.php:737
+#: inc/customizer.php:660
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:862
-msgid "Documentation"
-msgstr ""
-
-#: inc/customizer.php:863
-msgid "Support Forum"
-msgstr ""
-
-#: inc/customizer.php:864
-msgid "Upgrade to PRO"
+#: inc/customizer.php:684
+msgid "Image"
 msgstr ""
 
 #: inc/extras.php:52
@@ -803,6 +845,18 @@ msgstr ""
 
 #: inc/template-tags.php:30
 msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:58
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:63
+#, php-format
+msgctxt "post author"
+msgid "by %s"
 msgstr ""
 
 #: inc/template-tags.php:82
@@ -847,9 +901,19 @@ msgstr ""
 msgid "Year: %s"
 msgstr ""
 
+#: inc/template-tags.php:121
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
 #: inc/template-tags.php:123
 #, php-format
 msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:123
+msgctxt "monthly archives date format"
+msgid "F Y"
 msgstr ""
 
 #: inc/template-tags.php:125
@@ -857,50 +921,60 @@ msgstr ""
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:147
+#: inc/template-tags.php:125
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:127
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:151
+#: inc/template-tags.php:131
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:153
+#: inc/template-tags.php:133
 msgid "Archives"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:62
+#: inc/admin/welcome-screen/welcome-screen.php:43
+msgid "About"
+msgstr ""
+
+#: inc/admin/welcome-screen/welcome-screen.php:64
 #, php-format
 msgid "Welcome! Thank you for choosing Azera Shop! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s."
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:63
+#: inc/admin/welcome-screen/welcome-screen.php:65
 msgid "Get started with Azera Shop"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:98
+#: inc/admin/welcome-screen/welcome-screen.php:100
+#: inc/admin/welcome-screen/sections/actions-required.php:58
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:178
+#: inc/admin/welcome-screen/welcome-screen.php:180
 msgid "Getting started"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:179
+#: inc/admin/welcome-screen/welcome-screen.php:181
 msgid "Actions recommended"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:180
+#: inc/admin/welcome-screen/welcome-screen.php:182
 msgid "Contribute"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:181
+#: inc/admin/welcome-screen/welcome-screen.php:183
 msgid "Support"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:182
+#: inc/admin/welcome-screen/welcome-screen.php:184
 msgid "Change log"
 msgstr ""
 
@@ -908,111 +982,116 @@ msgstr ""
 msgid "Keep up with Azera Shop's recommended actions"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:15
+#: inc/admin/welcome-screen/sections/getting-started.php:16
+#, php-format
+msgid "Welcome to %1$s!"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/getting-started.php:24
 msgid "Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:16
+#: inc/admin/welcome-screen/sections/getting-started.php:25
 msgid "We want to make sure you have the best experience using Azera Shop and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Azera Shop, as much as we enjoy creating great products."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:26
+#: inc/admin/welcome-screen/sections/getting-started.php:35
 msgid "Customize everything in a single place."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:27
+#: inc/admin/welcome-screen/sections/getting-started.php:36
 msgid "Using the WordPress Customizer you can easily customize every aspect of the theme."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:28
+#: inc/admin/welcome-screen/sections/getting-started.php:37
 msgid "Go to Customizer"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:36
+#: inc/admin/welcome-screen/sections/getting-started.php:45
 msgid "FAQ"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:42
+#: inc/admin/welcome-screen/sections/getting-started.php:51
 msgid "Create a child theme"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:43
+#: inc/admin/welcome-screen/sections/getting-started.php:52
 msgid "If you want to make changes to the theme's files, those changes are likely to be overwritten when you next update the theme. In order to prevent that from happening, you need to create a child theme. For this, please follow the documentation below."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:44
-#: inc/admin/welcome-screen/sections/getting-started.php:50
-#: inc/admin/welcome-screen/sections/getting-started.php:58
-#: inc/admin/welcome-screen/sections/getting-started.php:64
+#: inc/admin/welcome-screen/sections/getting-started.php:53
+#: inc/admin/welcome-screen/sections/getting-started.php:59
+#: inc/admin/welcome-screen/sections/getting-started.php:67
+#: inc/admin/welcome-screen/sections/getting-started.php:73
 msgid "View how to do this"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:48
+#: inc/admin/welcome-screen/sections/getting-started.php:57
 msgid "How to Internationalize Your Website"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:49
+#: inc/admin/welcome-screen/sections/getting-started.php:58
 msgid "Although English is the most used language on the internet, you should consider all your web users as well. Find out what it takes to make your website ready for foreign markets from this document."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:56
+#: inc/admin/welcome-screen/sections/getting-started.php:65
 msgid "Speed up your site"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:57
+#: inc/admin/welcome-screen/sections/getting-started.php:66
 msgid "If you find yourself in the situation where everything on your site is running very slow, you might consider having a look at the below documentation where you will find the most common issues causing this and possible solutions for each of the issues."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:62
+#: inc/admin/welcome-screen/sections/getting-started.php:71
 msgid "Link Menu to sections"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:63
+#: inc/admin/welcome-screen/sections/getting-started.php:72
 msgid "Linking the frontpage sections with the top menu is very simple, all you need to do is assign section anchors to the menu. In the below documentation you will find a nice tutorial about this."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:75
+#: inc/admin/welcome-screen/sections/getting-started.php:84
 msgid "View full documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:76
+#: inc/admin/welcome-screen/sections/getting-started.php:85
 msgid "Need more details? Please check our full documentation for detailed information on how to use Azera Shop."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:77
+#: inc/admin/welcome-screen/sections/getting-started.php:86
 msgid "Read full documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:84
+#: inc/admin/welcome-screen/sections/getting-started.php:95
 msgid "Recommended plugins"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:90
+#: inc/admin/welcome-screen/sections/getting-started.php:101
 msgid "Intergeo Maps - Google Maps Plugin"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:91
+#: inc/admin/welcome-screen/sections/getting-started.php:102
 msgid "The Intergeo Google Maps plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:95
-#: inc/admin/welcome-screen/sections/getting-started.php:119
+#: inc/admin/welcome-screen/sections/getting-started.php:106
+#: inc/admin/welcome-screen/sections/getting-started.php:130
 msgid "Already activated"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:101
+#: inc/admin/welcome-screen/sections/getting-started.php:112
 msgid "Install Intergeo Maps"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:114
+#: inc/admin/welcome-screen/sections/getting-started.php:125
 msgid "Pirate Forms"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:115
+#: inc/admin/welcome-screen/sections/getting-started.php:126
 msgid "Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:125
+#: inc/admin/welcome-screen/sections/getting-started.php:136
 msgid "Install Pirate Forms"
 msgstr ""
 
@@ -1073,79 +1152,73 @@ msgstr ""
 msgid "Support forum"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:74
-#: inc/class/azera-shop-general-control.php:167
-#: inc/class/azera-shop-general-control.php:258
-msgid "Azera Shop"
-msgstr ""
-
 #: inc/class/azera-shop-general-control.php:78
-#: inc/class/azera-shop-general-control.php:171
-#: inc/class/azera-shop-general-control.php:262
+#: inc/class/azera-shop-general-control.php:175
+#: inc/class/azera-shop-general-control.php:270
 msgid "Image type"
 msgstr ""
 
 #: inc/class/azera-shop-general-control.php:80
 #: inc/class/azera-shop-general-control.php:92
-#: inc/class/azera-shop-general-control.php:114
-#: inc/class/azera-shop-general-control.php:173
-#: inc/class/azera-shop-general-control.php:185
-#: inc/class/azera-shop-general-control.php:207
-#: inc/class/azera-shop-general-control.php:264
-#: inc/class/azera-shop-general-control.php:277
-#: inc/class/azera-shop-general-control.php:300
+#: inc/class/azera-shop-general-control.php:116
+#: inc/class/azera-shop-general-control.php:177
+#: inc/class/azera-shop-general-control.php:189
+#: inc/class/azera-shop-general-control.php:213
+#: inc/class/azera-shop-general-control.php:272
+#: inc/class/azera-shop-general-control.php:285
+#: inc/class/azera-shop-general-control.php:310
 msgid "Icon"
 msgstr ""
 
 #: inc/class/azera-shop-general-control.php:82
-#: inc/class/azera-shop-general-control.php:175
-#: inc/class/azera-shop-general-control.php:266
+#: inc/class/azera-shop-general-control.php:179
+#: inc/class/azera-shop-general-control.php:274
 msgid "None"
 msgstr ""
 
 #: inc/class/azera-shop-general-control.php:88
-#: inc/class/azera-shop-general-control.php:107
-#: inc/class/azera-shop-general-control.php:181
-#: inc/class/azera-shop-general-control.php:202
-#: inc/class/azera-shop-general-control.php:273
-#: inc/class/azera-shop-general-control.php:295
+#: inc/class/azera-shop-general-control.php:109
+#: inc/class/azera-shop-general-control.php:185
+#: inc/class/azera-shop-general-control.php:208
+#: inc/class/azera-shop-general-control.php:281
+#: inc/class/azera-shop-general-control.php:305
 msgid "Upload Image"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:141
-#: inc/class/azera-shop-general-control.php:142
-#: inc/class/azera-shop-general-control.php:233
-#: inc/class/azera-shop-general-control.php:234
-#: inc/class/azera-shop-general-control.php:325
-#: inc/class/azera-shop-general-control.php:326
+#: inc/class/azera-shop-general-control.php:145
+#: inc/class/azera-shop-general-control.php:146
+#: inc/class/azera-shop-general-control.php:241
+#: inc/class/azera-shop-general-control.php:242
+#: inc/class/azera-shop-general-control.php:337
+#: inc/class/azera-shop-general-control.php:338
 msgid "Text"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:146
-#: inc/class/azera-shop-general-control.php:147
-#: inc/class/azera-shop-general-control.php:237
-#: inc/class/azera-shop-general-control.php:238
-#: inc/class/azera-shop-general-control.php:330
-#: inc/class/azera-shop-general-control.php:331
+#: inc/class/azera-shop-general-control.php:150
+#: inc/class/azera-shop-general-control.php:151
+#: inc/class/azera-shop-general-control.php:245
+#: inc/class/azera-shop-general-control.php:246
+#: inc/class/azera-shop-general-control.php:342
+#: inc/class/azera-shop-general-control.php:343
 msgid "Link"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:151
-#: inc/class/azera-shop-general-control.php:152
-#: inc/class/azera-shop-general-control.php:241
-#: inc/class/azera-shop-general-control.php:242
-#: inc/class/azera-shop-general-control.php:336
-#: inc/class/azera-shop-general-control.php:337
+#: inc/class/azera-shop-general-control.php:155
+#: inc/class/azera-shop-general-control.php:156
+#: inc/class/azera-shop-general-control.php:249
+#: inc/class/azera-shop-general-control.php:250
+#: inc/class/azera-shop-general-control.php:348
+#: inc/class/azera-shop-general-control.php:349
 msgid "Shortcode"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:157
-#: inc/class/azera-shop-general-control.php:246
-#: inc/class/azera-shop-general-control.php:343
+#: inc/class/azera-shop-general-control.php:161
+#: inc/class/azera-shop-general-control.php:254
+#: inc/class/azera-shop-general-control.php:355
 msgid "Delete field"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:365
+#: inc/class/azera-shop-general-control.php:377
 msgid "Add new field"
 msgstr ""
 
@@ -1153,38 +1226,33 @@ msgstr ""
 msgid "All Categories"
 msgstr ""
 
-#: sections/azera_shop_contact_info_section.php:18
+#: sections/azera_shop_contact_info_section.php:20
 msgid "Contact Info"
 msgstr ""
 
-#: sections/azera_shop_header_section.php:88
-#: sections/azera_shop_header_section.php:91
-#: sections/azera_shop_header_section.php:93
+#: sections/azera_shop_header_section.php:80
+#: sections/azera_shop_header_section.php:83
+#: sections/azera_shop_header_section.php:85
 msgid "Header button label:"
 msgstr ""
 
-#: sections/azera_shop_logos_section.php:18
+#: sections/azera_shop_logos_section.php:24
 msgid "Affiliates Logos"
 msgstr ""
 
-#: sections/azera_shop_our_story_section.php:12
-#: sections/azera_shop_our_story_section.php:22
-msgid "About"
-msgstr ""
-
-#: sections/azera_shop_ribbon_section.php:14
-#: sections/azera_shop_ribbon_section.php:16
-#: sections/azera_shop_ribbon_section.php:54
-#: sections/azera_shop_ribbon_section.php:56
+#: sections/azera_shop_ribbon_section.php:21
+#: sections/azera_shop_ribbon_section.php:23
+#: sections/azera_shop_ribbon_section.php:59
+#: sections/azera_shop_ribbon_section.php:61
 msgid "Ribbon"
 msgstr ""
 
-#: sections/azera_shop_ribbon_section.php:35
-#: sections/azera_shop_ribbon_section.php:37
+#: sections/azera_shop_ribbon_section.php:40
+#: sections/azera_shop_ribbon_section.php:42
 msgid "Ribbon button label:"
 msgstr ""
 
-#: sections/azera_shop_shortcodes_section.php:8
+#: sections/azera_shop_shortcodes_section.php:36
 msgid "Shortcodes"
 msgstr ""
 

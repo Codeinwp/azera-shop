@@ -72,3 +72,4 @@ jQuery(document).ready(function(){
         jQuery('.header .overlay-layer').css('padding-top',$azera_shop_header_height);
     }
 });
+

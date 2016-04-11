@@ -1,17 +1,18 @@
 <!-- CONTAINER -->
 <?php
-	$azera_shop_header_logo = get_theme_mod('azera_shop_header_logo', azera_shop_get_file('/images/logo-2.png'));
-	$azera_shop_header_title = get_theme_mod('azera_shop_header_title',esc_html__('AZERA SHOP','azera-shop'));
-	$azera_shop_header_subtitle = get_theme_mod('azera_shop_header_subtitle',esc_html__('From the creators of the popular Zerif Lite meet the new ecommerce theme','azera-shop'));
+
+	$azera_website_name = get_bloginfo( 'name', 'display' );
+	$azera_website_description = get_bloginfo( 'description' );
+	$azera_shop_header_title = get_theme_mod('azera_shop_header_title',$azera_website_name);
+	$azera_shop_header_subtitle = get_theme_mod('azera_shop_header_subtitle',$azera_website_description);
 	$azera_shop_header_button_text = get_theme_mod('azera_shop_header_button_text',esc_html__('GET STARTED','azera-shop'));
 	$azera_shop_header_button_link = get_theme_mod('azera_shop_header_button_link','#');
 	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
 	$azera_shop_first_layer = get_theme_mod('azera_shop_first_layer', azera_shop_get_file('/images/background1.png'));
 	$azera_shop_second_layer = get_theme_mod('azera_shop_second_layer',azera_shop_get_file('/images/background2.png'));
-	$azera_shop_header_right_image = get_theme_mod('azera_shop_header_right_image',azera_shop_get_file('/images/imac.png'));
 	$azera_shop_header_layout = get_theme_mod('azera_shop_header_layout','layout2');
 
-	if(!empty($azera_shop_header_logo) || !empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){
+	if(!empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){
 ?>
 
 <?php
@@ -44,20 +45,10 @@
 		<div class="overlay-layer-wrap">
 			<div class="container overlay-layer" id="parallax_header">
 
-			<!-- ONLY LOGO ON HEADER -->
-			<?php
-				if( !empty($azera_shop_header_logo) ){
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($azera_shop_header_logo).'"   alt=""></div></div></div>';
-				} elseif ( isset( $wp_customize )   ) {
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="" alt=""></div></div></div>';
-				}
-			?>
-			<!-- /END ONLY LOGO ON HEADER -->
-
 			<div class="row">
 				<?php
 				if( !empty($azera_shop_header_layout) && ($azera_shop_header_layout == 'layout2') ) {
-					echo '<div class="col-md-6 text-left second-header-layout">';
+					echo '<div class="col-md-7 text-left second-header-layout">';
 				} else {
 					echo '<div class="col-md-12 intro-section-text-wrap">';
 				}
@@ -65,7 +56,7 @@
 
 					<!-- HEADING AND BUTTONS -->
 					<?php
-					if(!empty($azera_shop_header_logo) || !empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){?>
+					if(!empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){ ?>
 						<div id="intro-section" class="intro-section">
 
 							<!-- WELCOM MESSAGE -->
@@ -105,18 +96,7 @@
 					<?php
 					}
 					?>
-				</div><!-- .col-md-12 or .col-md-6 -->
-
-				<?php
-				if(!empty($azera_shop_header_right_image) && !empty($azera_shop_header_layout) && ($azera_shop_header_layout == 'layout2') ) { ?>
-					<div class="col-md-6 text-right">
-						<div class=" pull-right hidden-sm hidden-xs">
-							<img src="<?php echo $azera_shop_header_right_image; ?>" alt="">
-						</div>
-					</div>
-				<?php
-				} ?>
-
+				</div><!-- .col-md-12 or .col-md-7 -->
 			</div>
 			</div>
 		</div>
