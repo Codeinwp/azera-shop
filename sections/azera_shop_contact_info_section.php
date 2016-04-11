@@ -6,9 +6,9 @@
 if( current_user_can( 'edit_theme_options') ){
 	$azera_shop_contact_info_item = get_theme_mod('azera_shop_contact_info_content', json_encode(
 	array( 
-		array("icon_value" => "fa-envelope-o" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b291454c3' ), 
-		array("icon_value" => "fa-map-o" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b293454c4' ), 
-		array("icon_value" => "fa-phone" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b295454c5' )
+		array("icon_value" => "fa-envelope-o" ,"text" => esc_html__('Text from customizer.','azera-shop'), 'id' => 'azera_shop_56d6b291454c3' ), 
+		array("icon_value" => "fa-map-o" ,"text" => esc_html__('Text from customizer.','azera-shop'), 'id' => 'azera_shop_56d6b293454c4' ), 
+		array("icon_value" => "fa-phone" ,"text" => esc_html__('Text from customizer.','azera-shop'), 'id' => 'azera_shop_56d6b295454c5' )
 	) )
 );
 } else{
@@ -80,7 +80,7 @@ if( !empty($azera_shop_contact_info_item) ){
 									}
 
 									if(!empty($text)){
-										echo '<a href="" class="strong">'.html_entity_decode($text).'</a>';
+										echo '<div class="strong no-link">'.html_entity_decode($text).'</div>';
 									} ?>
 								</div>
 							<?php

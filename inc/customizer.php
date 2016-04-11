@@ -435,7 +435,6 @@ function azera_shop_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'azera_shop_button_link', array(
-		'default' => admin_url( 'customize.php?autofocus[control]=azera_shop_button_text' ),
 		'sanitize_callback' => 'esc_url',
 		'transport' => 'postMessage'
 	));
@@ -478,9 +477,9 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'azera_shop_contact_info_content', array(
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
 		'default' => json_encode( array(
-			array("icon_value" => "fa-envelope-o" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b291454c3' ), 
-			array("icon_value" => "fa-map-o" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b293454c4' ), 
-			array("icon_value" => "fa-phone" ,"text" => esc_html__('Edit this in customizer.','azera-shop'), 'id' => 'azera_shop_56d6b295454c5' ) 
+			array("icon_value" => "fa-envelope-o" ,"text" => esc_html__('Text from customizer.','azera-shop'), 'id' => 'azera_shop_56d6b291454c3' ), 
+			array("icon_value" => "fa-map-o" ,"text" => esc_html__('Text from customizer.','azera-shop'), 'id' => 'azera_shop_56d6b293454c4' ), 
+			array("icon_value" => "fa-phone" ,"text" => esc_html__('Text from customizer.','azera-shop'), 'id' => 'azera_shop_56d6b295454c5' ) 
 		) )
 	) );
 	
