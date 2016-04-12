@@ -496,6 +496,9 @@ if(function_exists('pll_register_string') || has_action('wpml_register_single_st
 	if( !empty( $azera_shop_logos ) ){
 		$azera_shop_logos_decoded = json_decode($azera_shop_logos);
 		foreach ($azera_shop_logos_decoded as $azera_shop_logo_box) {
+			$id = '';
+			$image = '';
+			$link = '';			
 			if( !empty( $azera_shop_logo_box->id ) ){
 				$id = $azera_shop_logo_box->id;
 			}
@@ -507,15 +510,17 @@ if(function_exists('pll_register_string') || has_action('wpml_register_single_st
 			}
 			if( !empty( $id ) ){
 				if( !empty( $image ) ){
-					do_action( 'wpml_register_single_string', 'Azera Shop -> Logos section', 'Logo image '.$id, $image );
 					if( function_exists('pll_register_string')){
 						pll_register_string($id.'_logo_image', $image, 'Logos');
+					} else {
+						do_action( 'wpml_register_single_string', 'Azera Shop -> Logos section', 'Logo image '.$id, $image );
 					}
 				}
 				if( !empty( $link ) ){
-					do_action( 'wpml_register_single_string', 'Azera Shop -> Logos section', 'Logo link '.$id, $link );
 					if( function_exists('pll_register_string')){
 						pll_register_string($id.'_logo_link', $link, 'Logos');
+					} else {
+						do_action( 'wpml_register_single_string', 'Azera Shop -> Logos section', 'Logo link '.$id, $link );
 					}
 				}
 			}
@@ -575,6 +580,9 @@ if(function_exists('pll_register_string') || has_action('wpml_register_single_st
 	if( !empty( $azera_shop_social_icons ) ){
 		$azera_shop_social_icons_decoded = json_decode($azera_shop_social_icons);
 		foreach($azera_shop_social_icons_decoded as $azera_shop_footer_social){
+			$id = '';
+			$link = '';
+			$icon = '';
 			if( !empty( $azera_shop_footer_social->id ) ){
 				$id = esc_attr($azera_shop_footer_social->id);
 			}
@@ -586,15 +594,17 @@ if(function_exists('pll_register_string') || has_action('wpml_register_single_st
 			}
 			if( !empty( $id ) ) {
 				if( !empty( $icon ) ){
-					do_action( 'wpml_register_single_string', 'Azera Shop -> Footer', 'Footer social icon '.$id, $icon );
 					if( function_exists('pll_register_string')){
 						pll_register_string( $id.'_footer_icon', $icon, 'Footer' );
+					} else {
+						do_action( 'wpml_register_single_string', 'Azera Shop -> Footer', 'Footer social icon '.$id, $icon );
 					}
 				}
 				if( !empty( $link ) ){
-					do_action( 'wpml_register_single_string', 'Azera Shop -> Footer', 'Footer social link '.$id, $link );
 					if( function_exists('pll_register_string')){
 						pll_register_string( $id.'_footer_link', $link, 'Footer' );
+					} else {
+						do_action( 'wpml_register_single_string', 'Azera Shop -> Footer', 'Footer social link '.$id, $link );
 					}
 				}
 			}
@@ -608,6 +618,10 @@ if(function_exists('pll_register_string') || has_action('wpml_register_single_st
 	if( !empty( $azera_shop_contact ) ){
 		$azera_shop_contact_decoded = json_decode($azera_shop_contact);
 		foreach($azera_shop_contact_decoded as $azera_shop_contact_box){
+			$id = '';
+			$icon = '';
+			$text = '';
+			$link = '';
 			if( !empty( $azera_shop_contact_box->id ) ){
 				$id = esc_attr($azera_shop_contact_box->id);
 			}
@@ -624,21 +638,24 @@ if(function_exists('pll_register_string') || has_action('wpml_register_single_st
 			}
 			if( !empty( $id ) ) {
 				if( !empty( $icon ) ){
-					do_action( 'wpml_register_single_string', 'Azera Shop -> Contact section', 'Contact box icon '.$id, $icon );
 					if( function_exists('pll_register_string')){
 						pll_register_string( $id.'_contact_icon', $icon, 'Contact' );
+					} else {
+						do_action( 'wpml_register_single_string', 'Azera Shop -> Contact section', 'Contact box icon '.$id, $icon );
 					}
 				}
 				if( !empty( $link ) ){
-					do_action( 'wpml_register_single_string', 'Azera Shop -> Contact section', 'Contact box link '.$id, $link );
 					if( function_exists('pll_register_string')){
 						pll_register_string( $id.'_contact_link', $link, 'Contact' );
+					} else {
+						do_action( 'wpml_register_single_string', 'Azera Shop -> Contact section', 'Contact box link '.$id, $link );
 					}
 				}
 				if( !empty( $text ) ){
-					do_action( 'wpml_register_single_string', 'Azera Shop -> Contact section', 'Contact box text '.$id, $text );
 					if( function_exists('pll_register_string')){
 						pll_register_string( $id.'_contact_text', $text, 'Contact' );
+					} else {
+						do_action( 'wpml_register_single_string', 'Azera Shop -> Contact section', 'Contact box text '.$id, $text );
 					}
 				}
 			}
