@@ -101,19 +101,31 @@
 							echo '<ul class="social-icons">';
 							
 								foreach($azera_shop_social_icons_decoded as $azera_shop_social_icon){
-									
-									if( !empty($azera_shop_social_icon->icon_value) ){
+									$id = '';
+									$link = '';
+									$icon = '';
+									if( !empty( $azera_shop_social_icon->id ) ){
+										$id = esc_attr($azera_shop_social_icon->id);
+									}
+									if( !empty( $azera_shop_social_icon->link ) ){
+										if( function_exists('pll__') ){
+											$link = pll__($azera_shop_social_icon->link);
+										} else {
+											$link = apply_filters( 'wpml_translate_single_string', $azera_shop_social_icon->link, 'Azera Shop -> Footer', 'Footer social link '.$id );
+										}
+									}
+									if( !empty( $azera_shop_social_icon->icon_value ) ){
+										if( function_exists('pll__') ){
+											$icon = pll__($azera_shop_social_icon->icon_value);
+										} else {
+											$icon = apply_filters( 'wpml_translate_single_string', $azera_shop_social_icon->icon_value, 'Azera Shop -> Footer', 'Footer social icon '.$id );
+										}
+									}
+									if( !empty($icon) ){
 										
-										explode("-",$azera_shop_social_icon->icon_value);
-										
-										if( !empty($azera_shop_social_icon->icon_value[2]) ) {
-									
-											if(function_exists('icl_t')){
-												echo '<li><a href="'.esc_url(icl_t('Footer Social Link',$azera_shop_social_icon->id.'_footer_social_link',$azera_shop_social_icon->link)).'"><i class="fa azera-shop-footer-icons '.icl_t('Footer Social Icon',$azera_shop_social_icon->id.'_footer_social_icon',esc_attr($azera_shop_social_icon->icon_value)).' transparent-text-dark" aria-hidden="true"></i><span class="screen-reader-text">'.esc_attr($azera_shop_social_icon->icon_value[2]).'</span></a></li>';
-											} else {
-												echo '<li><a href="'.esc_url($azera_shop_social_icon->link).'"><i class="azera-shop-footer-icons fa '.esc_attr($azera_shop_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></i><span class="screen-reader-text">'.esc_attr($azera_shop_social_icon->icon_value[2]).'</span></a></li>';
-											}
-
+										$ic = explode("-",$icon);
+										if( !empty($ic[1]) ) {
+											echo '<li><a href="'.esc_url($link).'"><i class="azera-shop-footer-icons fa '.esc_attr($icon).' transparent-text-dark" aria-hidden="true"></i><span class="screen-reader-text">'.esc_attr($ic[1]).'</span></a></li>';
 										}
 									}
 
