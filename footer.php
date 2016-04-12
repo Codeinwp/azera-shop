@@ -101,6 +101,9 @@
 							echo '<ul class="social-icons">';
 							
 								foreach($azera_shop_social_icons_decoded as $azera_shop_social_icon){
+									$id = '';
+									$link = '';
+									$icon = '';
 									if( !empty( $azera_shop_social_icon->id ) ){
 										$id = esc_attr($azera_shop_social_icon->id);
 									}
