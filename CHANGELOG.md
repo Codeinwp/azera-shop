@@ -1,5 +1,15 @@
 
 
+### 1.0.8 - 12/04/2016
+
+ Changes: 
+
+
+ * Merge pull request #49 from cristian-ungureanu/development
+
+!!! fix footer socials translations
+
+
 ### 1.0.7 - 11/04/2016
 
  Changes: 
