@@ -2,7 +2,7 @@
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return NULL;
 
-class azera_shop_General_Repeater extends WP_Customize_Control {
+class Azera_Shop_General_Repeater extends WP_Customize_Control {
 
         private $options = array();
 

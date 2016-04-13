@@ -82,15 +82,7 @@
 					echo '</div>';
 					/* SOCIAL ICONS */
 				
-					$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons',
-						json_encode(
-							array(
-								array('icon_value' =>'fa-facebook' , 'link' => get_site_url(), 'id' => 'azera_shop_56d6b2cc454c8'),
-								array('icon_value' =>'fa-twitter' , 'link' => get_site_url(), 'id' => 'azera_shop_56d6b2cb454c7'),
-								array('icon_value' =>'fa-google-plus-square' , 'link' => get_site_url(), 'id' => 'azera_shop_56d6b2c9454c6')
-								)
-							)
-						);
+					$azera_shop_social_icons = get_theme_mod('azera_shop_social_icons');
 
 					if( !empty( $azera_shop_social_icons ) ){
 						
