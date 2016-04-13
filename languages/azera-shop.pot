@@ -1,15 +1,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Azera Shop\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-11 18:43+0200\n"
-"PO-Revision-Date: 2016-04-11 18:43+0200\n"
+"POT-Creation-Date: 2016-04-13 12:22+0200\n"
+"PO-Revision-Date: 2016-04-13 12:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: Themeisle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;_x:1,2c\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x:1,2c;esc_html__;"
+"esc_html_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: inc\n"
@@ -20,36 +21,33 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:29
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
-#: archive.php:20
+#: archive.php:20 home.php:25 inc/customizer.php:644
 msgid "BLOG"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:333
-#: functions.php:342
+#: class-tgm-plugin-activation.php:333 functions.php:342
 msgid "Install Required Plugins"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:334
-#: functions.php:343
+#: class-tgm-plugin-activation.php:334 functions.php:343
 msgid "Install Plugins"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:335
-#: functions.php:344
+#: class-tgm-plugin-activation.php:335 functions.php:344
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:336
-#: functions.php:345
+#: class-tgm-plugin-activation.php:336 functions.php:345
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:397
-#: functions.php:356
+#: class-tgm-plugin-activation.php:397 functions.php:356
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -57,8 +55,7 @@ msgstr ""
 msgid "Return to the dashboard"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:399
-#: class-tgm-plugin-activation.php:3029
+#: class-tgm-plugin-activation.php:399 class-tgm-plugin-activation.php:3029
 #: functions.php:357
 msgid "Plugin activated successfully."
 msgstr ""
@@ -74,7 +71,9 @@ msgstr ""
 
 #: class-tgm-plugin-activation.php:402
 #, php-format
-msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:403
@@ -98,22 +97,26 @@ msgstr ""
 msgid "Set the parent_slug config variable instead."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:828
-#: class-tgm-plugin-activation.php:3438
+#: class-tgm-plugin-activation.php:828 class-tgm-plugin-activation.php:3438
 msgid "Return to the Dashboard"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:935
-msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:935
-#: class-tgm-plugin-activation.php:938
-msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+#: class-tgm-plugin-activation.php:935 class-tgm-plugin-activation.php:938
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:938
-msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:1881
@@ -191,7 +194,9 @@ msgstr ""
 
 #: class-tgm-plugin-activation.php:2422
 #, php-format
-msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:2436
@@ -292,7 +297,9 @@ msgid "The installation of %1$s failed."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:3369
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:3370
@@ -300,13 +307,11 @@ msgstr ""
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3370
-#: class-tgm-plugin-activation.php:3376
+#: class-tgm-plugin-activation.php:3370 class-tgm-plugin-activation.php:3376
 msgid "Show Details"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3370
-#: class-tgm-plugin-activation.php:3376
+#: class-tgm-plugin-activation.php:3370 class-tgm-plugin-activation.php:3376
 msgid "Hide Details"
 msgstr ""
 
@@ -320,7 +325,9 @@ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:3375
-msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:3376
@@ -337,18 +344,15 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: comments.php:35
-#: comments.php:58
+#: comments.php:35 comments.php:58
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:38
-#: comments.php:61
+#: comments.php:38 comments.php:61
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:39
-#: comments.php:62
+#: comments.php:39 comments.php:62
 msgid "Newer Comments"
 msgstr ""
 
@@ -356,8 +360,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-contact.php:33
-#: content-page.php:27
+#: content-contact.php:33 content-page.php:27 inc/template-tags.php:98
 msgid "Edit"
 msgstr ""
 
@@ -367,39 +370,39 @@ msgstr ""
 
 #: content-none.php:19
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-none.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
 #: content-none.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
-#: content-page.php:20
-#: content-search.php:90
-#: content-single-download.php:28
-#: content-single.php:32
-#: content.php:84
+#: content-page.php:20 content-search.php:90 content-single-download.php:28
+#: content-single.php:32 content.php:84
 msgid "Pages:"
 msgstr ""
 
-#: content-search.php:40
-#: content.php:40
+#: content-search.php:40 content.php:40
 msgctxt "post day fomat"
 msgid "d"
 msgstr ""
 
-#: content-search.php:41
-#: content.php:41
+#: content-search.php:41 content.php:41
 msgctxt "post month fomat"
 msgid "M"
 msgstr ""
 
-#: content-search.php:52
-#: content.php:55
+#: content-search.php:52 content.php:55 inc/template-tags.php:80
+#: inc/template-tags.php:86
 msgid ", "
 msgstr ""
 
@@ -407,21 +410,15 @@ msgstr ""
 msgid "Posted in "
 msgstr ""
 
-#: content-search.php:71
-#: content-single.php:23
-#: content.php:65
+#: content-search.php:71 content-single.php:23 content.php:65
 msgid "No comments"
 msgstr ""
 
-#: content-search.php:71
-#: content-single.php:23
-#: content.php:65
+#: content-search.php:71 content-single.php:23 content.php:65
 msgid "One comment"
 msgstr ""
 
-#: content-search.php:71
-#: content-single.php:23
-#: content.php:65
+#: content-search.php:71 content-single.php:23 content.php:65
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -460,26 +457,26 @@ msgstr ""
 msgid "Widgets Area 4"
 msgstr ""
 
-#: footer.php:73
-#: footer.php:74
+#: footer.php:73 footer.php:74
 msgid "Secondary Menu"
 msgstr ""
 
-#: footer.php:132
+#: footer.php:136
 #, php-format
 msgid "%1$s powered by %2$s"
 msgstr ""
 
-#: footer.php:133
+#: footer.php:137 inc/class/azera-shop-general-control.php:74
+#: inc/class/azera-shop-general-control.php:171
+#: inc/class/azera-shop-general-control.php:266
 msgid "Azera Shop"
 msgstr ""
 
-#: footer.php:134
+#: footer.php:138
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:47
-#: header.php:122
+#: functions.php:47 header.php:122
 msgid "Primary Menu"
 msgstr ""
 
@@ -492,7 +489,11 @@ msgid "Switch \"Front page displays\" to \"A static page\" "
 msgstr ""
 
 #: functions.php:122
-msgid "In order to have the one page look for your website, please go to Customize -> Advanced Options -> Static Front Page and switch \"Front page displays\" to \"A static page\". Then select the template \"Frontpage\" for that selected page."
+msgid ""
+"In order to have the one page look for your website, please go to Customize -"
+"> Advanced Options -> Static Front Page and switch \"Front page displays\" "
+"to \"A static page\". Then select the template \"Frontpage\" for that "
+"selected page."
 msgstr ""
 
 #: functions.php:127
@@ -500,7 +501,10 @@ msgid "Install Intergeo Maps - Google Maps Plugin"
 msgstr ""
 
 #: functions.php:128
-msgid "In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode"
+msgid ""
+"In order to use map section, you need to install Intergeo Maps plugin then "
+"use it to create a map and paste the generated shortcode in Customize -> "
+"Contact section -> Map shortcode"
 msgstr ""
 
 #: functions.php:166
@@ -541,8 +545,7 @@ msgstr ""
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:449
-#: functions.php:473
+#: functions.php:449 functions.php:473
 msgid "(Edit)"
 msgstr ""
 
@@ -565,12 +568,11 @@ msgstr ""
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:665
+#: functions.php:682
 msgid "Read more about "
 msgstr ""
 
-#: functions.php:676
-#: header.php:157
+#: functions.php:693 header.php:157
 msgid "View your shopping cart"
 msgstr ""
 
@@ -595,242 +597,270 @@ msgstr ""
 msgid "Main sidebar"
 msgstr ""
 
-#: inc/customizer.php:17
-msgid "To customize the Frontpage sections please create a page and select the template \"Frontpage\" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select \"A static page\". Finally, for \"Front page\" choose the page you previously created."
-msgstr ""
-
-#: inc/customizer.php:17
-msgid "Need further informations? Check this"
-msgstr ""
-
-#: inc/customizer.php:17
-msgid "doc"
-msgstr ""
-
-#: inc/customizer.php:41
+#: inc/customizer.php:35
 msgid "Appearance"
 msgstr ""
 
-#: inc/customizer.php:54
+#: inc/customizer.php:48
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer.php:66
 msgid "Title color"
 msgstr ""
 
-#: inc/customizer.php:80
+#: inc/customizer.php:74
 msgid "General options"
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:76
 msgid "Azera Shop theme general appearance options"
 msgstr ""
 
-#: inc/customizer.php:93
+#: inc/customizer.php:87 sections/azera_shop_logos_section.php:56
+#: sections/azera_shop_logos_section.php:61
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:100
 msgid "Header visibility"
 msgstr ""
 
-#: inc/customizer.php:107
+#: inc/customizer.php:101
 msgid "If this box is checked, the header will toggle on frontpage."
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:115
 msgid "Header section"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:121
 msgid "Content"
 msgstr ""
 
-#: inc/customizer.php:141
+#: inc/customizer.php:135
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:156
-#: inc/customizer.php:295
-#: inc/customizer.php:397
+#: inc/customizer.php:150 inc/customizer.php:289 inc/customizer.php:391
 msgid "Main title"
 msgstr ""
 
-#: inc/customizer.php:169
-#: inc/customizer.php:308
-#: inc/customizer.php:671
+#: inc/customizer.php:163 inc/customizer.php:302 inc/customizer.php:661
+#: inc/class/azera-shop-general-control.php:138
+#: inc/class/azera-shop-general-control.php:139
+#: inc/class/azera-shop-general-control.php:235
+#: inc/class/azera-shop-general-control.php:236
+#: inc/class/azera-shop-general-control.php:332
+#: inc/class/azera-shop-general-control.php:333
 msgid "Subtitle"
 msgstr ""
 
-#: inc/customizer.php:178
+#: inc/customizer.php:172 sections/azera_shop_header_section.php:8
 msgid "GET STARTED"
 msgstr ""
 
-#: inc/customizer.php:183
-#: inc/customizer.php:410
+#: inc/customizer.php:177 inc/customizer.php:404
 msgid "Button label"
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:185
 msgid "#"
 msgstr ""
 
-#: inc/customizer.php:196
-#: inc/customizer.php:422
+#: inc/customizer.php:190 inc/customizer.php:416
 msgid "Button link"
 msgstr ""
 
-#: inc/customizer.php:206
+#: inc/customizer.php:200
 msgid "Logos Bar"
 msgstr ""
 
-#: inc/customizer.php:228
-#: inc/customizer.php:570
+#: inc/customizer.php:222 inc/customizer.php:560
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:239
+#: inc/customizer.php:233
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:250
+#: inc/customizer.php:244
 msgid "Parallax effect"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:245
 msgid "If this box is checked, the parallax effect is enabled."
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:258
 msgid "First layer"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:270
 msgid "Second layer"
 msgstr ""
 
-#: inc/customizer.php:285
+#: inc/customizer.php:279
 msgid "Shop section"
 msgstr ""
 
-#: inc/customizer.php:290
+#: inc/customizer.php:284 sections/azera_shop_shop_section.php:5
+#: sections/azera_shop_shop_section.php:10
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:303
-msgid "Showcase your work effectively and in an attractive form that your prospective clients will love."
+#: inc/customizer.php:297 sections/azera_shop_shop_section.php:6
+msgid ""
+"Showcase your work effectively and in an attractive form that your "
+"prospective clients will love."
 msgstr ""
 
-#: inc/customizer.php:321
+#: inc/customizer.php:315
 msgid "Number of products"
 msgstr ""
 
-#: inc/customizer.php:337
+#: inc/customizer.php:331
 msgid "Display products from"
 msgstr ""
 
-#: inc/customizer.php:349
+#: inc/customizer.php:343
 msgid "Shortcodes section"
 msgstr ""
 
-#: inc/customizer.php:357
+#: inc/customizer.php:351
 msgid "Edit the shortcode options"
 msgstr ""
 
-#: inc/customizer.php:373
+#: inc/customizer.php:367
 msgid "Ribbon section"
 msgstr ""
 
-#: inc/customizer.php:385
+#: inc/customizer.php:379
 msgid "Ribbon Background"
 msgstr ""
 
-#: inc/customizer.php:392
+#: inc/customizer.php:386 sections/azera_shop_ribbon_section.php:10
 msgid "In order to edit the text here you should go to customizer."
 msgstr ""
 
-#: inc/customizer.php:405
+#: inc/customizer.php:399
 msgid "Text from customizer"
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:427
 msgid "Frontpage settings"
 msgstr ""
 
-#: inc/customizer.php:452
+#: inc/customizer.php:439
+msgid ""
+"To customize the Frontpage sections please create a page and select the "
+"template \"Frontpage\" for that page. After that, go to Appearance -> "
+"Customize -> Advanced options -> Frontpage displays and select \"A static "
+"page\". Finally, for \"Front page\" choose the page you previously created."
+msgstr ""
+
+#: inc/customizer.php:439
+msgid "Need further informations? Check this"
+msgstr ""
+
+#: inc/customizer.php:439
+msgid "doc"
+msgstr ""
+
+#: inc/customizer.php:449
 msgid "Contact section"
 msgstr ""
 
-#: inc/customizer.php:460
-#: inc/customizer.php:461
-#: inc/customizer.php:462
+#: inc/customizer.php:457 inc/customizer.php:458 inc/customizer.php:459
+#: sections/azera_shop_contact_info_section.php:9
+#: sections/azera_shop_contact_info_section.php:10
+#: sections/azera_shop_contact_info_section.php:11
+#: sections/azera_shop_ribbon_section.php:11
 msgid "Text from customizer."
 msgstr ""
 
-#: inc/customizer.php:467
+#: inc/customizer.php:464
 msgid "Add new contact field"
 msgstr ""
 
-#: inc/customizer.php:484
-#: inc/customizer.php:521
+#: inc/customizer.php:481 inc/customizer.php:518
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer.php:485
-#: inc/customizer.php:522
-msgid "To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated"
+#: inc/customizer.php:482 inc/customizer.php:519
+msgid ""
+"To use this section please install <a href=\"https://wordpress.org/plugins/"
+"intergeo-maps/\">Intergeo Maps</a> plugin then use it to create a map and "
+"paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:498
+#: inc/customizer.php:495
 msgid "Contact page"
 msgstr ""
 
-#: inc/customizer.php:508
+#: inc/customizer.php:505
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer.php:509
-msgid "Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
+#: inc/customizer.php:506
+msgid ""
+"Create a form, copy the shortcode generated and paste it here. We recommend "
+"<a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> "
+"but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer.php:533
+#: inc/customizer.php:530
 msgid "Footer options"
 msgstr ""
 
-#: inc/customizer.php:535
-msgid "The main content of this section is customizable in: Customize -> Widgets -> Footer area. "
+#: inc/customizer.php:532
+msgid ""
+"The main content of this section is customizable in: Customize -> Widgets -> "
+"Footer area. "
 msgstr ""
 
-#: inc/customizer.php:551
+#: inc/customizer.php:548
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer.php:584
+#: inc/customizer.php:574
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer.php:586
+#: inc/customizer.php:576
 msgid "Azera Shop theme general options"
 msgstr ""
 
-#: inc/customizer.php:637
+#: inc/customizer.php:627
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer.php:638
+#: inc/customizer.php:628
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
-#: inc/customizer.php:647
+#: inc/customizer.php:637
 msgid "Blog header"
 msgstr ""
 
-#: inc/customizer.php:660
+#: inc/customizer.php:650 inc/class/azera-shop-general-control.php:131
+#: inc/class/azera-shop-general-control.php:132
+#: inc/class/azera-shop-general-control.php:228
+#: inc/class/azera-shop-general-control.php:229
+#: inc/class/azera-shop-general-control.php:325
+#: inc/class/azera-shop-general-control.php:326
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:684
+#: inc/customizer.php:674 inc/class/azera-shop-general-control.php:81
+#: inc/class/azera-shop-general-control.php:86
+#: inc/class/azera-shop-general-control.php:106
+#: inc/class/azera-shop-general-control.php:178
+#: inc/class/azera-shop-general-control.php:183
+#: inc/class/azera-shop-general-control.php:205
+#: inc/class/azera-shop-general-control.php:273
+#: inc/class/azera-shop-general-control.php:279
+#: inc/class/azera-shop-general-control.php:302
 msgid "Image"
 msgstr ""
 
@@ -946,7 +976,9 @@ msgstr ""
 
 #: inc/admin/welcome-screen/welcome-screen.php:64
 #, php-format
-msgid "Welcome! Thank you for choosing Azera Shop! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s."
+msgid ""
+"Welcome! Thank you for choosing Azera Shop! To fully take advantage of the "
+"best our theme can offer please make sure you visit our %swelcome page%s."
 msgstr ""
 
 #: inc/admin/welcome-screen/welcome-screen.php:65
@@ -959,6 +991,7 @@ msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
 #: inc/admin/welcome-screen/welcome-screen.php:180
+#: inc/admin/welcome-screen/sections/getting-started.php:33
 msgid "Getting started"
 msgstr ""
 
@@ -988,11 +1021,16 @@ msgid "Welcome to %1$s!"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:24
-msgid "Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience."
+msgid ""
+"Our most elegant and professional one-page theme, which turns your scrolling "
+"into a smooth and pleasant experience."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:25
-msgid "We want to make sure you have the best experience using Azera Shop and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Azera Shop, as much as we enjoy creating great products."
+msgid ""
+"We want to make sure you have the best experience using Azera Shop and that "
+"is why we gathered here all the necessary informations for you. We hope you "
+"will enjoy using Azera Shop, as much as we enjoy creating great products."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:35
@@ -1000,7 +1038,9 @@ msgid "Customize everything in a single place."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:36
-msgid "Using the WordPress Customizer you can easily customize every aspect of the theme."
+msgid ""
+"Using the WordPress Customizer you can easily customize every aspect of the "
+"theme."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:37
@@ -1016,7 +1056,11 @@ msgid "Create a child theme"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:52
-msgid "If you want to make changes to the theme's files, those changes are likely to be overwritten when you next update the theme. In order to prevent that from happening, you need to create a child theme. For this, please follow the documentation below."
+msgid ""
+"If you want to make changes to the theme's files, those changes are likely "
+"to be overwritten when you next update the theme. In order to prevent that "
+"from happening, you need to create a child theme. For this, please follow "
+"the documentation below."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:53
@@ -1031,7 +1075,10 @@ msgid "How to Internationalize Your Website"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:58
-msgid "Although English is the most used language on the internet, you should consider all your web users as well. Find out what it takes to make your website ready for foreign markets from this document."
+msgid ""
+"Although English is the most used language on the internet, you should "
+"consider all your web users as well. Find out what it takes to make your "
+"website ready for foreign markets from this document."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:65
@@ -1039,7 +1086,11 @@ msgid "Speed up your site"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:66
-msgid "If you find yourself in the situation where everything on your site is running very slow, you might consider having a look at the below documentation where you will find the most common issues causing this and possible solutions for each of the issues."
+msgid ""
+"If you find yourself in the situation where everything on your site is "
+"running very slow, you might consider having a look at the below "
+"documentation where you will find the most common issues causing this and "
+"possible solutions for each of the issues."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:71
@@ -1047,7 +1098,10 @@ msgid "Link Menu to sections"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:72
-msgid "Linking the frontpage sections with the top menu is very simple, all you need to do is assign section anchors to the menu. In the below documentation you will find a nice tutorial about this."
+msgid ""
+"Linking the frontpage sections with the top menu is very simple, all you "
+"need to do is assign section anchors to the menu. In the below documentation "
+"you will find a nice tutorial about this."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:84
@@ -1055,7 +1109,9 @@ msgid "View full documentation"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:85
-msgid "Need more details? Please check our full documentation for detailed information on how to use Azera Shop."
+msgid ""
+"Need more details? Please check our full documentation for detailed "
+"information on how to use Azera Shop."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:86
@@ -1071,7 +1127,10 @@ msgid "Intergeo Maps - Google Maps Plugin"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:102
-msgid "The Intergeo Google Maps plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder."
+msgid ""
+"The Intergeo Google Maps plugin is a simple, easy and in the same time quite "
+"powerful tool for handling Google Maps in your website. The plugin allows "
+"users to create new maps by using powerful UI builder."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:106
@@ -1088,7 +1147,9 @@ msgid "Pirate Forms"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:126
-msgid "Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier."
+msgid ""
+"Makes your contact page more engaging by creating a good-looking contact "
+"form on your website. The interaction with your visitors was never easier."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:136
@@ -1112,7 +1173,8 @@ msgid "Azera Shop on GitHub"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/github.php:28
-msgid "Are you a polyglot? Want to translate Azera Shop into your own language?"
+msgid ""
+"Are you a polyglot? Want to translate Azera Shop into your own language?"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/github.php:30
@@ -1137,7 +1199,9 @@ msgid "Need more details?"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/support.php:11
-msgid "Please check our full documentation for detailed information on how to use Azera Shop."
+msgid ""
+"Please check our full documentation for detailed information on how to use "
+"Azera Shop."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/support.php:14
@@ -1255,4 +1319,3 @@ msgstr ""
 #: sections/azera_shop_shortcodes_section.php:36
 msgid "Shortcodes"
 msgstr ""
-

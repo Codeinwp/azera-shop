@@ -12,12 +12,6 @@
  */
 function azera_shop_customize_register( $wp_customize ) {
 
-	class Azera_Shop_Front_Page_Instructions extends WP_Customize_Control {
-		public function render_content() {
-			echo __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ).'<br><br>'.__( 'Need further informations? Check this','azera-shop' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','azera-shop').'</a>';
-		}
-	}
-
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -224,7 +218,7 @@ function azera_shop_customize_register( $wp_customize ) {
 		)
 
 	));
-	$wp_customize->add_control( new azera_shop_General_Repeater( $wp_customize, 'azera_shop_logos_content', array(
+	$wp_customize->add_control( new Azera_Shop_General_Repeater( $wp_customize, 'azera_shop_logos_content', array(
 		'label'   => esc_html__('Add new social icon','azera-shop'),
 		'section' => 'azera_shop_logos_settings_section',
 		'active_callback' => 'azera_shop_show_on_front',
@@ -438,9 +432,12 @@ function azera_shop_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'azera_shop_sanitize_text'
 	) );
 
-	$wp_customize->add_control( new Azera_Shop_Front_Page_Instructions( $wp_customize, 'azera_shop_front_page_instructions', array(
-	    'section' => 'azera_shop_front_page_instructions'
-	)));
+	require_once ( 'class/azera-shop-text-control.php');
+	
+	$wp_customize->add_control( new Azera_Shop_Message( $wp_customize, 'azera_shop_front_page_instructions', array(
+		'section' => 'azera_shop_front_page_instructions',
+		'azera_shop_message' => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ).'<br><br>'.__( 'Need further informations? Check this','azera-shop' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','azera-shop').'</a>'
+	) ) );
 
 	/********************************************************/
 	/****************** CONTACT OPTIONS  ********************/
@@ -463,7 +460,7 @@ function azera_shop_customize_register( $wp_customize ) {
 		) )
 	) );
 	
-	$wp_customize->add_control( new azera_shop_General_Repeater( $wp_customize, 'azera_shop_contact_info_content', array(
+	$wp_customize->add_control( new Azera_Shop_General_Repeater( $wp_customize, 'azera_shop_contact_info_content', array(
 		'label'   => esc_html__('Add new contact field','azera-shop'),
 		'section' => 'azera_shop_contact_section',
 		'active_callback' => 'azera_shop_show_on_front',
@@ -556,17 +553,10 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	/* Socials icons */
 	$wp_customize->add_setting( 'azera_shop_social_icons', array(
-		'sanitize_callback' => 'azera_shop_sanitize_repeater',
-		'default' => json_encode(
-			array(
-				array('icon_value' =>'fa-facebook' , 'link' => get_site_url() , 'id' => 'azera_shop_56d6b2cc454c8'),
-				array('icon_value' =>'fa-twitter' , 'link' => get_site_url() , 'id' => 'azera_shop_56d6b2cb454c7'),
-				array('icon_value' =>'fa-google-plus-square' , 'link' => get_site_url() , 'id' => 'azera_shop_56d6b2c9454c6')
-			)
-		)
-
-	));
-	$wp_customize->add_control( new azera_shop_General_Repeater( $wp_customize, 'azera_shop_social_icons', array(
+		'sanitize_callback' => 'azera_shop_sanitize_repeater'
+	) );
+	
+	$wp_customize->add_control( new Azera_Shop_General_Repeater( $wp_customize, 'azera_shop_social_icons', array(
 		'label'   => esc_html__('Add new social icon','azera-shop'),
 		'section' => 'azera_shop_footer_section',
 		'priority' => 3,
