@@ -436,7 +436,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control( new Azera_Shop_Message( $wp_customize, 'azera_shop_front_page_instructions', array(
 		'section' => 'azera_shop_front_page_instructions',
-		'azera_shop_message' => sprintf( wp_kses( __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.<br><br>Need further informations? Check this <a href="%s">doc</a>','azera-shop' ), array(  'a' => array( 'href' => array() ), 'br' => array() ) ), esc_url( "http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one" ) )
+		'azera_shop_message' => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ).'<br><br>'.__( 'Need further informations? Check this','azera-shop' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','azera-shop').'</a>'
 	) ) );
 
 	/********************************************************/
