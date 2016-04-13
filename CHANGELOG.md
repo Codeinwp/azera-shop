@@ -1,5 +1,15 @@
 
 
+### 1.0.9 - 13/04/2016
+
+ Changes: 
+
+
+ * Merge pull request #52 from cristian-ungureanu/development
+
+!!! translations issues
+
+
 ### 1.0.8 - 12/04/2016
 
  Changes: 
