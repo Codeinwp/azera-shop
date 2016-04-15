@@ -103,24 +103,42 @@ function azera_shop_customize_register( $wp_customize ) {
 				'priority'    => 2,
 			)
 	);
+	
+	/***********************************************************************************/
+	/******  Frontpage - instructions for users when not on Frontpage template *********/
+	/***********************************************************************************/
 
+	$wp_customize->add_section( 'azera_shop_front_page_instructions', array(
+        'title'    => __( 'Frontpage settings', 'azera-shop' ),
+        'priority' => 37
+    ) );
 
-	/********************************************************/
-	/************* HEADER OPTIONS  **************************/
-	/********************************************************/
-	$wp_customize->add_panel( 'panel_1', array(
-		'priority' => 35,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => esc_html__( 'Header section', 'azera-shop' )
+	$wp_customize->add_setting( 'azera_shop_front_page_instructions', array(
+		'sanitize_callback' => 'azera_shop_sanitize_text'
 	) );
 
-	/* HEADER CONTENT */
+	require_once ( 'class/azera-shop-text-control.php');
+	
+	$wp_customize->add_control( new Azera_Shop_Message( $wp_customize, 'azera_shop_front_page_instructions', array(
+		'section' => 'azera_shop_front_page_instructions',
+		'azera_shop_message' => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ).'<br><br>'.__( 'Need further informations? Check this','azera-shop' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','azera-shop').'</a>'
+	) ) );
+	
+	/****************************************************************/
+	/******************  	FRONTPAGE SECTIONS    *******************/
+	/****************************************************************/
+	
+	$wp_customize->add_panel( 'azera_shop_front_page_sections', array(
+        'title'    => __( 'Frontpage sections', 'azera-shop' ),
+        'priority' => 38
+    ) );
+	
+	/************** BIG TITLE SECTION **************/
 
 	$wp_customize->add_section( 'azera_shop_header_content' , array(
-		'title'       => esc_html__( 'Content', 'azera-shop' ),
+		'title'       => esc_html__( 'Big title section', 'azera-shop' ),
 		'priority'    => 1,
-		'panel' => 'panel_1'
+		'panel' => 'azera_shop_front_page_sections'
 	));
 
 	require_once ( 'class/azera-shop-image-picker-custom-control.php');
@@ -130,15 +148,14 @@ function azera_shop_customize_register( $wp_customize ) {
 		'default'        => 'layout2',
 		'sanitize_callback' => 'azera_shop_sanitize_text'
 	));
-	$wp_customize->add_control( new Azera_Shop_Image_Picker( $wp_customize, 'azera_shop_header_layout',
-		array(
-			'label'   => __('Layout','azera-shop'),
-			'section' => 'azera_shop_header_content',
-			'priority' => 1,
-			'active_callback' => 'azera_shop_show_on_front',
-			'azera-shop-image-picker-options' => array('layout1','layout2')
-	   )
-	));
+	
+	$wp_customize->add_control( new Azera_Shop_Image_Picker( $wp_customize, 'azera_shop_header_layout', array(
+		'label'   => __('Layout','azera-shop'),
+		'section' => 'azera_shop_header_content',
+		'priority' => 1,
+		'active_callback' => 'azera_shop_show_on_front',
+		'azera-shop-image-picker-options' => array('layout1','layout2')
+    )));
 
 	/* Header title */
 	$wp_customize->add_setting( 'azera_shop_header_title', array(
@@ -166,7 +183,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'priority'    => 30
 	));
 
-
 	/*Header Button text*/
 	$wp_customize->add_setting( 'azera_shop_header_button_text', array(
 		'default' => esc_html__('GET STARTED','azera-shop'),
@@ -180,7 +196,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'priority'    => 40
 	));
 
-
 	$wp_customize->add_setting( 'azera_shop_header_button_link', array(
 		'default' => esc_html__('#','azera-shop'),
 		'sanitize_callback' => 'esc_url',
@@ -193,45 +208,10 @@ function azera_shop_customize_register( $wp_customize ) {
 		'priority'    => 50
 	));
 
-
-	/* LOGOS SETTINGS */
-
-	$wp_customize->add_section( 'azera_shop_logos_settings_section' , array(
-			'title'       => esc_html__( 'Logos Bar', 'azera-shop' ),
-			'priority'    => 2,
-			'panel' => 'panel_1'
-	));
-
-
-    require_once ( 'class/azera-shop-general-control.php');
-
-	$wp_customize->add_setting( 'azera_shop_logos_content', array(
-		'sanitize_callback' => 'azera_shop_sanitize_repeater',
-		'default' => json_encode(
-				array(
-					array("image_url" => azera_shop_get_file('/images/companies/1.png') ,"link" => "#", "id" => "azera_shop_56d450842cb37" ),
-					array("image_url" => azera_shop_get_file('/images/companies/2.png') ,"link" => "#", "id" => "azera_shop_56d6b175454b8" ),
-					array("image_url" => azera_shop_get_file('/images/companies/3.png') ,"link" => "#", "id" => "azera_shop_56d6b17a454b9" ),
-					array("image_url" => azera_shop_get_file('/images/companies/4.png') ,"link" => "#", "id" => "azera_shop_56d6b17b454ba" ),
-					array("image_url" => azera_shop_get_file('/images/companies/5.png') ,"link" => "#", "id" => "azera_shop_56d6b17d454bb" )
-				)
-		)
-
-	));
-	$wp_customize->add_control( new Azera_Shop_General_Repeater( $wp_customize, 'azera_shop_logos_content', array(
-		'label'   => esc_html__('Add new social icon','azera-shop'),
-		'section' => 'azera_shop_logos_settings_section',
-		'active_callback' => 'azera_shop_show_on_front',
-		'priority' => 10,
-        'azera_shop_image_control' => true,
-        'azera_shop_icon_control' => false,
-        'azera_shop_text_control' => false,
-        'azera_shop_link_control' => true
-	) ) );
-
-	$wp_customize->get_section('header_image')->panel='panel_1';
-	$wp_customize->get_section('header_image')->title=esc_html__( 'Background', 'azera-shop' );
+	$wp_customize->get_section('header_image')->panel = 'azera_shop_front_page_sections';
+	$wp_customize->get_section('header_image')->title = esc_html__( 'Big title section background', 'azera-shop' );
 	$wp_customize->get_section('header_image')->active_callback = 'azera_shop_show_on_front';
+	$wp_customize->get_section('header_image')->priority = 2;
 
 	/* Enable parallax effect*/
 	$wp_customize->add_setting( 'azera_shop_enable_move', array(
@@ -273,11 +253,48 @@ function azera_shop_customize_register( $wp_customize ) {
 	)));
 
 	/********************************************************/
+	/*************** LOGOS BAR SECTION  *********************/
+	/********************************************************/
+
+	$wp_customize->add_section( 'azera_shop_logos_settings_section' , array(
+		'title'       => esc_html__( 'Logos Bar section', 'azera-shop' ),
+		'priority'    => 3,
+		'panel' => 'azera_shop_front_page_sections'
+	));
+
+    require_once ( 'class/azera-shop-general-control.php');
+
+	$wp_customize->add_setting( 'azera_shop_logos_content', array(
+		'sanitize_callback' => 'azera_shop_sanitize_repeater',
+		'default' => json_encode(
+				array(
+					array("image_url" => azera_shop_get_file('/images/companies/1.png') ,"link" => "#", "id" => "azera_shop_56d450842cb37" ),
+					array("image_url" => azera_shop_get_file('/images/companies/2.png') ,"link" => "#", "id" => "azera_shop_56d6b175454b8" ),
+					array("image_url" => azera_shop_get_file('/images/companies/3.png') ,"link" => "#", "id" => "azera_shop_56d6b17a454b9" ),
+					array("image_url" => azera_shop_get_file('/images/companies/4.png') ,"link" => "#", "id" => "azera_shop_56d6b17b454ba" ),
+					array("image_url" => azera_shop_get_file('/images/companies/5.png') ,"link" => "#", "id" => "azera_shop_56d6b17d454bb" )
+				)
+		)
+
+	));
+	$wp_customize->add_control( new Azera_Shop_General_Repeater( $wp_customize, 'azera_shop_logos_content', array(
+		'label'   => esc_html__('Add new social icon','azera-shop'),
+		'section' => 'azera_shop_logos_settings_section',
+		'active_callback' => 'azera_shop_show_on_front',
+		'priority' => 10,
+        'azera_shop_image_control' => true,
+        'azera_shop_icon_control' => false,
+        'azera_shop_text_control' => false,
+        'azera_shop_link_control' => true
+	) ) );
+
+	/********************************************************/
 	/****************** SHOP SECTION  ***********************/
 	/********************************************************/
 	$wp_customize->add_section( 'azera_shop_shop_section' , array(
 		'title'       => esc_html__( 'Shop section', 'azera-shop' ),
-		'priority'    => 39,
+		'priority'    => 5,
+		'panel' => 'azera_shop_front_page_sections'
 	));
 	/* Header title */
 	$wp_customize->add_setting( 'azera_shop_shop_section_title', array(
@@ -341,7 +358,8 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'azera_shop_shortcodes_section' , array(
 		'title'       => esc_html__( 'Shortcodes section', 'azera-shop' ),
-		'priority'    => 49,
+		'priority'    => 8,
+		'panel' => 'azera_shop_front_page_sections'
 	));
 
 	$wp_customize -> add_setting( 'azera_shop_shortcodes_settings',  array(
@@ -361,13 +379,12 @@ function azera_shop_customize_register( $wp_customize ) {
 	/***************** RIBBON OPTIONS  **********************/
 	/********************************************************/
 
-
 	/* RIBBON SETTINGS */
 	$wp_customize->add_section( 'azera_shop_ribbon_section' , array(
 		'title'       => esc_html__( 'Ribbon section', 'azera-shop' ),
-		'priority'    => 60,
+		'priority'    => 9,
+		'panel' => 'azera_shop_front_page_sections'
 	));
-
 
 	/* Ribbon Background	*/
 	$wp_customize->add_setting( 'azera_shop_ribbon_background', array(
@@ -419,35 +436,15 @@ function azera_shop_customize_register( $wp_customize ) {
 		'priority'    => 40
 	));
 
-	/***********************************************************************************/
-	/******  Frontpage - instructions for users when not on Frontpage template *********/
-	/***********************************************************************************/
-
-	$wp_customize->add_section( 'azera_shop_front_page_instructions', array(
-        'title'    => __( 'Frontpage settings', 'azera-shop' ),
-        'priority' => 37
-    ) );
-
-	$wp_customize->add_setting( 'azera_shop_front_page_instructions', array(
-		'sanitize_callback' => 'azera_shop_sanitize_text'
-	) );
-
-	require_once ( 'class/azera-shop-text-control.php');
-	
-	$wp_customize->add_control( new Azera_Shop_Message( $wp_customize, 'azera_shop_front_page_instructions', array(
-		'section' => 'azera_shop_front_page_instructions',
-		'azera_shop_message' => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ).'<br><br>'.__( 'Need further informations? Check this','azera-shop' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','azera-shop').'</a>'
-	) ) );
-
 	/********************************************************/
 	/****************** CONTACT OPTIONS  ********************/
 	/********************************************************/
 
-
 	/* CONTACT SETTINGS */
 	$wp_customize->add_section( 'azera_shop_contact_section' , array(
-		'title'       => esc_html__( 'Contact section', 'azera-shop' ),
-		'priority'    => 70,
+		'title'       => esc_html__( 'Contact info section', 'azera-shop' ),
+		'priority'    => 10,
+		'panel' => 'azera_shop_front_page_sections'
 	));
 
 
@@ -482,7 +479,7 @@ function azera_shop_customize_register( $wp_customize ) {
 		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','azera-shop'),
 		'section'  => 'azera_shop_contact_section',
 		'active_callback' => 'azera_shop_show_on_front',
-		'priority'    => 20
+		'priority'    => 11
 	));
 
 
@@ -636,7 +633,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'azera_shop_blog_header_section' , array(
 		'title'		=> esc_html__( 'Blog header', 'azera-shop' ),
 		'priority'	=> 86,
-		'panel'     => 'panel_1'
 	));
 
 	/* Blog Header title */
