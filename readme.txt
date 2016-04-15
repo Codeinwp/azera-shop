@@ -36,11 +36,24 @@ The exceptions to this license are as follows:
 
 * Images
 
-	License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+		
+	License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	  
+	 
+	* images/background-images/background.jpg, images/background-images/background_thumbnail.jpg
+			Source: https://download.unsplash.com/31/8jLdwLg6TLKIQfJcZgDb_Freedom_5.jpg
 	* images/background-images/parallax-img/parallax-img1.jpg
-			Source: http://tumblr.unsplash.com/post/51495156548/download-by-alejandro-escamilla
-
-
-  License: All pexels.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
-	* images/about-us-background.jpg
-		Source: https://static.pexels.com/photos/9051/pexels-photo.jpg
+			Source: https://download.unsplash.com/photo-1434626881859-194d67b2b86f
+	* images/clients/1.jpg
+			Source: https://download.unsplash.com/photo-1433615988899-12bdf1bd42b6
+	* images/clients/2.jpg
+			Source: https://download.unsplash.com/photo-1427096105551-15e2512fd2dc
+	* images/clients/3.jpg
+			Source: https://download.unsplash.com/photo-1427088625471-da8a7193afd3
+	* images/team/1.jpg
+			Source: https://download.unsplash.com/reserve/ysPfhVSzSP2m629CW0mw_selfPortrait.jpg
+	* images/team/2.jpg
+			Source: https://download.unsplash.com/photo-1418833893919-fa9c83e8d69e
+	* images/team/3.jpg
+			Source: https://download.unsplash.com/photo-1433170897235-615700336230
+	Screenshot image:
+			https://static.pexels.com/photos/7409/pexels-photo.jpg
