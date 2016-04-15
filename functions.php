@@ -664,17 +664,24 @@ if(function_exists('pll_register_string') || has_action('wpml_register_single_st
 }
 
 
-function azera_shop_get_template_part($template){
-
-    if(locate_template($template.'.php')) {
+function azera_shop_get_template_part($template) {
+	
+	if(locate_template($template.'.php')) {
 		get_template_part($template);
     } else {
-		if(defined('AZERA_SHOP_PLUS_PATH')){
+    	if(defined('AZERA_SHOP_PLUS_PATH')){
 			if(file_exists ( AZERA_SHOP_PLUS_PATH.'public/templates/'.$template.'.php' )){
 				require_once ( AZERA_SHOP_PLUS_PATH.'public/templates/'.$template.'.php' );
 			}
+		} else {
+			if(defined('AZERA_SHOP_COMPANION_PATH')){
+				if(file_exists ( AZERA_SHOP_COMPANION_PATH.'sections/'.$template.'.php' )){
+					require_once ( AZERA_SHOP_COMPANION_PATH.'sections/'.$template.'.php' );
+				}
+			}
 		}
 	}
+	
 }
 
 function azera_shop_excerpt_more($more) {
