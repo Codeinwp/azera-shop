@@ -327,6 +327,11 @@ function azera_shop_register_required_plugins() {
 			'name'     => 'WooCommerce',
 			'slug' 	   => 'woocommerce',
 			'required' => false
+		),
+		array(
+			'name'      => 'Azera Shop Companion',
+			'slug'      => 'azera-shop-companion',
+			'required'  => false
 		)
 	);
 	

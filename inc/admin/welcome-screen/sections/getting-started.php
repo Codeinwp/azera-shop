@@ -96,8 +96,27 @@ $customizer_url = admin_url() . 'customize.php' ;
 		</div>
 
 		<div class="azera-shop-tab-pane-half azera-shop-tab-pane-first-half">
+		
+			<!-- Azera Shop Companion -->
+			<h4><?php esc_html_e( 'Azera Shop Companion', 'azera-shop' ); ?></h4>
+			<p><?php printf(  __('The %1$s plugin is a simple, easy and in the same time quite powerful plugins that adds options for Our Services, Our Team and Testimonials sections on frontpage.', 'azera-shop' ), 'Azera Shop Companion' ); ?></p>
 
-			<!-- WP Product Review -->
+			<?php if ( is_plugin_active( 'azera-shop-companion/azera-shop-companion.php' ) ) { ?>
+
+					<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
+
+				<?php
+			}
+			else { ?>
+
+					<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=azera-shop-companion' ), 'install-plugin_azera-shop-companion' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %1$s', 'azera-shop' ), 'Azera Shop Companion' ); ?></a></p>
+
+				<?php
+			}
+			?>
+			<hr />
+
+			<!-- Intergeo Maps -->
 			<h4><?php esc_html_e( 'Intergeo Maps - Google Maps Plugin', 'azera-shop' ); ?></h4>
 			<p><?php esc_html_e( 'The Intergeo Google Maps plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder.', 'azera-shop' ); ?></p>
 
