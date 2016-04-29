@@ -332,6 +332,16 @@ function azera_shop_register_required_plugins() {
 			'name'      => 'Azera Shop Companion',
 			'slug'      => 'azera-shop-companion',
 			'required'  => false
+		),
+		array(
+			'name'      => 'FEEDZY RSS Feeds',
+			'slug'      => 'feedzy-rss-feeds',
+			'required'  => false
+		),
+		array(
+			'name'      => 'Adblock Notify',
+			'slug'      => 'adblock-notify-by-bweb',
+			'required'  => false
 		)
 	);
 	
