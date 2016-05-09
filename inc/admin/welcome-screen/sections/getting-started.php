@@ -159,6 +159,44 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 			?>
 
+			<hr />
+
+			<!-- Adblock Notify -->
+			<h4>Adblock Notify</h4>
+
+			<?php if ( is_plugin_active( 'adblock-notify-by-bweb/adblock-notify.php' ) ) { ?>
+
+				<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
+
+				<?php
+			}
+			else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=adblock-notify-by-bweb' ), 'install-plugin_adblock-notify-by-bweb' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'azera-shop' ); ?> Adblock Notify</a></p>
+
+				<?php
+			} 
+			?>
+
+			<hr />
+
+			<!-- FEEDZY RSS Feeds -->
+			<h4>FEEDZY RSS Feeds</h4>
+
+			<?php if ( is_plugin_active( 'feedzy-rss-feeds/feedzy-rss-feed.php' ) ) { ?>
+
+				<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
+
+				<?php
+			}
+			else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=feedzy-rss-feeds' ), 'install-plugin_feedzy-rss-feeds' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'azera-shop' ); ?> FEEDZY RSS Feeds</a></p>
+
+				<?php
+			}
+			?>
+
 		</div>
 	<?php
 	}

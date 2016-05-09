@@ -23,7 +23,7 @@ $azera_shop = wp_get_theme( 'azera-shop' );
 		if(substr( $azera_shop_changelog_line, 0, 3 ) === "###"){
 			echo '<hr /><h1>'.substr($azera_shop_changelog_line,3).'</h1>';
 		} else {
-			echo $azera_shop_changelog_line,'<br/>';
+			echo $azera_shop_changelog_line.'<br/>';
 		}
 	}
 
