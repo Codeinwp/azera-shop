@@ -1,5 +1,15 @@
 
 
+### 1.0.12 - 09/05/2016
+
+ Changes: 
+
+
+ * Fixed #25 #26 Recommend out Adlock Notify and Feedze plugins in the About theme page
+ * Recommend out Adlock Notify and Feedze plugins on the About theme page
+ * Fixed #58 changelog layout
+
+
 ### 1.0.9 - 13/04/2016
 
  Changes: 
