@@ -24,6 +24,13 @@
 			<key name="azera_shop_contact_map_shortcode" />	
 			<key name="azera_shop_blog_header_title" />
 			<key name="azera_shop_blog_header_subtitle" />
+			<key name="azera_shop_our_services_title" />
+			<key name="azera_shop_our_services_subtitle" />
+			<key name="azera_shop_our_team_title" />
+			<key name="azera_shop_our_team_subtitle" />
+			<key name="azera_shop_our_team_background" />
+			<key name="azera_shop_happy_customers_title" />
+			<key name="azera_shop_happy_customers_subtitle" />
 		</key>
 	</admin-texts>
 </wpml-config>
