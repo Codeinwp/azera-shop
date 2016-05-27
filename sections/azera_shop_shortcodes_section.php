@@ -33,7 +33,7 @@ if(!empty($azera_shop_shortcodes_section) && (!empty($azera_shop_shortcodes_sect
                 $shortcode = apply_filters( 'wpml_translate_single_string', $section->shortcode, 'Azera Shop -> Shortcodes section', 'Shortcode '.$id );
             }
         } ?>
-        <section class="shortcodes" role="region" aria-label="<?php esc_html_e('Shortcodes','azera-shop'); ?>">
+        <section id="shortcodes" class="shortcodes" role="region" aria-label="<?php esc_html_e('Shortcodes','azera-shop'); ?>">
             <div class="section-overlay-layer">
                 <div class="container">
 
