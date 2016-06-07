@@ -1,4 +1,9 @@
 
+### 1.0.14 - 07/06/2016
+**Changes:** 
+- Make shortcodes linkable from the main nav menu
+- Fixed layout issues with Pirate Forms on the contact page
+
 ### 1.0.13 - 24/05/2016
 **Changes:** 
 - Update wpml file with Azera Shop Companion strings
