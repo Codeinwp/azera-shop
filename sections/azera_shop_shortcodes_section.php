@@ -3,7 +3,8 @@ $azera_shop_shortcodes_section = get_theme_mod('azera_shop_shortcodes_settings')
 $azera_shop_shortcodes_section_decoded = json_decode($azera_shop_shortcodes_section);
 if(!empty($azera_shop_shortcodes_section) && (!empty($azera_shop_shortcodes_section_decoded[0]->title) || !empty($azera_shop_shortcodes_section_decoded[0]->subtitle) || !empty($azera_shop_shortcodes_section_decoded[0]->shortcode))){
 
-    foreach($azera_shop_shortcodes_section_decoded as $section){ 
+    foreach($azera_shop_shortcodes_section_decoded as $section){
+        $pos = strlen(strstr($section->shortcode,"pirate_forms"));
         $id = '';
         $title = '';
         $subtitle = '';
@@ -33,7 +34,7 @@ if(!empty($azera_shop_shortcodes_section) && (!empty($azera_shop_shortcodes_sect
                 $shortcode = apply_filters( 'wpml_translate_single_string', $section->shortcode, 'Azera Shop -> Shortcodes section', 'Shortcode '.$id );
             }
         } ?>
-        <section id="shortcodes" class="shortcodes" role="region" aria-label="<?php esc_html_e('Shortcodes','azera-shop'); ?>">
+        <section id="<?php if($pos > 0 ) { echo 'contact';} else {if(!empty($section->title)) {echo preg_replace('/[^a-zA-Z0-9]/','', strtolower($section->title));}}?>" class="shortcodes" role="region" aria-label="<?php esc_html_e('Shortcodes','azera-shop'); ?>">
             <div class="section-overlay-layer">
                 <div class="container">
 
