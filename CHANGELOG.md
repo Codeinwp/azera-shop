@@ -1,4 +1,9 @@
 
+### 1.0.15 - 08/09/2016
+**Changes:** 
+- Fixed issue with Parallax effect overlapping the other sections
+- Update tags
+
 ### 1.0.14 - 07/06/2016
 **Changes:** 
 - Make shortcodes linkable from the main nav menu
