@@ -15,6 +15,8 @@
 	if(!empty($azera_shop_header_title) || !empty($azera_shop_header_subtitle) || !empty($azera_shop_header_button_text)){
 ?>
 
+<div class="header-section-inner-wrap">
+
 <?php
 	if( !empty($azera_shop_enable_move) && $azera_shop_enable_move ) {
 
@@ -100,6 +102,8 @@
 			</div>
 			</div>
 		</div>
+		
+		</div><!-- .header-section-inner-wrap -->
 
 <?php
 	}

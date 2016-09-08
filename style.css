@@ -1378,6 +1378,11 @@ header .navbar-brand {
 	margin-top: 70px;
 }
 
+.header-section-inner-wrap {
+	position: relative;
+	overflow: hidden;
+}
+
 /****
 Search form Header
 ****/
