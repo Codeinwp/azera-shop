@@ -267,8 +267,7 @@ function azera_shop_admin_scripts() {
 	wp_enqueue_style( 'azera-shop-admin-fontawesome', azera_shop_get_file( '/css/font-awesome.min.css' ),array(), '4.5.0');
 	wp_enqueue_style( 'azera-shop-admin-stylesheet', azera_shop_get_file('/css/admin-style.css'),'1.0.0' );
 
-	wp_register_script( 'azera-shop-lite-ddslick', get_template_directory_uri() .'/js/jquery.ddslick.js', array("jquery"), '1.0.1');
-	wp_enqueue_script( 'azera-shop-customizer-script', azera_shop_get_file('/js/azera_shop_customizer.js'), array("jquery","jquery-ui-draggable","azera-shop-lite-ddslick"),'1.0.0', true  );
+	wp_enqueue_script( 'azera-shop-customizer-script', azera_shop_get_file('/js/azera_shop_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 
 	wp_localize_script( 'azera-shop-customizer-script', 'azeraShopCustomizerObject', array(
 

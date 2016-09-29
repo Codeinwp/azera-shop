@@ -34,6 +34,10 @@ The exceptions to this license are as follows:
 	HTML5 Shiv 3.7.2
 	Licensed under the MIT/GPL2 license.
 
+* Font Awesome Iconpocker from repeater
+    Copyright (c) 2014 Javier Aguilar @mjolnic
+    Licensed under the MIT license.
+
 * Images
 
 		
