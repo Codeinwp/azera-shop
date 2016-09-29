@@ -394,11 +394,11 @@ function azera_shop_php_style() {
 	
 	$azera_shop_title_color = get_theme_mod('azera_shop_title_color');
 	if(!empty($azera_shop_title_color)){
-		echo 'h1, h2, h3, h4, h5, h6, .entry-title a, .archive-top-big-title { color: '. $azera_shop_title_color .'!important }';
+		echo '.no-link, .colored-text,.home-shop-product-title h3, .dark-text, .content-wrap h1,.content-wrap h2, .content-wrap h3, .content-wrap h4, .content-wrap h5, .content-wrap h6, .content-wrap .entry-title a { color: '. $azera_shop_title_color .'!important }';
 	}
 	$azera_shop_text_color = get_theme_mod('azera_shop_text_color');
 	if(!empty($azera_shop_text_color)){
-		echo 'p{ color: '.$azera_shop_text_color.'!important }';
+		echo '.powered-by, .azera_shop_copyright_content, .testimonials-box p, .service-box p, .home-shop-product-price span, .home-shop-product-content p, .sub-heading, .content-wrap p{ color: '.$azera_shop_text_color.'!important }';
 	}
 	
 	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
