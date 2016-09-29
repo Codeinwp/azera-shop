@@ -395,16 +395,14 @@ function azera_shop_php_style() {
 	
 	$azera_shop_title_color = get_theme_mod('azera_shop_title_color');
 	if(!empty($azera_shop_title_color)){
-		echo '.dark-text { color: '. $azera_shop_title_color .' }';
+		echo 'h1, h2, h3, h4, h5, h6, .entry-title a, .archive-top-big-title { color: '. $azera_shop_title_color .'!important }';
 	}
 	$azera_shop_text_color = get_theme_mod('azera_shop_text_color');
 	if(!empty($azera_shop_text_color)){
-		echo 'body{ color: '.$azera_shop_text_color.'}';
+		echo 'p{ color: '.$azera_shop_text_color.'!important }';
 	}
 	
 	$azera_shop_enable_move = get_theme_mod('azera_shop_enable_move');
-	$azera_shop_first_layer = get_theme_mod('azera_shop_first_layer', azera_shop_get_file('/images/background1.png'));
-	$azera_shop_second_layer = get_theme_mod('azera_shop_second_layer',azera_shop_get_file('/images/background2.png'));
 
 	if( ( empty($azera_shop_enable_move) || !$azera_shop_enable_move) && is_page_template('template-frontpage.php') ) {
 		$azera_shop_header_image = get_header_image();
