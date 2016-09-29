@@ -92,6 +92,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	/* Sticky header */
 	$wp_customize->add_setting( 'azera_shop_sticky_header', array(
 		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'default' => false
 	));
 	$wp_customize->add_control(
 			'azera_shop_sticky_header',

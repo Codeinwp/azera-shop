@@ -48,8 +48,8 @@
 
         <!-- COLOR OVER IMAGE -->
         <?php
-			$azera_shop_sticky_header = get_theme_mod('azera_shop_sticky_header','azera-shop');
-			if( isset($azera_shop_sticky_header) && ($azera_shop_sticky_header != 1)){
+			$azera_shop_sticky_header = get_theme_mod('azera_shop_sticky_header',false);
+			if( isset($azera_shop_sticky_header) && ((bool)$azera_shop_sticky_header !== true)){
 				$fixedheader = 'sticky-navigation-open';
 			} else {
 				if( !is_page_template('template-frontpage.php') ){
