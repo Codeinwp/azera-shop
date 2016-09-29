@@ -665,7 +665,7 @@ add_action( 'customize_register', 'azera_shop_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function azera_shop_customize_preview_js() {
-	wp_enqueue_script( 'azera_shop_customizer', azera_shop_get_file('/js/customizer.js'), array( 'customize-preview' ), '1.0.2', true );
+	wp_enqueue_script( 'azera_shop_customizer', azera_shop_get_file('/js/customizer.js'), array( 'customize-preview' ), '1.0.3', true );
 }
 add_action( 'customize_preview_init', 'azera_shop_customize_preview_js' );
 
