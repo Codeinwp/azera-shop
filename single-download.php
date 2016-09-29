@@ -4,30 +4,19 @@
  *
  * @package azera-shop
  */
-	get_header(); 
-?>
+get_header();
+azera_shop_wrapper_start(); ?>
 
-	</div>
-	<!-- /END COLOR OVER IMAGE -->
-</header>
-<!-- /END HOME / HEADER  -->
+	<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 
-<div class="content-wrap">
-	<div class="container">
+	<?php while ( have_posts() ) : the_post(); ?>
 
-		<div id="primary" class="content-area col-md-12">
-			<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
+		<?php get_template_part( 'content', 'single-download' ); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php endwhile; // end of the loop. ?>
 
-				<?php get_template_part( 'content', 'single-download' ); ?>
+	</main><!-- #main -->
 
-			<?php endwhile; // end of the loop. ?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-
-	</div>
-</div><!-- .content-wrap -->
-
-<?php get_footer(); ?>
+<?php
+azera_shop_wrapper_end();
+get_footer(); ?>

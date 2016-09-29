@@ -10,38 +10,25 @@
  * @package azera-shop
  */
 
-	get_header(); 
-?>
+get_header();
+azera_shop_wrapper_start(); ?>
 
-	</div>
-	<!-- /END COLOR OVER IMAGE -->
-</header>
-<!-- /END HOME / HEADER  -->
+	<main id="main" class="site-main" role="main">
 
+	<?php while ( have_posts() ) : the_post(); ?>
 
-<div class="content-wrap">
-	<div class="container">
+		<?php get_template_part( 'content', 'page' ); ?>
 
-		<div id="primary" class="content-area col-md-12">
-			<main id="main" class="site-main" role="main">
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php endwhile; // end of the loop. ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
-
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-
-			<?php endwhile; // end of the loop. ?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-
-	</div>
-</div><!-- .content-wrap -->
-
-<?php get_footer(); ?>
+	</main><!-- #main -->
+<?php
+azera_shop_wrapper_end();
+get_footer(); ?>

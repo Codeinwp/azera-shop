@@ -654,7 +654,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_blog_header_image', array(
 		'label'    => esc_html__( 'Image', 'azera-shop' ),
-	 	'section'  => 'azera_shop_blog_header_section',
+		'section'  => 'azera_shop_blog_header_section',
 		'priority'    => 3,
 	)));
 

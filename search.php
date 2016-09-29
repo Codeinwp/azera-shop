@@ -5,54 +5,40 @@
  * @package azera-shop
  */
 
-	get_header(); 
-?>
+get_header();
+azera_shop_wrapper_start('col-md-8 post-list', false);?>
+	<main id="main" class="site-main" role="main">
 
-	</div>
-	<!-- /END COLOR OVER IMAGE -->
-</header>
-<!-- /END HOME / HEADER  -->
+		<?php if ( have_posts() ) : ?>
 
-<div itemscope itemtype="http://schema.org/SearchResultsPage" role="main" id="content" class="content-warp">
-	<div class="container">
+			<header class="page-header">
+				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'azera-shop' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			</header><!-- .page-header -->
 
-		<div id="primary" class="content-area col-md-8 post-list">
-			<main id="main" class="site-main" role="main">
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php if ( have_posts() ) : ?>
+				<?php
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'content', 'search' );
+				?>
 
-					<header class="page-header">
-						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'azera-shop' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-					</header><!-- .page-header -->
+			<?php endwhile; ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+			<?php the_posts_navigation(); ?>
 
-						<?php
-						/**
-						 * Run the loop for the search to output the results.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-search.php and that will be used instead.
-						 */
-						get_template_part( 'content', 'search' );
-						?>
+		<?php else : ?>
 
-					<?php endwhile; ?>
+			<?php get_template_part( 'content', 'none' ); ?>
 
-					<?php the_posts_navigation(); ?>
+		<?php endif; ?>
 
-				<?php else : ?>
+	</main><!-- #main -->
 
-					<?php get_template_part( 'content', 'none' ); ?>
-
-				<?php endif; ?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-
-		<?php get_sidebar(); ?>
-
-	</div>
-</div><!-- .content-wrap -->
-
-<?php get_footer(); ?>
+<?php
+azera_shop_wrapper_end(true);
+get_footer(); ?>
