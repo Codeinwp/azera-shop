@@ -1,4 +1,11 @@
 
+### 1.0.16 - 30/09/2016
+**Changes:** 
+- Add a solid background color for the main content of the inner pages, when a background image is selected
+- Update the iconpicket in Customizer
+- Fixed sticky header option
+- Fixed color options
+
 ### 1.0.15 - 08/09/2016
 **Changes:** 
 - Fixed issue with Parallax effect overlapping the other sections
