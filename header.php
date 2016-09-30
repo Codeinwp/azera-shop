@@ -19,37 +19,37 @@
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'azera-shop' ); ?></a>
 	<!-- =========================
-     PRE LOADER       
+     PRE LOADER
     ============================== -->
 	<?php
-		
+
 	 global $wp_customize;
 
 	 if( !isset( $wp_customize ) && is_page_template('template-frontpage.php') ) {
-	 
+
 		$azera_shop_disable_preloader = get_theme_mod('azera_shop_disable_preloader');
-		
+
 		if( isset($azera_shop_disable_preloader) && ($azera_shop_disable_preloader != 1)) {
-			 
+
 			echo '<div class="preloader">';
 				echo '<div class="status">&nbsp;</div>';
 			echo '</div>';
-			
+
 		}
 
 	} ?>
 
 
 	<!-- =========================
-     SECTION: HOME / HEADER  
+     SECTION: HOME / HEADER
     ============================== -->
 	<!--header-->
 	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" data-stellar-background-ratio="0.5" class="header header-style-one site-header">
 
         <!-- COLOR OVER IMAGE -->
         <?php
-			$azera_shop_sticky_header = get_theme_mod('azera_shop_sticky_header','azera-shop');
-			if( isset($azera_shop_sticky_header) && ($azera_shop_sticky_header != 1)){
+			$azera_shop_sticky_header = get_theme_mod('azera_shop_sticky_header',false);
+			if( isset($azera_shop_sticky_header) && ((bool)$azera_shop_sticky_header !== true)){
 				$fixedheader = 'sticky-navigation-open';
 			} else {
 				if( !is_page_template('template-frontpage.php') ){
@@ -72,7 +72,7 @@
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
 				<!-- CONTAINER -->
                 <div class="container">
-				
+
 
 
 					<div class="header-container-wrap">
@@ -90,7 +90,7 @@
 										echo '<div class="header-logo-wrap text-header azera_shop_only_customizer">';
 											echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 											echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
-										echo '</div>';	
+										echo '</div>';
 									} else {
 										if( isset( $wp_customize ) ) {
 											echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand azera_shop_only_customizer" title="'.get_bloginfo('title').'">';
@@ -100,8 +100,8 @@
 										echo '<div class="header-logo-wrap text-header">';
 											echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 											echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
-										echo '</div>';							
-									}	
+										echo '</div>';
+									}
 								?>
 							</div>
 
@@ -115,7 +115,7 @@
 		                    </div><!-- .header-button-wrap -->
 
 	                    </div><!-- .navbar-header-wrap -->
-	                    
+
 
 	                    <!-- MENU -->
 	                    <div class="header-nav-wrap">
@@ -123,14 +123,14 @@
 								<!-- LOGO ON STICKY NAV BAR -->
 								<div id="site-header-menu" class="site-header-menu">
 									<nav id="site-navigation" class="main-navigation" role="navigation">
-									<?php 
-										wp_nav_menu( 
-											array( 
+									<?php
+										wp_nav_menu(
+											array(
 												'theme_location'    => 'primary',
 												'menu_class'        => 'primary-menu small-text',
 												'depth'           	=> 4,
 												'fallback_cb'       => 'azera_shop_wp_page_menu'
-												 ) 
+												 )
 										);
 									?>
 									</nav>
@@ -140,7 +140,7 @@
 
 						<?php if( class_exists( 'WooCommerce' ) ) { ?>
 							<div class="header-icons-wrap">
-								
+
 								<div class="header-search">
 									<div class="fa fa-search header-search-button"></div>
 									<div class="header-search-input">
@@ -167,7 +167,7 @@
 					</div><!--  -->
 
 
-					
+
                 </div>
                 <!-- /END CONTAINER -->
             </div>

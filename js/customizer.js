@@ -89,11 +89,11 @@
         value.bind(function( to ) {
 
 			if( to != '' ) {
-				$( '#parallax_header .button a' ).removeClass( 'azera_shop_only_customizer' );
+				$( '.intro-section button' ).removeClass( 'azera_shop_only_customizer' );
 			} else {
-				$( '#parallax_header .button a' ).addClass( 'azera_shop_only_customizer' );
+				$( '.intro-section button' ).addClass( 'azera_shop_only_customizer' );
 			}
-			$( '#parallax_header .button a' ).text( to );
+			$( '.intro-section button' ).text( to );
 		} );
 		
     });
