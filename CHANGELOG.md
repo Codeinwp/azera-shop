@@ -1,4 +1,8 @@
 
+### 1.0.17 - 30/09/2016
+**Changes:** 
+- Fix translations
+
 ### 1.0.16 - 30/09/2016
 **Changes:** 
 - Add a solid background color for the main content of the inner pages, when a background image is selected
