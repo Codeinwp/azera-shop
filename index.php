@@ -12,44 +12,31 @@
  * @package azera-shop
  */
 
-	get_header();
-?>
+get_header();
+azera_shop_wrapper_start('col-md-8', false); ?>
 
-	</div>
-	<!-- /END COLOR OVER IMAGE -->
-</header>
-<!-- /END HOME / HEADER  -->
+	<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
 
-<div role="main" id="content" class="content-warp">
-	<div class="container">
+		<?php if ( have_posts() ) : ?>
 
-		<div id="primary" class="content-area col-md-8">
-			<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php if ( have_posts() ) : ?>
+				<?php
+				get_template_part( 'content' ); ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+			<?php endwhile; ?>
 
-						<?php
-						get_template_part( 'content' ); ?>
+			<?php the_posts_navigation(); ?>
 
-					<?php endwhile; ?>
+		<?php else : ?>
 
-					<?php the_posts_navigation(); ?>
+			<?php get_template_part( 'content', 'none' ); ?>
 
-				<?php else : ?>
+		<?php endif; ?>
 
-					<?php get_template_part( 'content', 'none' ); ?>
+	</main><!-- #main -->
 
-				<?php endif; ?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-
-		<?php get_sidebar(); ?>
-
-	</div>
-</div><!-- .content-wrap -->
-
-<?php get_footer(); ?>
+<?php
+azera_shop_wrapper_end(true);
+get_footer(); ?>

@@ -6,39 +6,26 @@
  * @package azera-shop
  */
 
-	get_header(); 
-?>
+get_header();
+azera_shop_wrapper_start('col-md-8', false); ?>
 
-	</div>
-	<!-- /END COLOR OVER IMAGE -->
-</header>
-<!-- /END HOME / HEADER  -->
+	<main id="main" class="site-main" role="main">
 
-<div class="content-wrap">
-	<div class="container">
+		<section class="error-404 not-found">
+			<header class="page-header">
+				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'azera-shop' ); ?></h1>
+			</header><!-- .page-header -->
 
-		<div id="primary" class="content-area col-md-8">
-			<main id="main" class="site-main" role="main">
+			<div class="page-content">
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'azera-shop' ); ?></p>
 
-				<section class="error-404 not-found">
-					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'azera-shop' ); ?></h1>
-					</header><!-- .page-header -->
+				<?php get_search_form(); ?>
 
-					<div class="page-content">
-						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'azera-shop' ); ?></p>
+			</div><!-- .page-content -->
+		</section><!-- .error-404 -->
 
-						<?php get_search_form(); ?>
+	</main><!-- #main -->
 
-					</div><!-- .page-content -->
-				</section><!-- .error-404 -->
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-
-		<?php get_sidebar(); ?>
-
-	</div>
-</div><!-- .content-wrap -->
-
-<?php get_footer(); ?>
+<?php
+azera_shop_wrapper_end(true);
+get_footer(); ?>

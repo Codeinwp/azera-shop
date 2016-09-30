@@ -7,9 +7,11 @@ jQuery(window).resize(function(){
 
 /* STICKY FOOTER */
 function fixFooterBottom(){
+    var minHeight = '1px';
     var header      = jQuery('header.header');
     var footer      = jQuery('footer.footer');
     var content     = jQuery('.content-wrap');
+    var contentBackground = jQuery('.content-background');
     content.css('min-height', '1px');
     var headerHeight  = header.outerHeight();
     var footerHeight  = footer.outerHeight();
@@ -17,10 +19,10 @@ function fixFooterBottom(){
     var windowHeight  = jQuery(window).height();
     var totalHeight = headerHeight + footerHeight + contentHeight;
     if (totalHeight<windowHeight){
-      content.css('min-height', windowHeight - headerHeight - footerHeight );
-    } else {
-      content.css('min-height','1px');
+        minHeight = windowHeight - headerHeight - footerHeight;
     }
+    content.css('min-height', minHeight );
+    contentBackground.css('min-height', minHeight );
 }
 
 jQuery(document).ready(function($) {

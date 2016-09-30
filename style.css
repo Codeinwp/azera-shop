@@ -1177,6 +1177,10 @@ header .navbar-brand {
 	width: 100%;
 }
 
+.content-background{
+	background-color: #fff;
+}
+
 .navbar-header-wrap {
 	display: table-cell;
     vertical-align: middle;

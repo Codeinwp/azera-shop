@@ -92,6 +92,7 @@ function azera_shop_customize_register( $wp_customize ) {
 	/* Sticky header */
 	$wp_customize->add_setting( 'azera_shop_sticky_header', array(
 		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'default' => false
 	));
 	$wp_customize->add_control(
 			'azera_shop_sticky_header',
@@ -654,7 +655,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_blog_header_image', array(
 		'label'    => esc_html__( 'Image', 'azera-shop' ),
-	 	'section'  => 'azera_shop_blog_header_section',
+		'section'  => 'azera_shop_blog_header_section',
 		'priority'    => 3,
 	)));
 
@@ -665,7 +666,7 @@ add_action( 'customize_register', 'azera_shop_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function azera_shop_customize_preview_js() {
-	wp_enqueue_script( 'azera_shop_customizer', azera_shop_get_file('/js/customizer.js'), array( 'customize-preview' ), '1.0.2', true );
+	wp_enqueue_script( 'azera_shop_customizer', azera_shop_get_file('/js/customizer.js'), array( 'customize-preview' ), '1.0.3', true );
 }
 add_action( 'customize_preview_init', 'azera_shop_customize_preview_js' );
 
