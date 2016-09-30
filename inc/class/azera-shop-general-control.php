@@ -256,7 +256,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
             foreach ( $array as $icon ) {  ?>
                 <div class="azera_shop_general_control_repeater_container azera_shop_draggable">
                     <div class="azera-shop-customize-control-title">
-                        <?php esc_html_e( 'Llorix One','azera-shop' )?>
+                        <?php esc_html_e( 'Azera Shop','azera-shop' )?>
                     </div>
                     <div class="azera-shop-box-content-hidden">
                         <?php
