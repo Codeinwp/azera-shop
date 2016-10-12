@@ -1,4 +1,8 @@
 
+### 1.0.18 - 12/10/2016
+**Changes:** 
+- Fixed issue with breadcrumbs when background image is selected
+
 ### 1.0.17 - 30/09/2016
 **Changes:** 
 - Fix translations
