@@ -61,3 +61,30 @@ The exceptions to this license are as follows:
 			Source: https://download.unsplash.com/photo-1433170897235-615700336230
 	Screenshot image:
 			https://static.pexels.com/photos/7409/pexels-photo.jpg
+
+* Hooks
+	- azera_shop_top_single_post
+
+	- azera_shop_bottom_single_post
+
+	- azera_shop_bottom_footer
+
+	- azera_shop_after_footer
+
+	- azera_shop_content_single_top
+
+	- azera_shop_post_date_box
+
+	- azera_shop_content_entry_meta_top
+
+* Filters
+
+    - azera_shop_post_navigation_filter
+
+    - azera_shop_footer_class_filter
+
+    - azera_shop_header_underline
+
+    - azera_shop_content_post_class_filter
+
+    - azera_shop_post_date_box_class_filter

@@ -8,7 +8,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('border-bottom-hover'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( apply_filters( 'azera_shop_content_post_class_filter','border-bottom-hover' ) ); ?>>
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
@@ -36,13 +36,15 @@
 					<?php } ?>
 
 				</a>
-				<div class="post-date">
-					<span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop') ); ?></span>
-					<span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop') ); ?></span>
-				</div>
+				<?php azera_shop_post_date_search_box_trigger(); ?>
+
 			</div>
 
 			<div class="entry-meta list-post-entry-meta">
+				<span class="post-date" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'azera-shop' ) ); ?>">
+					<i class="fa fa-clock-o" aria-hidden="true"></i>
+					<?php the_time( get_option( 'date_format' ) ); ?>
+				</span>
 				<span class="post-author">
 					<i class="fa fa-user" aria-hidden="true"></i><?php the_author_posts_link(); ?>
 				</span>
@@ -73,8 +75,7 @@
 			</div><!-- .entry-meta -->
 
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		<div class="colored-line-left"></div>
-		<div class="clearfix"></div>
+		<?php echo apply_filters( 'azera_shop_header_underline','<div class="colored-line-left"></div><div class="clearfix"></div>' ); ?>
 
 	</header><!-- .entry-header -->
 	<div class="entry-content">

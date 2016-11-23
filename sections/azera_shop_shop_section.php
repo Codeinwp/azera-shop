@@ -48,13 +48,14 @@ $cat = get_theme_mod('azera_shop_woocomerce_categories','all');
                         while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 
                             <div class="col-md-4 col-sm-6 home-shop-product-wrap-all">
+
                                 <div class="home-shop-product-wrap">
                                     <div class="home-shop-product-img">
-                                        <?php 
-                                        if (has_post_thumbnail( $loop->post->ID )) 
-                                            echo get_the_post_thumbnail($loop->post->ID,'azera_shop_home_prod'); 
-                                        else 
-                                            echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" />'; 
+                                        <?php
+                                        if (has_post_thumbnail( $loop->post->ID ))
+                                            echo get_the_post_thumbnail($loop->post->ID,'azera_shop_home_prod');
+                                        else
+                                            echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" />';
                                         ?>
                                     </div>
                                     <p class="home-shop-product-price">

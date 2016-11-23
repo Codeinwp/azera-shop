@@ -33,7 +33,7 @@ azera_shop_wrapper_start(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
 
 		<?php else : ?>
 

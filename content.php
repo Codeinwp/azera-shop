@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('border-bottom-hover'); ?> itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class(apply_filters( 'azera_shop_content_post_class_filter','border-bottom-hover' ) ); ?> itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting">
 
 	<header class="entry-header">
 
@@ -33,16 +33,11 @@
 					<?php } ?>
 
 				</a>
-				<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'azera-shop' ) ); ?>">
-					<?php the_time( get_option('date_format') ); ?>
-				</div>
-				<div class="post-date entry-published updated">
-					<span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop') ); ?></span>
-					<span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop') ); ?></span>
-				</div>
+				<?php azera_shop_post_date_index_box_trigger(); ?>
 			</div>
 			
 			<div class="entry-meta list-post-entry-meta">
+				<?php azera_shop_content_entry_meta_top_trigger(); ?>
 				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
 					<span  itemprop="name" class="entry-author author vcard">
 					<i class="fa fa-user" aria-hidden="true"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
@@ -67,8 +62,7 @@
 			</div><!-- .entry-meta -->
 
 		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		<div class="colored-line-left"></div>
-		<div class="clearfix"></div>
+		<?php echo apply_filters( 'azera_shop_header_underline','<div class="colored-line-left"></div><div class="clearfix"></div>' ); ?>
 
 	</header><!-- .entry-header -->
 	<div itemprop="description" class="entry-content entry-summary">

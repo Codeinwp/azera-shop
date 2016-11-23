@@ -27,7 +27,7 @@ azera_shop_wrapper_start('col-md-8 post-list', true); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
 
 		<?php else : ?>
 

@@ -22,6 +22,8 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
  */
 function azera_shop_setup() {
 
+	require get_template_directory() . '/inc/hooks.php';
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -729,34 +731,102 @@ function azera_shop_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+if( !function_exists('azera_shop_blog_header') ) {
 
+	/**
+	 * Blog header
+	 */
+	function azera_shop_blog_header() {
+		$azera_shop_blog_header_image    = get_theme_mod( 'azera_shop_blog_header_image', azera_shop_get_file( '/images/background-images/background.jpg' ) );
+		$azera_shop_blog_header_title    = get_theme_mod( 'azera_shop_blog_header_title', esc_html__( 'BLOG', 'azera-shop' ) );
+		$azera_shop_blog_header_subtitle = get_theme_mod( 'azera_shop_blog_header_subtitle' );
 
-function azera_shop_blog_header(){
-	$azera_shop_blog_header_image = get_theme_mod( 'azera_shop_blog_header_image', azera_shop_get_file('/images/background-images/background.jpg') );
-	$azera_shop_blog_header_title = get_theme_mod( 'azera_shop_blog_header_title', esc_html__('BLOG','azera-shop')  );
-	$azera_shop_blog_header_subtitle = get_theme_mod( 'azera_shop_blog_header_subtitle' );
+		if ( ! empty( $azera_shop_blog_header_image ) || ! empty( $azera_shop_blog_header_title ) || ! empty( $azera_shop_blog_header_subtitle ) ) {
 
-	if( !empty($azera_shop_blog_header_image) || !empty($azera_shop_blog_header_title) || !empty($azera_shop_blog_header_subtitle) ) {
+			if ( ! empty( $azera_shop_blog_header_image ) ) {
+				echo '<div class="archive-top" style="background-image: url(' . $azera_shop_blog_header_image . ');" role="banner">';
+			} else {
+				echo '<div class="archive-top" role="banner">';
+			}
+			echo '<div class="section-overlay-layer">';
+			echo '<div class="container">';
+			if ( ! empty( $azera_shop_blog_header_title ) ) {
+				echo '<p class="archive-top-big-title">' . $azera_shop_blog_header_title . '</p>';
+				echo '<p class="colored-line"></p>';
+			}
 
-		if( !empty($azera_shop_blog_header_image) ) {
-			echo '<div class="archive-top" style="background-image: url('.$azera_shop_blog_header_image.');" role="banner">';
-		} else {
-			echo '<div class="archive-top" role="banner">';
+			if ( ! empty( $azera_shop_blog_header_subtitle ) ) {
+				echo '<p class="archive-top-text">' . $azera_shop_blog_header_subtitle . '</p>';
+			}
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+
 		}
-		echo '<div class="section-overlay-layer">';
-		echo '<div class="container">';
-		if( !empty($azera_shop_blog_header_title) ) {
-			echo '<p class="archive-top-big-title">'.$azera_shop_blog_header_title.'</p>';
-			echo '<p class="colored-line"></p>';
-		}
+	}
 
-		if( !empty($azera_shop_blog_header_subtitle) ) {
-			echo '<p class="archive-top-text">'.$azera_shop_blog_header_subtitle.'</p>';
-		}
-		echo '</div>';
-		echo '</div>';
-		echo '</div>';
+}
+add_action( 'blog_header','azera_shop_blog_header' );
 
+if( !function_exists( 'azera_shop_footer_powered_by' ) ) {
+
+	/**
+	 * Display the powered by section in the footer
+	 */
+	function azera_shop_footer_powered_by() {
+		?>
+		<div class="powered-by">
+			<?php printf(
+				__( '%1$s powered by %2$s', 'azera-shop' ),
+				sprintf( '<a href="https://themeisle.com/themes/azera-shop/" rel="nofollow">%s</a>', esc_html__( 'Azera Shop', 'azera-shop' ) ),
+				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )
+			); ?>
+		</div>
+		<?php
 	}
 }
-add_action('blog_header','azera_shop_blog_header');
+
+add_action( 'azera_shop_bottom_footer','azera_shop_footer_powered_by' );
+
+if( !function_exists( 'azera_shop_post_entry_meta' ) ) {
+
+	function azera_shop_post_entry_meta() {
+		?>
+		<div class="entry-meta single-entry-meta">
+			<span class="author-link" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+				<span itemprop="name" class="post-author author vcard">
+					<i class="fa fa-user" aria-hidden="true"></i><a
+						href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" itemprop="url"
+						rel="author"><?php the_author(); ?></a>
+				</span>
+			</span>
+			<time class="post-time posted-on published" datetime="<?php the_time( 'c' ); ?>" itemprop="datePublished">
+				<i class="fa fa-clock-o" aria-hidden="true"></i><?php the_time( get_option( 'date_format' ) ); ?>
+			</time>
+			<a href="<?php comments_link(); ?>" class="post-comments">
+				<i class="fa fa-comment-o"
+				   aria-hidden="true"></i><?php comments_number( esc_html__( 'No comments', 'azera-shop' ), esc_html__( 'One comment', 'azera-shop' ), esc_html__( '% comments', 'azera-shop' ) ); ?>
+			</a>
+		</div><!-- .entry-meta -->
+		<?php
+	}
+}
+
+add_action( 'azera_shop_content_single_top','azera_shop_post_entry_meta' );
+
+if( !function_exists( 'azera_shop_post_date_box_function' ) ) {
+
+	/**
+	 * Function to create the box with the post date
+	 */
+	function azera_shop_post_date_box_function( $class ) {
+		?>
+		<div class="<?php if( !empty( $class ) ) { echo $class; } ?>">
+			<span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop' ) ); ?></span>
+			<span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop' ) ); ?></span>
+		</div>
+		<?php
+	}
+}
+
+add_action( 'azera_shop_post_date_box','azera_shop_post_date_box_function', 10, 1 );

@@ -9,8 +9,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title single-title" itemprop="headline">', '</h1>' ); ?>
-		<div class="colored-line-left"></div>
-		<div class="clearfix"></div>
+		<?php echo apply_filters( 'azera_shop_header_underline','<div class="colored-line-left"></div><div class="clearfix"></div>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content content-page" itemprop="text">

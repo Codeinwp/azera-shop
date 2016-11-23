@@ -8,7 +8,7 @@
  */
 ?>
 
-    <footer itemscope itemtype="http://schema.org/WPFooter" id="footer" role="contentinfo" class = "footer grey-bg">
+    <footer itemscope itemtype="http://schema.org/WPFooter" id="footer" role="contentinfo" class="<?php echo apply_filters( 'azera_shop_footer_class_filter','footer grey-bg' ); ?>">
 
         <div class="container">
             <div class="footer-widget-wrap">
@@ -128,18 +128,14 @@
 						}
 					}
 				?>
-	            
+
 	        </div><!-- .footer-bottom-wrap -->
 
-	        <div class="powered-by">
-	        	<?php printf(
-					__( '%1$s powered by %2$s', 'azera-shop' ),
-					sprintf( '<a href="https://themeisle.com/themes/azera-shop/" rel="nofollow">%s</a>', esc_html__( 'Azera Shop', 'azera-shop' ) ),
-					sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )
-				); ?>
-	        </div>
+	       <?php azera_shop_bottom_footer_trigger(); ?>
 
 	    </div><!-- container -->
+
+	    <?php azera_shop_after_footer_trigger(); ?>
 
     </footer>
 
