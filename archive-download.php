@@ -9,7 +9,7 @@
 get_header();
 azera_shop_wrapper_start(); ?>
 
-	<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
+	<main <?php if ( have_posts() ) { echo 'itemscope itemtype="http://schema.org/Blog"';} ?> id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -24,7 +24,8 @@ azera_shop_wrapper_start(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
-					/* Include the Post-Format-specific template for the content.
+					/*
+					 Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
@@ -33,7 +34,7 @@ azera_shop_wrapper_start(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
 
 		<?php else : ?>
 

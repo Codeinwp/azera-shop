@@ -8,9 +8,9 @@
  */
 
 get_header();
-azera_shop_wrapper_start('col-md-8 post-list', true); ?>
+azera_shop_wrapper_start( 'col-md-8 post-list', true ); ?>
 
-	<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
+	<main <?php if ( have_posts() ) { echo 'itemscope itemtype="http://schema.org/Blog"';} ?> id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -29,7 +29,7 @@ azera_shop_wrapper_start('col-md-8 post-list', true); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
 
 		<?php else : ?>
 
@@ -40,5 +40,5 @@ azera_shop_wrapper_start('col-md-8 post-list', true); ?>
 	</main><!-- #main -->
 
 <?php
-azera_shop_wrapper_end(true);
+azera_shop_wrapper_end( true );
 get_footer(); ?>

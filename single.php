@@ -10,7 +10,10 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 	$class_to_add = 'col-md-8';
 }
 get_header();
-azera_shop_wrapper_start($class_to_add , false); ?>
+
+azera_shop_top_single_post_trigger();
+
+azera_shop_wrapper_start( $class_to_add , false ); ?>
 
 	<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 
@@ -22,8 +25,8 @@ azera_shop_wrapper_start($class_to_add , false); ?>
 
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
 			endif;
 		?>
 
@@ -32,6 +35,9 @@ azera_shop_wrapper_start($class_to_add , false); ?>
 	</main><!-- #main -->
 
 <?php
-azera_shop_wrapper_end(true);
-get_footer(); ?>
 
+azera_shop_wrapper_end( true );
+
+azera_shop_bottom_single_post_trigger();
+
+get_footer(); ?>
