@@ -6,7 +6,7 @@
  */
 
 get_header();
-azera_shop_wrapper_start('col-md-8 post-list', false);?>
+azera_shop_wrapper_start( 'col-md-8 post-list', false );?>
 	<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -40,5 +40,5 @@ azera_shop_wrapper_start('col-md-8 post-list', false);?>
 	</main><!-- #main -->
 
 <?php
-azera_shop_wrapper_end(true);
+azera_shop_wrapper_end( true );
 get_footer(); ?>

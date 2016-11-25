@@ -1,0 +1,30 @@
+{
+  "name": "azera-shop",
+  "nicename": "Azera Shop",
+  "version": "1.1.0",
+  "description": "Azera Shop theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codeinwp/azera-shop.git"
+  },
+  "keywords": [
+    "wordpress-theme"
+  ],
+  "theme": {
+    "textdomain": "azera-shop"
+  },
+  "author": "ThemeIsle <friends@themeisle.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/Codeinwp/azera-shop/issues"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/Codeinwp/azera-shop/issues",
+    "languageteam": "Themeisle Translate <friends@themeisle.com>",
+    "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
+  },
+  "devDependencies": {
+    "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
+    "load-project-config": "~0.2.0"
+  }
+}

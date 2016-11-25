@@ -64,4 +64,4 @@ function azera_shop_post_date_index_box_trigger() {
 function azera_shop_content_entry_meta_top_trigger() {
 	do_action( 'azera_shop_content_entry_meta_top' );
 }
-?>
+

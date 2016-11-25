@@ -1,13 +1,13 @@
 <?php
 /**
- * 
+ *
  * The template for displaying 404 pages (not found).
  *
  * @package azera-shop
  */
 
 get_header();
-azera_shop_wrapper_start('col-md-8', false); ?>
+azera_shop_wrapper_start( 'col-md-8', false ); ?>
 
 	<main id="main" class="site-main" role="main">
 
@@ -27,5 +27,5 @@ azera_shop_wrapper_start('col-md-8', false); ?>
 	</main><!-- #main -->
 
 <?php
-azera_shop_wrapper_end(true);
+azera_shop_wrapper_end( true );
 get_footer(); ?>
