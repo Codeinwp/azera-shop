@@ -1,4 +1,9 @@
 
+### 1.1.0 - 25/11/2016
+**Changes:** 
+- Added hooks and filters to be used in child themes
+- Added grunt
+
 ### 1.0.18 - 12/10/2016
 **Changes:** 
 - Fixed issue with breadcrumbs when background image is selected
