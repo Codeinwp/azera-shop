@@ -88,3 +88,7 @@ The exceptions to this license are as follows:
     - azera_shop_content_post_class_filter
 
     - azera_shop_post_date_box_class_filter
+
+    - azera_shop_widgets_after_title
+
+    - azera_shop_widgets_before_title

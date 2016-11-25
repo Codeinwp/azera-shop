@@ -171,8 +171,8 @@ function azera_shop_widgets_init() {
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2><div class="colored-line-left"></div><div class="clearfix widget-title-margin"></div>',
+			'before_title'  => apply_filters( 'azera_shop_widgets_before_title','<h2 class="widget-title">' ),
+			'after_title'   => apply_filters( 'azera_shop_widgets_after_title','</h2><div class="colored-line-left"></div><div class="clearfix widget-title-margin"></div>' ),
 		)
 	);
 
