@@ -12,6 +12,8 @@
  */
 function azera_shop_customize_register( $wp_customize ) {
 
+	require_once( 'class/azera-shop-alpha-control.php' );
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -92,7 +94,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	/* Sticky header */
 	$wp_customize->add_setting( 'azera_shop_sticky_header', array(
-		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'sanitize_callback' => 'azera_shop_sanitize_checkbox',
 		'default' => false,
 	));
 	$wp_customize->add_control(
@@ -213,7 +215,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	/* Enable parallax effect*/
 	$wp_customize->add_setting( 'azera_shop_enable_move', array(
-		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'sanitize_callback' => 'azera_shop_sanitize_checkbox',
 	));
 	$wp_customize->add_control(
 		'azera_shop_enable_move',
@@ -607,7 +609,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	/* Disable preloader */
 	$wp_customize->add_setting( 'azera_shop_disable_preloader', array(
-		'sanitize_callback' => 'azera_shop_sanitize_text',
+		'sanitize_callback' => 'azera_shop_sanitize_checkbox',
 	));
 	$wp_customize->add_control(
 		'azera_shop_disable_preloader',
@@ -762,4 +764,13 @@ function azera_shop_show_on_front() {
 
 function azera_check_woo() {
 	return class_exists( 'WooCommerce' ) && is_page_template( 'template-frontpage.php' );
+}
+
+/**
+ * Sanitize checkboxes
+ *
+ * @param bool $input Value of checkbox to be sanitize.
+ */
+function azera_shop_sanitize_checkbox( $input ) {
+	return ( isset( $input ) && true == $input ? true : false );
 }
