@@ -1,5 +1,7 @@
 <?php
 /**
+ * Content for download single page.
+ *
  * @package azera-shop
  */
 ?>

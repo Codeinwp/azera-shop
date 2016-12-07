@@ -1,5 +1,7 @@
 <?php
 /**
+ * The template part for displaying content.
+ *
  * @package azera-shop
  */
 ?>
@@ -67,7 +69,7 @@
 	</header><!-- .entry-header -->
 	<div itemprop="description" class="entry-content entry-summary">
 		<?php
-			$ismore = @strpos( $post->post_content, '<!--more-->' );
+			$ismore = strpos( $post->post_content, '<!--more-->' );
 		if ( $ismore ) : the_content( sprintf( esc_html__( 'Read more %s &#8230;','azera-shop' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'azera-shop' ) . esc_html( get_the_title() ) . '</span>' ) );
 			else : the_excerpt();
 			endif;

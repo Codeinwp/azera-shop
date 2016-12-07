@@ -1,7 +1,9 @@
-<!-- =========================
- SECTION: RIBBON   
-============================== -->
 <?php
+/**
+ * Ribbon section of the homepage.
+ *
+ * @package azera-shop
+ */
 
 $azera_shop_button_link = get_theme_mod( 'azera_shop_button_link' );
 
