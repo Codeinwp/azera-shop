@@ -26,28 +26,30 @@ function fixFooterBottom(){
 }
 
 jQuery(document).ready(function($) {
-    "use strict";
+    'use strict';
     /*---------------------------------------*/
     /*	BOOTSTRAP FIXES
 	/*---------------------------------------*/
     var oldSSB = jQuery.fn.modal.Constructor.prototype.setScrollbar;
     $.fn.modal.Constructor.prototype.setScrollbar = function() {
         oldSSB.apply(this);
-        if (this.scrollbarWidth) jQuery('.navbar-fixed-top').css('padding-right', this.scrollbarWidth);
-    }
+        if (this.scrollbarWidth) {
+            jQuery('.navbar-fixed-top').css('padding-right', this.scrollbarWidth);
+        }
+    };
     var oldRSB = $.fn.modal.Constructor.prototype.resetScrollbar;
     $.fn.modal.Constructor.prototype.resetScrollbar = function() {
         oldRSB.apply(this);
         jQuery('.navbar-fixed-top').css('padding-right', '');
-    }
+    };
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement('style')
+        var msViewportStyle = document.createElement('style');
         msViewportStyle.appendChild(
             document.createTextNode(
                 '@-ms-viewport{width:auto!important}'
             )
-        )
-        document.querySelector('head').appendChild(msViewportStyle)
+        );
+        document.querySelector('head').appendChild(msViewportStyle);
     }
 });
 
@@ -73,7 +75,7 @@ jQuery(document).ready(function(){
     } else {
       headerHeight = 0;
     }
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
       var target = jQuery(this.hash);
       target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
       if (target.length) {
@@ -86,7 +88,7 @@ jQuery(document).ready(function(){
   });
     
     
-    jQuery("#inpage_scroll_btn").click(function(event) {
+    jQuery('#inpage_scroll_btn').click(function() {
         var anchor = jQuery('#inpage_scroll_btn').attr('data-anchor');
         var offset = -60;
         jQuery('html, body').animate({
@@ -108,19 +110,21 @@ function mainNav() {
     var topMenuClose    = -70;
     var topMenuOpen     = 0;
     if ( jQuery('.admin-bar').length>0 ) {
-        $azera_shop_header_height = jQuery('.navbar').height();
+        var $azera_shop_header_height = jQuery('.navbar').height();
         topMenuClose    = $azera_shop_header_height * -1;
         topMenuOpen     = 32;
     }
-    if ( top > 40 )
+    if ( top > 40 ) {
         jQuery('.appear-on-scroll').stop().animate({
-            "opacity": '1',
-            "top": topMenuOpen
+            'opacity': '1',
+            'top': topMenuOpen
         });
-    else jQuery('.appear-on-scroll').stop().animate({
-        "top": topMenuClose,
-        "opacity": '0'
-    });
+    } else {
+        jQuery('.appear-on-scroll').stop().animate({
+            'top': topMenuClose,
+            'opacity': '0'
+        });
+    }
 }
 
 /* TOP NAVIGATION MENU SELECTED ITEMS */
@@ -131,7 +135,7 @@ function scrolled() {
         var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
         var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
         // for all sections check if the cursor is inside a section
-        jQuery("section").each( function() {
+        jQuery('section').each( function() {
             var thisID = '#' + jQuery(this).attr('id');           // section id
             var azera_shop_offset = jQuery(this).offset().top;         // distance between top and our section
             var thisHeight  = jQuery(this).outerHeight();         // section height
@@ -144,7 +148,7 @@ function scrolled() {
                 jQuery('#menu-primary a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
                 return false;
             }
-            if (isInOneSection == 'no') {
+            if (isInOneSection === 'no') {
                 jQuery('.current').removeClass('current');
             }
         });
@@ -157,7 +161,9 @@ jQuery(window).scroll(function(){
 
     mainNav();
 
-    if ( timer ) clearTimeout(timer);
+    if ( timer ) {
+        clearTimeout(timer);
+    }
     timer = setTimeout(function(){
         scrolled();
     }, 500);
@@ -181,7 +187,7 @@ jQuery(document).ready(function(){
 });
 
 jQuery(window).resize(function() {
-    if( window_width_old != jQuery('.container').outerWidth() ){
+    if( window_width_old = jQuery('.container').outerWidth() ){
         window_width_old = jQuery('.container').outerWidth();
         if( window_width_old <= 462 ) {
             jQuery('.post-type-archive-product .products').azerashopgridpinterest({columns: 1,selector: '.product', calcMin: false});
@@ -211,18 +217,19 @@ jQuery(window).resize(function() {
     }
     AzeraShopGridPinterest.prototype.init = function () {
         var self            = this,
-            $container      = $(this.element);
+            $container      = $(this.element),
             $select_options = $(this.element).children();
         self.make_magic( $container, $select_options );
     };
     AzeraShopGridPinterest.prototype.make_magic = function (container) {
-        var self            = this;
+        var self            = this,
             $container      = $(container),
             columns_height  = [],
             prefix          = 'azera_shop',
-            unique_class    = prefix + '_grid_' + self.make_unique();
+            unique_class    = prefix + '_grid_' + self.make_unique(),
             local_class     = prefix + '_grid';
         var classname;
+        var tIndex;
         var substr_index    = this.element.className.indexOf(prefix+'_grid_');
         if( substr_index>-1 ) {
             classname = this.element.className.substr( 0, this.element.className.length-unique_class.length-local_class.length-2 );
@@ -230,7 +237,7 @@ jQuery(window).resize(function() {
             classname = this.element.className;
         }
         var my_id;
-        if( this.element.id == '' ) {
+        if( this.element.id === '' ) {
             my_id = prefix+'_id_' + self.make_unique();
         } else {
             my_id = this.element.id;
@@ -241,8 +248,8 @@ jQuery(window).resize(function() {
             columns_height.push(0);
             var first_cols = '';
             var last_cols = '';
-            if( i%self.options.columns == 1 ) { first_cols = prefix + '_grid_first'; }
-            if( i%self.options.columns == 0 ) { first_cols = prefix + '_grid_last'; }
+            if( i%self.options.columns === 1 ) { first_cols = prefix + '_grid_first'; }
+            if( i%self.options.columns === 0 ) { first_cols = prefix + '_grid_last'; }
             $('.'+unique_class).append('<div class="' + prefix + '_grid_col_' + this.options.columns +' ' + prefix + '_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
         }
         var calcMin = this.options.calcMin;
@@ -250,55 +257,56 @@ jQuery(window).resize(function() {
         if( this.element.className.indexOf(local_class)<0 ){
             
             $container.children(this.options.selector).each(function(index){
-                if(calcMin == true){
+                if(calcMin === true){
                     var min = Math.min.apply(null,columns_height);
-                    var this_index = columns_height.indexOf(min)+1;
+                    tIndex = columns_height.indexOf(min)+1;
                 }
                 else {
-                    this_index = index % cols + 1;
+                    tIndex = index % cols + 1;
                 }
-                $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
-                if(calcMin == true){
-                    columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
+                $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+tIndex);
+                if(calcMin === true){
+                    columns_height[tIndex-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+tIndex).height();
                 }
                     
             });
             
         } else {
             var no_boxes = $container.find(this.options.selector).length;
-            var i;
             for( i=0; i<no_boxes; i++ ){
-                if(calcMin == true){
+                if(calcMin === true){
                     var min = Math.min.apply(null,columns_height);
-                    var this_index = columns_height.indexOf(min)+1;
+                    tIndex = columns_height.indexOf(min)+1;
                 }
                 else {
-                    this_index = i % cols + 1;
+                    tIndex = i % cols + 1;
                 }
-                $('#'+this.element.id).find('['+prefix+'grid-attr="this-'+i+'"]').appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
-                if(calcMin == true){
-                    columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
+                $('#'+this.element.id).find('['+prefix+'grid-attr="this-'+i+'"]').appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+tIndex);
+                if(calcMin === true){
+                    columns_height[tIndex-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+tIndex).height();
                 }
             }
         }
         $container.remove();
-    }
+    };
     
     AzeraShopGridPinterest.prototype.make_unique = function () {
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for( var i=0; i<10; i++ )
+        var text = '';
+        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for( var i=0; i<10; i++ ) {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
         return text;
-    }
+    };
     
     AzeraShopGridPinterest.prototype.allValuesSame = function(arr) {
         for(var i = 1; i < arr.length; i++){
-            if(arr[i] !== arr[0])
+            if(arr[i] !== arr[0]) {
                 return false;
+            }
         }
         return true;
-    }
+    };
     
     $.fn.azerashopgridpinterest = function (options) {
         return this.each(function () {
@@ -307,7 +315,7 @@ jQuery(window).resize(function() {
                 $.data(this, value, new AzeraShopGridPinterest(this, options) );
             }
         });
-    }
+    };
 })(jQuery);
 
 var isMobile = {
@@ -369,7 +377,6 @@ var isMobile = {
 				$(this).parent().prev().children('a').focus();
 			}
 			else {
-                console.log($(this).parents('ul'));
 				$(this).parents('ul').first().prev().prev().focus();
 			}
 		}
@@ -379,6 +386,7 @@ var isMobile = {
 
 //ACCESSIBILITY MENU
 ( function( $ ) {
+    var screenReaderText;
 
     function initMainNavigation( container ) {
         // Add dropdown toggle that display child menu items.
@@ -403,10 +411,10 @@ var isMobile = {
     
     initMainNavigation( $( '.main-navigation' ) );
     
-    masthead = $( '#masthead' );
-	menuToggle       = masthead.find( '#menu-toggle' );
-	siteHeaderMenu   = masthead.find( '#site-header-menu' );
-	siteNavigation   = masthead.find( '#site-navigation' ); 
+    var masthead         = $( '#masthead' );
+	var menuToggle       = masthead.find( '#menu-toggle' );
+	var siteHeaderMenu   = masthead.find( '#site-header-menu' );
+	var siteNavigation   = masthead.find( '#site-navigation' );
     
     // Enable menuToggle.
 	( function() {
@@ -469,7 +477,7 @@ var isMobile = {
 	}
     
     $( document ).ready( function() {
-		$( window ).on( 'load.parallax-one', onResizeARIA )
+		$( window ).on( 'load.parallax-one', onResizeARIA );
 	} );
     
     
@@ -524,7 +532,7 @@ function fixed_responsive_bg_body() {
         }
     }
 
-    $( '.header-search-button' ).click( function(event) {
+    $( '.header-search-button' ).click( function() {
         $( '.header-search' ).toggleClass( 'header-search-open' );
             $( '.navbar-collapse').removeClass( 'in' ).attr( 'aria-expanded', 'false' ).css( 'height', '1px' );
             $( '.navbar-toggle').attr( 'aria-expanded', 'false' );
