@@ -1,4 +1,8 @@
 
+### 1.1.0 - 13/12/2016
+**Changes:** 
+- Revert 'Changes for compatibility with plus plugin'
+
 ### 1.1.0 - 25/11/2016
 **Changes:** 
 - Added hooks and filters to be used in child themes
