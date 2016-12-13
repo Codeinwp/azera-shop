@@ -1,7 +1,9 @@
 <?php
-/*
-Template Name: Contact
-*/
+/**
+ * Template Name: Contact
+ *
+ * @package azera-shop
+ */
 
 get_header();
 azera_shop_wrapper_start(); ?>

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Shop section of the homepage.
+ *
+ * @package azera_shop
+ */
 
 if ( class_exists( 'WooCommerce' ) ) {
 
