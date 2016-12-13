@@ -122,12 +122,8 @@ button.azera_shop_general_control_remove_field:hover {
 }
 
 .azera-shop-image-picker li:nth-child(even) {
-	margin-right: 0
+	margin-right: 0;
 }
-
-
-
-
 
 .azera-shop-alpha-container .transparency {
 	width: 100%;
@@ -180,6 +176,6 @@ button.azera_shop_general_control_remove_field:hover {
 }
 
 .customize-control-alphacolor .wp-picker-container .iris-picker {
-	border-bottom: none;
 	margin-right: 0;
+	border-bottom: none;
 }

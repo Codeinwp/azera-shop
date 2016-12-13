@@ -918,7 +918,12 @@ if ( ! function_exists( 'azera_shop_post_date_box_function' ) ) {
 
 add_action( 'azera_shop_post_date_box','azera_shop_post_date_box_function', 10, 1 );
 
-function azera_shop_header_layout(){
-    return 'layout2';
+/**
+ * Filter for header layout.
+ *
+ * @return string
+ */
+function azera_shop_header_layout() {
+	return 'layout2';
 }
-add_filter('azera_shop_header_layout_filter','azera_shop_header_layout');
+add_filter( 'azera_shop_header_layout_filter','azera_shop_header_layout' );
