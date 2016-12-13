@@ -1,6 +1,6 @@
 <?php
 /**
- * azera-shop Theme Customizer
+ * Azera-shop Theme Customizer
  *
  * @package azera-shop
  */
@@ -19,16 +19,12 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	/**
-	*/
-	/**
 	************ WP DEFAULT CONTROLS  */
 
 	$wp_customize->remove_control( 'background_color' );
 	$wp_customize->get_section( 'background_image' )->panel = 'panel_2';
 	$wp_customize->get_section( 'colors' )->panel = 'panel_2';
 
-	/**
-	*/
 	/**
 	******************* APPEARANCE  */
 
@@ -109,8 +105,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	);
 
 	/**
-	*/
-	/**
 	****  Frontpage - instructions for users when not on Frontpage template */
 
 	$wp_customize->add_section( 'azera_shop_front_page_instructions', array(
@@ -129,8 +123,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'azera_shop_message' => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ) . '<br><br>' . __( 'Need further informations? Check this','azera-shop' ) . ' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">' . __( 'doc','azera-shop' ) . '</a>',
 	) ) );
 
-	/**
-	*/
 	/**
 	****************     FRONTPAGE SECTIONS    */
 
@@ -253,8 +245,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	)));
 
 	/**
-	*/
-	/**
 	************* LOGOS BAR SECTION  */
 
 	$wp_customize->add_section( 'azera_shop_logos_settings_section' , array(
@@ -288,8 +278,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'azera_shop_link_control' => true,
 	) ) );
 
-	/**
-	*/
 	/**
 	**************** SHOP SECTION  */
 
@@ -355,8 +343,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	));
 
 	/**
-	*/
-	/**
 	*************** SHORTCODES SECTION  */
 
 	$wp_customize->add_section( 'azera_shop_shortcodes_section' , array(
@@ -377,8 +363,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'azera_shop_shortcode_control' => true,
 	) ) );
 
-	/**
-	*/
 	/**
 	*************** RIBBON OPTIONS  */
 
@@ -434,8 +418,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	));
 
 	/**
-	*/
-	/**
 	**************** CONTACT OPTIONS  */
 
 	/* CONTACT SETTINGS */
@@ -477,8 +459,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	));
 
 	/**
-	*/
-	/**
 	************* CONTACT PAGE OPTIONS  */
 
 	$wp_customize->add_section( 'azera_shop_contact_page' , array(
@@ -512,8 +492,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'priority'    => 2,
 	));
 
-	/**
-	*/
 	/**
 	**************** FOOTER OPTIONS  */
 
@@ -556,8 +534,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'azera_shop_link_control' => true,
 	) ) );
 
-	/**
-	*/
 	/**
 	************ ADVANCED OPTIONS  */
 
@@ -677,11 +653,24 @@ function azera_shop_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'azera_shop_customize_preview_js' );
 
-
+/**
+ * Satinize text.
+ *
+ * @param string $input string to satinize.
+ *
+ * @return mixed
+ */
 function azera_shop_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
 
+/**
+ * Satinize repeater
+ *
+ * @param string $input string to satinize.
+ *
+ * @return string
+ */
 function azera_shop_sanitize_repeater( $input ) {
 
 	$input_decoded = json_decode( $input,true );
@@ -719,7 +708,13 @@ function azera_shop_sanitize_repeater( $input ) {
 	return $input;
 }
 
-
+/**
+ * Satinize html.
+ *
+ * @param string $input string to satinize.
+ *
+ * @return mixed
+ */
 function azera_shop_sanitize_html( $input ) {
 
 	$allowed_html = array(
@@ -754,14 +749,29 @@ function azera_shop_sanitize_html( $input ) {
 	return wp_kses( $string, $allowed_html );
 }
 
+/**
+ * Check if is used contact template.
+ *
+ * @return mixed
+ */
 function azera_shop_is_contact_page() {
 	return is_page_template( 'template-contact.php' );
 };
 
+/**
+ * Check if is used frontpage template.
+ *
+ * @return mixed
+ */
 function azera_shop_show_on_front() {
 	return is_page_template( 'template-frontpage.php' );
 }
 
+/**
+ * Check if is used woocommerce in homepage template.
+ *
+ * @return mixed
+ */
 function azera_check_woo() {
 	return class_exists( 'WooCommerce' ) && is_page_template( 'template-frontpage.php' );
 }

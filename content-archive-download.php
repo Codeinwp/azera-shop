@@ -1,5 +1,7 @@
 <?php
 /**
+ * Content archive download.
+ *
  * @package azera-shop
  */
 ?>

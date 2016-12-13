@@ -1,5 +1,10 @@
-<!-- CONTAINER -->
 <?php
+/**
+ * Header section of the homepage.
+ *
+ * @package azera-shop
+ */
+
 
 	$azera_website_name = get_bloginfo( 'name', 'display' );
 	$azera_website_description = get_bloginfo( 'description' );

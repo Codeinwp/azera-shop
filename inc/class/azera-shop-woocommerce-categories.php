@@ -1,11 +1,28 @@
 <?php
+/**
+ * Woocommerce category.
+ *
+ * @package azera-shop
+ */
+
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
+/**
+ * Class Azera_Shop_Woocommerce_Categories
+ */
 class Azera_Shop_Woocommerce_Categories extends WP_Customize_Control {
 
-
+	/**
+	 * Azera_Shop_Woocommerce_Categories constructor.
+	 *
+	 * @param WP_Customize_Manager $manager WP_Customize_Manager class.
+	 * @param string               $id Control id.
+	 * @param array                $args Control args.
+	 * $options array              $options Control options.
+	 */
 	public function __construct( $manager, $id, $args = array(), $options = array() ) {
 		parent::__construct( $manager, $id, $args );
 	}
