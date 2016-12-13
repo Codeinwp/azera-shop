@@ -1,3 +1,4 @@
+/* global azeraShopCustomizerObject */
 function media_upload(button_class) {
 
 	jQuery('body').on('click', button_class, function() {
