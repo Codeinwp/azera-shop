@@ -1535,108 +1535,6 @@ Header Cart
 	font-size: 16px;
   font-weight: 300;
 }
-
-/*---------------------------------------
-   3.4 SECTION: APP BRIEF
------------------------------------------*/
-
-.brief {
-	border-bottom: 1px solid #eaebec;
-	background-color: #fff;
-}
-
-.brief .section-overlay-layer {
-	padding-top: 80px;
-	padding-bottom: 115px;
-}
-
-.brief .content-section {
-	margin-top: 15px;
-}
-
-.brief h2 {
-	margin-top: 10px;
-	margin-bottom: 15px;
-	font-size: 2.4rem;
-	line-height: 3.125rem;
-}
-
-.brief p {
-	margin-top: 40px;
-}
-
-.brief .brief-image-right {
-	margin-top: 20px;
-}
-
-.brief .brief-image-right img {
-	float: right;
-	width: 92%;
-}
-
-.brief .brief-image-left {
-	overflow: hidden;
-	margin-top: 25px;
-}
-
-.brief .brief-image-left img {
-	float: left;
-	width: 95%;
-}
-
-.feature-list {
-	margin-top: 15px;
-}
-
-.feature-list li {
-	position: relative;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	padding-left: 20px;
-}
-
-.feature-list li:before {
-	position: absolute;
-	top: 8px;
-	left: 0;
-	color: #008ed6;
-	font-size: 36px;
-	content: "\2022";
-}
-
-.feature-list li span {
-	margin-right: 10px;
-}
-
-.brief-content-one {
-	float: left;
-}
-
-.brief-content-one {
-	float: right;
-}
-
-.brief-left .brief-content-one {
-	float: left;
-}
-
-.brief-left .brief-content-two {
-	float: right;
-}
-
-.brief-right .brief-content-one {
-	float: right;
-}
-
-.brief-right .brief-content-two {
-	float: left;
-}
-
-.brief-content-text {
-	clear: both;
-	margin-top: 40px;
-}
-
 /*---------------------------------------
    3.2 SECTION: CLIENTS LIST
 -----------------------------------------*/
@@ -4750,7 +4648,7 @@ h2.screen-reader-text {
 .home-add-to-cart-wrap a {
 	background-image: url(images/tr-btn.png);
 	background-repeat: repeat-x;
-	background-color: rgba(255,162,0,1.00)!important;
+	background-color: rgba(255,162,0,1.00);
 	background-size: contain;
 	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
