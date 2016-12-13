@@ -391,30 +391,46 @@ function azera_shop_register_required_plugins() {
 
 add_action( 'wp_footer','azera_shop_php_style', 100 );
 
+/**
+ * Theme inline style.
+ */
 function azera_shop_php_style() {
 
-	echo '<style type="text/css">';
+	$custom_css                        = '';
+	$azera_shop_title_color       = get_theme_mod( 'azera_shop_title_color' );
+	$azera_shop_text_color        = get_theme_mod( 'azera_shop_text_color' );
+	$azera_shop_enable_move       = get_theme_mod( 'azera_shop_enable_move' );
+	$azera_shop_frontpage_opacity = get_theme_mod( 'azera_shop_frontpage_opacity', apply_filters( 'azera_shop_frontpage_opacity_filter','rgba(0, 0, 0, 0.1)' ) );
+	$azera_shop_blog_opacity      = get_theme_mod( 'azera_shop_blog_opacity', apply_filters( 'azera_shop_blog_opacity_filter','rgba(0, 0, 0, 0.1)' ) );
+	$llorix_one_header_image           = get_header_image();
 
-	$azera_shop_title_color = get_theme_mod( 'azera_shop_title_color' );
 	if ( ! empty( $azera_shop_title_color ) ) {
-		echo '.no-link, .colored-text,.home-shop-product-title h3, .dark-text, .content-wrap h1,.content-wrap h2, .content-wrap h3, .content-wrap h4, .content-wrap h5, .content-wrap h6, .content-wrap .entry-title a { color: ' . $azera_shop_title_color . '!important }';
+		$custom_css .= '.dark-text { color: ' . $azera_shop_title_color . ' }';
 	}
-	$azera_shop_text_color = get_theme_mod( 'azera_shop_text_color' );
+
 	if ( ! empty( $azera_shop_text_color ) ) {
-		echo '.powered-by, .azera_shop_copyright_content, .testimonials-box p, .service-box p, .home-shop-product-price span, .home-shop-product-content p, .sub-heading, .content-wrap p{ color: ' . $azera_shop_text_color . '!important }';
+		$custom_css .= 'body{ color: ' . $azera_shop_text_color . '}';
 	}
 
-	$azera_shop_enable_move = get_theme_mod( 'azera_shop_enable_move' );
+	if ( ( empty( $azera_shop_enable_move ) || ! $azera_shop_enable_move ) && ( is_front_page() || is_page_template( 'template-frontpage.php' ) ) ) {
 
-	if ( ( empty( $azera_shop_enable_move ) || ! $azera_shop_enable_move) && is_page_template( 'template-frontpage.php' ) ) {
-		$azera_shop_header_image = get_header_image();
-		if ( ! empty( $azera_shop_header_image ) ) {
-			echo '.header{ background-image: url(' . $azera_shop_header_image . ');}';
+		if ( ! empty( $llorix_one_header_image ) ) {
+			$custom_css .= '.header{ background-image: url(' . $llorix_one_header_image . ');}';
 		}
 	}
 
-	echo '</style>';
+	if ( ! empty( $azera_shop_frontpage_opacity ) ) {
+		$custom_css .= '.overlay-layer-wrap{ background:' . $azera_shop_frontpage_opacity . ';}';
+	}
+
+	if ( ! empty( $azera_shop_blog_opacity ) ) {
+		$custom_css .= '.archive-top .section-overlay-layer{ background:' . $azera_shop_blog_opacity . ';}';
+	}
+
+	wp_add_inline_style( 'azera-shop-style', $custom_css );
+
 }
+add_action( 'wp_enqueue_scripts', 'azera_shop_php_style', 100 );
 
 $pro_functions_path = azera_shop_get_file( '/pro/functions.php' );
 if ( file_exists( $pro_functions_path ) ) {
@@ -827,3 +843,8 @@ if ( ! function_exists( 'azera_shop_post_date_box_function' ) ) {
 }
 
 add_action( 'azera_shop_post_date_box','azera_shop_post_date_box_function', 10, 1 );
+
+function azera_shop_header_layout(){
+    return 'layout2';
+}
+add_filter('azera_shop_header_layout_filter','azera_shop_header_layout');
