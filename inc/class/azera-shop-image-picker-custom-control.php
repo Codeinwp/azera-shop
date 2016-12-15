@@ -1,10 +1,33 @@
 <?php
+/**
+ * Image picker oontrol.
+ *
+ * @package azera-shop
+ */
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
+
+/**
+ * Class Azera_Shop_Image_Picker
+ */
 class Azera_Shop_Image_Picker extends WP_Customize_Control {
 
+	/**
+	 * Options.
+	 *
+	 * @var array
+	 */
 	private $options = array();
+
+	/**
+	 * Azera_Shop_Image_Picker constructor.
+	 *
+	 * @param string $manager   manager.
+	 * @param int    $id           id.
+	 * @param array  $args       arguments.
+	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 		$this->options = $args;

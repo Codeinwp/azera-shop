@@ -1,5 +1,7 @@
 <?php
 /**
+ * Content contact.
+ *
  * @package azera-shop
  */
 ?>

@@ -1,17 +1,17 @@
 /* PRE LOADER */
 jQuery(window).load(function () {
-    "use strict";
-    jQuery(".status").fadeOut();
-    jQuery(".preloader").delay(1000).fadeOut("slow");    
+    'use strict';
+    jQuery('.status').fadeOut();
+    jQuery('.preloader').delay(1000).fadeOut('slow');    
 });
 
 jQuery(window).resize(function() {
-    "use strict";
+    'use strict';
     var ww = jQuery(window).width();
     /* COLLAPSE NAVIGATION ON MOBILE AFTER CLICKING ON LINK */
     if (ww < 480) {
         jQuery('.sticky-navigation a').on('click', function() {
-            jQuery(".navbar-toggle").click();
+            jQuery('.navbar-toggle').click();
         });
     }
 });
@@ -29,7 +29,7 @@ jQuery(document).ready(function(){
 });
 
 jQuery(window).resize(function() {
-    if( home_window_width_old != jQuery('.container').outerWidth() ){
+    if( home_window_width_old !== jQuery('.container').outerWidth() ){
         home_window_width_old = jQuery('.container').outerWidth();
         if( home_window_width_old < 750  ){
             jQuery('#our_services_wrap').azerashopgridpinterest({columns: 1,selector: '.service-box'});
@@ -46,7 +46,7 @@ jQuery(window).resize(function() {
 ========= MAP OVERLAY =========
 ===============================*/
 jQuery(document).ready(function(){
-    jQuery('html').click(function(event) {
+    jQuery('html').click(function() {
         jQuery('.azera_shop_map_overlay').show();
     });
     
@@ -54,20 +54,14 @@ jQuery(document).ready(function(){
         event.stopPropagation();
     });
     
-    jQuery('.azera_shop_map_overlay').on('click',function(event){
+    jQuery('.azera_shop_map_overlay').on('click',function(){
         jQuery(this).hide();
-    })
-});
-
-
-jQuery(document).ready(function() {
-    "use strict";
-    mainNav();
+    });
 });
 
 jQuery(document).ready(function(){
     if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
-        $azera_shop_header_height = jQuery('.navbar').height();
+        var $azera_shop_header_height = jQuery('.navbar').height();
         $azera_shop_header_height+=84;
         jQuery('.header .overlay-layer').css('padding-top',$azera_shop_header_height);
     }
