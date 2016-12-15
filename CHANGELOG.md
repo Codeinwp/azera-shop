@@ -1,4 +1,8 @@
 
+### 1.1.2 - 15/12/2016
+**Changes:** 
+- Make theme ready for Plus version
+
 ### 1.1.0 - 13/12/2016
 **Changes:** 
 - Revert 'Changes for compatibility with plus plugin'
