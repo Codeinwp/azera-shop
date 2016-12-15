@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Azera Shop 1.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/azera-shop/issues\n"
-"POT-Creation-Date: 2016-12-13 12:01:27+00:00\n"
+"POT-Creation-Date: 2016-12-13 13:38:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -468,15 +468,15 @@ msgstr ""
 msgid "Posted in "
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:882
+#: content-search.php:73 content.php:62 functions.php:895
 msgid "No comments"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:882
+#: content-search.php:73 content.php:62 functions.php:895
 msgid "One comment"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:882
+#: content-search.php:73 content.php:62 functions.php:895
 msgid "% comments"
 msgstr ""
 
@@ -611,39 +611,39 @@ msgstr[1] ""
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: functions.php:528
+#: functions.php:541
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:528 functions.php:551
+#: functions.php:541 functions.php:564
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:539
+#: functions.php:552
 msgid "<span itemprop=\"name\">%s </span><span class=\"says\">says:</span>"
 msgstr ""
 
-#: functions.php:542
+#: functions.php:555
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:548
+#: functions.php:561
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:776
+#: functions.php:789
 msgid "Read more about "
 msgstr ""
 
-#: functions.php:794 header.php:156
+#: functions.php:807 header.php:156
 msgid "View your shopping cart"
 msgstr ""
 
-#: functions.php:813 inc/customizer.php:608
+#: functions.php:826 inc/customizer.php:610
 msgid "BLOG"
 msgstr ""
 
-#: functions.php:851
+#: functions.php:864
 msgid "%1$s powered by %2$s"
 msgstr ""
 
@@ -651,7 +651,7 @@ msgstr ""
 msgid "Azera Shop"
 msgstr ""
 
-#: functions.php:853
+#: functions.php:866
 msgid "WordPress"
 msgstr ""
 
@@ -937,7 +937,7 @@ msgid "Icon"
 msgstr ""
 
 #: inc/class/azera-shop-general-control.php:203
-#: inc/class/azera-shop-general-control.php:223 inc/customizer.php:638
+#: inc/class/azera-shop-general-control.php:223 inc/customizer.php:640
 msgid "Image"
 msgstr ""
 
@@ -954,13 +954,13 @@ msgid "None"
 msgstr ""
 
 #: inc/class/azera-shop-general-control.php:305
-#: inc/class/azera-shop-general-control.php:367 inc/customizer.php:614
+#: inc/class/azera-shop-general-control.php:367 inc/customizer.php:616
 msgid "Title"
 msgstr ""
 
 #: inc/class/azera-shop-general-control.php:312
-#: inc/class/azera-shop-general-control.php:374 inc/customizer.php:174
-#: inc/customizer.php:307 inc/customizer.php:625
+#: inc/class/azera-shop-general-control.php:374 inc/customizer.php:176
+#: inc/customizer.php:309 inc/customizer.php:627
 msgid "Subtitle"
 msgstr ""
 
@@ -988,44 +988,44 @@ msgstr ""
 msgid "All Categories"
 msgstr ""
 
-#: inc/customizer.php:33
+#: inc/customizer.php:35
 msgid "Appearance"
 msgstr ""
 
-#: inc/customizer.php:46
+#: inc/customizer.php:48
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer.php:63
+#: inc/customizer.php:65
 msgid "Title color"
 msgstr ""
 
-#: inc/customizer.php:71
+#: inc/customizer.php:73
 msgid "General options"
 msgstr ""
 
-#: inc/customizer.php:73
+#: inc/customizer.php:75
 msgid "Azera Shop theme general appearance options"
 msgstr ""
 
-#: inc/customizer.php:84 sections/azera_shop_logos_section.php:80
+#: inc/customizer.php:86 sections/azera_shop_logos_section.php:80
 #: sections/azera_shop_logos_section.php:85
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:98
+#: inc/customizer.php:100
 msgid "Header visibility"
 msgstr ""
 
-#: inc/customizer.php:99
+#: inc/customizer.php:101
 msgid "If this box is checked, the header will toggle on frontpage."
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:111
 msgid "Frontpage settings"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:123
 msgid ""
 "To customize the Frontpage sections please create a page and select the "
 "template \"Frontpage\" for that page. After that, go to Appearance -> "
@@ -1033,126 +1033,126 @@ msgid ""
 "page\". Finally, for \"Front page\" choose the page you previously created."
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:123
 msgid "Need further informations? Check this"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:123
 msgid "doc"
 msgstr ""
 
-#: inc/customizer.php:128
+#: inc/customizer.php:130
 msgid "Frontpage sections"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:137
 msgid "Big title section"
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:151
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:162 inc/customizer.php:294 inc/customizer.php:392
+#: inc/customizer.php:164 inc/customizer.php:296 inc/customizer.php:394
 msgid "Main title"
 msgstr ""
 
-#: inc/customizer.php:181 sections/azera_shop_header_section.php:13
+#: inc/customizer.php:183 sections/azera_shop_header_section.php:13
 msgid "GET STARTED"
 msgstr ""
 
-#: inc/customizer.php:186 inc/customizer.php:403
+#: inc/customizer.php:188 inc/customizer.php:405
 msgid "Button label"
 msgstr ""
 
-#: inc/customizer.php:192
+#: inc/customizer.php:194
 msgid "#"
 msgstr ""
 
-#: inc/customizer.php:197 inc/customizer.php:413
+#: inc/customizer.php:199 inc/customizer.php:415
 msgid "Button link"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:205
 msgid "Big title section background"
 msgstr ""
 
-#: inc/customizer.php:214
+#: inc/customizer.php:216
 msgid "Parallax effect"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:217
 msgid "If this box is checked, the parallax effect is enabled."
 msgstr ""
 
-#: inc/customizer.php:228
+#: inc/customizer.php:230
 msgid "First layer"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:242
 msgid "Second layer"
 msgstr ""
 
-#: inc/customizer.php:249
+#: inc/customizer.php:251
 msgid "Logos Bar section"
 msgstr ""
 
-#: inc/customizer.php:270 inc/customizer.php:526
+#: inc/customizer.php:272 inc/customizer.php:528
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:285
 msgid "Shop section"
 msgstr ""
 
-#: inc/customizer.php:289 sections/azera_shop_shop_section.php:10
+#: inc/customizer.php:291 sections/azera_shop_shop_section.php:10
 #: sections/azera_shop_shop_section.php:15
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:302 sections/azera_shop_shop_section.php:11
+#: inc/customizer.php:304 sections/azera_shop_shop_section.php:11
 msgid ""
 "Showcase your work effectively and in an attractive form that your "
 "prospective clients will love."
 msgstr ""
 
-#: inc/customizer.php:320
+#: inc/customizer.php:322
 msgid "Number of products"
 msgstr ""
 
-#: inc/customizer.php:336
+#: inc/customizer.php:338
 msgid "Display products from"
 msgstr ""
 
-#: inc/customizer.php:347
+#: inc/customizer.php:349
 msgid "Shortcodes section"
 msgstr ""
 
-#: inc/customizer.php:356
+#: inc/customizer.php:358
 msgid "Edit the shortcode options"
 msgstr ""
 
-#: inc/customizer.php:369
+#: inc/customizer.php:371
 msgid "Ribbon section"
 msgstr ""
 
-#: inc/customizer.php:381
+#: inc/customizer.php:383
 msgid "Ribbon Background"
 msgstr ""
 
-#: inc/customizer.php:387 sections/azera_shop_ribbon_section.php:12
+#: inc/customizer.php:389 sections/azera_shop_ribbon_section.php:12
 msgid "In order to edit the text here you should go to customizer."
 msgstr ""
 
-#: inc/customizer.php:398
+#: inc/customizer.php:400
 msgid "Text from customizer"
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:425
 msgid "Contact info section"
 msgstr ""
 
-#: inc/customizer.php:431 inc/customizer.php:432 inc/customizer.php:433
+#: inc/customizer.php:433 inc/customizer.php:434 inc/customizer.php:435
 #: sections/azera_shop_contact_info_section.php:11
 #: sections/azera_shop_contact_info_section.php:12
 #: sections/azera_shop_contact_info_section.php:13
@@ -1160,67 +1160,67 @@ msgstr ""
 msgid "Text from customizer."
 msgstr ""
 
-#: inc/customizer.php:438
+#: inc/customizer.php:440
 msgid "Add new contact field"
 msgstr ""
 
-#: inc/customizer.php:453 inc/customizer.php:486
+#: inc/customizer.php:455 inc/customizer.php:488
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer.php:454 inc/customizer.php:487
+#: inc/customizer.php:456 inc/customizer.php:489
 msgid ""
 "To use this section please install <a "
 "href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> "
 "plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:463
+#: inc/customizer.php:465
 msgid "Contact page"
 msgstr ""
 
-#: inc/customizer.php:473
+#: inc/customizer.php:475
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer.php:474
+#: inc/customizer.php:476
 msgid ""
 "Create a form, copy the shortcode generated and paste it here. We recommend "
 "<a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form "
 "7</a> but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer.php:497
+#: inc/customizer.php:499
 msgid "Footer options"
 msgstr ""
 
-#: inc/customizer.php:499
+#: inc/customizer.php:501
 msgid ""
 "The main content of this section is customizable in: Customize -> Widgets "
 "-> Footer area. "
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:517
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer.php:539
+#: inc/customizer.php:541
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer.php:541
+#: inc/customizer.php:543
 msgid "Azera Shop theme general options"
 msgstr ""
 
-#: inc/customizer.php:592
+#: inc/customizer.php:594
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer.php:593
+#: inc/customizer.php:595
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
-#: inc/customizer.php:602
+#: inc/customizer.php:604
 msgid "Blog header"
 msgstr ""
 
@@ -1427,17 +1427,17 @@ msgctxt "post time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""
 
-#: functions.php:547
+#: functions.php:560
 msgctxt "comment time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""
 
-#: functions.php:899
+#: functions.php:912
 msgctxt "post day fomat"
 msgid "d"
 msgstr ""
 
-#: functions.php:900
+#: functions.php:913
 msgctxt "post month fomat"
 msgid "M"
 msgstr ""
