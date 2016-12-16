@@ -927,3 +927,12 @@ function azera_shop_header_layout() {
 	return 'layout2';
 }
 add_filter( 'azera_shop_header_layout_filter','azera_shop_header_layout' );
+
+/**
+ * Filter to remove default options.
+ * @return string
+ */
+function azera_shop_remove_default(){
+    return '';
+}
+add_filter('azera_shop_header_logo_filter','azera_shop_remove_default');

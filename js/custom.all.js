@@ -386,9 +386,12 @@ var isMobile = {
 
 //ACCESSIBILITY MENU
 ( function( $ ) {
-    var screenReaderText;
+    'use strict';
 
     function initMainNavigation( container ) {
+        if( screenReaderText === 'undefined' ){
+            return;
+        }
         // Add dropdown toggle that display child menu items.
         container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 

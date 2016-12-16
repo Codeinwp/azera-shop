@@ -154,11 +154,23 @@ function azera_shop_customize_register( $wp_customize ) {
 		'azera-shop-image-picker-options' => array( 'layout1','layout2' ),
 	)));
 
+	/**
+	 * Header Logo
+	 */
+	$wp_customize->add_setting( 'azera_shop_header_logo', array(
+		'sanitize_callback' => 'esc_url',
+	));
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_header_logo', array(
+		'label'    => esc_html__( 'Header Top Logo', 'azera-shop' ),
+		'section'  => 'azera_shop_header_content',
+		'priority'    => 10,
+	)));
+
 	/* Header title */
 	$wp_customize->add_setting( 'azera_shop_header_title', array(
 		'default' => get_bloginfo( 'name', 'display' ),
 		'sanitize_callback' => 'azera_shop_sanitize_text',
-		'transport' => 'postMessage',
 	));
 	$wp_customize->add_control( 'azera_shop_header_title', array(
 		'label'    => esc_html__( 'Main title', 'azera-shop' ),
@@ -170,7 +182,6 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'azera_shop_header_subtitle', array(
 		'default' => get_bloginfo( 'description' ),
 		'sanitize_callback' => 'azera_shop_sanitize_text',
-		'transport' => 'postMessage',
 	));
 	$wp_customize->add_control( 'azera_shop_header_subtitle', array(
 		'label'    => esc_html__( 'Subtitle', 'azera-shop' ),
