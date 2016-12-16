@@ -1,4 +1,5 @@
-jQuery(window).load(function(){ 
+/* global screenReaderText */
+jQuery(window).load(function(){
     fixFooterBottom();
 });
 jQuery(window).resize(function(){
