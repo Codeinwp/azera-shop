@@ -739,6 +739,7 @@ big {
 
 .header {
 	position: relative;
+	overflow: hidden;
 }
 
 .overlay-layer-wrap {
