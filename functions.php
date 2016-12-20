@@ -49,10 +49,10 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 			'azera_shop_footer_menu' => esc_html__( 'Footer Menu', 'azera-shop' ),
 		) );
 
-		 /*
-		  Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
+		/*
+		 Switch default core markup for search form, comment form, and comments
+		* to output valid HTML5.
+		*/
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -68,11 +68,11 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 			'default-attachment'     => 'fixed',
 		)));
 
-		 /*
-		 * This feature enables Custom_Headers support for a theme as of Version 3.4.
-		 *
-		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
-		 */
+		/*
+		* This feature enables Custom_Headers support for a theme as of Version 3.4.
+		*
+		* @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
+		*/
 
 		add_theme_support( 'custom-header',apply_filters( 'azera_shop_custom_header_args', array(
 			'default-image' => azera_shop_get_file( '/images/background-images/background.jpg' ),
@@ -85,8 +85,8 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 
 		register_default_headers( array(
 			'azera_shop_default_header_image' => array(
-			'url'   => azera_shop_get_file( '/images/background-images/background.jpg' ),
-			'thumbnail_url' => azera_shop_get_file( '/images/background-images/background_thumbnail.jpg' ),
+				'url'   => azera_shop_get_file( '/images/background-images/background.jpg' ),
+				'thumbnail_url' => azera_shop_get_file( '/images/background-images/background_thumbnail.jpg' ),
 			),
 		));
 
@@ -121,19 +121,19 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 			 * plugin_slug - the plugin's slug (used for installing the plugin)
 			 */
 			$azera_shop_required_actions = array(
-			array(
-				'id' => 'azera-shop-req-ac-check-front-page',
-				'title' => esc_html__( 'Switch "Front page displays" to "A static page" ' ,'azera-shop' ),
-				'description' => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Advanced Options -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','azera-shop' ),
-				'check' => azera_shop_is_not_static_page(),
-			),
-			array(
-				'id' => 'azera-shop-req-ac-install-intergeo-maps',
-				'title' => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'azera-shop' ),
-				'description' => esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','azera-shop' ),
-				'check' => defined( 'INTERGEO_PLUGIN_NAME' ),
-				'plugin_slug' => 'intergeo-maps',
-			),
+				array(
+					'id' => 'azera-shop-req-ac-check-front-page',
+					'title' => esc_html__( 'Switch "Front page displays" to "A static page" ' ,'azera-shop' ),
+					'description' => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Advanced Options -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','azera-shop' ),
+					'check' => azera_shop_is_not_static_page(),
+				),
+				array(
+					'id' => 'azera-shop-req-ac-install-intergeo-maps',
+					'title' => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'azera-shop' ),
+					'description' => esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','azera-shop' ),
+					'check' => defined( 'INTERGEO_PLUGIN_NAME' ),
+					'plugin_slug' => 'intergeo-maps',
+				),
 			);
 
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
@@ -203,7 +203,7 @@ add_action( 'widgets_init', 'azera_shop_widgets_init' );
  */
 function azera_shop_wp_page_menu() {
 	echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
-		wp_list_pages( array( 'title_li' => '', 'depth' => 1 ) );
+	wp_list_pages( array( 'title_li' => '', 'depth' => 1 ) );
 	echo '</ul>';
 }
 
@@ -328,8 +328,8 @@ function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 		do_action( 'blog_header' );
 	} ?>
 	<div class="content-wrap">
-		<div class="container <?php echo $class_to_add; ?>">
-			<div id="primary" class="content-area <?php echo esc_attr( $class ); ?>">
+	<div class="container <?php echo $class_to_add; ?>">
+	<div id="primary" class="content-area <?php echo esc_attr( $class ); ?>">
 	<?php
 }
 
@@ -541,44 +541,44 @@ function azera_shop_comment( $comment, $args, $depth ) {
 		case 'pingback' :
 
 		case 'trackback' :
-		?>
+			?>
 			<li class="post pingback">
-				<p><?php _e( 'Pingback:', 'azera-shop' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' ); ?></p>
-		<?php
-		break;
+			<p><?php _e( 'Pingback:', 'azera-shop' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' ); ?></p>
+			<?php
+			break;
 
 		default :
-		?>
+			?>
 			<li itemscope itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-				<article id="comment-<?php comment_ID(); ?>" class="comment-body">
-					<footer>
-						<div itemscope itemprop="creator" itemtype="http://schema.org/Person" class="comment-author vcard" >
-							<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
-							<?php printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'azera-shop' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
-						</div><!-- .comment-author .vcard -->
-						<?php if ( $comment->comment_approved == '0' ) : ?>
-							<em><?php _e( 'Your comment is awaiting moderation.', 'azera-shop' ); ?></em>
-							<br />
-						<?php endif; ?>
-						<div class="comment-metadata">
-							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-permalink" itemprop="url">
-								<time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'azera-shop' ) ); ?>" itemprop="commentTime">
-									<?php printf( __( '%1$s at %2$s', 'azera-shop' ), get_comment_date(), get_comment_time() ); ?>
-								</time>
-							</a>
-							<?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' );?>
-						</div><!-- .comment-meta .commentmetadata -->
-					</footer>
+			<article id="comment-<?php comment_ID(); ?>" class="comment-body">
+				<footer>
+					<div itemscope itemprop="creator" itemtype="http://schema.org/Person" class="comment-author vcard" >
+						<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
+						<?php printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'azera-shop' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
+					</div><!-- .comment-author .vcard -->
+					<?php if ( $comment->comment_approved == '0' ) : ?>
+						<em><?php _e( 'Your comment is awaiting moderation.', 'azera-shop' ); ?></em>
+						<br />
+					<?php endif; ?>
+					<div class="comment-metadata">
+						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-permalink" itemprop="url">
+							<time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'azera-shop' ) ); ?>" itemprop="commentTime">
+								<?php printf( __( '%1$s at %2$s', 'azera-shop' ), get_comment_date(), get_comment_time() ); ?>
+							</time>
+						</a>
+						<?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' );?>
+					</div><!-- .comment-meta .commentmetadata -->
+				</footer>
 
-					<div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
+				<div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
 
-					<div class="reply">
-						<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-					</div><!-- .reply -->
-				</article><!-- #comment-## -->
+				<div class="reply">
+					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				</div><!-- .reply -->
+			</article><!-- #comment-## -->
 
-<?php
-		break;
+			<?php
+			break;
 
 	endswitch;
 }
@@ -790,8 +790,8 @@ function azera_shop_get_template_part( $template ) {
  * @return string
  */
 function azera_shop_excerpt_more( $more ) {
-		global $post;
-		return '<a class="moretag" href="' . get_permalink( $post->ID ) . '"><span class="screen-reader-text">' . esc_html__( 'Read more about ', 'azera-shop' ) . esc_html( get_the_title() ) . '</span>[&#8230;]</a>';
+	global $post;
+	return '<a class="moretag" href="' . get_permalink( $post->ID ) . '"><span class="screen-reader-text">' . esc_html__( 'Read more about ', 'azera-shop' ) . esc_html( get_the_title() ) . '</span>[&#8230;]</a>';
 }
 
 add_filter( 'excerpt_more', 'azera_shop_excerpt_more' );
@@ -809,10 +809,10 @@ function azera_shop_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 
-		<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
-			<span class="fa fa-shopping-cart"></span>
-			<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
-		</a>
+	<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
+		<span class="fa fa-shopping-cart"></span>
+		<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
+	</a>
 
 	<?php
 
