@@ -107,21 +107,11 @@ function azera_shop_customize_register( $wp_customize ) {
 	/**
 	****  Frontpage - instructions for users when not on Frontpage template */
 
-	$wp_customize->add_section( 'azera_shop_front_page_instructions', array(
-		'title'    => __( 'Frontpage settings', 'azera-shop' ),
-		'priority' => 37,
-	) );
 
 	$wp_customize->add_setting( 'azera_shop_front_page_instructions', array(
 		'sanitize_callback' => 'azera_shop_sanitize_text',
 	) );
 
-	require_once( 'class/azera-shop-text-control.php' );
-
-	$wp_customize->add_control( new Azera_Shop_Message( $wp_customize, 'azera_shop_front_page_instructions', array(
-		'section' => 'azera_shop_front_page_instructions',
-		'azera_shop_message' => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Advanced options -> Frontpage displays and select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ) . '<br><br>' . __( 'Need further informations? Check this','azera-shop' ) . ' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">' . __( 'doc','azera-shop' ) . '</a>',
-	) ) );
 
 	/**
 	****************     FRONTPAGE SECTIONS    */
