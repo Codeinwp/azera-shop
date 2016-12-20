@@ -12,7 +12,7 @@
 		}
 	} );
 
-	api.sectionConstructor['azera-shop-frontpage-instrucctions'] = api.Section.extend( {
+	api.sectionConstructor['azera-shop-frontpage-instructions'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},
