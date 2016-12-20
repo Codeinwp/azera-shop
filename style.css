@@ -277,9 +277,8 @@ h5 {
 	word-wrap: break-word;
 }
 
-h1.intro {
+h2.intro {
 	font-size: 3.75rem;
-	font-weight: bold;
 	line-height: 5rem;
 	text-align: center;
 }
@@ -1524,7 +1523,7 @@ Header Cart
 /**********
 ** Restyle intro section
 **********/
-.second-header-layout .intro-section h1.intro,
+.second-header-layout .intro-section h2.intro,
 .second-header-layout .intro-section h5,
 .second-header-layout .intro-section {
 	font-weight: normal;
