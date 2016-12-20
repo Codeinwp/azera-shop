@@ -107,11 +107,9 @@ function azera_shop_customize_register( $wp_customize ) {
 	/**
 	****  Frontpage - instructions for users when not on Frontpage template */
 
-
 	$wp_customize->add_setting( 'azera_shop_front_page_instructions', array(
 		'sanitize_callback' => 'azera_shop_sanitize_text',
 	) );
-
 
 	/**
 	****************     FRONTPAGE SECTIONS    */

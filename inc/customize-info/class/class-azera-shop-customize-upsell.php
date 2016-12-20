@@ -76,14 +76,11 @@ final class Azera_Shop_Customizer_Upsell {
 		$page_on_front_id = get_option( 'page_on_front' );
 
 		if ( 'posts' == get_option( 'show_on_front' ) || get_page_template_slug( $page_on_front_id ) !== 'template-frontpage.php' ) {
-			$manager->add_section( new Azera_Shop_Customizer_Upsell_Frontpage_Sections( $manager, 'azera-shop-frontpage-instructions',
-					array(
-						'upsell_text'               => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Static Front Page and under "Static Front Page" select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ) . '<br><br>' . __( 'Need further informations? Check this','azera-shop' ) . ' <a href="http://docs.themeisle.com/article/312-azera-documentation">' . __( 'doc','azera-shop' ) . '</a>',
-						'panel'                     => 'azera_shop_front_page_sections',
-						'priority'                  => 0,
-					)
-				)
-			);
+			$manager->add_section( new Azera_Shop_Customizer_Upsell_Frontpage_Sections( $manager, 'azera-shop-frontpage-instructions', array(
+				'upsell_text'               => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Static Front Page and under "Static Front Page" select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ) . '<br><br>' . __( 'Need further informations? Check this','azera-shop' ) . ' <a href="http://docs.themeisle.com/article/312-azera-documentation">' . __( 'doc','azera-shop' ) . '</a>',
+				'panel'                     => 'azera_shop_front_page_sections',
+				'priority'                  => 0,
+			) ) );
 		}
 
 	}
