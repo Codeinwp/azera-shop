@@ -23,7 +23,7 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 	<?php
 	if ( ! empty( $azera_shop_enable_move ) && $azera_shop_enable_move ) {
 
-		echo '<ul id="parallax_move">';
+		echo '<ul id="azera_shop_move">';
 
 
 		if ( empty( $azera_shop_first_layer ) && empty( $azera_shop_second_layer ) ) {
