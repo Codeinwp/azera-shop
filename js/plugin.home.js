@@ -12,17 +12,17 @@ jQuery(window).resize(parallax_effect);
 
 function parallax_effect(){
 
-    if( jQuery('#parallax_move').length>0 ) {
-        var scene = document.getElementById('parallax_move');
+    if( jQuery('#azera_shop_move').length>0 ) {
+        var scene = document.getElementById('azera_shop_move');
         var window_width = jQuery(window).outerWidth();
-        jQuery('#parallax_move').css({
+        jQuery('#azera_shop_move').css({
         'width':            window_width + 120,
         'margin-left':      -60,
         'margin-top':       -60,
         'position':         'absolute',
         });
         var h = jQuery('.overlay-layer-wrap').outerHeight();
-        jQuery('#parallax_move').children().each(function(){
+        jQuery('#azera_shop_move').children().each(function(){
         jQuery(this).css({
             'height': h+100,
         });
