@@ -23,5 +23,27 @@
 		}
 	} );
 
+	api.sectionConstructor['azera-shop-upsell'] = api.Section.extend( {
+
+		// No events for this type of section.
+		attachEvents: function () {},
+
+		// Always make the section active.
+		isContextuallyActive: function () {
+			return true;
+		}
+	} );
+
+	api.sectionConstructor['azera-shop-view-pro'] = api.Section.extend( {
+
+		// No events for this type of section.
+		attachEvents: function () {},
+
+		// Always make the section active.
+		isContextuallyActive: function () {
+			return true;
+		}
+	} );
+
 
 } )( wp.customize );

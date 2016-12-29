@@ -83,6 +83,21 @@ final class Azera_Shop_Customizer_Upsell {
 			) ) );
 		}
 
+		if(!class_exists('Azera_Shop_Plus')){
+			$manager->add_section( new Azera_Shop_Customizer_Upsell_Frontpage_Sections( $manager, 'azera-shop-upsell', array(
+				'upsell_text'               => sprintf( esc_html__( 'Check out the %sPRO version%s for full control over the frontpage SECTIONS ORDER!.', 'azera-shop' ), '<a href="' . esc_url( 'https://themeisle.com/plugins/azera-shop-plus/' ) . '">', '</a>' ),
+				'panel'                     => 'azera_shop_front_page_sections',
+				'priority'                  => 500,
+			) ) );
+
+
+			$manager->add_section( new Azera_Shop_Customizer_Upsell_Frontpage_Sections( $manager, 'azera-shop-view-pro', array(
+				'upsell_title' => __( 'View PRO version', 'azera-shop' ),
+				'upsell_url' => 'https://themeisle.com/plugins/azera-shop-plus/',
+				'upsell_text' => __( 'Get it', 'azera-shop' ),
+				'priority'                  => 500,
+			) ) );
+		}
 	}
 
 	/**
