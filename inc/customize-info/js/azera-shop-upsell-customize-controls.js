@@ -23,7 +23,7 @@
 		}
 	} );
 
-	api.sectionConstructor['azera-shop-upsell'] = api.Section.extend( {
+	api.sectionConstructor['azera-shop-order-upsell'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},

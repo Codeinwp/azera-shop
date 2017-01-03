@@ -13,6 +13,7 @@
 function azera_shop_customize_register( $wp_customize ) {
 
 	require_once( 'class/azera-shop-alpha-control.php' );
+	require_once( 'class/azera-shop-text-control.php' );
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -69,6 +70,18 @@ function azera_shop_customize_register( $wp_customize ) {
 		)
 	);
 
+	if ( ! class_exists( 'Azera_Shop_Plus' ) ) {
+		$wp_customize->add_setting( 'azera_shop_colors_management', array(
+			'sanitize_callback' => 'azera_shop_sanitize_text',
+		) );
+		$wp_customize->add_control( new Azera_Shop_Text_Control( $wp_customize, 'azera_shop_colors_management',
+			array(
+				'section'            => 'colors',
+				'priority'           => 100,
+				'azera_shop_message' => sprintf( esc_html__( 'Get full color schemes support for your site. %1$s', 'azera-shop' ), sprintf( '<a href="%1$s" target=_blank"><b>%2$s</b></a><span class="dashicons dashicons-admin-customizer"></span>', esc_url( 'https://themeisle.com/plugins/azera-shop-plus/' ), esc_html__( 'View PRO version', 'azera-shop' ) ) ),
+			)
+		) );
+	}
 	$wp_customize->add_section( 'azera_shop_appearance_general' , array(
 		'title'       => esc_html__( 'General options', 'azera-shop' ),
 	  	'priority'    => 3,
