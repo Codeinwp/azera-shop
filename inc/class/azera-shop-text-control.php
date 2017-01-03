@@ -20,9 +20,9 @@ class Azera_Shop_Text_Control extends WP_Customize_Control {
 	/**
 	 * Azera_Shop_Text_Control constructor.
 	 *
-	 * @param WP_Customize_Manager  $manager Manager.
-	 * @param integer               $id Id.
-	 * @param array                 $args Array of arguments.
+	 * @param WP_Customize_Manager $manager Manager.
+	 * @param integer              $id Id.
+	 * @param array                $args Array of arguments.
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
@@ -35,11 +35,11 @@ class Azera_Shop_Text_Control extends WP_Customize_Control {
 	 * The render function for the controller
 	 */
 	public function render_content() {
-	    if(!empty($this->label)){ ?>
+	    if ( ! empty( $this->label ) ) { ?>
 		    <span class="customize-control-title">
-                <?php echo $this->label; ?>
-            </span>
-            <?php
+				<?php echo $this->label; ?>
+			</span>
+			<?php
 	    }
 		echo $this->message;
 	}
