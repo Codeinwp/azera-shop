@@ -20,6 +20,8 @@ $azera_shop_header_layout      = get_theme_mod( 'azera_shop_header_layout', 'lay
 if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle ) || ! empty( $azera_shop_header_button_text ) ) {
 	?>
 
+	<div class="header-section-inner-wrap">
+
 	<?php
 	if ( ! empty( $azera_shop_enable_move ) && $azera_shop_enable_move ) {
 
@@ -117,6 +119,8 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 		</div>
 	</div>
 	</div>
+	
+	</div><!-- .header-section-inner-wrap -->
 
 	<?php
 }
