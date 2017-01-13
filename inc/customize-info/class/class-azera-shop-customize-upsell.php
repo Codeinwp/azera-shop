@@ -88,6 +88,7 @@ final class Azera_Shop_Customizer_Upsell {
 				'upsell_text'               => sprintf( esc_html__( 'Check out the %1$s for full control over the frontpage SECTIONS ORDER!', 'azera-shop' ), sprintf( '<a href="%1$s" target="_blank"><b>%2$s</b></a>', esc_url( 'https://themeisle.com/plugins/azera-shop-plus/' ), esc_html__( 'PRO version', 'azera-shop' ) ) ),
 				'panel'                     => 'azera_shop_front_page_sections',
 				'priority'                  => 500,
+				'active_callback'   =>  'azera_shop_show_on_front',
 			) ) );
 
 			$manager->add_section( new Azera_Shop_Customizer_Upsell_Frontpage_Sections( $manager, 'azera-shop-view-pro', array(
