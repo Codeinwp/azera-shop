@@ -264,7 +264,7 @@ function azera_shop_customize_register( $wp_customize ) {
 		'title'       => esc_html__( 'Logos Bar section', 'azera-shop' ),
 		'priority'    => 3,
 		'panel' => 'azera_shop_front_page_sections',
-		'active_callback'   =>  'azera_shop_show_on_front',
+		'active_callback' => 'azera_shop_show_on_front',
 	));
 
 	require_once( 'class/azera-shop-general-control.php' );
