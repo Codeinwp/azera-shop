@@ -1,4 +1,8 @@
 
+### 1.1.5 - 18/01/2017
+**Changes:** 
+- Fixes for Azera Shop Plus plugin
+
 ### 1.1.2 - 15/12/2016
 **Changes:** 
 - Make theme ready for Plus version
