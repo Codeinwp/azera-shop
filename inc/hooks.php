@@ -65,3 +65,10 @@ function azera_shop_content_entry_meta_top_trigger() {
 	do_action( 'azera_shop_content_entry_meta_top' );
 }
 
+/**
+ * About us after content
+ * HTML context: within `.brief-content-one`
+ */
+function azera_shop_home_about_section_content_one_after_trigger() {
+	do_action( 'azera_shop_home_about_section_content_one_after' );
+}
