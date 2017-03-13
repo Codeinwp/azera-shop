@@ -72,7 +72,7 @@ class Ti_Customizer_Notify_Section extends WP_Customize_Section {
 					                      'plugin_status' => 'all',
 					                      'paged'         => '1',
 					                      '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $slug . '.php' ),
-				                      ), network_admin_url( 'plugins.php' ) );
+				), network_admin_url( 'plugins.php' ) );
 				break;
 			case 'activate':
 				return add_query_arg( array(
@@ -81,7 +81,7 @@ class Ti_Customizer_Notify_Section extends WP_Customize_Section {
 					                      'plugin_status' => 'all',
 					                      'paged'         => '1',
 					                      '_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $slug . '.php' ),
-				                      ), network_admin_url( 'plugins.php' ) );
+				), network_admin_url( 'plugins.php' ) );
 				break;
 		}
 	}
@@ -174,7 +174,7 @@ class Ti_Customizer_Notify_Section extends WP_Customize_Section {
 						$ti_customizer_notify_recommended_action['button_label'] = $deactivate_button_label;
 						break;
 				}
-}
+			}
 			$formatted_array[] = $ti_customizer_notify_recommended_action;
 		}
 
