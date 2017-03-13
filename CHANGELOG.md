@@ -1,4 +1,10 @@
 
+### 1.1.6 - 13/03/2017
+**Changes:** 
+- Added started content for new users
+- Fixed travis issues
+- Added a notification in Customize to suggest the Azera Shop Companion plugin
+
 ### 1.1.5 - 18/01/2017
 **Changes:** 
 - Fixes for Azera Shop Plus plugin
