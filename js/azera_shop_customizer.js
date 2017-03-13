@@ -299,7 +299,6 @@ jQuery(document).ready(function(){
 });
 
 jQuery(document).ready(function() {
-     azeraShopCustomizerObject;
     var azera_shop_aboutpage = azeraShopCustomizerObject.aboutpage;
     var azera_shop_nr_actions_required = azeraShopCustomizerObject.nr_actions_required;
 
