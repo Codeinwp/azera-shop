@@ -942,3 +942,39 @@ function azera_shop_remove_default() {
 	return '';
 }
 add_filter( 'azera_shop_header_logo_filter','azera_shop_remove_default' );
+
+/**
+ * Add starter content for fresh sites
+ *
+ * @since 1.1.6
+ */
+function azera_shop_starter_content() {
+	/*
+	 * Starter Content Support
+	 */
+	add_theme_support( 'starter-content', array(
+		'posts' => array(
+			'home' => array(
+			        'template' => 'template-frontpage.php',
+            ),
+			'blog',
+		),
+
+		'nav_menus' => array(
+			'primary' => array(
+				'name'  => __( 'Primary Menu', 'azera-shop' ),
+				'items' => array(
+					'page_home',
+					'page_blog',
+				),
+			),
+		),
+
+		'options' => array(
+			'show_on_front'  => 'page',
+			'page_on_front'  => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+	) );
+}
+add_action( 'after_setup_theme', 'azera_shop_starter_content' );
