@@ -6,14 +6,8 @@ module.exports = function( grunt ) {
     var loader = require( 'load-project-config' ),
         config = require( 'grunt-theme-fleet' );
     config = config();
-    config.files.php.push( '!inc/admin/**/*.php' );
-    config.files.php.push( '!class-tgm-plugin-activation.php' );
-    config.files.js.push( '!inc/admin/**/*.js' );
-    config.files.js.push( '!js/bootstrap.js' );
-    config.files.js.push( '!js/bootstrap.min.js' );
-    config.files.js.push( '!js/html5shiv.js' );
-    config.files.js.push( '!js/html5shiv.min.js' );
-    config.files.js.push( '!js/skip-link-focus-fix.js' );
-    config.files.js.push( '!js/plugin.home.js' );
+    config.files.php.push( [ '!inc/admin/**/*.php', '!class-tgm-plugin-activation.php', '!ti-customizer-notify/**/*.php' ] );
+    config.files.js.push( [ '!inc/admin/**/*.js', '!js/bootstrap.js', '!js/bootstrap.min.js', '!js/html5shiv.js', '!js/html5shiv.min.js', '!js/skip-link-focus-fix.js', '!js/plugin.home.js', '!ti-customizer-notify/**/*.js' ] );
+    config.files.css.push( [ '!ti-customizer-notify/**/*.css' ] );
     loader( grunt, config ).init();
 };

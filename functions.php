@@ -138,6 +138,29 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 		}
+
+		/*
+		 * Notifications in customize
+		 */
+		require get_template_directory() . '/ti-customizer-notify/class-ti-customizer-notify.php';
+
+		$config_customizer = array(
+			'recommended_plugins'       => array(
+				'azera-shop-companion' => array(
+					'recommended' => true,
+					'description' => sprintf( esc_html__( 'If you want to take full advantage of the options this theme has to offer, please install and activate %s', 'azera-shop' ), sprintf( '<strong>%s</strong>', 'Azera Shop Companion' ) ),
+				),
+			),
+			'recommended_actions'       => array(),
+			'recommended_actions_title' => esc_html__( 'Recommended Actions', 'azera-shop' ),
+			'recommended_plugins_title' => esc_html__( 'Recommended Plugins', 'azera-shop' ),
+			'dismiss_button'            => esc_html__( 'Dismiss', 'azera-shop' ),
+			'install_button_label'      => esc_html__( 'Install', 'azera-shop' ),
+			'activate_button_label'     => esc_html__( 'Activate', 'azera-shop' ),
+			'deactivate_button_label'   => esc_html__( 'Deactivate', 'azera-shop' ),
+		);
+		Ti_Customizer_Notify::init( $config_customizer );
+
 	}
 endif; // azera_shop_setup
 add_action( 'after_setup_theme', 'azera_shop_setup' );
@@ -942,3 +965,39 @@ function azera_shop_remove_default() {
 	return '';
 }
 add_filter( 'azera_shop_header_logo_filter','azera_shop_remove_default' );
+
+/**
+ * Add starter content for fresh sites
+ *
+ * @since 1.1.6
+ */
+function azera_shop_starter_content() {
+	/*
+	 * Starter Content Support
+	 */
+	add_theme_support( 'starter-content', array(
+		'posts' => array(
+			'home' => array(
+			        'template' => 'template-frontpage.php',
+			),
+			'blog',
+		),
+
+		'nav_menus' => array(
+			'primary' => array(
+				'name'  => __( 'Primary Menu', 'azera-shop' ),
+				'items' => array(
+					'page_home',
+					'page_blog',
+				),
+			),
+		),
+
+		'options' => array(
+			'show_on_front'  => 'page',
+			'page_on_front'  => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+	) );
+}
+add_action( 'after_setup_theme', 'azera_shop_starter_content' );
