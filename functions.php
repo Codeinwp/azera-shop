@@ -142,23 +142,26 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		/*
 		 * Notifications in customize
 		 */
-		require get_template_directory() . '/ti-customizer-notify/class-ti-customizer-notify.php';
+		if ( ! defined( 'AZERA_SHOP_PLUS_VERSION' ) ) {
 
-		$config_customizer = array(
-			'recommended_plugins'       => array(
-				'azera-shop-companion' => array(
-					'recommended' => true,
-					'description' => sprintf( esc_html__( 'If you want to take full advantage of the options this theme has to offer, please install and activate %s', 'azera-shop' ), sprintf( '<strong>%s</strong>', 'Azera Shop Companion' ) ),
+			require get_template_directory() . '/ti-customizer-notify/class-ti-customizer-notify.php';
+
+			$config_customizer = array(
+				'recommended_plugins'       => array(
+					'azera-shop-companion' => array(
+						'recommended' => true,
+						'description' => sprintf( esc_html__( 'If you want to take full advantage of the options this theme has to offer, please install and activate %s', 'azera-shop' ), sprintf( '<strong>%s</strong>', 'Azera Shop Companion' ) ),
+					),
 				),
-			),
-			'recommended_actions'       => array(),
-			'recommended_actions_title' => '',
-			'recommended_plugins_title' => esc_html__( 'Recommended Plugins', 'azera-shop' ),
-			'install_button_label'      => esc_html__( 'Install', 'azera-shop' ),
-			'activate_button_label'     => esc_html__( 'Activate', 'azera-shop' ),
-			'deactivate_button_label'   => esc_html__( 'Deactivate', 'azera-shop' ),
-		);
-		Ti_Customizer_Notify::init( $config_customizer );
+				'recommended_actions'       => array(),
+				'recommended_actions_title' => '',
+				'recommended_plugins_title' => esc_html__( 'Recommended Plugins', 'azera-shop' ),
+				'install_button_label'      => esc_html__( 'Install', 'azera-shop' ),
+				'activate_button_label'     => esc_html__( 'Activate', 'azera-shop' ),
+				'deactivate_button_label'   => esc_html__( 'Deactivate', 'azera-shop' ),
+			);
+			Ti_Customizer_Notify::init( $config_customizer );
+		}
 
 	}
 endif; // azera_shop_setup
