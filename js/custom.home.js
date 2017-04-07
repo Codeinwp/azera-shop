@@ -1,3 +1,4 @@
+/* global viewcart */
 /* PRE LOADER */
 jQuery(window).load(function () {
     'use strict';
