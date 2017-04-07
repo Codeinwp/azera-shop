@@ -89,7 +89,7 @@ if ( ! empty( $azera_shop_logos ) ) {
 
 
 		}
-	}
+	}// End foreach().
 		echo '</ul>';
 	echo '</div></div>';
-}
+}// End if().

@@ -260,7 +260,14 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 					</div>
 					<div class="azera-shop-box-content-hidden">
 						<?php
-						$choice = $image_url = $icon_value = $title = $subtitle = $text = $link = $shortcode = '';
+						$choice = '';
+						$image_url = '';
+						$icon_value = '';
+						$title = '';
+						$subtitle = '';
+						$text = '';
+						$link = '';
+						$shortcode = '';
 
 						if ( ! empty( $icon->choice ) ) {
 							$choice = $icon->choice;
@@ -343,7 +350,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 
 				<?php
 				$it++;
-			}
+			}// End foreach().
 		} else { ?>
 			<div class="azera_shop_general_control_repeater_container">
 				<div
@@ -404,6 +411,6 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 				</div>
 			</div>
 			<?php
-		}
+		}// End if().
 	}
 }

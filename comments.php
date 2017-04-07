@@ -81,7 +81,7 @@ if ( post_password_required() ) {
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 
-	<?php endif; // have_comments() ?>
+	<?php endif; // End if(). ?>
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
@@ -90,6 +90,9 @@ if ( post_password_required() ) {
 	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'azera-shop' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array( 'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">', 'title_reply_after' => '</h2>' ) ); ?>
+	<?php comment_form( array(
+		'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+		'title_reply_after' => '</h2>',
+	) ); ?>
 
 </div><!-- #comments -->

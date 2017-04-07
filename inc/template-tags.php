@@ -55,11 +55,13 @@ if ( ! function_exists( 'azera_shop_posted_on' ) ) :
 		);
 
 			$posted_on = sprintf(
+				/* translators: post date */
 				_x( 'Posted on %s', 'post date', 'azera-shop' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
 
 			$byline = sprintf(
+				/* translators: post author */
 				_x( 'by %s', 'post author', 'azera-shop' ),
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
@@ -79,12 +81,14 @@ if ( ! function_exists( 'azera_shop_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'azera-shop' ) );
 			if ( $categories_list && azera_shop_categorized_blog() ) {
+				/* translators: categories list */
 				printf( '<span class="cat-links"><i class="fa fa-folder-open-o" aria-hidden="true"></i>' . esc_html__( 'Posted in %1$s', 'azera-shop' ) . '</span>', $categories_list );
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'azera-shop' ) );
 			if ( $tags_list ) {
+				/* translators: tags list */
 				printf( '<span class="tags-links"><i class="fa fa-folder-open-o" aria-hidden="true"></i>' . esc_html__( 'Tagged %1$s', 'azera-shop' ) . '</span>', $tags_list );
 			}
 		}
@@ -112,18 +116,25 @@ if ( ! function_exists( 'the_archive_title' ) ) :
 	 */
 	function the_archive_title( $before = '', $after = '' ) {
 		if ( is_category() ) {
+			/* translators: archive category */
 			$title = sprintf( esc_html__( 'Category: %s', 'azera-shop' ), single_cat_title( '', false ) );
 		} elseif ( is_tag() ) {
+			/* translators: archive tag */
 			$title = sprintf( esc_html__( 'Tag: %s', 'azera-shop' ), single_tag_title( '', false ) );
 		} elseif ( is_author() ) {
+			/* translators: archive author */
 			$title = sprintf( esc_html__( 'Author: %s', 'azera-shop' ), '<span class="vcard">' . get_the_author() . '</span>' );
 		} elseif ( is_year() ) {
+			/* translators: archive year */
 			$title = sprintf( esc_html__( 'Year: %s', 'azera-shop' ), get_the_date( _x( 'Y', 'yearly archives date format', 'azera-shop' ) ) );
 		} elseif ( is_month() ) {
+			/* translators: archive month */
 			$title = sprintf( esc_html__( 'Month: %s', 'azera-shop' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'azera-shop' ) ) );
 		} elseif ( is_day() ) {
+			/* translators: archive day */
 			$title = sprintf( esc_html__( 'Day: %s', 'azera-shop' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'azera-shop' ) ) );
 		} elseif ( is_post_type_archive() ) {
+			/* translators: archive title */
 			$title = sprintf( esc_html__( 'Archives: %s', 'azera-shop' ), post_type_archive_title( '', false ) );
 		} elseif ( is_tax() ) {
 			$tax = get_taxonomy( get_queried_object()->taxonomy );
@@ -179,7 +190,9 @@ endif;
  * @return bool
  */
 function azera_shop_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'azera_shop_categories' ) ) ) {
+
+	$all_the_cool_cats = get_transient( 'azera_shop_categories' );
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
