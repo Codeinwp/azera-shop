@@ -65,5 +65,26 @@ jQuery(document).ready(function(){
         $azera_shop_header_height+=84;
         jQuery('.header .overlay-layer').css('padding-top',$azera_shop_header_height);
     }
+
+    /* Added View cart button on the frontpage Shop section */
+    jQuery('body').on('added_to_cart',function(){
+
+        if( typeof jQuery( 'section.shop a.add_to_cart_button.added' ) !== 'undefined' ) {
+
+            jQuery( 'section.shop a.add_to_cart_button.added' ).each( function () {
+
+                if( typeof jQuery( this ).parent() !== 'undefined' ) {
+
+                    if ( ! jQuery( this ).parent().find( '.added_to_cart' ).length ) {
+
+                        jQuery( this ).parent().append( '<a href="' + viewcart.view_cart_link + '" class="added_to_cart wc-forward">' + viewcart.view_cart_label +  '</a>' );
+
+                    }
+                }
+
+            });
+        }
+
+    });
 });
 

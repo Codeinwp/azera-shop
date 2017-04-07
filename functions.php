@@ -276,6 +276,21 @@ function azera_shop_scripts() {
 	if ( is_page_template( 'template-frontpage.php' ) ) {
 
 		wp_enqueue_script( 'azera-shop-custom-home', azera_shop_get_file( '/js/custom.home.js' ), array( 'jquery' ), '1.0.0', true );
+
+		$azera_shop_cart_url = '';
+		if ( class_exists( 'WooCommerce' ) ) {
+			global $woocommerce;
+			$cart_url = $woocommerce->cart->get_cart_url();
+			if ( ! empty( $cart_url ) ) {
+				$azera_shop_cart_url = $cart_url;
+			}
+		}
+
+		wp_localize_script( 'azera-shop-custom-home', 'viewcart', array(
+			'view_cart_label' => esc_html__( 'View cart', 'azera-shop' ), // label of View cart button,
+			'view_cart_link' => $azera_shop_cart_url, // link of View cart button
+		) );
+
 	}
 
 	wp_enqueue_script( 'azera-shop-skip-link-focus-fix', azera_shop_get_file( '/js/skip-link-focus-fix.js' ), array(), '1.0.0', true );
