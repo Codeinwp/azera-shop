@@ -93,6 +93,12 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		// Theme Support for WooCommerce
 		add_theme_support( 'woocommerce' );
 
+		if ( class_exists( 'WooCommerce' ) ) {
+			add_theme_support( 'wc-product-gallery-zoom' );
+			add_theme_support( 'wc-product-gallery-lightbox' );
+			add_theme_support( 'wc-product-gallery-slider' );
+		}
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
