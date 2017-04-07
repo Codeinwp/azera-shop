@@ -40,7 +40,8 @@ if ( ! empty( $azera_shop_shortcodes_section ) && ( ! empty( $azera_shop_shortco
 				$shortcode = apply_filters( 'wpml_translate_single_string', $section->shortcode, 'Azera Shop -> Shortcodes section', 'Shortcode ' . $id );
 			}
 		} ?>
-		<section id="<?php if ( $pos > 0 ) { echo 'contact';} else { if ( ! empty( $section->title ) ) {echo preg_replace( '/[^a-zA-Z0-9]/','', strtolower( $section->title ) );}
+		<section id="<?php if ( $pos > 0 ) { echo 'contact';
+} else { if ( ! empty( $section->title ) ) {echo preg_replace( '/[^a-zA-Z0-9]/','', strtolower( $section->title ) );}
 }?>" class="shortcodes" role="region" aria-label="<?php esc_html_e( 'Shortcodes','azera-shop' ); ?>">
 			<div class="section-overlay-layer">
 				<div class="container">
@@ -68,6 +69,6 @@ if ( ! empty( $azera_shop_shortcodes_section ) && ( ! empty( $azera_shop_shortco
 			</div>
 		</section>
 		<?php
-	}
-}
+	}// End foreach().
+}// End if().
 ?>

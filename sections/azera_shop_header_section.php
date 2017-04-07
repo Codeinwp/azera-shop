@@ -113,7 +113,7 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 					</div>
 					<!-- /END HEADNING AND BUTTONS -->
 					<?php
-				}
+				}// End if().
 				?>
 			</div><!-- .col-md-12 or .col-md-7 -->
 		</div>
@@ -123,5 +123,5 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 	</div><!-- .header-section-inner-wrap -->
 
 	<?php
-}
+}// End if().
 ?>

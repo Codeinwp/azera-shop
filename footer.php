@@ -64,7 +64,7 @@
 
 				if ( ! empty( $azera_shop_copyright ) ) {
 					echo '<span class="azera_shop_copyright_content">' . esc_attr( $azera_shop_copyright ) . '</span>';
-				} elseif ( isset( $wp_customize )   ) {
+				} elseif ( isset( $wp_customize ) ) {
 					echo '<span class="azera_shop_copyright_content azera_shop_only_customizer"></span>';
 				}
 
@@ -125,8 +125,8 @@
 
 								echo '</ul>';
 
-							}
-						}
+							}// End if().
+						}// End if().
 				?>
 
 	        </div><!-- .footer-bottom-wrap -->

@@ -33,7 +33,7 @@ if ( ! empty( $azera_shop_ribbon_title ) || ! empty( $azera_shop_button_text ) )
 					<?php
 					if ( ! empty( $azera_shop_ribbon_title ) ) {
 						echo '<h2 class="white-text strong">' . esc_attr( $azera_shop_ribbon_title ) . '</h2>';
-					} elseif ( isset( $wp_customize )   ) {
+					} elseif ( isset( $wp_customize ) ) {
 						echo '<h2 class="white-text strong azera_shop_only_customizer"></h2>';
 					}
 
@@ -43,7 +43,7 @@ if ( ! empty( $azera_shop_ribbon_title ) || ! empty( $azera_shop_button_text ) )
 						} else {
 							echo '<button onclick="window.location=\'' . esc_url( $azera_shop_button_link ) . '\'" class="btn btn-primary standard-button" type="button" data-toggle="modal" data-target="#stamp-modal"><span class="screen-reader-text">' . esc_html__( 'Ribbon button label:','azera-shop' ) . $azera_shop_button_text . '</span>' . esc_attr( $azera_shop_button_text ) . '</button>';
 						}
-					} elseif ( isset( $wp_customize )   ) {
+					} elseif ( isset( $wp_customize ) ) {
 						echo '<button class="btn btn-primary standard-button azera_shop_only_customizer" type="button" data-toggle="modal" data-target="#stamp-modal"></button>';
 					}
 					?>
@@ -76,5 +76,5 @@ if ( ! empty( $azera_shop_ribbon_title ) || ! empty( $azera_shop_button_text ) )
 		</section>
 <?php
 	}
-}
+}// End if().
 ?>

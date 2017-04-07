@@ -24,13 +24,13 @@ if ( class_exists( 'WooCommerce' ) ) {
 					<?php
 					if ( ! empty( $azera_shop_shop_section_title ) ) {
 						echo '<h2 class="dark-text">' . esc_attr( $azera_shop_shop_section_title ) . '</h2><div class="colored-line"></div>';
-					} elseif ( isset( $wp_customize )   ) {
+					} elseif ( isset( $wp_customize ) ) {
 						echo '<h2 class="dark-text azera_shop_only_customizer"></h2><div class="colored-line azera_shop_only_customizer"></div>';
 					}
 
 					if ( ! empty( $azera_shop_shop_section_subtitle ) ) {
 						echo '<div class="sub-heading">' . esc_attr( $azera_shop_shop_section_subtitle ) . '</div>';
-					} elseif ( isset( $wp_customize )   ) {
+					} elseif ( isset( $wp_customize ) ) {
 						echo '<div class="sub-heading azera_shop_only_customizer"></div>';
 					}
 					?>
@@ -45,12 +45,26 @@ if ( class_exists( 'WooCommerce' ) ) {
 					<div class="azera_shop_products_container">
 						<?php
 						if ( $cat == 'all' ) {
-							$args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => $nb_of_products, 'orderby' => 'date','order' => 'DESC' );
+							$args = array(
+								'post_type' => 'product',
+								'stock' => 1,
+								'posts_per_page' => $nb_of_products,
+								'orderby' => 'date',
+								'order' => 'DESC',
+							);
 						} else {
-							$args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => $nb_of_products, 'orderby' => 'date','order' => 'DESC', 'product_cat' => $cat );
+							$args = array(
+								'post_type' => 'product',
+								'stock' => 1,
+								'posts_per_page' => $nb_of_products,
+								'orderby' => 'date',
+								'order' => 'DESC',
+								'product_cat' => $cat,
+							);
 						}
 						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+						while ( $loop->have_posts() ) : $loop->the_post();
+							global $product; ?>
 
 							<div class="col-md-4 col-sm-6 home-shop-product-wrap-all">
 
@@ -94,4 +108,5 @@ if ( class_exists( 'WooCommerce' ) ) {
 	</div>
 </section>
 <?php
-} ?>
+}// End if().
+	?>

@@ -93,6 +93,12 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		// Theme Support for WooCommerce
 		add_theme_support( 'woocommerce' );
 
+		if ( class_exists( 'WooCommerce' ) ) {
+			add_theme_support( 'wc-product-gallery-zoom' );
+			add_theme_support( 'wc-product-gallery-lightbox' );
+			add_theme_support( 'wc-product-gallery-slider' );
+		}
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
@@ -142,23 +148,27 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		/*
 		 * Notifications in customize
 		 */
-		require get_template_directory() . '/ti-customizer-notify/class-ti-customizer-notify.php';
+		if ( ! defined( 'AZERA_SHOP_PLUS_VERSION' ) ) {
 
-		$config_customizer = array(
-			'recommended_plugins'       => array(
-				'azera-shop-companion' => array(
-					'recommended' => true,
-					'description' => sprintf( esc_html__( 'If you want to take full advantage of the options this theme has to offer, please install and activate %s', 'azera-shop' ), sprintf( '<strong>%s</strong>', 'Azera Shop Companion' ) ),
+			require get_template_directory() . '/ti-customizer-notify/class-ti-customizer-notify.php';
+
+			$config_customizer = array(
+				'recommended_plugins'       => array(
+					'azera-shop-companion' => array(
+						'recommended' => true,
+						/* translators: Theme companion install link */
+						'description' => sprintf( esc_html__( 'If you want to take full advantage of the options this theme has to offer, please install and activate %s', 'azera-shop' ), sprintf( '<strong>%s</strong>', 'Azera Shop Companion' ) ),
+					),
 				),
-			),
-			'recommended_actions'       => array(),
-			'recommended_actions_title' => '',
-			'recommended_plugins_title' => esc_html__( 'Recommended Plugins', 'azera-shop' ),
-			'install_button_label'      => esc_html__( 'Install', 'azera-shop' ),
-			'activate_button_label'     => esc_html__( 'Activate', 'azera-shop' ),
-			'deactivate_button_label'   => esc_html__( 'Deactivate', 'azera-shop' ),
-		);
-		Ti_Customizer_Notify::init( $config_customizer );
+				'recommended_actions'       => array(),
+				'recommended_actions_title' => '',
+				'recommended_plugins_title' => esc_html__( 'Recommended Plugins', 'azera-shop' ),
+				'install_button_label'      => esc_html__( 'Install', 'azera-shop' ),
+				'activate_button_label'     => esc_html__( 'Activate', 'azera-shop' ),
+				'deactivate_button_label'   => esc_html__( 'Deactivate', 'azera-shop' ),
+			);
+			Ti_Customizer_Notify::init( $config_customizer );
+		}
 
 	}
 endif; // azera_shop_setup
@@ -206,6 +216,7 @@ function azera_shop_widgets_init() {
 
 	register_sidebars( 4,
 		array(
+			/* translators: footer area number */
 			'name' => esc_html__( 'Footer area %d','azera-shop' ),
 			'id' => 'footer-area',
 			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
@@ -225,7 +236,10 @@ add_action( 'widgets_init', 'azera_shop_widgets_init' );
  */
 function azera_shop_wp_page_menu() {
 	echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
-	wp_list_pages( array( 'title_li' => '', 'depth' => 1 ) );
+	wp_list_pages( array(
+		'title_li' => '',
+		'depth' => 1,
+	) );
 	echo '</ul>';
 }
 
@@ -262,6 +276,21 @@ function azera_shop_scripts() {
 	if ( is_page_template( 'template-frontpage.php' ) ) {
 
 		wp_enqueue_script( 'azera-shop-custom-home', azera_shop_get_file( '/js/custom.home.js' ), array( 'jquery' ), '1.0.0', true );
+
+		$azera_shop_cart_url = '';
+		if ( class_exists( 'WooCommerce' ) ) {
+			global $woocommerce;
+			$cart_url = $woocommerce->cart->get_cart_url();
+			if ( ! empty( $cart_url ) ) {
+				$azera_shop_cart_url = $cart_url;
+			}
+		}
+
+		wp_localize_script( 'azera-shop-custom-home', 'viewcart', array(
+			'view_cart_label' => esc_html__( 'View cart', 'azera-shop' ), // label of View cart button,
+			'view_cart_link' => $azera_shop_cart_url, // link of View cart button
+		) );
+
 	}
 
 	wp_enqueue_script( 'azera-shop-skip-link-focus-fix', azera_shop_get_file( '/js/skip-link-focus-fix.js' ), array(), '1.0.0', true );
@@ -415,26 +444,6 @@ function azera_shop_register_required_plugins() {
 		'dismiss_msg'  => '',
 		'is_automatic' => false,
 		'message'      => '',
-		'strings'      => array(
-			'page_title'                      => esc_html__( 'Install Required Plugins', 'azera-shop' ),
-			'menu_title'                      => esc_html__( 'Install Plugins', 'azera-shop' ),
-			'installing'                      => esc_html__( 'Installing Plugin: %s', 'azera-shop' ),
-			'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'azera-shop' ),
-			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'azera-shop' ),
-			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'azera-shop' ),
-			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'azera-shop' ),
-			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'azera-shop' ),
-			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'azera-shop' ),
-			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'azera-shop' ),
-			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'azera-shop' ),
-			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'azera-shop' ),
-			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'azera-shop' ),
-			'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'azera-shop' ),
-			'return'                          => esc_html__( 'Return to Required Plugins Installer', 'azera-shop' ),
-			'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'azera-shop' ),
-			'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'azera-shop' ),
-			'nag_type'                        => 'updated',
-		),
 	);
 
 	tgmpa( $plugins, $config );
@@ -576,7 +585,9 @@ function azera_shop_comment( $comment, $args, $depth ) {
 				<footer>
 					<div itemscope itemprop="creator" itemtype="http://schema.org/Person" class="comment-author vcard" >
 						<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
-						<?php printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'azera-shop' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
+						<?php
+						/* translators: comment author */
+						printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'azera-shop' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
 					</div><!-- .comment-author .vcard -->
 					<?php if ( $comment->comment_approved == '0' ) : ?>
 						<em><?php _e( 'Your comment is awaiting moderation.', 'azera-shop' ); ?></em>
@@ -585,7 +596,9 @@ function azera_shop_comment( $comment, $args, $depth ) {
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-permalink" itemprop="url">
 							<time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'azera-shop' ) ); ?>" itemprop="commentTime">
-								<?php printf( __( '%1$s at %2$s', 'azera-shop' ), get_comment_date(), get_comment_time() ); ?>
+								<?php
+								/* translators: 1 - comment date, 2 - comment time */
+								printf( __( '%1$s at %2$s', 'azera-shop' ), get_comment_date(), get_comment_time() ); ?>
 							</time>
 						</a>
 						<?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' );?>
@@ -595,7 +608,10 @@ function azera_shop_comment( $comment, $args, $depth ) {
 				<div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
 
 				<div class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					<?php comment_reply_link( array_merge( $args, array(
+						'depth' => $depth,
+						'max_depth' => $args['max_depth'],
+					) ) ); ?>
 				</div><!-- .reply -->
 			</article><!-- #comment-## -->
 
@@ -689,8 +705,8 @@ if ( function_exists( 'pll_register_string' ) || has_action( 'wpml_register_sing
 					}
 				}
 			}
-		}
-	}
+		}// End foreach().
+	}// End if().
 
 	/*Footer*/
 	$azera_shop_social_icons = get_theme_mod( 'azera_shop_social_icons' );
@@ -776,9 +792,9 @@ if ( function_exists( 'pll_register_string' ) || has_action( 'wpml_register_sing
 					}
 				}
 			}
-		}
-	}
-}
+		}// End foreach().
+	}// End if().
+}// End if().
 /**
  * Template part.
  *
@@ -888,6 +904,7 @@ if ( ! function_exists( 'azera_shop_footer_powered_by' ) ) {
 		?>
 		<div class="powered-by">
 			<?php printf(
+				/* translators: 1 - theme name , 2 - WordPress link */
 				__( '%1$s powered by %2$s', 'azera-shop' ),
 				sprintf( '<a href="https://themeisle.com/themes/azera-shop/" rel="nofollow">%s</a>', esc_html__( 'Azera Shop', 'azera-shop' ) ),
 				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )

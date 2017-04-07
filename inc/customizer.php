@@ -78,6 +78,7 @@ function azera_shop_customize_register( $wp_customize ) {
 			array(
 				'section'            => 'colors',
 				'priority'           => 100,
+				/* translators: Upsell link */
 				'azera_shop_message' => sprintf( esc_html__( 'Get full color schemes support for your site. %1$s', 'azera-shop' ), sprintf( '<a href="%1$s" target=_blank"><b>%2$s</b></a><span class="dashicons dashicons-admin-customizer"></span>', esc_url( 'https://themeisle.com/plugins/azera-shop-plus/' ), esc_html__( 'View PRO version', 'azera-shop' ) ) ),
 			)
 		) );
@@ -273,11 +274,31 @@ function azera_shop_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
 		'default' => json_encode(
 			array(
-					array( 'image_url' => azera_shop_get_file( '/images/companies/1.png' ) ,'link' => '#', 'id' => 'azera_shop_56d450842cb37' ),
-					array( 'image_url' => azera_shop_get_file( '/images/companies/2.png' ) ,'link' => '#', 'id' => 'azera_shop_56d6b175454b8' ),
-					array( 'image_url' => azera_shop_get_file( '/images/companies/3.png' ) ,'link' => '#', 'id' => 'azera_shop_56d6b17a454b9' ),
-					array( 'image_url' => azera_shop_get_file( '/images/companies/4.png' ) ,'link' => '#', 'id' => 'azera_shop_56d6b17b454ba' ),
-					array( 'image_url' => azera_shop_get_file( '/images/companies/5.png' ) ,'link' => '#', 'id' => 'azera_shop_56d6b17d454bb' ),
+					array(
+						'image_url' => azera_shop_get_file( '/images/companies/1.png' ),
+						'link' => '#',
+						'id' => 'azera_shop_56d450842cb37',
+					),
+					array(
+						'image_url' => azera_shop_get_file( '/images/companies/2.png' ),
+						'link' => '#',
+						'id' => 'azera_shop_56d6b175454b8',
+					),
+					array(
+						'image_url' => azera_shop_get_file( '/images/companies/3.png' ),
+						'link' => '#',
+						'id' => 'azera_shop_56d6b17a454b9',
+					),
+					array(
+						'image_url' => azera_shop_get_file( '/images/companies/4.png' ),
+						'link' => '#',
+						'id' => 'azera_shop_56d6b17b454ba',
+					),
+					array(
+						'image_url' => azera_shop_get_file( '/images/companies/5.png' ),
+						'link' => '#',
+						'id' => 'azera_shop_56d6b17d454bb',
+					),
 				)
 		),
 
@@ -438,9 +459,21 @@ function azera_shop_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'azera_shop_contact_info_content', array(
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
 		'default' => json_encode( array(
-			array( 'icon_value' => 'fa-envelope-o' ,'text' => esc_html__( 'Text from customizer.','azera-shop' ), 'id' => 'azera_shop_56d6b291454c3' ),
-			array( 'icon_value' => 'fa-map-o' ,'text' => esc_html__( 'Text from customizer.','azera-shop' ), 'id' => 'azera_shop_56d6b293454c4' ),
-			array( 'icon_value' => 'fa-phone' ,'text' => esc_html__( 'Text from customizer.','azera-shop' ), 'id' => 'azera_shop_56d6b295454c5' ),
+			array(
+				'icon_value' => 'fa-envelope-o',
+				'text' => esc_html__( 'Text from customizer.','azera-shop' ),
+				'id' => 'azera_shop_56d6b291454c3',
+			),
+			array(
+				'icon_value' => 'fa-map-o',
+				'text' => esc_html__( 'Text from customizer.','azera-shop' ),
+				'id' => 'azera_shop_56d6b293454c4',
+			),
+			array(
+				'icon_value' => 'fa-phone',
+				'text' => esc_html__( 'Text from customizer.','azera-shop' ),
+				'id' => 'azera_shop_56d6b295454c5',
+			),
 		) ),
 	) );
 
