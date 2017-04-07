@@ -1,4 +1,9 @@
 
+### 1.1.7 - 07/04/2017
+**Changes:** 
+- Fixed compatibility issues with WooCommerce 3.0.0
+- Fixed grunt issues
+
 ### 1.1.6 - 13/03/2017
 **Changes:** 
 - Added started content for new users
