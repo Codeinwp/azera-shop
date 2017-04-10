@@ -92,23 +92,23 @@
 							if ( ! empty( $azera_shop_social_icons_decoded ) ) { ?>
 
 								<ul class="social-icons">
-                                    <?php
+									<?php
 								    foreach ( $azera_shop_social_icons_decoded as $azera_shop_social_icon ) {
 									    $icon = ! empty( $azera_shop_social_icon->icon_value ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->icon_value, 'Social icons in footer' ) : '';
 									    $link = ! empty( $azera_shop_social_icon->link ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->link, 'Social icons in footer' ) : '';
 
 									    if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) { ?>
-                                            <li>
-                                                <a href="<?php echo esc_url( $link ); ?>">
-                                                    <span class="screen-reader-text"><?php echo esc_attr( $icon ) ?></span>
-                                                    <i class="fa azera-shop-footer-icons <?php echo esc_attr( $icon ); ?> transparent-text-dark" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
+											<li>
+												<a href="<?php echo esc_url( $link ); ?>">
+													<span class="screen-reader-text"><?php echo esc_attr( $icon ) ?></span>
+													<i class="fa azera-shop-footer-icons <?php echo esc_attr( $icon ); ?> transparent-text-dark" aria-hidden="true"></i>
+												</a>
+											</li>
 										    <?php
 									    }
-                                    } ?>
-                                </ul>
-                                <?php
+									} ?>
+								</ul>
+								<?php
 							}// End if().
 						} ?>
 

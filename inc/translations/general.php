@@ -75,7 +75,8 @@ if ( ! function_exists( 'azera_shop_filter_translations' ) ) {
 		return array_merge( $array, array(
 			'translations/translations-logos-section',
 			'translations/translations-contact-section',
-//			'translations/translations-footer-socials',
+			'translations/translations-shortcode-section',
+			'translations/translations-footer-socials',
 		) );
 	}
 }
@@ -94,7 +95,7 @@ if ( ! function_exists( 'azera_shop_include_translations' ) ) {
 			if ( file_exists( $azera_shop_file_to_include ) ) {
 				include_once( $azera_shop_file_to_include );
 			} else {
-				if( defined ('AZERA_SHOP_COMPANION_PATH') ){
+				if ( defined( 'AZERA_SHOP_COMPANION_PATH' ) ) {
 					$azera_shop_file_to_include_from_companion = LLORIX_ONE_COMPANION_PATH . '/inc/' . $file . '.php';
 					if ( file_exists( $azera_shop_file_to_include_from_companion ) ) {
 						include_once( $azera_shop_file_to_include_from_companion );

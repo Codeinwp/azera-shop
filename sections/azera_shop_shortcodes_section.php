@@ -12,9 +12,9 @@ if ( ! empty( $azera_shop_shortcodes_section ) && ( ! empty( $azera_shop_shortco
 	foreach ( $azera_shop_shortcodes_section_decoded as $section ) {
 		$pos = strlen( strstr( $section->shortcode,'pirate_forms' ) );
 
-		$title = ! empty( $section->title ) ? apply_filters( 'llorix_one_lite_translate_single_string', $section->title, 'Shortcodes section' ) : '';
-		$subtitle = ! empty( $section->subtitle ) ? apply_filters( 'llorix_one_lite_translate_single_string', $section->subtitle, 'Shortcodes section' ) : '';
-		$shortcode = ! empty( $section->shortcode ) ? apply_filters( 'llorix_one_lite_translate_single_string', $section->shortcode, 'Shortcodes section' ) : ''; ?>
+		$title = ! empty( $section->title ) ? apply_filters( 'azera_shop_translate_single_string', $section->title, 'Shortcodes section' ) : '';
+		$subtitle = ! empty( $section->subtitle ) ? apply_filters( 'azera_shop_translate_single_string', $section->subtitle, 'Shortcodes section' ) : '';
+		$shortcode = ! empty( $section->shortcode ) ? apply_filters( 'azera_shop_translate_single_string', $section->shortcode, 'Shortcodes section' ) : ''; ?>
 		<section id="<?php if ( $pos > 0 ) { echo 'contact';
 } else { if ( ! empty( $title ) ) {echo preg_replace( '/[^a-zA-Z0-9]/','', strtolower( $title ) );}
 }?>" class="shortcodes" role="region" aria-label="<?php esc_html_e( 'Shortcodes','azera-shop' ); ?>">
@@ -24,13 +24,13 @@ if ( ! empty( $azera_shop_shortcodes_section ) && ( ! empty( $azera_shop_shortco
 					<div class="section-header">
 						<?php
 						if ( ! empty( $title ) ) { ?>
-                            <h2 class="dark-text"><?php echo wp_kses_post( $title ); ?></h2><div class="colored-line"></div>
-                            <?php
+							<h2 class="dark-text"><?php echo wp_kses_post( $title ); ?></h2><div class="colored-line"></div>
+							<?php
 						}
 
 						if ( ! empty( $subtitle ) ) { ?>
-                            <div class="sub-heading"><?php echo wp_kses_post( $subtitle ); ?></div>
-                            <?php
+							<div class="sub-heading"><?php echo wp_kses_post( $subtitle ); ?></div>
+							<?php
 						}
 						?>
 					</div>
