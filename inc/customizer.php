@@ -271,38 +271,10 @@ function azera_shop_customize_register( $wp_customize ) {
 		'active_callback' => 'azera_shop_show_on_front',
 	));
 
+	$default = azera_shop_logos_get_default_content();
 	$wp_customize->add_setting( 'azera_shop_logos_content', array(
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
-		'default' => json_encode(
-			array(
-					array(
-						'image_url' => azera_shop_get_file( '/images/companies/1.png' ),
-						'link' => '#',
-						'id' => 'azera_shop_56d450842cb37',
-					),
-					array(
-						'image_url' => azera_shop_get_file( '/images/companies/2.png' ),
-						'link' => '#',
-						'id' => 'azera_shop_56d6b175454b8',
-					),
-					array(
-						'image_url' => azera_shop_get_file( '/images/companies/3.png' ),
-						'link' => '#',
-						'id' => 'azera_shop_56d6b17a454b9',
-					),
-					array(
-						'image_url' => azera_shop_get_file( '/images/companies/4.png' ),
-						'link' => '#',
-						'id' => 'azera_shop_56d6b17b454ba',
-					),
-					array(
-						'image_url' => azera_shop_get_file( '/images/companies/5.png' ),
-						'link' => '#',
-						'id' => 'azera_shop_56d6b17d454bb',
-					),
-				)
-		),
-
+		'default' => $default,
 	));
 	$wp_customize->add_control( new Azera_Shop_General_Repeater( $wp_customize, 'azera_shop_logos_content', array(
 		'label'   => esc_html__( 'Add new social icon','azera-shop' ),
@@ -457,25 +429,10 @@ function azera_shop_customize_register( $wp_customize ) {
 		'active_callback'   => 'azera_shop_show_on_front',
 	));
 
+	$default = azera_shop_contact_get_default_content();
 	$wp_customize->add_setting( 'azera_shop_contact_info_content', array(
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
-		'default' => json_encode( array(
-			array(
-				'icon_value' => 'fa-envelope-o',
-				'text' => esc_html__( 'Text from customizer.','azera-shop' ),
-				'id' => 'azera_shop_56d6b291454c3',
-			),
-			array(
-				'icon_value' => 'fa-map-o',
-				'text' => esc_html__( 'Text from customizer.','azera-shop' ),
-				'id' => 'azera_shop_56d6b293454c4',
-			),
-			array(
-				'icon_value' => 'fa-phone',
-				'text' => esc_html__( 'Text from customizer.','azera-shop' ),
-				'id' => 'azera_shop_56d6b295454c5',
-			),
-		) ),
+		'default' => $default,
 	) );
 
 	$wp_customize->add_control( new Azera_Shop_General_Repeater( $wp_customize, 'azera_shop_contact_info_content', array(
