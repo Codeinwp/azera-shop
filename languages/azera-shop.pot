@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Azera Shop 1.1.5\n"
+"Project-Id-Version: Azera Shop 1.1.7\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/azera-shop/issues\n"
-"POT-Creation-Date: 2017-03-13 13:56:40+00:00\n"
+"POT-Creation-Date: 2017-04-10 11:17:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,29 +34,29 @@ msgid ""
 "links below or a search?"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:333 functions.php:420
+#: class-tgm-plugin-activation.php:333
 msgid "Install Required Plugins"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:334 functions.php:421
+#: class-tgm-plugin-activation.php:334
 msgid "Install Plugins"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:335 functions.php:422
+#: class-tgm-plugin-activation.php:335
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:336 functions.php:423
+#: class-tgm-plugin-activation.php:336
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:337 functions.php:424
+#: class-tgm-plugin-activation.php:337
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:342 functions.php:425
+#: class-tgm-plugin-activation.php:342
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
@@ -72,7 +72,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:352 functions.php:430
+#: class-tgm-plugin-activation.php:352
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
 "maximum compatibility with this theme: %1$s."
@@ -98,13 +98,13 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:367 functions.php:427
+#: class-tgm-plugin-activation.php:367
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:372 functions.php:428
+#: class-tgm-plugin-activation.php:372
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
@@ -120,7 +120,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:382 functions.php:432
+#: class-tgm-plugin-activation.php:382
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
@@ -132,13 +132,13 @@ msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:392 functions.php:433
+#: class-tgm-plugin-activation.php:392
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:397 functions.php:434
+#: class-tgm-plugin-activation.php:397
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -147,7 +147,6 @@ msgid "Return to the dashboard"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:399 class-tgm-plugin-activation.php:3029
-#: functions.php:435
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -315,7 +314,7 @@ msgstr ""
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2603 functions.php:158
+#: class-tgm-plugin-activation.php:2603 functions.php:166
 #: inc/admin/welcome-screen/sections/getting-started.php:175
 #: inc/admin/welcome-screen/sections/getting-started.php:194
 msgid "Install"
@@ -325,7 +324,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2612 functions.php:159
+#: class-tgm-plugin-activation.php:2612 functions.php:167
 msgid "Activate"
 msgstr ""
 
@@ -429,7 +428,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-contact.php:34 content-page.php:26 inc/template-tags.php:98
+#: content-contact.php:34 content-page.php:26 inc/template-tags.php:102
 msgid "Edit"
 msgstr ""
 
@@ -437,29 +436,30 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:19
+#: content-none.php:21
+#. translators: Add new post link
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:23
+#: content-none.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:28
+#: content-none.php:30
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
 #: content-page.php:19 content-search.php:91 content-single-download.php:29
-#: content-single.php:21 content.php:80
+#: content-single.php:21 content.php:83
 msgid "Pages:"
 msgstr ""
 
-#: content-search.php:54 content.php:52 inc/template-tags.php:80
-#: inc/template-tags.php:86
+#: content-search.php:54 content.php:52 inc/template-tags.php:82
+#: inc/template-tags.php:89
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
@@ -468,15 +468,15 @@ msgstr ""
 msgid "Posted in "
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:923
+#: content-search.php:73 content.php:62 functions.php:939
 msgid "No comments"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:923
+#: content-search.php:73 content.php:62 functions.php:939
 msgid "One comment"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:923
+#: content-search.php:73 content.php:62 functions.php:939
 msgid "% comments"
 msgstr ""
 
@@ -484,11 +484,12 @@ msgstr ""
 msgid "Posted in"
 msgstr ""
 
-#: content.php:73
+#: content.php:75
+#. translators: Post title
 msgid "Read more %s &#8230;"
 msgstr ""
 
-#: content.php:73
+#: content.php:75
 msgid "about "
 msgstr ""
 
@@ -512,7 +513,7 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: functions.php:48 functions.php:988 header.php:121
+#: functions.php:48 functions.php:1004 header.php:122
 msgid "Primary Menu"
 msgstr ""
 
@@ -520,11 +521,11 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:132
 msgid "Switch \"Front page displays\" to \"A static page\" "
 msgstr ""
 
-#: functions.php:127
+#: functions.php:133
 msgid ""
 "In order to have the one page look for your website, please go to Customize "
 "-> Advanced Options -> Static Front Page and switch \"Front page displays\" "
@@ -532,140 +533,101 @@ msgid ""
 "selected page."
 msgstr ""
 
-#: functions.php:132
+#: functions.php:138
 msgid "Install Intergeo Maps - Google Maps Plugin"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:139
 msgid ""
 "In order to use map section, you need to install Intergeo Maps plugin then "
 "use it to create a map and paste the generated shortcode in Customize -> "
 "Contact section -> Map shortcode"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:160
+#. translators: Theme companion install link
 msgid ""
 "If you want to take full advantage of the options this theme has to offer, "
 "please install and activate %s"
 msgstr ""
 
-#: functions.php:155
-msgid "Recommended Actions"
-msgstr ""
-
-#: functions.php:156
+#: functions.php:165
 msgid "Recommended Plugins"
 msgstr ""
 
-#: functions.php:157
-msgid "Dismiss"
-msgstr ""
-
-#: functions.php:160
+#: functions.php:168
 msgid "Deactivate"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:207
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:210
+#: functions.php:220
+#. translators: footer area number
 msgid "Footer area %d"
 msgstr ""
 
-#: functions.php:252
+#: functions.php:265
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:253
+#: functions.php:266
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:290
+msgid "View cart"
+msgstr ""
+
+#: functions.php:340
 msgid "Documentation"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:341
 msgid "Support Forum"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:342
 msgid "Upgrade to PRO"
 msgstr ""
 
-#: functions.php:426
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:429
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:431
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:436
-msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: functions.php:569
+#: functions.php:577
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:569 functions.php:592
+#: functions.php:577 functions.php:604
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:580
+#: functions.php:590
+#. translators: comment author
 msgid "<span itemprop=\"name\">%s </span><span class=\"says\">says:</span>"
 msgstr ""
 
-#: functions.php:583
+#: functions.php:593
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:589
+#: functions.php:601
+#. translators: 1 - comment date, 2 - comment time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:817
+#: functions.php:832
 msgid "Read more about "
 msgstr ""
 
-#: functions.php:835 header.php:156
+#: functions.php:850 header.php:157
 msgid "View your shopping cart"
 msgstr ""
 
-#: functions.php:854 inc/customizer.php:617
+#: functions.php:869 inc/customizer.php:651
 msgid "BLOG"
 msgstr ""
 
-#: functions.php:892
+#: functions.php:908
+#. translators: 1 - theme name , 2 - WordPress link
 msgid "%1$s powered by %2$s"
 msgstr ""
 
@@ -673,19 +635,19 @@ msgstr ""
 msgid "Azera Shop"
 msgstr ""
 
-#: functions.php:894
+#: functions.php:910
 msgid "WordPress"
 msgstr ""
 
-#: header.php:20
+#: header.php:21
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:108
+#: header.php:109
 msgid "Toggle Menu"
 msgstr ""
 
-#: header.php:109
+#: header.php:110
 msgid "Toggle navigation"
 msgstr ""
 
@@ -950,59 +912,83 @@ msgid "Change log"
 msgstr ""
 
 #: inc/class/azera-shop-general-control.php:157
+#: inc/customizer-repeater/class/customizer-repeater-control.php:112
 msgid "Add new field"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:183
-#: inc/class/azera-shop-general-control.php:222
+#: inc/class/azera-shop-general-control.php:181
+#: inc/class/azera-shop-general-control.php:220
+#: inc/customizer-repeater/class/customizer-repeater-control.php:451
+#: inc/customizer-repeater/class/customizer-repeater-control.php:504
 msgid "Icon"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:203
-#: inc/class/azera-shop-general-control.php:223 inc/customizer.php:647
+#: inc/class/azera-shop-general-control.php:201
+#: inc/class/azera-shop-general-control.php:221
+#: inc/customizer-repeater/class/customizer-repeater-control.php:484
+#: inc/customizer-repeater/class/customizer-repeater-control.php:505
+#: inc/customizer.php:681
 msgid "Image"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:206
+#: inc/class/azera-shop-general-control.php:204
+#: inc/customizer-repeater/class/customizer-repeater-control.php:487
 msgid "Upload Image"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:219
+#: inc/class/azera-shop-general-control.php:217
+#: inc/customizer-repeater/class/customizer-repeater-control.php:501
 msgid "Image type"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:224
+#: inc/class/azera-shop-general-control.php:222
+#: inc/customizer-repeater/class/customizer-repeater-control.php:506
 msgid "None"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:305
-#: inc/class/azera-shop-general-control.php:367 inc/customizer.php:623
+#: inc/class/azera-shop-general-control.php:310
+#: inc/class/azera-shop-general-control.php:372
+#: inc/customizer-repeater/class/customizer-repeater-control.php:299
+#: inc/customizer-repeater/class/customizer-repeater-control.php:370
+#: inc/customizer.php:657
 msgid "Title"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:312
-#: inc/class/azera-shop-general-control.php:374 inc/customizer.php:189
-#: inc/customizer.php:322 inc/customizer.php:634
+#: inc/class/azera-shop-general-control.php:317
+#: inc/class/azera-shop-general-control.php:379
+#: inc/customizer-repeater/class/customizer-repeater-control.php:306
+#: inc/customizer-repeater/class/customizer-repeater-control.php:377
+#: inc/customizer.php:193 inc/customizer.php:344 inc/customizer.php:668
 msgid "Subtitle"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:319
-#: inc/class/azera-shop-general-control.php:381
+#: inc/class/azera-shop-general-control.php:324
+#: inc/class/azera-shop-general-control.php:386
+#: inc/customizer-repeater/class/customizer-repeater-control.php:313
+#: inc/customizer-repeater/class/customizer-repeater-control.php:384
 msgid "Text"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:327
-#: inc/class/azera-shop-general-control.php:389
+#: inc/class/azera-shop-general-control.php:332
+#: inc/class/azera-shop-general-control.php:394
+#: inc/customizer-repeater/class/customizer-repeater-control.php:320
+#: inc/customizer-repeater/class/customizer-repeater-control.php:391
+#: inc/customizer-repeater/class/customizer-repeater-control.php:533
+#: inc/customizer-repeater/class/customizer-repeater-control.php:555
 msgid "Link"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:335
-#: inc/class/azera-shop-general-control.php:396
+#: inc/class/azera-shop-general-control.php:340
+#: inc/class/azera-shop-general-control.php:401
+#: inc/customizer-repeater/class/customizer-repeater-control.php:328
+#: inc/customizer-repeater/class/customizer-repeater-control.php:398
 msgid "Shortcode"
 msgstr ""
 
-#: inc/class/azera-shop-general-control.php:340
-#: inc/class/azera-shop-general-control.php:403
+#: inc/class/azera-shop-general-control.php:345
+#: inc/class/azera-shop-general-control.php:408
+#: inc/customizer-repeater/class/customizer-repeater-control.php:343
+#: inc/customizer-repeater/class/customizer-repeater-control.php:408
 msgid "Delete field"
 msgstr ""
 
@@ -1027,248 +1013,281 @@ msgstr ""
 msgid "doc"
 msgstr ""
 
-#: inc/customize-info/class/class-azera-shop-customize-upsell.php:88
+#: inc/customize-info/class/class-azera-shop-customize-upsell.php:89
+#. translators: Upsell link
 msgid "Check out the %1$s for full control over the frontpage SECTIONS ORDER!"
 msgstr ""
 
-#: inc/customize-info/class/class-azera-shop-customize-upsell.php:88
+#: inc/customize-info/class/class-azera-shop-customize-upsell.php:89
 msgid "PRO version"
 msgstr ""
 
-#: inc/customize-info/class/class-azera-shop-customize-upsell.php:95
-#: inc/customizer.php:81
+#: inc/customize-info/class/class-azera-shop-customize-upsell.php:96
+#: inc/customizer.php:85
 msgid "View PRO version"
 msgstr ""
 
-#: inc/customize-info/class/class-azera-shop-customize-upsell.php:97
+#: inc/customize-info/class/class-azera-shop-customize-upsell.php:98
 msgid "Get it"
 msgstr ""
 
-#: inc/customizer.php:36
+#: inc/customizer-repeater/class/customizer-repeater-control.php:117
+msgid "Cusomizer Repeater"
+msgstr ""
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:456
+#. translators: %s is link to FontAwesome
+msgid ""
+"Note: Some icons may not be displayed here. You can see the full list of "
+"icons at %s"
+msgstr ""
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:459
+#. translators: %s is link label
+msgid "FontAwesome"
+msgstr ""
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:519
+msgid "Social icons"
+msgstr ""
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:536
+#: inc/customizer-repeater/class/customizer-repeater-control.php:566
+msgid "Remove Icon"
+msgstr ""
+
+#: inc/customizer-repeater/class/customizer-repeater-control.php:541
+#: inc/customizer-repeater/class/customizer-repeater-control.php:574
+msgid "Add icon"
+msgstr ""
+
+#: inc/customizer.php:39
 msgid "Appearance"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:52
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer.php:66
+#: inc/customizer.php:69
 msgid "Title color"
 msgstr ""
 
-#: inc/customizer.php:81
+#: inc/customizer.php:85
+#. translators: Upsell link
 msgid "Get full color schemes support for your site. %1$s"
 msgstr ""
 
-#: inc/customizer.php:86
+#: inc/customizer.php:90
 msgid "General options"
 msgstr ""
 
-#: inc/customizer.php:88
+#: inc/customizer.php:92
 msgid "Azera Shop theme general appearance options"
 msgstr ""
 
-#: inc/customizer.php:99 sections/azera_shop_logos_section.php:80
+#: inc/customizer.php:103 sections/azera_shop_logos_section.php:80
 #: sections/azera_shop_logos_section.php:85
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:113
+#: inc/customizer.php:117
 msgid "Header visibility"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:118
 msgid "If this box is checked, the header will toggle on frontpage."
 msgstr ""
 
-#: inc/customizer.php:131
+#: inc/customizer.php:135
 msgid "Frontpage sections"
 msgstr ""
 
-#: inc/customizer.php:138
+#: inc/customizer.php:142
 msgid "Big title section"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:157
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:167
+#: inc/customizer.php:171
 msgid "Header Top Logo"
 msgstr ""
 
-#: inc/customizer.php:178 inc/customizer.php:310 inc/customizer.php:402
+#: inc/customizer.php:182 inc/customizer.php:332 inc/customizer.php:424
 msgid "Main title"
 msgstr ""
 
-#: inc/customizer.php:196 sections/azera_shop_header_section.php:13
+#: inc/customizer.php:200 sections/azera_shop_header_section.php:13
 msgid "GET STARTED"
 msgstr ""
 
-#: inc/customizer.php:201 inc/customizer.php:413
+#: inc/customizer.php:205 inc/customizer.php:435
 msgid "Button label"
 msgstr ""
 
-#: inc/customizer.php:207
+#: inc/customizer.php:211
 msgid "#"
 msgstr ""
 
-#: inc/customizer.php:212 inc/customizer.php:423
+#: inc/customizer.php:216 inc/customizer.php:445
 msgid "Button link"
 msgstr ""
 
-#: inc/customizer.php:218
+#: inc/customizer.php:222
 msgid "Big title section background"
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:234
 msgid "Parallax effect"
 msgstr ""
 
-#: inc/customizer.php:231
+#: inc/customizer.php:235
 msgid "If this box is checked, the parallax effect is enabled."
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:248
 msgid "First layer"
 msgstr ""
 
-#: inc/customizer.php:256
+#: inc/customizer.php:260
 msgid "Second layer"
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:268
 msgid "Logos Bar section"
 msgstr ""
 
-#: inc/customizer.php:286 inc/customizer.php:535
+#: inc/customizer.php:308 inc/customizer.php:569
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:298
+#: inc/customizer.php:320
 msgid "Shop section"
 msgstr ""
 
-#: inc/customizer.php:305 sections/azera_shop_shop_section.php:10
+#: inc/customizer.php:327 sections/azera_shop_shop_section.php:10
 #: sections/azera_shop_shop_section.php:15
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:317 sections/azera_shop_shop_section.php:11
+#: inc/customizer.php:339 sections/azera_shop_shop_section.php:11
 msgid ""
 "Showcase your work effectively and in an attractive form that your "
 "prospective clients will love."
 msgstr ""
 
-#: inc/customizer.php:333
+#: inc/customizer.php:355
 msgid "Number of products"
 msgstr ""
 
-#: inc/customizer.php:347
+#: inc/customizer.php:369
 msgid "Display products from"
 msgstr ""
 
-#: inc/customizer.php:356
+#: inc/customizer.php:378
 msgid "Shortcodes section"
 msgstr ""
 
-#: inc/customizer.php:366
+#: inc/customizer.php:388
 msgid "Edit the shortcode options"
 msgstr ""
 
-#: inc/customizer.php:378
+#: inc/customizer.php:400
 msgid "Ribbon section"
 msgstr ""
 
-#: inc/customizer.php:391
+#: inc/customizer.php:413
 msgid "Ribbon Background"
 msgstr ""
 
-#: inc/customizer.php:397 sections/azera_shop_ribbon_section.php:12
+#: inc/customizer.php:419 sections/azera_shop_ribbon_section.php:12
 msgid "In order to edit the text here you should go to customizer."
 msgstr ""
 
-#: inc/customizer.php:408
+#: inc/customizer.php:430
 msgid "Text from customizer"
 msgstr ""
 
-#: inc/customizer.php:432
+#: inc/customizer.php:454
 msgid "Contact info section"
 msgstr ""
 
-#: inc/customizer.php:441 inc/customizer.php:442 inc/customizer.php:443
-#: sections/azera_shop_contact_info_section.php:11
-#: sections/azera_shop_contact_info_section.php:12
+#: inc/customizer.php:465 inc/customizer.php:470 inc/customizer.php:475
 #: sections/azera_shop_contact_info_section.php:13
+#: sections/azera_shop_contact_info_section.php:18
+#: sections/azera_shop_contact_info_section.php:23
 #: sections/azera_shop_ribbon_section.php:13
 msgid "Text from customizer."
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:482
 msgid "Add new contact field"
 msgstr ""
 
-#: inc/customizer.php:463 inc/customizer.php:496
+#: inc/customizer.php:497 inc/customizer.php:530
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer.php:464 inc/customizer.php:497
+#: inc/customizer.php:498 inc/customizer.php:531
 msgid ""
 "To use this section please install <a "
 "href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> "
 "plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:473
+#: inc/customizer.php:507
 msgid "Contact page"
 msgstr ""
 
-#: inc/customizer.php:484
+#: inc/customizer.php:518
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer.php:485
+#: inc/customizer.php:519
 msgid ""
 "Create a form, copy the shortcode generated and paste it here. We recommend "
 "<a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form "
 "7</a> but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer.php:506
+#: inc/customizer.php:540
 msgid "Footer options"
 msgstr ""
 
-#: inc/customizer.php:508
+#: inc/customizer.php:542
 msgid ""
 "The main content of this section is customizable in: Customize -> Widgets "
 "-> Footer area. "
 msgstr ""
 
-#: inc/customizer.php:524
+#: inc/customizer.php:558
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer.php:548
+#: inc/customizer.php:582
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:584
 msgid "Azera Shop theme general options"
 msgstr ""
 
-#: inc/customizer.php:601
+#: inc/customizer.php:635
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer.php:602
+#: inc/customizer.php:636
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
-#: inc/customizer.php:611
+#: inc/customizer.php:645
 msgid "Blog header"
 msgstr ""
 
-#: inc/extras.php:52
+#: inc/extras.php:53
+#. translators: page number
 msgid "Page %s"
 msgstr ""
 
@@ -1280,68 +1299,78 @@ msgstr ""
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:82
+#: inc/template-tags.php:85
+#. translators: categories list
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:88
+#: inc/template-tags.php:92
+#. translators: tags list
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:94
+#: inc/template-tags.php:98
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:94
+#: inc/template-tags.php:98
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:94
+#: inc/template-tags.php:98
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:115
+#: inc/template-tags.php:120
+#. translators: archive category
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:117
+#: inc/template-tags.php:123
+#. translators: archive tag
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:119
+#: inc/template-tags.php:126
+#. translators: archive author
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:121
+#: inc/template-tags.php:129
+#. translators: archive year
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:123
+#: inc/template-tags.php:132
+#. translators: archive month
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:125
+#: inc/template-tags.php:135
+#. translators: archive day
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:127
+#: inc/template-tags.php:138
+#. translators: archive title
 msgid "Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:131
+#: inc/template-tags.php:142
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:133
+#: inc/template-tags.php:144
 msgid "Archives"
 msgstr ""
 
 #: search.php:15
+#. translators: Search query
 msgid "Search Results for: %s"
 msgstr ""
 
-#: sections/azera_shop_contact_info_section.php:22
+#: sections/azera_shop_contact_info_section.php:34
 msgid "Contact Info"
 msgstr ""
 
@@ -1367,7 +1396,7 @@ msgstr ""
 msgid "Ribbon button label:"
 msgstr ""
 
-#: sections/azera_shop_shortcodes_section.php:44
+#: sections/azera_shop_shortcodes_section.php:45
 msgid "Shortcodes"
 msgstr ""
 
@@ -1471,57 +1500,59 @@ msgctxt "post time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""
 
-#: functions.php:588
+#: functions.php:598
 msgctxt "comment time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""
 
-#: functions.php:940
+#: functions.php:956
 msgctxt "post day fomat"
 msgid "d"
 msgstr ""
 
-#: functions.php:941
+#: functions.php:957
 msgctxt "post month fomat"
 msgid "M"
 msgstr ""
 
-#: header.php:147
+#: header.php:148
 msgctxt "placeholder"
 msgid "Search Products&hellip;"
 msgstr ""
 
-#: header.php:147
+#: header.php:148
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: header.php:148
+#: header.php:149
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:59
+#. translators: post date
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:63
+#: inc/template-tags.php:65
+#. translators: post author
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:121
+#: inc/template-tags.php:129
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:123
+#: inc/template-tags.php:132
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:125
+#: inc/template-tags.php:135
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
