@@ -15,30 +15,30 @@ if ( ! empty( $azera_shop_shortcodes_section ) && ( ! empty( $azera_shop_shortco
 		$title     = ! empty( $section->title ) ? apply_filters( 'azera_shop_translate_single_string', $section->title, 'Shortcodes section' ) : '';
 		$subtitle  = ! empty( $section->subtitle ) ? apply_filters( 'azera_shop_translate_single_string', $section->subtitle, 'Shortcodes section' ) : '';
 		$shortcode = ! empty( $section->shortcode ) ? apply_filters( 'azera_shop_translate_single_string', $section->shortcode, 'Shortcodes section' ) : ''; ?>
-        <section id="<?php if ( $pos > 0 ) {
+		<section id="<?php if ( $pos > 0 ) {
 			echo 'contact';
-		} else {
-			if ( ! empty( $title ) ) {
-				echo preg_replace( '/[^a-zA-Z0-9]/', '', strtolower( $title ) );
-			}
-		} ?>" class="shortcodes" role="region" aria-label="<?php esc_html_e( 'Shortcodes', 'azera-shop' ); ?>">
-            <div class="section-overlay-layer">
-                <div class="container">
+} else {
+	if ( ! empty( $title ) ) {
+		echo preg_replace( '/[^a-zA-Z0-9]/', '', strtolower( $title ) );
+	}
+} ?>" class="shortcodes" role="region" aria-label="<?php esc_html_e( 'Shortcodes', 'azera-shop' ); ?>">
+			<div class="section-overlay-layer">
+				<div class="container">
 
-                    <div class="section-header">
+					<div class="section-header">
 						<?php
 						if ( ! empty( $title ) ) { ?>
-                            <h2 class="dark-text"><?php echo wp_kses_post( $title ); ?></h2>
-                            <div class="colored-line"></div>
+							<h2 class="dark-text"><?php echo wp_kses_post( $title ); ?></h2>
+							<div class="colored-line"></div>
 							<?php
 						}
 
 						if ( ! empty( $subtitle ) ) { ?>
-                            <div class="sub-heading"><?php echo wp_kses_post( $subtitle ); ?></div>
+							<div class="sub-heading"><?php echo wp_kses_post( $subtitle ); ?></div>
 							<?php
 						}
 						?>
-                    </div>
+					</div>
 
 					<?php
 					if ( ! empty( $shortcode ) ) {
@@ -46,9 +46,9 @@ if ( ! empty( $azera_shop_shortcodes_section ) && ( ! empty( $azera_shop_shortco
 						echo do_shortcode( $scd );
 					} ?>
 
-                </div>
-            </div>
-        </section>
+				</div>
+			</div>
+		</section>
 		<?php
 	}// End foreach().
 }// End if().

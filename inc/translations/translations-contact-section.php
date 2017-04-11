@@ -27,7 +27,7 @@ if ( ! function_exists( 'azera_shop_contact_get_default_content' ) ) {
 					'text'       => esc_html__( 'Text from customizer.', 'azera-shop' ),
 					'id'         => 'azera_shop_56d6b295454c5',
 				),
-			) );
+		) );
 	}
 }
 
