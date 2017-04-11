@@ -14,20 +14,20 @@ if ( ! function_exists( 'azera_shop_contact_get_default_content' ) ) {
 			array(
 				array(
 					'icon_value' => 'fa-envelope-o',
-					'text' => esc_html__( 'Text from customizer.','azera-shop' ),
-					'id' => 'azera_shop_56d6b291454c3',
+					'text'       => esc_html__( 'Text from customizer.', 'azera-shop' ),
+					'id'         => 'azera_shop_56d6b291454c3',
 				),
 				array(
 					'icon_value' => 'fa-map-o',
-					'text' => esc_html__( 'Text from customizer.','azera-shop' ),
-					'id' => 'azera_shop_56d6b293454c4',
+					'text'       => esc_html__( 'Text from customizer.', 'azera-shop' ),
+					'id'         => 'azera_shop_56d6b293454c4',
 				),
 				array(
 					'icon_value' => 'fa-phone',
-					'text' => esc_html__( 'Text from customizer.','azera-shop' ),
-					'id' => 'azera_shop_56d6b295454c5',
+					'text'       => esc_html__( 'Text from customizer.', 'azera-shop' ),
+					'id'         => 'azera_shop_56d6b295454c5',
 				),
-		) );
+			) );
 	}
 }
 
