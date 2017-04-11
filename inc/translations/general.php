@@ -96,12 +96,12 @@ if ( ! function_exists( 'azera_shop_include_translations' ) ) {
 				include_once( $azera_shop_file_to_include );
 			} else {
 				if ( defined( 'AZERA_SHOP_COMPANION_PATH' ) ) {
-					$azera_shop_file_to_include_from_companion = LLORIX_ONE_COMPANION_PATH . '/inc/' . $file . '.php';
+					$azera_shop_file_to_include_from_companion = AZERA_SHOP_COMPANION_PATH . '/inc/' . $file . '.php';
 					if ( file_exists( $azera_shop_file_to_include_from_companion ) ) {
 						include_once( $azera_shop_file_to_include_from_companion );
 					}
 				} elseif ( defined( 'AZERA_SHOP_PLUS_PATH' ) ) {
-					$azera_shop_file_to_include_from_pro = LLORIX_ONE_PLUS_PATH . 'public/inc/' . $file . '.php';
+					$azera_shop_file_to_include_from_pro = AZERA_SHOP_PLUS_PATH . 'public/inc/' . $file . '.php';
 					if ( file_exists( $azera_shop_file_to_include_from_pro ) ) {
 						include_once( $azera_shop_file_to_include_from_pro );
 					}
