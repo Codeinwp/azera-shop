@@ -1022,26 +1022,3 @@ function azera_shop_starter_content() {
 	) );
 }
 add_action( 'after_setup_theme', 'azera_shop_starter_content' );
-
-/**
- * Check if Repeater is empty
- *
- * @param array $azera_shop_arr Repeater content.
- *
- * @return bool
- */
-function azera_shop_general_repeater_is_empty( $azera_shop_arr ) {
-	$azera_shop_services_decoded = json_decode( $azera_shop_arr );
-	foreach ( $azera_shop_services_decoded as $azera_shop_box ) {
-		if ( ! empty( $azera_shop_box->choice ) && $azera_shop_box->choice == 'parallax_none' ) {
-			$azera_shop_box->icon_value = '';
-			$azera_shop_box->image_url = '';
-		}
-		foreach ( $azera_shop_box as $key => $value ) {
-			if ( ! empty( $value ) && $key != 'choice' && $key != 'id' && ($value != 'No Icon' && $key == 'icon_value') ) {
-				return false;
-			}
-		}
-	}
-	return true;
-}
