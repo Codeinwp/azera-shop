@@ -5,6 +5,9 @@
  * @package azera-shop
  */
 
+/* Include customizer repeater */
+require_once get_template_directory() . '/inc/customizer-repeater/functions.php';
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -267,8 +270,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'panel' => 'azera_shop_front_page_sections',
 		'active_callback' => 'azera_shop_show_on_front',
 	));
-
-	require_once( 'class/azera-shop-general-control.php' );
 
 	$wp_customize->add_setting( 'azera_shop_logos_content', array(
 		'sanitize_callback' => 'azera_shop_sanitize_repeater',
