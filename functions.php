@@ -327,6 +327,11 @@ require get_template_directory() . '/inc/jetpack.php';
 require_once get_template_directory() . '/inc/customize-info/class/class-azera-shop-customize-upsell.php';
 
 /**
+ * Translations
+ */
+require get_template_directory() . '/inc/translations/general.php';
+
+/**
  * Admin scripts.
  */
 function azera_shop_admin_scripts() {

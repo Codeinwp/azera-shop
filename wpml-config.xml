@@ -2,35 +2,31 @@
 	<admin-texts>
 		<key name="theme_mods_azera-shop">
 			<key name="azera_shop_logo" />
-			<key name="azera_shop_header_right_image" />
+			<key name="azera_shop_header_layout" />
 			<key name="azera_shop_header_logo" />
 			<key name="azera_shop_header_title" />
 			<key name="azera_shop_header_subtitle" />
 			<key name="azera_shop_header_button_text" />
-			<key name="azera_shop_header_button_link" />		
+			<key name="azera_shop_header_button_link" />
 			<key name="azera_shop_first_layer" />
-			<key name="azera_shop_second_layer" />		
+			<key name="azera_shop_second_layer" />
 			<key name="azera_shop_our_story_title" />
 			<key name="azera_shop_our_story_text" />
-			<key name="azera_shop_our_story_image" />		
 			<key name="azera_shop_shop_section_title" />
-			<key name="azera_shop_shop_section_subtitle" />		
+			<key name="azera_shop_shop_section_subtitle" />
+			<key name="azera_shop_number_of_products" />
+			<key name="azera_shop_woocomerce_categories" />
 			<key name="azera_shop_ribbon_background" />
 			<key name="azera_shop_ribbon_title" />
 			<key name="azera_shop_button_text" />
 			<key name="azera_shop_button_link" />
+			<key name="azera_shop_frontpage_map_shortcode" />
 			<key name="azera_shop_copyright" />
 			<key name="azera_shop_contact_form_shortcode" />
-			<key name="azera_shop_contact_map_shortcode" />	
+			<key name="azera_shop_contact_map_shortcode" />
 			<key name="azera_shop_blog_header_title" />
 			<key name="azera_shop_blog_header_subtitle" />
-			<key name="azera_shop_our_services_title" />
-			<key name="azera_shop_our_services_subtitle" />
-			<key name="azera_shop_our_team_title" />
-			<key name="azera_shop_our_team_subtitle" />
-			<key name="azera_shop_our_team_background" />
-			<key name="azera_shop_happy_customers_title" />
-			<key name="azera_shop_happy_customers_subtitle" />
+			<key name="azera_shop_blog_header_image" />
 		</key>
 	</admin-texts>
 </wpml-config>
