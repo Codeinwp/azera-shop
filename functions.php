@@ -468,7 +468,7 @@ function azera_shop_php_style() {
 	$azera_shop_enable_move       = get_theme_mod( 'azera_shop_enable_move' );
 	$azera_shop_frontpage_opacity = get_theme_mod( 'azera_shop_frontpage_opacity', apply_filters( 'azera_shop_frontpage_opacity_filter','rgba(0, 0, 0, 0.1)' ) );
 	$azera_shop_blog_opacity      = get_theme_mod( 'azera_shop_blog_opacity', apply_filters( 'azera_shop_blog_opacity_filter','rgba(0, 0, 0, 0.1)' ) );
-	$llorix_one_header_image           = get_header_image();
+	$azera_shop_header_image           = get_header_image();
 
 	if ( ! empty( $azera_shop_title_color ) ) {
 		$custom_css .= '.dark-text { color: ' . $azera_shop_title_color . ' }';
@@ -480,8 +480,8 @@ function azera_shop_php_style() {
 
 	if ( ( empty( $azera_shop_enable_move ) || ! $azera_shop_enable_move ) && ( is_front_page() || is_page_template( 'template-frontpage.php' ) ) ) {
 
-		if ( ! empty( $llorix_one_header_image ) ) {
-			$custom_css .= '.header{ background-image: url(' . $llorix_one_header_image . ');}';
+		if ( ! empty( $azera_shop_header_image ) ) {
+			$custom_css .= '.header{ background-image: url(' . $azera_shop_header_image . ');}';
 		}
 	}
 
@@ -852,7 +852,7 @@ function azera_shop_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 
-	<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
+	<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
 		<span class="fa fa-shopping-cart"></span>
 		<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 	</a>

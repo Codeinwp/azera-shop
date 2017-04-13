@@ -35,7 +35,7 @@ if ( ! empty( $azera_shop_contact_info_item ) ) {
 										<?php
 									}
 									if ( ! empty( $text ) ) { ?>
-										<a <?php echo ( ! empty( $link ) ? 'href="' . esc_url( $link ) . '"' : '') ?> class="strong">
+										<a <?php echo ( ! empty( $link ) ? 'href="' . esc_url( $link ) . '"' : ''); ?> class="strong">
 											<?php echo wp_kses_post( $text ); ?>
 										</a>
 										<?php

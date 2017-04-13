@@ -100,7 +100,7 @@
 									    if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) { ?>
 											<li>
 												<a href="<?php echo esc_url( $link ); ?>">
-													<span class="screen-reader-text"><?php echo wp_kses_post( $icon ) ?></span>
+													<span class="screen-reader-text"><?php echo wp_kses_post( $icon ); ?></span>
 													<i class="fa azera-shop-footer-icons <?php echo esc_attr( $icon ); ?> transparent-text-dark" aria-hidden="true"></i>
 												</a>
 											</li>
