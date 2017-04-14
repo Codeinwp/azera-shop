@@ -6,8 +6,8 @@
  */
 
 $azera_shop_shortcodes_section         = get_theme_mod( 'azera_shop_shortcodes_settings' );
-if ( ! azera_shop_general_repeater_is_empty($azera_shop_shortcodes_section) ) {
-    $azera_shop_shortcodes_section_decoded = json_decode( $azera_shop_shortcodes_section );
+if ( ! azera_shop_general_repeater_is_empty( $azera_shop_shortcodes_section ) ) {
+	$azera_shop_shortcodes_section_decoded = json_decode( $azera_shop_shortcodes_section );
 	foreach ( $azera_shop_shortcodes_section_decoded as $section ) {
 		$pos = strlen( strstr( $section->shortcode, 'pirate_forms' ) );
 

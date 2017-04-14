@@ -183,12 +183,11 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 	 */
 	public function render_content() {
 
-        /*Get values (json format)*/
-        $values = $this->value();
+		/*Get values (json format)*/
+		$values = $this->value();
 
 		/*Get default options*/
-		$this_default = !empty( $this->value() ) ? json_decode( $values ) : json_decode( $this->setting->default );
-
+		$this_default = ! empty( $this->value() ) ? json_decode( $values ) : json_decode( $this->setting->default );
 
 		/*Decode values*/
 		$json = json_decode( $values );
@@ -200,7 +199,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<div class="customizer-repeater-general-control-repeater customizer-repeater-general-control-droppable">
 			<?php
-			if ( ! azera_shop_general_repeater_is_empty($values) ) {
+			if ( ! azera_shop_general_repeater_is_empty( $values ) ) {
 				if ( ! empty( $this_default ) ) {
 					$this->iterate_array( $this_default ); ?>
 					<input type="hidden"
