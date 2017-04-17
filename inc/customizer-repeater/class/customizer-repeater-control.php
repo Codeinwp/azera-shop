@@ -183,25 +183,32 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 	 */
 	public function render_content() {
 
-		/*Get values (json format)*/
-		$values = $this->value();
-
-		/*Get default options*/
-		if ( ! azera_shop_general_repeater_is_empty( $values ) ) {
-			$json = $values;
+		$values = array();
+	    if ( ! empty( $this->value() ) ) {
+	        $values = $this->value();
 		} else {
-			$json = $this->setting->default;
+	        if ( ! empty( $this->setting->default ) ) {
+				$values = $this->setting->default;
+			}
 		} ?>
 
 		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<div class="customizer-repeater-general-control-repeater customizer-repeater-general-control-droppable">
 			<?php
-			if ( ! azera_shop_general_repeater_is_empty( $json ) ) {
-				$this->iterate_array( json_decode( $json ) ); ?>
+			if ( ! azera_shop_general_repeater_is_empty( $values ) ) {
+				$valuse_decoded = json_decode( $values );
+
+				$this->iterate_array( $valuse_decoded ); ?>
 				<input type="hidden"
 					   id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
 					   class="customizer-repeater-colector"
-					   value="<?php echo esc_textarea( json_encode( $json ) ); ?>"/>
+					   value="<?php echo esc_textarea( json_encode( $valuse_decoded ) ); ?>"/>
+				<?php
+			} else {
+				$this->iterate_array(); ?>
+				<input type="hidden"
+					   id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
+					   class="customizer-repeater-colector"/>
 				<?php
 			} ?>
 			</div>

@@ -5,7 +5,7 @@
  * @package azera-shop
  */
 
-$default          = current_user_can( 'edit_theme_options' ) ? azera_shop_contact_get_default_content() : false;
+$default          = current_user_can( 'edit_theme_options' ) ? azera_shop_logos_get_default_content() : false;
 $azera_shop_logos = get_theme_mod( 'azera_shop_logos_content', $default );
 $azera_shop_logos_decoded = json_decode( $azera_shop_logos );
 if ( ! azera_shop_general_repeater_is_empty( $azera_shop_logos ) ) {
