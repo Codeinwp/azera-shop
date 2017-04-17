@@ -468,7 +468,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 	 * @param string $value Input value.
 	 * @param string $show Display image control.
 	 */
-	private function image_control( $value = '', $show = 'azera_shop_icon' ) {
+	private function image_control( $value = '', $show = '' ) {
 	?>
 		<div class="customizer-repeater-image-control" <?php if ( $show === 'azera_shop_icon' || $show === 'azera_shop_none' ) { echo 'style="display:none;"'; } ?>>
 			<span class="customize-control-title">
