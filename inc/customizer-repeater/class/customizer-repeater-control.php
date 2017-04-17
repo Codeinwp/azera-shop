@@ -182,10 +182,10 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 	 * Render function
 	 */
 	public function render_content() {
-
+		$repeater_content = $this->value();
 		$values = array();
-	    if ( ! empty( $this->value() ) ) {
-	        $values = $this->value();
+	    if ( ! empty( $repeater_content ) ) {
+	        $values = $repeater_content;
 		} else {
 	        if ( ! empty( $this->setting->default ) ) {
 				$values = $this->setting->default;
