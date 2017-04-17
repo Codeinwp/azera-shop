@@ -187,37 +187,21 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 		$values = $this->value();
 
 		/*Get default options*/
-		$this_default = ! empty( $this->value() ) ? json_decode( $values ) : json_decode( $this->setting->default );
-
-		/*Decode values*/
-		$json = json_decode( $values );
-
-		if ( ! is_array( $json ) ) {
-			$json = array( $values );
+		if ( ! azera_shop_general_repeater_is_empty( $values ) ) {
+			$json = $values;
+		} else {
+			$json = $this->setting->default;
 		} ?>
 
 		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<div class="customizer-repeater-general-control-repeater customizer-repeater-general-control-droppable">
 			<?php
-			if ( ! azera_shop_general_repeater_is_empty( $values ) ) {
-				if ( ! empty( $this_default ) ) {
-					$this->iterate_array( $this_default ); ?>
-					<input type="hidden"
-					       id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
-					       class="customizer-repeater-colector"
-					       value="<?php echo esc_textarea( json_encode( $this_default ) ); ?>"/>
-					<?php
-				} else {
-					$this->iterate_array(); ?>
-					<input type="hidden"
-					       id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
-					       class="customizer-repeater-colector"/>
-					<?php
-				}
-			} else {
-				$this->iterate_array( $json ); ?>
-				<input type="hidden" id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
-				       class="customizer-repeater-colector" value="<?php echo esc_textarea( $this->value() ); ?>"/>
+			if ( ! azera_shop_general_repeater_is_empty( $json ) ) {
+				$this->iterate_array( json_decode( $json ) ); ?>
+				<input type="hidden"
+					   id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
+					   class="customizer-repeater-colector"
+					   value="<?php echo esc_textarea( json_encode( $json ) ); ?>"/>
 				<?php
 			} ?>
 			</div>
