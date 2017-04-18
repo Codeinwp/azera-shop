@@ -9,11 +9,14 @@ $azera_shop_shortcodes_section         = get_theme_mod( 'azera_shop_shortcodes_s
 if ( ! azera_shop_general_repeater_is_empty( $azera_shop_shortcodes_section ) ) {
 	$azera_shop_shortcodes_section_decoded = json_decode( $azera_shop_shortcodes_section );
 	foreach ( $azera_shop_shortcodes_section_decoded as $section ) {
-		$pos = strlen( strstr( $section->shortcode, 'pirate_forms' ) );
-
-		$title     = ! empty( $section->title ) ? apply_filters( 'azera_shop_translate_single_string', $section->title, 'Shortcodes section' ) : '';
+        $title     = ! empty( $section->title ) ? apply_filters( 'azera_shop_translate_single_string', $section->title, 'Shortcodes section' ) : '';
 		$subtitle  = ! empty( $section->subtitle ) ? apply_filters( 'azera_shop_translate_single_string', $section->subtitle, 'Shortcodes section' ) : '';
-		$shortcode = ! empty( $section->shortcode ) ? apply_filters( 'azera_shop_translate_single_string', $section->shortcode, 'Shortcodes section' ) : ''; ?>
+		$shortcode = ! empty( $section->shortcode ) ? apply_filters( 'azera_shop_translate_single_string', $section->shortcode, 'Shortcodes section' ) : '';
+        $pos = 0;
+		if( !empty( $shortcode ) ){
+            $pos = strlen( strstr( $section->shortcode, 'pirate_forms' ) );
+        }
+		?>
 		<section id="<?php if ( $pos > 0 ) {
 			echo 'contact';
 } else {

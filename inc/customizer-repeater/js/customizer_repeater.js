@@ -126,7 +126,7 @@ function customizer_repeater_item_is_empty( $value ){
 
 function customizer_repeater_get_html_val( $input ){
     if ($input.length !== 0) {
-        return $input.val();
+        return escapeHtml( $input.val() );
     }
     return '';
 }
@@ -156,7 +156,7 @@ function customizer_repeater_refresh_general_control_values() {
 
             var response = {};
             if( !customizer_repeater_item_is_empty( text ) ){
-                response.text = escapeHtml(text);
+                response.text = text;
             }
             if( !customizer_repeater_item_is_empty( image_url ) ){
                 if(choice !== 'azera_shop_none'){
@@ -164,10 +164,10 @@ function customizer_repeater_refresh_general_control_values() {
                 }
             }
             if( !customizer_repeater_item_is_empty( title ) ){
-                response.title = escapeHtml(title);
+                response.title = title;
             }
             if( !customizer_repeater_item_is_empty( subtitle ) ){
-                response.subtitle = escapeHtml(subtitle);
+                response.subtitle = subtitle;
             }
             if( !customizer_repeater_item_is_empty( icon_value ) ){
                 if(choice !== 'azera_shop_none'){
@@ -181,10 +181,10 @@ function customizer_repeater_refresh_general_control_values() {
                 response.choice = choice;
             }
             if( !customizer_repeater_item_is_empty( social_repeater ) ){
-                response.social_repeater = escapeHtml(social_repeater);
+                response.social_repeater = social_repeater;
             }
             if( !customizer_repeater_item_is_empty( shortcode ) ){
-                response.shortcode = escapeHtml(shortcode);
+                response.shortcode = shortcode;
             }
 
             if(!jQuery.isEmptyObject(response)){
