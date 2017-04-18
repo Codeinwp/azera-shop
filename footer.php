@@ -85,32 +85,29 @@
 
 						$azera_shop_social_icons = get_theme_mod( 'azera_shop_social_icons' );
 
-						if ( ! empty( $azera_shop_social_icons ) ) {
+						if ( ! azera_shop_general_repeater_is_empty( $azera_shop_social_icons ) ) {
+							$azera_shop_social_icons_decoded = json_decode( $azera_shop_social_icons ); ?>
 
-							$azera_shop_social_icons_decoded = json_decode( $azera_shop_social_icons );
-
-							if ( ! empty( $azera_shop_social_icons_decoded ) ) { ?>
-
-								<ul class="social-icons">
-									<?php
-								    foreach ( $azera_shop_social_icons_decoded as $azera_shop_social_icon ) {
-									    $icon = ! empty( $azera_shop_social_icon->icon_value ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->icon_value, 'Social icons in footer' ) : '';
-									    $link = ! empty( $azera_shop_social_icon->link ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->link, 'Social icons in footer' ) : '';
-
-									    if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) { ?>
-											<li>
-												<a href="<?php echo esc_url( $link ); ?>">
-													<span class="screen-reader-text"><?php echo wp_kses_post( $icon ); ?></span>
-													<i class="fa azera-shop-footer-icons <?php echo esc_attr( $icon ); ?> transparent-text-dark" aria-hidden="true"></i>
-												</a>
-											</li>
-										    <?php
-									    }
-									} ?>
-								</ul>
+							<ul class="social-icons">
 								<?php
-							}// End if().
-						} ?>
+								foreach ( $azera_shop_social_icons_decoded as $azera_shop_social_icon ) {
+									$icon = ! empty( $azera_shop_social_icon->icon_value ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->icon_value, 'Social icons in footer' ) : '';
+									$link = ! empty( $azera_shop_social_icon->link ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->link, 'Social icons in footer' ) : '';
+
+									if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) { ?>
+										<li>
+											<a href="<?php echo esc_url( $link ); ?>">
+												<span class="screen-reader-text"><?php echo wp_kses_post( $icon ); ?></span>
+												<i class="fa azera-shop-footer-icons <?php echo esc_attr( $icon ); ?> transparent-text-dark" aria-hidden="true"></i>
+											</a>
+										</li>
+										<?php
+									}
+								} ?>
+							</ul>
+							<?php
+						}// End if().
+				?>
 
 	        </div><!-- .footer-bottom-wrap -->
 
