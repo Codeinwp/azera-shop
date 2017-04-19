@@ -439,7 +439,6 @@ function azera_shop_customize_register( $wp_customize ) {
 		'label'   => esc_html__( 'Add new contact field','azera-shop' ),
 		'section' => 'azera_shop_contact_section',
 		'priority' => 10,
-		'azera_shop_image_control' => false,
 		'azera_shop_icon_control' => true,
 		'azera_shop_text_control' => true,
 		'azera_shop_link_control' => true,
@@ -660,91 +659,6 @@ add_action( 'customize_preview_init', 'azera_shop_customize_preview_js' );
  */
 function azera_shop_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
-}
-
-/**
- * Satinize repeater
- *
- * @param string $input string to satinize.
- *
- * @return string
- */
-function azera_shop_sanitize_repeater( $input ) {
-
-	$input_decoded = json_decode( $input,true );
-	$allowed_html = array(
-								'br' => array(),
-								'em' => array(),
-								'strong' => array(),
-								'a' => array(
-									'href' => array(),
-									'class' => array(),
-									'id' => array(),
-									'target' => array(),
-								),
-								'button' => array(
-									'class' => array(),
-									'id' => array(),
-								),
-							);
-
-	if ( ! empty( $input_decoded ) ) {
-		foreach ( $input_decoded as $boxk => $box ) {
-			foreach ( $box as $key => $value ) {
-				if ( $key == 'text' ) {
-					$value = html_entity_decode( $value );
-					$input_decoded[ $boxk ][ $key ] = wp_kses( $value, $allowed_html );
-				} else {
-					$input_decoded[ $boxk ][ $key ] = wp_kses_post( force_balance_tags( $value ) );
-				}
-			}
-		}
-
-		return json_encode( $input_decoded );
-	}
-
-	return $input;
-}
-
-/**
- * Satinize html.
- *
- * @param string $input string to satinize.
- *
- * @return mixed
- */
-function azera_shop_sanitize_html( $input ) {
-
-	$allowed_html = array(
-							'p' => array(
-								'class' => array(),
-								'id' => array(),
-							),
-							'br' => array(),
-							'em' => array(),
-							'strong' => array(),
-							'ul' => array(
-								'class' => array(),
-								'id' => array(),
-							),
-							'li' => array(
-								'class' => array(),
-								'id' => array(),
-							),
-							'a' => array(
-								'href' => array(),
-								'class' => array(),
-								'id' => array(),
-								'target' => array(),
-							),
-							'button' => array(
-								'class' => array(),
-								'id' => array(),
-							),
-						);
-
-	$string = force_balance_tags( $input );
-	return wp_kses( $string, $allowed_html );
 }
 
 /**
