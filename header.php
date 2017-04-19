@@ -119,7 +119,7 @@
 
 	                    <!-- MENU -->
 	                    <div class="header-nav-wrap">
-							<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e( 'Primary Menu','azera-shop' ) ?>" id="menu-primary" class="navbar-collapse collapse">
+							<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e( 'Primary Menu','azera-shop' ); ?>" id="menu-primary" class="navbar-collapse collapse">
 								<!-- LOGO ON STICKY NAV BAR -->
 								<div id="site-header-menu" class="site-header-menu">
 									<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -154,7 +154,7 @@
 
 								<?php if ( function_exists( 'WC' ) ) { ?>
 									<div class="navbar-cart-inner">
-										<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
+										<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
 											<span class="fa fa-shopping-cart"></span>
 											<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 										</a>

@@ -164,9 +164,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 	 * Enqueue required scripts and styles.
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'azera-shop-fontawesome-iconpicker', azera_shop_get_file( '/inc/icon-picker/js/fontawesome-iconpicker.min.js' ), array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'azera-shop-iconpicker-control', azera_shop_get_file( '/inc/icon-picker/js/iconpicker-control.js' ), array( 'jquery' ), '1.0.0', true );
-		wp_enqueue_style( 'azera-shop-fontawesome-iconpicker', azera_shop_get_file( '/inc/icon-picker/css/fontawesome-iconpicker.min.css' ) );
 		wp_enqueue_style( 'azera-shop-fontawesome-admin', azera_shop_get_file( '/css/font-awesome.min.css' ),array(), '4.5.0' );
 	}
 
@@ -354,7 +352,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 		} else { ?>
 			<div class="azera_shop_general_control_repeater_container">
 				<div
-					class="azera-shop-customize-control-title"><?php esc_html_e( 'Azera Shop', 'azera-shop' ) ?></div>
+					class="azera-shop-customize-control-title"><?php esc_html_e( 'Azera Shop', 'azera-shop' ); ?></div>
 				<div class="azera-shop-box-content-hidden">
 					<?php
 					if ( $this->azera_shop_image_control == true && $this->azera_shop_icon_control == true ) {

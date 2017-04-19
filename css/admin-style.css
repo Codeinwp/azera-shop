@@ -115,16 +115,6 @@ button.azera_shop_general_control_remove_field:hover {
 	padding-top: 5px;
 }
 
-.azera-shop-image-picker li {
-	display: inline-block;
-	margin-right: 7px;
-	cursor: pointer;
-}
-
-.azera-shop-image-picker li:nth-child(even) {
-	margin-right: 0;
-}
-
 .azera-shop-alpha-container .transparency {
 	width: 100%;
 	height: 24px;
