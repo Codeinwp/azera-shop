@@ -1,4 +1,10 @@
 
+### 1.1.8 - 19/04/2017
+**Changes:** 
+- Improved compatibility with WPML and Polylang
+- Fixed issues with missing image in Testimonials and Our team sections
+- Update repeater control to fix issues in Mozilla Firefox
+
 ### 1.1.7 - 07/04/2017
 **Changes:** 
 - Fixed compatibility issues with WooCommerce 3.0.0
