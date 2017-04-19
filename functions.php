@@ -339,14 +339,6 @@ function azera_shop_admin_scripts() {
 	wp_enqueue_style( 'azera-shop-admin-stylesheet', azera_shop_get_file( '/css/admin-style.css' ),'1.0.0' );
 
 	wp_enqueue_script( 'azera-shop-customizer-script', azera_shop_get_file( '/js/azera_shop_customizer.js' ), array( 'jquery', 'jquery-ui-draggable' ),'1.0.0', true );
-
-	wp_localize_script( 'azera-shop-customizer-script', 'azeraShopCustomizerObject', array(
-
-		'documentation' => esc_html__( 'Documentation', 'azera-shop' ),
-		'support' => esc_html__( 'Support Forum','azera-shop' ),
-		'pro' => __( 'Upgrade to PRO','azera-shop' ),
-
-	) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_scripts', 10 );
 

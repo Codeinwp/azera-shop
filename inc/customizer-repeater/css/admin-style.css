@@ -211,3 +211,13 @@ button.customizer-repeater-new-field:before {
 .customizer-repeater-box-content-hidden textarea {
 	width: 100%;
 }
+
+.azera-shop-image-picker li {
+	display: inline-block;
+	margin-right: 7px;
+	cursor: pointer;
+}
+
+.azera-shop-image-picker li:nth-child(even) {
+	margin-right: 0;
+}

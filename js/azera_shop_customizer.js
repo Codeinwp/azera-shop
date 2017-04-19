@@ -1,4 +1,3 @@
-/* global azeraShopCustomizerObject */
 /* global Color */
 function media_upload(button_class) {
 
@@ -299,14 +298,6 @@ jQuery(document).ready(function(){
 });
 
 jQuery(document).ready(function() {
-    var azera_shop_aboutpage = azeraShopCustomizerObject.aboutpage;
-    var azera_shop_nr_actions_required = azeraShopCustomizerObject.nr_actions_required;
-
-    /* Number of required actions */
-    if ((typeof azera_shop_aboutpage !== 'undefined') && (typeof azera_shop_nr_actions_required !== 'undefined') && (azera_shop_nr_actions_required !== '0')) {
-        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + azera_shop_aboutpage + '"><span class="azera-shop-actions-count">' + azera_shop_nr_actions_required + '</span></a>');
-    }
-
     /* WooCommerce category select */
     jQuery(document).on('change', '.azera_shop_cat_select', function () {
         var th = jQuery(this).parent().parent();
