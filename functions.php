@@ -915,7 +915,7 @@ if ( ! function_exists( 'azera_shop_footer_powered_by' ) ) {
 				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )
 			); ?>
 		</div>
-        <?php
+		<?php
 	}
 }
 
