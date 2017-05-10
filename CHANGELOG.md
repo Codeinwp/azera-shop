@@ -1,4 +1,8 @@
 
+### 1.1.9 - 10/05/2017
+**Changes:** 
+- Small fixes for the color control in customizer
+
 ### 1.1.8 - 19/04/2017
 **Changes:** 
 - Improved compatibility with WPML and Polylang
