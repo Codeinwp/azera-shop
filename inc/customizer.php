@@ -15,7 +15,7 @@ require_once get_template_directory() . '/inc/customizer-repeater/functions.php'
  */
 function azera_shop_customize_register( $wp_customize ) {
 
-	require_once( 'class/azera-shop-alpha-control.php' );
+	require_once( 'alpha-control/azera-shop-alpha-control.php' );
 	require_once( 'class/azera-shop-text-control.php' );
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
