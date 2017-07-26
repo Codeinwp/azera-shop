@@ -19,6 +19,7 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 $ribbon_background = apply_filters( 'azera_shop_translate_single_string', $ribbon_background, 'Ribbon section - background image' );
 $azera_shop_ribbon_title = apply_filters( 'azera_shop_translate_single_string', $azera_shop_ribbon_title, 'Ribbon section - title' );
 $azera_shop_button_text = apply_filters( 'azera_shop_translate_single_string', $azera_shop_button_text, 'Ribbon section - button text' );
+$azera_shop_button_link = apply_filters( 'azera_shop_translate_single_string', $azera_shop_button_link, 'Ribbon section - button link' );
 
 if ( ! empty( $azera_shop_ribbon_title ) || ! empty( $azera_shop_button_text ) ) {
 

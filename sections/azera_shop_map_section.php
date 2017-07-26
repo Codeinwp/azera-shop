@@ -6,6 +6,7 @@
  */
 
 	$azera_shop_frontpage_map_shortcode = get_theme_mod( 'azera_shop_frontpage_map_shortcode' );
+	$azera_shop_frontpage_map_shortcode = apply_filters( 'azera_shop_translate_single_string', $azera_shop_frontpage_map_shortcode, 'Contact info section - map shortcode' );
 if ( ! empty( $azera_shop_frontpage_map_shortcode ) ) {
 ?>
 <div id="container-fluid">

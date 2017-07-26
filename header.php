@@ -83,6 +83,7 @@
 							<div class="header-logo-wrap">
 								<?php
 									$azera_shop_logo = get_theme_mod( 'azera_shop_logo' );
+									$azera_shop_logo = apply_filters( 'azera_shop_translate_single_string', $azera_shop_logo, 'General options - logo' );
 								if ( ! empty( $azera_shop_logo ) ) {
 									echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="navbar-brand" title="' . get_bloginfo( 'title' ) . '">';
 									echo '<img src="' . esc_url( $azera_shop_logo ) . '" alt="' . get_bloginfo( 'title' ) . '">';

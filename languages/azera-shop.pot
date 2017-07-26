@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Azera Shop 1.1.9\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/azera-shop/issues\n"
-"POT-Creation-Date: 2017-07-26 13:03:14+00:00\n"
+"POT-Creation-Date: 2017-07-26 17:23:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -468,15 +468,15 @@ msgstr ""
 msgid "Posted in "
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:936
+#: content-search.php:73 content.php:62 functions.php:939
 msgid "No comments"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:936
+#: content-search.php:73 content.php:62 functions.php:939
 msgid "One comment"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:936
+#: content-search.php:73 content.php:62 functions.php:939
 msgid "% comments"
 msgstr ""
 
@@ -509,11 +509,11 @@ msgstr ""
 msgid "Widgets Area 4"
 msgstr ""
 
-#: footer.php:73 footer.php:74
+#: footer.php:74 footer.php:75
 msgid "Secondary Menu"
 msgstr ""
 
-#: functions.php:48 functions.php:1001 header.php:122
+#: functions.php:48 functions.php:1004 header.php:123
 msgid "Primary Menu"
 msgstr ""
 
@@ -606,15 +606,15 @@ msgstr ""
 msgid "Read more about "
 msgstr ""
 
-#: functions.php:847 header.php:157
+#: functions.php:847 header.php:158
 msgid "View your shopping cart"
 msgstr ""
 
-#: functions.php:866 inc/customizer.php:607
+#: functions.php:867 inc/customizer.php:607
 msgid "BLOG"
 msgstr ""
 
-#: functions.php:905
+#: functions.php:908
 #. translators: 1 - theme name , 2 - WordPress link
 msgid "%1$s powered by %2$s"
 msgstr ""
@@ -623,7 +623,7 @@ msgstr ""
 msgid "Azera Shop"
 msgstr ""
 
-#: functions.php:907
+#: functions.php:910
 msgid "WordPress"
 msgstr ""
 
@@ -631,11 +631,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:109
+#: header.php:110
 msgid "Toggle Menu"
 msgstr ""
 
-#: header.php:110
+#: header.php:111
 msgid "Toggle navigation"
 msgstr ""
 
@@ -1107,7 +1107,7 @@ msgstr ""
 msgid "Main title"
 msgstr ""
 
-#: inc/customizer.php:200 sections/azera_shop_header_section.php:13
+#: inc/customizer.php:200 sections/azera_shop_header_section.php:15
 msgid "GET STARTED"
 msgstr ""
 
@@ -1361,9 +1361,9 @@ msgstr ""
 msgid "Contact Info"
 msgstr ""
 
-#: sections/azera_shop_header_section.php:99
-#: sections/azera_shop_header_section.php:102
-#: sections/azera_shop_header_section.php:104
+#: sections/azera_shop_header_section.php:103
+#: sections/azera_shop_header_section.php:106
+#: sections/azera_shop_header_section.php:108
 msgid "Header button label:"
 msgstr ""
 
@@ -1371,15 +1371,15 @@ msgstr ""
 msgid "Affiliates Logos"
 msgstr ""
 
-#: sections/azera_shop_ribbon_section.php:26
-#: sections/azera_shop_ribbon_section.php:28
-#: sections/azera_shop_ribbon_section.php:64
-#: sections/azera_shop_ribbon_section.php:66
+#: sections/azera_shop_ribbon_section.php:27
+#: sections/azera_shop_ribbon_section.php:29
+#: sections/azera_shop_ribbon_section.php:65
+#: sections/azera_shop_ribbon_section.php:67
 msgid "Ribbon"
 msgstr ""
 
-#: sections/azera_shop_ribbon_section.php:45
-#: sections/azera_shop_ribbon_section.php:47
+#: sections/azera_shop_ribbon_section.php:46
+#: sections/azera_shop_ribbon_section.php:48
 msgid "Ribbon button label:"
 msgstr ""
 
@@ -1492,27 +1492,27 @@ msgctxt "comment time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""
 
-#: functions.php:953
+#: functions.php:956
 msgctxt "post day fomat"
 msgid "d"
 msgstr ""
 
-#: functions.php:954
+#: functions.php:957
 msgctxt "post month fomat"
 msgid "M"
 msgstr ""
 
-#: header.php:148
+#: header.php:149
 msgctxt "placeholder"
 msgid "Search Products&hellip;"
 msgstr ""
 
-#: header.php:148
+#: header.php:149
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: header.php:149
+#: header.php:150
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
