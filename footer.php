@@ -55,7 +55,7 @@
 
 			</div><!-- .footer-widget-wrap -->
 
-	        <div class="footer-bottom-wrap">
+			<div class="footer-bottom-wrap">
 				<?php
 					global $wp_customize;
 
@@ -109,13 +109,13 @@
 						}// End if().
 				?>
 
-	        </div><!-- .footer-bottom-wrap -->
+			</div><!-- .footer-bottom-wrap -->
 
 			<?php azera_shop_bottom_footer_trigger(); ?>
 
-	    </div><!-- container -->
+		</div><!-- container -->
 
-	    <?php azera_shop_after_footer_trigger(); ?>
+		<?php azera_shop_after_footer_trigger(); ?>
 
 	</footer>
 

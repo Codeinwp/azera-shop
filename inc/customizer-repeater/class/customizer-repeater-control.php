@@ -184,10 +184,10 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 	public function render_content() {
 		$repeater_content = $this->value();
 		$values = array();
-	    if ( ! empty( $repeater_content ) ) {
-	        $values = $repeater_content;
+		if ( ! empty( $repeater_content ) ) {
+			$values = $repeater_content;
 		} else {
-	        if ( ! empty( $this->setting->default ) ) {
+			if ( ! empty( $this->setting->default ) ) {
 				$values = $this->setting->default;
 			}
 		} ?>
@@ -443,7 +443,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 				<?php
 				/* translators: %s is link to FontAwesome */
 				printf( esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %s', 'azera-shop' ),
-	                /* translators: %s is link label*/
+					/* translators: %s is link label*/
 					sprintf( '<a href="http://fontawesome.io/icons/" rel="nofollow">%s</a>',
 						esc_html__( 'FontAwesome', 'azera-shop' )
 					)
@@ -519,7 +519,7 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 					</div>
 					<?php get_template_part( $this->azera_shop_icon_container ); ?>
 					<input type="text" class="customizer-repeater-social-repeater-link"
-					       placeholder="<?php esc_attr_e( 'Link', 'azera-shop' ); ?>">
+						   placeholder="<?php esc_attr_e( 'Link', 'azera-shop' ); ?>">
 					<input type="hidden" class="customizer-repeater-social-repeater-id" value="">
 					<button class="social-repeater-remove-social-item" style="display:none">
 						<?php esc_html_e( 'Remove Icon', 'azera-shop' ); ?>
@@ -541,24 +541,24 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 						</div>
 						<?php get_template_part( $this->azera_shop_icon_container ); ?>
 						<input type="text" class="customizer-repeater-social-repeater-link"
-						       placeholder="<?php esc_html_e( 'Link', 'azera-shop' ); ?>"
-						       value="<?php if ( ! empty( $social_icon['link'] ) ) {
+							   placeholder="<?php esc_html_e( 'Link', 'azera-shop' ); ?>"
+							   value="<?php if ( ! empty( $social_icon['link'] ) ) {
 									echo esc_url( $social_icon['link'] );
 } ?>">
 						<input type="hidden" class="customizer-repeater-social-repeater-id"
-						       value="<?php if ( ! empty( $social_icon['id'] ) ) {
+							   value="<?php if ( ! empty( $social_icon['id'] ) ) {
 									echo esc_attr( $social_icon['id'] );
 } ?>">
 						<button class="social-repeater-remove-social-item"
-						        style="<?php if ( $show_del == 1 ) {
-							        echo 'display:none';
+								style="<?php if ( $show_del == 1 ) {
+									echo 'display:none';
 } ?>"><?php esc_html_e( 'Remove Icon', 'azera-shop' ); ?></button>
 					</div>
 					<?php
 				} ?>
 				<input type="hidden" id="social-repeater-socials-repeater-colector"
-				       class="social-repeater-socials-repeater-colector"
-				       value="<?php echo esc_textarea( html_entity_decode( $value ) ); ?>" />
+					   class="social-repeater-socials-repeater-colector"
+					   value="<?php echo esc_textarea( html_entity_decode( $value ) ); ?>" />
 			</div>
 			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add icon', 'azera-shop' ); ?></button>
 			<?php

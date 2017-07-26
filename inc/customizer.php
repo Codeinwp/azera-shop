@@ -88,8 +88,8 @@ function azera_shop_customize_register( $wp_customize ) {
 	}
 	$wp_customize->add_section( 'azera_shop_appearance_general' , array(
 		'title'       => esc_html__( 'General options', 'azera-shop' ),
-	  	'priority'    => 3,
-	  	'description' => esc_html__( 'Azera Shop theme general appearance options','azera-shop' ),
+		  'priority'    => 3,
+		  'description' => esc_html__( 'Azera Shop theme general appearance options','azera-shop' ),
 		'panel'		  => 'panel_2',
 	));
 
@@ -100,8 +100,8 @@ function azera_shop_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_logo', array(
-	      	'label'    => esc_html__( 'Logo', 'azera-shop' ),
-	      	'section'  => 'azera_shop_appearance_general',
+			  'label'    => esc_html__( 'Logo', 'azera-shop' ),
+			  'section'  => 'azera_shop_appearance_general',
 			'priority'    => 1,
 	)));
 
@@ -245,8 +245,8 @@ function azera_shop_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_first_layer', array(
-	      	'label'    => esc_html__( 'First layer', 'azera-shop' ),
-	      	'section'  => 'header_image',
+			  'label'    => esc_html__( 'First layer', 'azera-shop' ),
+			  'section'  => 'header_image',
 			'priority'    => 4,
 	)));
 
@@ -257,8 +257,8 @@ function azera_shop_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_second_layer', array(
-	      	'label'    => esc_html__( 'Second layer', 'azera-shop' ),
-	      	'section'  => 'header_image',
+			  'label'    => esc_html__( 'Second layer', 'azera-shop' ),
+			  'section'  => 'header_image',
 			'priority'    => 5,
 	)));
 
@@ -382,8 +382,8 @@ function azera_shop_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'azera_shop_ribbon_background', array(
-	      	'label'    => esc_html__( 'Ribbon Background', 'azera-shop' ),
-	      	'section'  => 'azera_shop_ribbon_section',
+			  'label'    => esc_html__( 'Ribbon Background', 'azera-shop' ),
+			  'section'  => 'azera_shop_ribbon_section',
 			'priority'    => 10,
 	)));
 
@@ -461,7 +461,7 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'azera_shop_contact_page' , array(
 		'title'       => esc_html__( 'Contact page', 'azera-shop' ),
-	  	'priority'    => 75,
+		  'priority'    => 75,
 		'active_callback' => 'azera_shop_is_contact_page',
 	));
 
@@ -494,8 +494,8 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'azera_shop_footer_section' , array(
 		'title'       => esc_html__( 'Footer options', 'azera-shop' ),
-	  	'priority'    => 80,
-	  	'description' => esc_html__( 'The main content of this section is customizable in: Customize -> Widgets -> Footer area. ','azera-shop' ),
+		  'priority'    => 80,
+		  'description' => esc_html__( 'The main content of this section is customizable in: Customize -> Widgets -> Footer area. ','azera-shop' ),
 	));
 
 	/* Footer Menu */
@@ -536,8 +536,8 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'azera_shop_general_section' , array(
 		'title'       => esc_html__( 'Advanced options', 'azera-shop' ),
-	  	'priority'    => 85,
-	  	'description' => esc_html__( 'Azera Shop theme general options','azera-shop' ),
+		  'priority'    => 85,
+		  'description' => esc_html__( 'Azera Shop theme general options','azera-shop' ),
 	));
 
 	$blogname = $wp_customize->get_control( 'blogname' );

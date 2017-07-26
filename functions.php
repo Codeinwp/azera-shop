@@ -991,7 +991,7 @@ function azera_shop_starter_content() {
 	add_theme_support( 'starter-content', array(
 		'posts' => array(
 			'home' => array(
-			        'template' => 'template-frontpage.php',
+					'template' => 'template-frontpage.php',
 			),
 			'blog',
 		),
