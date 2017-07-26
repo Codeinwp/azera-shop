@@ -16,6 +16,9 @@ if ( current_user_can( 'edit_theme_options' ) ) {
 	$azera_shop_ribbon_title = get_theme_mod( 'azera_shop_ribbon_title' );
 	$azera_shop_button_text = get_theme_mod( 'azera_shop_button_text' );
 }
+$ribbon_background = apply_filters( 'azera_shop_translate_single_string', $ribbon_background, 'Ribbon section - background image' );
+$azera_shop_ribbon_title = apply_filters( 'azera_shop_translate_single_string', $azera_shop_ribbon_title, 'Ribbon section - title' );
+$azera_shop_button_text = apply_filters( 'azera_shop_translate_single_string', $azera_shop_button_text, 'Ribbon section - button text' );
 
 if ( ! empty( $azera_shop_ribbon_title ) || ! empty( $azera_shop_button_text ) ) {
 
