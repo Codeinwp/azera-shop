@@ -15,8 +15,11 @@ azera_shop_wrapper_start( 'col-md-8 post-list', false );?>
 				<h1 class="page-title"><?php /* translators: Search query */ printf( esc_html__( 'Search Results for: %s', 'azera-shop' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php ;/* Start the Loop */ ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+?>
 
 				<?php
 				/**

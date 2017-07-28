@@ -63,8 +63,10 @@ if ( class_exists( 'WooCommerce' ) ) {
 							);
 						}
 						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post();
-							global $product; ?>
+						while ( $loop->have_posts() ) :
+							$loop->the_post();
+							global $product;
+							?>
 
 							<div class="col-md-4 col-sm-6 home-shop-product-wrap-all">
 
@@ -73,7 +75,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 										<?php
 										if ( has_post_thumbnail( $loop->post->ID ) ) {
 											echo get_the_post_thumbnail( $loop->post->ID,'azera_shop_home_prod' );
-										} else { 											echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />';
+										} else {
+											echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />';
 										}
 										?>
 									</div>

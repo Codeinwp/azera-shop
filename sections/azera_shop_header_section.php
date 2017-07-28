@@ -67,7 +67,8 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 				echo '<div id="azera_only_logo" class="navbar-header"><img src="" alt=""></div>';
 				echo '</div>';
 				echo '</div>';
-			} ?>
+			}
+			?>
 			<div class="row">
 				<?php
 				if ( ! empty( $azera_shop_header_layout ) && ( $azera_shop_header_layout == 'layout2' ) ) {
@@ -79,7 +80,8 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 
 				<!-- HEADING AND BUTTONS -->
 				<?php
-				if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle ) || ! empty( $azera_shop_header_button_text ) ) { ?>
+				if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle ) || ! empty( $azera_shop_header_button_text ) ) {
+				?>
 					<div id="intro-section" class="intro-section">
 
 						<!-- WELCOM MESSAGE -->

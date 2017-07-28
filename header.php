@@ -16,8 +16,14 @@
 <?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if ( is_rtl() ) { echo 'rtl';
-} else { echo 'ltr';} ?>">
+<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="
+																			<?php
+																			if ( is_rtl() ) {
+																				echo 'rtl';
+																			} else {
+																				echo 'ltr';}
+?>
+">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'azera-shop' ); ?></a>
 	<!-- =========================
 	 PRE LOADER
@@ -37,7 +43,8 @@
 			echo '</div>';
 
 		}
-	} ?>
+	}
+	?>
 
 
 	<!-- =========================
@@ -66,7 +73,12 @@
 			}
 		}
 		?>
-		<div class="overlay-layer-nav <?php if ( ! empty( $fixedheader ) ) {echo esc_attr( $fixedheader );} ?>">
+		<div class="overlay-layer-nav 
+		<?php
+		if ( ! empty( $fixedheader ) ) {
+			echo esc_attr( $fixedheader );}
+?>
+">
 
 			<!-- STICKY NAVIGATION -->
 			<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
@@ -129,9 +141,9 @@
 											array(
 												'theme_location'    => 'primary',
 												'menu_class'        => 'primary-menu small-text',
-												'depth'           	=> 4,
+												'depth'             => 4,
 												'fallback_cb'       => 'azera_shop_wp_page_menu',
-												 )
+											)
 										);
 									?>
 									</nav>

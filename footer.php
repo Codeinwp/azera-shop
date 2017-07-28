@@ -78,16 +78,18 @@
 								'theme_location'    => 'azera_shop_footer_menu',
 								'container'         => false,
 								'menu_class'        => 'footer-links small-text',
-								'depth' 			=> 1,
-							'fallback_cb'       => false,
-						) );
+								'depth'             => 1,
+								'fallback_cb'       => false,
+							)
+						);
 						echo '</div>';
 						/* SOCIAL ICONS */
 
 						$azera_shop_social_icons = get_theme_mod( 'azera_shop_social_icons' );
 
 						if ( ! azera_shop_general_repeater_is_empty( $azera_shop_social_icons ) ) {
-							$azera_shop_social_icons_decoded = json_decode( $azera_shop_social_icons ); ?>
+							$azera_shop_social_icons_decoded = json_decode( $azera_shop_social_icons );
+							?>
 
 							<ul class="social-icons">
 								<?php
@@ -95,7 +97,8 @@
 									$icon = ! empty( $azera_shop_social_icon->icon_value ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->icon_value, 'Social icons in footer' ) : '';
 									$link = ! empty( $azera_shop_social_icon->link ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->link, 'Social icons in footer' ) : '';
 
-									if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) { ?>
+									if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) {
+									?>
 										<li>
 											<a href="<?php echo esc_url( $link ); ?>">
 												<span class="screen-reader-text"><?php echo wp_kses_post( $icon ); ?></span>
@@ -104,7 +107,8 @@
 										</li>
 										<?php
 									}
-								} ?>
+								}
+								?>
 							</ul>
 							<?php
 						}// End if().

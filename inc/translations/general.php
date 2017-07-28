@@ -88,12 +88,14 @@ if ( ! function_exists( 'azera_shop_filter_translations' ) ) {
 	 * Define Allowed Files to be included.
 	 */
 	function azera_shop_filter_translations( $array ) {
-		return array_merge( $array, array(
-			'translations/translations-logos-section',
-			'translations/translations-contact-section',
-			'translations/translations-shortcode-section',
-			'translations/translations-footer-socials',
-		) );
+		return array_merge(
+			$array, array(
+				'translations/translations-logos-section',
+				'translations/translations-contact-section',
+				'translations/translations-shortcode-section',
+				'translations/translations-footer-socials',
+			)
+		);
 	}
 }
 add_filter( 'azera_shop_filter_translations', 'azera_shop_filter_translations' );

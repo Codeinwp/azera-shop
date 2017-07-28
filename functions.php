@@ -44,29 +44,37 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'azera-shop' ),
-			'azera_shop_footer_menu' => esc_html__( 'Footer Menu', 'azera-shop' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => esc_html__( 'Primary Menu', 'azera-shop' ),
+				'azera_shop_footer_menu' => esc_html__( 'Footer Menu', 'azera-shop' ),
+			)
+		);
 
 		/*
 		 Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
 		*/
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background',apply_filters( 'azera_shop_custom_background_args', array(
-			'default-repeat'         => 'no-repeat',
-			'default-position-x'     => 'center',
-			'default-attachment'     => 'fixed',
-		)));
+		add_theme_support(
+			'custom-background',apply_filters(
+				'azera_shop_custom_background_args', array(
+					'default-repeat'         => 'no-repeat',
+					'default-position-x'     => 'center',
+					'default-attachment'     => 'fixed',
+				)
+			)
+		);
 
 		/*
 		* This feature enables Custom_Headers support for a theme as of Version 3.4.
@@ -74,21 +82,27 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		* @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
 		*/
 
-		add_theme_support( 'custom-header',apply_filters( 'azera_shop_custom_header_args', array(
-			'default-image' => azera_shop_get_file( '/images/background-images/background.jpg' ),
-			'width'         => 1000,
-			'height'        => 680,
-			'flex-height'   => true,
-			'flex-width'    => true,
-			'header-text' 	=> false,
-		)));
+		add_theme_support(
+			'custom-header',apply_filters(
+				'azera_shop_custom_header_args', array(
+					'default-image' => azera_shop_get_file( '/images/background-images/background.jpg' ),
+					'width'         => 1000,
+					'height'        => 680,
+					'flex-height'   => true,
+					'flex-width'    => true,
+					'header-text'   => false,
+				)
+			)
+		);
 
-		register_default_headers( array(
-			'azera_shop_default_header_image' => array(
-				'url'   => azera_shop_get_file( '/images/background-images/background.jpg' ),
-				'thumbnail_url' => azera_shop_get_file( '/images/background-images/background_thumbnail.jpg' ),
-			),
-		));
+		register_default_headers(
+			array(
+				'azera_shop_default_header_image' => array(
+					'url'   => azera_shop_get_file( '/images/background-images/background.jpg' ),
+					'thumbnail_url' => azera_shop_get_file( '/images/background-images/background_thumbnail.jpg' ),
+				),
+			)
+		);
 
 		// Theme Support for WooCommerce
 		add_theme_support( 'woocommerce' );
@@ -214,15 +228,16 @@ function azera_shop_widgets_init() {
 		)
 	);
 
-	register_sidebars( 4,
+	register_sidebars(
+		4,
 		array(
 			/* translators: footer area number */
 			'name' => esc_html__( 'Footer area %d','azera-shop' ),
 			'id' => 'footer-area',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
 
@@ -236,10 +251,12 @@ add_action( 'widgets_init', 'azera_shop_widgets_init' );
  */
 function azera_shop_wp_page_menu() {
 	echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
-	wp_list_pages( array(
-		'title_li' => '',
-		'depth' => 1,
-	) );
+	wp_list_pages(
+		array(
+			'title_li' => '',
+			'depth' => 1,
+		)
+	);
 	echo '</ul>';
 }
 
@@ -261,10 +278,12 @@ function azera_shop_scripts() {
 
 	wp_enqueue_script( 'azera-shop-custom-all', azera_shop_get_file( '/js/custom.all.js' ), array( 'jquery' ), '2.0.2', true );
 
-	wp_localize_script( 'azera-shop-custom-all', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'azera-shop' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'azera-shop' ) . '</span>',
-	) );
+	wp_localize_script(
+		'azera-shop-custom-all', 'screenReaderText', array(
+			'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'azera-shop' ) . '</span>',
+			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'azera-shop' ) . '</span>',
+		)
+	);
 
 	$azera_shop_enable_move = get_theme_mod( 'azera_shop_enable_move' );
 	if ( ! empty( $azera_shop_enable_move ) && $azera_shop_enable_move && is_page_template( 'template-frontpage.php' ) ) {
@@ -286,10 +305,12 @@ function azera_shop_scripts() {
 			}
 		}
 
-		wp_localize_script( 'azera-shop-custom-home', 'viewcart', array(
-			'view_cart_label' => esc_html__( 'View cart', 'azera-shop' ), // label of View cart button,
+		wp_localize_script(
+			'azera-shop-custom-home', 'viewcart', array(
+				'view_cart_label' => esc_html__( 'View cart', 'azera-shop' ), // label of View cart button,
 			'view_cart_link' => $azera_shop_cart_url, // link of View cart button
-		) );
+			)
+		);
 
 	}
 
@@ -374,7 +395,8 @@ function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	<?php
 	if ( $is_blog == true ) {
 		do_action( 'blog_header' );
-	} ?>
+	}
+	?>
 	<div class="content-wrap">
 	<div class="container <?php echo $class_to_add; ?>">
 	<div id="primary" class="content-area <?php echo esc_attr( $class ); ?>">
@@ -392,7 +414,8 @@ function azera_shop_wrapper_end( $has_sidebar = false ) {
 	<?php
 	if ( $has_sidebar == true ) {
 		get_sidebar();
-	} ?>
+	}
+	?>
 	</div>
 	</div>
 	<?php
@@ -418,12 +441,12 @@ function azera_shop_register_required_plugins() {
 		),
 		array(
 			'name'     => 'Pirate Forms',
-			'slug' 	   => 'pirate-forms',
+			'slug'     => 'pirate-forms',
 			'required' => false,
 		),
 		array(
 			'name'     => 'WooCommerce',
-			'slug' 	   => 'woocommerce',
+			'slug'     => 'woocommerce',
 			'required' => false,
 		),
 		array(
@@ -504,7 +527,7 @@ if ( file_exists( $pro_functions_path ) ) {
  */
 function azera_shop_get_file( $file ) {
 	$file_parts = pathinfo( $file );
-	$accepted_ext = array( 'jpg','img','png','css','js' );
+	$accepted_ext = array( 'jpg', 'img', 'png', 'css', 'js' );
 	if ( in_array( $file_parts['extension'], $accepted_ext ) ) {
 		$file_path = get_stylesheet_directory() . $file;
 		if ( file_exists( $file_path ) ) {
@@ -566,16 +589,15 @@ function azera_shop_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	switch ( $comment->comment_type ) :
-		case 'pingback' :
-
-		case 'trackback' :
+		case 'pingback':
+		case 'trackback':
 			?>
 			<li class="post pingback">
 			<p><?php _e( 'Pingback:', 'azera-shop' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' ); ?></p>
 			<?php
 			break;
 
-		default :
+		default:
 			?>
 			<li itemscope itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment-body">
@@ -584,7 +606,8 @@ function azera_shop_comment( $comment, $args, $depth ) {
 						<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
 						<?php
 						/* translators: comment author */
-						printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'azera-shop' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
+						printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'azera-shop' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) );
+						?>
 					</div><!-- .comment-author .vcard -->
 					<?php if ( $comment->comment_approved == '0' ) : ?>
 						<em><?php _e( 'Your comment is awaiting moderation.', 'azera-shop' ); ?></em>
@@ -595,20 +618,27 @@ function azera_shop_comment( $comment, $args, $depth ) {
 							<time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'azera-shop' ) ); ?>" itemprop="commentTime">
 								<?php
 								/* translators: 1 - comment date, 2 - comment time */
-								printf( __( '%1$s at %2$s', 'azera-shop' ), get_comment_date(), get_comment_time() ); ?>
+								printf( __( '%1$s at %2$s', 'azera-shop' ), get_comment_date(), get_comment_time() );
+								?>
 							</time>
 						</a>
-						<?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' );?>
+						<?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' ); ?>
 					</div><!-- .comment-meta .commentmetadata -->
 				</footer>
 
 				<div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
 
 				<div class="reply">
-					<?php comment_reply_link( array_merge( $args, array(
-						'depth' => $depth,
-						'max_depth' => $args['max_depth'],
-					) ) ); ?>
+					<?php
+					comment_reply_link(
+						array_merge(
+							$args, array(
+								'depth' => $depth,
+								'max_depth' => $args['max_depth'],
+							)
+						)
+					);
+					?>
 				</div><!-- .reply -->
 			</article><!-- #comment-## -->
 
@@ -903,12 +933,14 @@ if ( ! function_exists( 'azera_shop_footer_powered_by' ) ) {
 	function azera_shop_footer_powered_by() {
 		?>
 		<div class="powered-by">
-			<?php printf(
+			<?php
+			printf(
 				/* translators: 1 - theme name , 2 - WordPress link */
 				__( '%1$s powered by %2$s', 'azera-shop' ),
 				sprintf( '<a href="https://themeisle.com/themes/azera-shop/" rel="nofollow">%s</a>', esc_html__( 'Azera Shop', 'azera-shop' ) ),
 				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )
-			); ?>
+			);
+			?>
 		</div>
 		<?php
 	}
@@ -952,7 +984,12 @@ if ( ! function_exists( 'azera_shop_post_date_box_function' ) ) {
 	 */
 	function azera_shop_post_date_box_function( $class ) {
 		?>
-		<div class="<?php if ( ! empty( $class ) ) { echo $class; } ?>">
+		<div class="
+		<?php
+		if ( ! empty( $class ) ) {
+			echo $class; }
+?>
+">
 			<span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop' ) ); ?></span>
 			<span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop' ) ); ?></span>
 		</div>
@@ -991,29 +1028,31 @@ function azera_shop_starter_content() {
 	/*
 	 * Starter Content Support
 	 */
-	add_theme_support( 'starter-content', array(
-		'posts' => array(
-			'home' => array(
+	add_theme_support(
+		'starter-content', array(
+			'posts' => array(
+				'home' => array(
 					'template' => 'template-frontpage.php',
+				),
+				'blog',
 			),
-			'blog',
-		),
 
-		'nav_menus' => array(
-			'primary' => array(
-				'name'  => __( 'Primary Menu', 'azera-shop' ),
-				'items' => array(
-					'page_home',
-					'page_blog',
+			'nav_menus' => array(
+				'primary' => array(
+					'name'  => __( 'Primary Menu', 'azera-shop' ),
+					'items' => array(
+						'page_home',
+						'page_blog',
+					),
 				),
 			),
-		),
 
-		'options' => array(
-			'show_on_front'  => 'page',
-			'page_on_front'  => '{{home}}',
-			'page_for_posts' => '{{blog}}',
-		),
-	) );
+			'options' => array(
+				'show_on_front'  => 'page',
+				'page_on_front'  => '{{home}}',
+				'page_for_posts' => '{{blog}}',
+			),
+		)
+	);
 }
 add_action( 'after_setup_theme', 'azera_shop_starter_content' );
