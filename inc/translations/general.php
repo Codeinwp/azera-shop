@@ -17,10 +17,13 @@ if ( ! function_exists( 'azera_shop_translate_single_string' ) ) {
 				return pll__( $original_value );
 			}
 		}
+
 		return $wpml_translation;
 	}
-	add_filter( 'azera_shop_translate_single_string', 'azera_shop_translate_single_string', 10, 2 );
+}
+add_filter( 'azera_shop_translate_single_string', 'azera_shop_translate_single_string', 10, 2 );
 
+if ( ! function_exists( 'azera_shop_translate_header_image' ) ) {
 	/**
 	 * Filter to translate header image
 	 */
@@ -33,10 +36,12 @@ if ( ! function_exists( 'azera_shop_translate_single_string' ) ) {
 				return pll__( $original_value );
 			}
 		}
+
 		return $wpml_translation;
 	}
-	add_filter( 'theme_mod_header_image', 'azera_shop_translate_header_image', 10 );
 }
+add_filter( 'theme_mod_header_image', 'azera_shop_translate_header_image', 10 );
+
 
 
 if ( ! function_exists( 'azera_shop_pll_string_register_helper' ) ) {

@@ -61,7 +61,7 @@
 
 					/* COPYRIGHT */
 					$azera_shop_copyright = get_theme_mod( 'azera_shop_copyright','Themeisle' );
-					$azera_shop_copyright = apply_filters( 'azera_shop_translate_single_string', $azera_shop_copyright, 'Footer options - copyright' );
+					$azera_shop_copyright = apply_filters( 'azera_shop_translate_single_string', $azera_shop_copyright, 'Copyright' );
 
 				if ( ! empty( $azera_shop_copyright ) ) {
 					echo '<span class="azera_shop_copyright_content">' . esc_attr( $azera_shop_copyright ) . '</span>';

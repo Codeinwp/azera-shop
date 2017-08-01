@@ -893,11 +893,11 @@ if ( ! function_exists( 'azera_shop_blog_header' ) ) {
 	 */
 	function azera_shop_blog_header() {
 		$azera_shop_blog_header_image    = get_theme_mod( 'azera_shop_blog_header_image', azera_shop_get_file( '/images/background-images/background.jpg' ) );
-		$azera_shop_blog_header_image = apply_filters( 'azera_shop_translate_single_string', $azera_shop_blog_header_image, 'Blog Header - image' );
+		$azera_shop_blog_header_image = apply_filters( 'azera_shop_translate_single_string', $azera_shop_blog_header_image, 'Blog Header' );
 		$azera_shop_blog_header_title    = get_theme_mod( 'azera_shop_blog_header_title', esc_html__( 'BLOG', 'azera-shop' ) );
-		$azera_shop_blog_header_title = apply_filters( 'azera_shop_translate_single_string', $azera_shop_blog_header_title, 'Blog Header - title' );
+		$azera_shop_blog_header_title = apply_filters( 'azera_shop_translate_single_string', $azera_shop_blog_header_title, 'Blog Header' );
 		$azera_shop_blog_header_subtitle = get_theme_mod( 'azera_shop_blog_header_subtitle' );
-		$azera_shop_blog_header_subtitle = apply_filters( 'azera_shop_translate_single_string', $azera_shop_blog_header_subtitle, 'Blog Header - subtitle' );
+		$azera_shop_blog_header_subtitle = apply_filters( 'azera_shop_translate_single_string', $azera_shop_blog_header_subtitle, 'Blog Header' );
 
 		if ( ! empty( $azera_shop_blog_header_image ) || ! empty( $azera_shop_blog_header_title ) || ! empty( $azera_shop_blog_header_subtitle ) ) {
 
