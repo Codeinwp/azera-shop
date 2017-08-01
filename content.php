@@ -11,7 +11,7 @@
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
-			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+				 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
 					<?php
 					if ( has_post_thumbnail() ) {
@@ -29,7 +29,7 @@
 					} else {
 					?>
 					<picture itemscope itemprop="image">
-					<source media="(max-width: 600px)" srcset="<?php echo azera_shop_get_file( '/images/no-thumbnail-mobile.jpg' );?> ">
+					<source media="(max-width: 600px)" srcset="<?php echo azera_shop_get_file( '/images/no-thumbnail-mobile.jpg' ); ?> ">
 					<img src="<?php echo azera_shop_get_file( '/images/no-thumbnail.jpg' ); ?>" alt="<?php the_title_attribute(); ?>">
 					</picture>
 					<?php } ?>
@@ -79,10 +79,12 @@
 		?>
 
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'azera-shop' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'azera-shop' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 

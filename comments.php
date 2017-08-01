@@ -20,8 +20,7 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
-
+	
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
@@ -46,7 +45,9 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through
+		?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'azera-shop' ); ?></h2>
 			<div class="nav-links">
@@ -56,20 +57,26 @@ if ( post_password_required() ) {
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+		<?php
+		endif; // check for comment navigation
+		?>
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'callback'    => 'azera_shop_comment',
-					'avatar_size' => 60,
-				) );
+				wp_list_comments(
+					array(
+						'style'       => 'ol',
+						'short_ping'  => true,
+						'callback'    => 'azera_shop_comment',
+						'avatar_size' => 60,
+					)
+				);
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through
+		?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'azera-shop' ); ?></h2>
 			<div class="nav-links">
@@ -79,9 +86,13 @@ if ( post_password_required() ) {
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
+		<?php
+		endif; // check for comment navigation
+		?>
 
-	<?php endif; // End if(). ?>
+	<?php
+	endif;
+	?>
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
@@ -90,9 +101,13 @@ if ( post_password_required() ) {
 	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'azera-shop' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array(
-		'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-		'title_reply_after' => '</h2>',
-	) ); ?>
+	<?php
+	comment_form(
+		array(
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_after' => '</h2>',
+		)
+	);
+	?>
 
 </div><!-- #comments -->

@@ -1,6 +1,7 @@
 <wpml-config>
 	<admin-texts>
 		<key name="theme_mods_azera-shop">
+			<key name="header_image" />
 			<key name="azera_shop_logo" />
 			<key name="azera_shop_header_layout" />
 			<key name="azera_shop_header_logo" />
@@ -12,6 +13,7 @@
 			<key name="azera_shop_second_layer" />
 			<key name="azera_shop_our_story_title" />
 			<key name="azera_shop_our_story_text" />
+			<key name="azera_shop_our_story_image" />
 			<key name="azera_shop_shop_section_title" />
 			<key name="azera_shop_shop_section_subtitle" />
 			<key name="azera_shop_number_of_products" />

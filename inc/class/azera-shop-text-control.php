@@ -35,12 +35,12 @@ class Azera_Shop_Text_Control extends WP_Customize_Control {
 	 * The render function for the controller
 	 */
 	public function render_content() {
-	    if ( ! empty( $this->label ) ) { ?>
-		    <span class="customize-control-title">
+		if ( ! empty( $this->label ) ) { ?>
+			<span class="customize-control-title">
 				<?php echo $this->label; ?>
 			</span>
 			<?php
-	    }
+		}
 		echo $this->message;
 	}
 }

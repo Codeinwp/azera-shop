@@ -10,33 +10,35 @@ if ( ! function_exists( 'azera_shop_logos_get_default_content' ) ) {
 	 * Get logos section default content.
 	 */
 	function azera_shop_logos_get_default_content() {
-		return json_encode( array(
+		return json_encode(
 			array(
-				'image_url' => azera_shop_get_file( '/images/companies/1.png' ),
-				'link'      => '#',
-				'id'        => 'azera_shop_56d069bb8cb71',
-			),
-			array(
-				'image_url' => azera_shop_get_file( '/images/companies/2.png' ),
-				'link'      => '#',
-				'id'        => 'azera_shop_56d069bc8cb72',
-			),
-			array(
-				'image_url' => azera_shop_get_file( '/images/companies/3.png' ),
-				'link'      => '#',
-				'id'        => 'azera_shop_56d069bd8cb73',
-			),
-			array(
-				'image_url' => azera_shop_get_file( '/images/companies/4.png' ),
-				'link'      => '#',
-				'id'        => 'azera_shop_56d06d128cb74',
-			),
-			array(
-				'image_url' => azera_shop_get_file( '/images/companies/5.png' ),
-				'link'      => '#',
-				'id'        => 'azera_shop_56d06d3d8cb75',
-			),
-		) );
+				array(
+					'image_url' => azera_shop_get_file( '/images/companies/1.png' ),
+					'link'      => '#',
+					'id'        => 'azera_shop_56d069bb8cb71',
+				),
+				array(
+					'image_url' => azera_shop_get_file( '/images/companies/2.png' ),
+					'link'      => '#',
+					'id'        => 'azera_shop_56d069bc8cb72',
+				),
+				array(
+					'image_url' => azera_shop_get_file( '/images/companies/3.png' ),
+					'link'      => '#',
+					'id'        => 'azera_shop_56d069bd8cb73',
+				),
+				array(
+					'image_url' => azera_shop_get_file( '/images/companies/4.png' ),
+					'link'      => '#',
+					'id'        => 'azera_shop_56d06d128cb74',
+				),
+				array(
+					'image_url' => azera_shop_get_file( '/images/companies/5.png' ),
+					'link'      => '#',
+					'id'        => 'azera_shop_56d06d3d8cb75',
+				),
+			)
+		);
 	}
 }
 

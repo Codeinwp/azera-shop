@@ -17,25 +17,31 @@ if ( ! azera_shop_general_repeater_is_empty( $azera_shop_shortcodes_section ) ) 
 			$pos = strlen( strstr( $section->shortcode, 'pirate_forms' ) );
 		}
 		?>
-		<section id="<?php if ( $pos > 0 ) {
+		<section id="
+		<?php
+		if ( $pos > 0 ) {
 			echo 'contact';
-} else {
-	if ( ! empty( $title ) ) {
-		echo preg_replace( '/[^a-zA-Z0-9]/', '', strtolower( $title ) );
-	}
-} ?>" class="shortcodes" role="region" aria-label="<?php esc_html_e( 'Shortcodes', 'azera-shop' ); ?>">
+		} else {
+			if ( ! empty( $title ) ) {
+				echo preg_replace( '/[^a-zA-Z0-9]/', '', strtolower( $title ) );
+			}
+		}
+?>
+" class="shortcodes" role="region" aria-label="<?php esc_html_e( 'Shortcodes', 'azera-shop' ); ?>">
 			<div class="section-overlay-layer">
 				<div class="container">
 
 					<div class="section-header">
 						<?php
-						if ( ! empty( $title ) ) { ?>
+						if ( ! empty( $title ) ) {
+						?>
 							<h2 class="dark-text"><?php echo wp_kses_post( $title ); ?></h2>
 							<div class="colored-line"></div>
 							<?php
 						}
 
-						if ( ! empty( $subtitle ) ) { ?>
+						if ( ! empty( $subtitle ) ) {
+						?>
 							<div class="sub-heading"><?php echo wp_kses_post( $subtitle ); ?></div>
 							<?php
 						}
@@ -46,7 +52,8 @@ if ( ! azera_shop_general_repeater_is_empty( $azera_shop_shortcodes_section ) ) 
 					if ( ! empty( $shortcode ) ) {
 						$scd = html_entity_decode( $shortcode );
 						echo do_shortcode( $scd );
-					} ?>
+					}
+					?>
 
 				</div>
 			</div>
