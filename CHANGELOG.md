@@ -1,4 +1,8 @@
 
+### 1.1.10 - 03/08/2017
+**Changes:** 
+- Fixed translation issues
+
 ### 1.1.9 - 10/05/2017
 **Changes:** 
 - Small fixes for the color control in customizer
