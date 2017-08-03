@@ -3,6 +3,7 @@
   "nicename": "Azera Shop",
   "version": "1.1.0",
   "description": "Azera Shop theme",
+  "category": "themes",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codeinwp/azera-shop.git"

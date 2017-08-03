@@ -12,7 +12,7 @@
 
 	<div class="azera-shop-tab-pane-half azera-shop-tab-pane-first-half">
 
-		<p><strong><?php esc_html_e( 'Found a bug? Want to contribute with a fix or create a new feature?','azera-shop'); ?></strong></p>
+		<p><strong><?php esc_html_e( 'Found a bug? Want to contribute with a fix or create a new feature?','azera-shop' ); ?></strong></p>
 
 		<p><?php esc_html_e( 'GitHub is the place to go!','azera-shop' ); ?></p>
 
@@ -39,7 +39,7 @@
 
 		<h4><?php esc_html_e( 'Are you enjoying Azera Shop?', 'azera-shop' ); ?></h4>
 
-		<p class="review-link"><?php echo sprintf( esc_html__( 'Rate our theme on %sWordPress.org%s. We\'d really appreciate it!', 'azera-shop' ), '<a href="https://wordpress.org/support/theme/azera-shop/">', '</a>' ); ?></p>
+		<p class="review-link"><?php echo sprintf( esc_html__( 'Rate our theme on %1$sWordPress.org%2$s. We\'d really appreciate it!', 'azera-shop' ), '<a href="https://wordpress.org/support/theme/azera-shop/">', '</a>' ); ?></p>
 
 		<p><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></p>
 

@@ -10,7 +10,12 @@
 get_header();
 azera_shop_wrapper_start( 'col-md-8 post-list', true ); ?>
 
-	<main <?php if ( have_posts() ) { echo 'itemscope itemtype="http://schema.org/Blog"';} ?> id="main" class="site-main" role="main">
+	<main 
+	<?php
+	if ( have_posts() ) {
+		echo 'itemscope itemtype="http://schema.org/Blog"';}
+?>
+ id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -21,11 +26,15 @@ azera_shop_wrapper_start( 'col-md-8 post-list', true ); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php ;/* Start the Loop */ ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+?>
 
 				<?php
-				get_template_part( 'content' ); ?>
+				get_template_part( 'content' );
+				?>
 
 			<?php endwhile; ?>
 

@@ -55,12 +55,13 @@
 
 			</div><!-- .footer-widget-wrap -->
 
-	        <div class="footer-bottom-wrap">
+			<div class="footer-bottom-wrap">
 				<?php
 					global $wp_customize;
 
 					/* COPYRIGHT */
 					$azera_shop_copyright = get_theme_mod( 'azera_shop_copyright','Themeisle' );
+					$azera_shop_copyright = apply_filters( 'azera_shop_translate_single_string', $azera_shop_copyright, 'Copyright' );
 
 				if ( ! empty( $azera_shop_copyright ) ) {
 					echo '<span class="azera_shop_copyright_content">' . esc_attr( $azera_shop_copyright ) . '</span>';
@@ -77,16 +78,18 @@
 								'theme_location'    => 'azera_shop_footer_menu',
 								'container'         => false,
 								'menu_class'        => 'footer-links small-text',
-								'depth' 			=> 1,
-							'fallback_cb'       => false,
-						) );
+								'depth'             => 1,
+								'fallback_cb'       => false,
+							)
+						);
 						echo '</div>';
 						/* SOCIAL ICONS */
 
 						$azera_shop_social_icons = get_theme_mod( 'azera_shop_social_icons' );
 
 						if ( ! azera_shop_general_repeater_is_empty( $azera_shop_social_icons ) ) {
-							$azera_shop_social_icons_decoded = json_decode( $azera_shop_social_icons ); ?>
+							$azera_shop_social_icons_decoded = json_decode( $azera_shop_social_icons );
+							?>
 
 							<ul class="social-icons">
 								<?php
@@ -94,7 +97,8 @@
 									$icon = ! empty( $azera_shop_social_icon->icon_value ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->icon_value, 'Social icons in footer' ) : '';
 									$link = ! empty( $azera_shop_social_icon->link ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_social_icon->link, 'Social icons in footer' ) : '';
 
-									if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) { ?>
+									if ( ! empty( $icon ) && $icon !== 'No Icon' && ! empty( $link ) ) {
+									?>
 										<li>
 											<a href="<?php echo esc_url( $link ); ?>">
 												<span class="screen-reader-text"><?php echo wp_kses_post( $icon ); ?></span>
@@ -103,19 +107,20 @@
 										</li>
 										<?php
 									}
-								} ?>
+								}
+								?>
 							</ul>
 							<?php
 						}// End if().
 				?>
 
-	        </div><!-- .footer-bottom-wrap -->
+			</div><!-- .footer-bottom-wrap -->
 
 			<?php azera_shop_bottom_footer_trigger(); ?>
 
-	    </div><!-- container -->
+		</div><!-- container -->
 
-	    <?php azera_shop_after_footer_trigger(); ?>
+		<?php azera_shop_after_footer_trigger(); ?>
 
 	</footer>
 

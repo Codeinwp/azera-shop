@@ -25,7 +25,7 @@ function azera_shop_general_repeater_is_empty( $azera_shop_arr ) {
 	foreach ( $azera_shop_arr_decoded as $item ) {
 		foreach ( $item as $key => $value ) {
 			if ( $key === 'icon_value' && ( ! empty( $value ) && $value !== 'No icon') ) {
-			    return false;
+				return false;
 			}
 			if ( ! in_array( $key, $not_check_keys ) ) {
 				if ( ! empty( $value ) ) {

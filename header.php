@@ -16,8 +16,14 @@
 <?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if ( is_rtl() ) { echo 'rtl';
-} else { echo 'ltr';} ?>">
+<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="
+																			<?php
+																			if ( is_rtl() ) {
+																				echo 'rtl';
+																			} else {
+																				echo 'ltr';}
+?>
+">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'azera-shop' ); ?></a>
 	<!-- =========================
 	 PRE LOADER
@@ -37,7 +43,8 @@
 			echo '</div>';
 
 		}
-	} ?>
+	}
+	?>
 
 
 	<!-- =========================
@@ -66,7 +73,12 @@
 			}
 		}
 		?>
-		<div class="overlay-layer-nav <?php if ( ! empty( $fixedheader ) ) {echo esc_attr( $fixedheader );} ?>">
+		<div class="overlay-layer-nav 
+		<?php
+		if ( ! empty( $fixedheader ) ) {
+			echo esc_attr( $fixedheader );}
+?>
+">
 
 			<!-- STICKY NAVIGATION -->
 			<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
@@ -77,12 +89,13 @@
 
 					<div class="header-container-wrap">
 
-	                    <div class="navbar-header navbar-header-wrap">
+						<div class="navbar-header navbar-header-wrap">
 
-	                        <!-- LOGO -->
-	                        <div class="header-logo-wrap">
+							<!-- LOGO -->
+							<div class="header-logo-wrap">
 								<?php
 									$azera_shop_logo = get_theme_mod( 'azera_shop_logo' );
+									$azera_shop_logo = apply_filters( 'azera_shop_translate_single_string', $azera_shop_logo, 'Logo' );
 								if ( ! empty( $azera_shop_logo ) ) {
 									echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="navbar-brand" title="' . get_bloginfo( 'title' ) . '">';
 									echo '<img src="' . esc_url( $azera_shop_logo ) . '" alt="' . get_bloginfo( 'title' ) . '">';
@@ -105,20 +118,20 @@
 								?>
 							</div>
 
-	                        <div class="header-button-wrap">
-			                    <button title='<?php _e( 'Toggle Menu', 'azera-shop' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
-			                        <span class="screen-reader-text"><?php esc_html_e( 'Toggle navigation','azera-shop' ); ?></span>
-			                        <span class="icon-bar"></span>
-			                        <span class="icon-bar"></span>
-			                        <span class="icon-bar"></span>
-			                    </button>
-		                    </div><!-- .header-button-wrap -->
+							<div class="header-button-wrap">
+								<button title='<?php _e( 'Toggle Menu', 'azera-shop' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
+									<span class="screen-reader-text"><?php esc_html_e( 'Toggle navigation','azera-shop' ); ?></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div><!-- .header-button-wrap -->
 
-	                    </div><!-- .navbar-header-wrap -->
+						</div><!-- .navbar-header-wrap -->
 
 
-	                    <!-- MENU -->
-	                    <div class="header-nav-wrap">
+						<!-- MENU -->
+						<div class="header-nav-wrap">
 							<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e( 'Primary Menu','azera-shop' ); ?>" id="menu-primary" class="navbar-collapse collapse">
 								<!-- LOGO ON STICKY NAV BAR -->
 								<div id="site-header-menu" class="site-header-menu">
@@ -128,15 +141,15 @@
 											array(
 												'theme_location'    => 'primary',
 												'menu_class'        => 'primary-menu small-text',
-												'depth'           	=> 4,
+												'depth'             => 4,
 												'fallback_cb'       => 'azera_shop_wp_page_menu',
-												 )
+											)
 										);
 									?>
 									</nav>
 								</div>
-		                    </div><!-- .navbar-collapse -->
-		                </div><!-- .header-nav-wrap -->
+							</div><!-- .navbar-collapse -->
+						</div><!-- .header-nav-wrap -->
 
 						<?php if ( class_exists( 'WooCommerce' ) ) { ?>
 							<div class="header-icons-wrap">

@@ -15,7 +15,10 @@ azera_shop_wrapper_start(); ?>
 
 	<main id="main" class="site-main" role="main">
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+?>
 
 		<?php get_template_part( 'content', 'page' ); ?>
 
@@ -26,7 +29,7 @@ azera_shop_wrapper_start(); ?>
 			endif;
 		?>
 
-	<?php endwhile; // end of the loop. ?>
+	<?php endwhile; ?>
 
 	</main><!-- #main -->
 <?php
