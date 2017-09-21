@@ -758,6 +758,23 @@ function azera_shop_customize_register( $wp_customize ) {
 		)
 	);
 
+	/* Choose Shop Sidebar position */
+	$wp_customize->add_setting(
+		'azera_shop_sidebar_woocommerce_position', array(
+			'sanitize_callback' => 'azera_shop_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'azera_shop_sidebar_woocommerce_position',
+		array(
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Show Shop Sidebar on left?','azera-shop' ),
+			'description' => esc_html__( 'If this box is checked, the sidebar on shop page will be on the left side.','azera-shop' ),
+			'section' => 'azera_shop_general_section',
+			'priority'    => 8,
+		)
+	);
+
 	/* BLOG HEADER */
 
 	$wp_customize->add_section(

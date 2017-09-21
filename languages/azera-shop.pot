@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Azera Shop 1.1.10\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/azera-shop/issues\n"
-"POT-Creation-Date: 2017-09-14 13:55:45+00:00\n"
+"POT-Creation-Date: 2017-09-21 14:38:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -468,15 +468,15 @@ msgstr ""
 msgid "Posted in "
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:1016
+#: content-search.php:73 content.php:62 functions.php:1048
 msgid "No comments"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:1016
+#: content-search.php:73 content.php:62 functions.php:1048
 msgid "One comment"
 msgstr ""
 
-#: content-search.php:73 content.php:62 functions.php:1016
+#: content-search.php:73 content.php:62 functions.php:1048
 msgid "% comments"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: functions.php:49 functions.php:1087 header.php:135
+#: functions.php:49 functions.php:1119 header.php:135
 msgid "Primary Menu"
 msgstr ""
 
@@ -584,41 +584,41 @@ msgstr ""
 msgid "View cart"
 msgstr ""
 
-#: functions.php:641
+#: functions.php:673
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:641 functions.php:670
+#: functions.php:673 functions.php:702
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:654
+#: functions.php:686
 #. translators: comment author
 msgid "<span itemprop=\"name\">%s </span><span class=\"says\">says:</span>"
 msgstr ""
 
-#: functions.php:658
+#: functions.php:690
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:666
+#: functions.php:698
 #. translators: 1 - comment date, 2 - comment time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:904
+#: functions.php:936
 msgid "Read more about "
 msgstr ""
 
-#: functions.php:922 header.php:170
+#: functions.php:954 header.php:170
 msgid "View your shopping cart"
 msgstr ""
 
-#: functions.php:942 inc/customizer.php:773
+#: functions.php:974 inc/customizer.php:790
 msgid "BLOG"
 msgstr ""
 
-#: functions.php:984
+#: functions.php:1016
 #. translators: 1 - theme name , 2 - WordPress link
 msgid "%1$s powered by %2$s"
 msgstr ""
@@ -627,7 +627,7 @@ msgstr ""
 msgid "Azera Shop"
 msgstr ""
 
-#: functions.php:986
+#: functions.php:1018
 msgid "WordPress"
 msgstr ""
 
@@ -920,7 +920,7 @@ msgstr ""
 #: inc/class/azera-shop-general-control.php:235
 #: inc/customizer-repeater/class/customizer-repeater-control.php:527
 #: inc/customizer-repeater/class/customizer-repeater-control.php:548
-#: inc/customizer.php:814
+#: inc/customizer.php:831
 msgid "Image"
 msgstr ""
 
@@ -943,7 +943,7 @@ msgstr ""
 #: inc/class/azera-shop-general-control.php:412
 #: inc/customizer-repeater/class/customizer-repeater-control.php:295
 #: inc/customizer-repeater/class/customizer-repeater-control.php:386
-#: inc/customizer.php:781
+#: inc/customizer.php:798
 msgid "Title"
 msgstr ""
 
@@ -951,7 +951,7 @@ msgstr ""
 #: inc/class/azera-shop-general-control.php:421
 #: inc/customizer-repeater/class/customizer-repeater-control.php:304
 #: inc/customizer-repeater/class/customizer-repeater-control.php:395
-#: inc/customizer.php:239 inc/customizer.php:402 inc/customizer.php:796
+#: inc/customizer.php:239 inc/customizer.php:402 inc/customizer.php:813
 msgid "Subtitle"
 msgstr ""
 
@@ -1267,7 +1267,15 @@ msgstr ""
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
-#: inc/customizer.php:765
+#: inc/customizer.php:771
+msgid "Show Shop Sidebar on left?"
+msgstr ""
+
+#: inc/customizer.php:772
+msgid "If this box is checked, the sidebar on shop page will be on the left side."
+msgstr ""
+
+#: inc/customizer.php:782
 msgid "Blog header"
 msgstr ""
 
@@ -1492,17 +1500,17 @@ msgctxt "post time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""
 
-#: functions.php:663
+#: functions.php:695
 msgctxt "comment time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""
 
-#: functions.php:1038
+#: functions.php:1070
 msgctxt "post day fomat"
 msgid "d"
 msgstr ""
 
-#: functions.php:1039
+#: functions.php:1071
 msgctxt "post month fomat"
 msgid "M"
 msgstr ""

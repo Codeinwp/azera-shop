@@ -412,6 +412,11 @@ function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	?>
 	<div class="content-wrap">
 	<div class="container <?php echo $class_to_add; ?>">
+	<?php
+	if ( azera_shop_woo_sidebar_position() ) {
+		azera_shop_display_woocommerce_sidebar();
+	}
+	?>
 	<div id="primary" class="content-area <?php echo esc_attr( $class ); ?>">
 	<?php
 }
@@ -432,6 +437,33 @@ function azera_shop_wrapper_end( $has_sidebar = false ) {
 	</div>
 	</div>
 	<?php
+}
+
+/**
+ * Display sidebar on shop page
+ *
+ * @since 1.1.11
+ */
+function azera_shop_display_woocommerce_sidebar() {
+	if ( is_active_sidebar( 'sidebar-woocommerce' ) ) {
+		get_sidebar( 'woocommerce' );
+	}
+}
+
+/**
+ * Choose the shop sidebar position
+ *
+ * @param bool $position - position of the woo sidebar, true - left/false - right.
+ *
+ * @return bool
+ */
+function azera_shop_woo_sidebar_position( $position = false ) {
+
+	$position = get_theme_mod( 'azera_shop_sidebar_woocommerce_position', 'false' );
+	if ( $position ) {
+		return true;
+	}
+	return false;
 }
 
 /**
@@ -457,8 +489,8 @@ function azera_shop_wrapper_end_shop_page() {
 	?>
 	</div>
 	<?php
-	if ( is_active_sidebar( 'sidebar-woocommerce' ) ) {
-		get_sidebar( 'shop' );
+	if ( ! azera_shop_woo_sidebar_position() ) {
+		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
 	</div>
