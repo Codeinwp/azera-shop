@@ -1056,3 +1056,5 @@ function azera_shop_starter_content() {
 	);
 }
 add_action( 'after_setup_theme', 'azera_shop_starter_content' );
+
+/* I need fork for wraith */
