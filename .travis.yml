@@ -1,6 +1,4 @@
-language:php
-
-##  PHP versions to test  against
+language: php
 php:
   - "7.1"
   - "7.0"
