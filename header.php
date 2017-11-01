@@ -167,7 +167,7 @@
 
 								<?php if ( function_exists( 'WC' ) ) { ?>
 									<div class="navbar-cart-inner">
-										<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
+										<a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
 											<span class="fa fa-shopping-cart"></span>
 											<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 										</a>

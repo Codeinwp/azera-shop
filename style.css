@@ -3249,6 +3249,10 @@ div.wpcf7-mail-sent-ng {
 	padding-left: 0;
 }
 
+.woocommerce-page #secondary {
+	margin: 100px 0;
+}
+
 .woocommerce div.product form.cart .variations label {
 	color: #313131;
 	font-family: "Open Sans", Helvetica Neue, Sans-serif;

@@ -39,7 +39,7 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
 		 * hard-coded <title> tag in the document head, and expect WordPress to
-         * provide it for us.
+		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
 
@@ -228,6 +228,19 @@ function azera_shop_widgets_init() {
 		)
 	);
 
+	if ( class_exists( 'WooCommerce' ) ) {
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'WooCommerce Sidebar', 'azera-shop' ),
+				'id'            => 'sidebar-woocommerce',
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => apply_filters( 'azera_shop_widgets_before_title','<h2 class="widget-title">' ),
+				'after_title'   => apply_filters( 'azera_shop_widgets_after_title','</h2><div class="colored-line-left"></div><div class="clearfix widget-title-margin"></div>' ),
+			)
+		);
+	}
+
 	register_sidebars(
 		4,
 		array(
@@ -298,8 +311,7 @@ function azera_shop_scripts() {
 
 		$azera_shop_cart_url = '';
 		if ( class_exists( 'WooCommerce' ) ) {
-			global $woocommerce;
-			$cart_url = $woocommerce->cart->get_cart_url();
+			$cart_url = wc_get_cart_url();
 			if ( ! empty( $cart_url ) ) {
 				$azera_shop_cart_url = $cart_url;
 			}
@@ -375,8 +387,8 @@ add_action( 'wp_head', 'azera_shop_ie' );
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-add_action( 'woocommerce_before_main_content', 'azera_shop_wrapper_start', 10 );
-add_action( 'woocommerce_after_main_content', 'azera_shop_wrapper_end', 10 );
+add_action( 'woocommerce_before_main_content', 'azera_shop_wrapper_start_trigger_shop_page', 10 );
+add_action( 'woocommerce_after_main_content', 'azera_shop_wrapper_end_shop_page', 10 );
 
 /**
  * Wrapper start for content.
@@ -399,12 +411,17 @@ function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	?>
 	<div class="content-wrap">
 	<div class="container <?php echo $class_to_add; ?>">
+	<?php
+	if ( azera_shop_woo_sidebar_position() && is_shop() ) {
+		azera_shop_display_woocommerce_sidebar();
+	}
+	?>
 	<div id="primary" class="content-area <?php echo esc_attr( $class ); ?>">
 	<?php
 }
 
 /**
- * Wraooer end for content.
+ * Wrapper end for content.
  *
  * @param bool $has_sidebar     if is sidebar then get sidebar.
  */
@@ -414,6 +431,65 @@ function azera_shop_wrapper_end( $has_sidebar = false ) {
 	<?php
 	if ( $has_sidebar == true ) {
 		get_sidebar();
+	}
+	?>
+	</div>
+	</div>
+	<?php
+}
+
+/**
+ * Display sidebar on shop page
+ *
+ * @since 1.1.11
+ */
+function azera_shop_display_woocommerce_sidebar() {
+	if ( is_active_sidebar( 'sidebar-woocommerce' ) ) {
+		get_sidebar( 'woocommerce' );
+	}
+}
+
+/**
+ * Choose the shop sidebar position
+ *
+ * @param bool $position - position of the woo sidebar, true - left/false - right.
+ *
+ * @return bool
+ */
+function azera_shop_woo_sidebar_position( $position = false ) {
+
+	$position = get_theme_mod( 'azera_shop_sidebar_woocommerce_position', 'false' );
+	if ( $position ) {
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Set wrapper width to col-md-8 instead of 12 if sidebar is active
+ *
+ * @since 1.1.11
+ */
+function azera_shop_wrapper_start_trigger_shop_page() {
+
+	if ( is_active_sidebar( 'sidebar-woocommerce' ) && is_shop() ) {
+		azera_shop_wrapper_start( 'col-md-8', false );
+	} else {
+		azera_shop_wrapper_start( 'col-md-12', false );
+	}
+}
+
+/**
+ * Display shop sidebar if is active
+ *
+ * @since 1.1.11
+ */
+function azera_shop_wrapper_end_shop_page() {
+	?>
+	</div>
+	<?php
+	if ( ! azera_shop_woo_sidebar_position() && is_shop() ) {
+		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
 	</div>
@@ -874,7 +950,7 @@ function azera_shop_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 
-	<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
+	<a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
 		<span class="fa fa-shopping-cart"></span>
 		<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 	</a>
@@ -1057,4 +1133,3 @@ function azera_shop_starter_content() {
 }
 add_action( 'after_setup_theme', 'azera_shop_starter_content' );
 
-/* I need fork for wraith */
