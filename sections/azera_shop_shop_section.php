@@ -76,7 +76,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 										if ( has_post_thumbnail( $loop->post->ID ) ) {
 											echo get_the_post_thumbnail( $loop->post->ID,'azera_shop_home_prod' );
 										} else {
-											echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />';
+											echo '<img src="' . wc_placeholder_img_src() . '" alt="Placeholder" />';
 										}
 										?>
 									</div>

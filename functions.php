@@ -311,8 +311,7 @@ function azera_shop_scripts() {
 
 		$azera_shop_cart_url = '';
 		if ( class_exists( 'WooCommerce' ) ) {
-			global $woocommerce;
-			$cart_url = $woocommerce->cart->get_cart_url();
+			$cart_url = wc_get_cart_url();
 			if ( ! empty( $cart_url ) ) {
 				$azera_shop_cart_url = $cart_url;
 			}
@@ -413,7 +412,7 @@ function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	<div class="content-wrap">
 	<div class="container <?php echo $class_to_add; ?>">
 	<?php
-	if ( azera_shop_woo_sidebar_position() ) {
+	if ( azera_shop_woo_sidebar_position() && is_shop() ) {
 		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
@@ -473,7 +472,7 @@ function azera_shop_woo_sidebar_position( $position = false ) {
  */
 function azera_shop_wrapper_start_trigger_shop_page() {
 
-	if ( is_active_sidebar( 'sidebar-woocommerce' ) ) {
+	if ( is_active_sidebar( 'sidebar-woocommerce' ) && is_shop() ) {
 		azera_shop_wrapper_start( 'col-md-8', false );
 	} else {
 		azera_shop_wrapper_start( 'col-md-12', false );
@@ -489,7 +488,7 @@ function azera_shop_wrapper_end_shop_page() {
 	?>
 	</div>
 	<?php
-	if ( ! azera_shop_woo_sidebar_position() ) {
+	if ( ! azera_shop_woo_sidebar_position() && is_shop() ) {
 		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
@@ -951,7 +950,7 @@ function azera_shop_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 
-	<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
+	<a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','azera-shop' ); ?>" class="cart-contents">
 		<span class="fa fa-shopping-cart"></span>
 		<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 	</a>
