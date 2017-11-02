@@ -125,7 +125,6 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 		</div>
 	</div>
 	</div>
-	
 	</div><!-- .header-section-inner-wrap -->
 
 	<?php

@@ -13,7 +13,7 @@ get_header();
 
 azera_shop_top_single_post_trigger();
 
-azera_shop_wrapper_start( $class_to_add , false ); ?>
+azera_shop_wrapper_start( $class_to_add, false ); ?>
 
 	<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 

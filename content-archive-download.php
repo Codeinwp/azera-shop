@@ -20,7 +20,6 @@
 				?>
 			</a>
 		</div>
-		
 
 		<div itemprop="description" class="edd_download_excerpt">
 			<?php the_excerpt(); ?>

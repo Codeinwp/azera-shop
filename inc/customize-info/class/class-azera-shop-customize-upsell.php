@@ -79,9 +79,9 @@ final class Azera_Shop_Customizer_Upsell {
 			$manager->add_section(
 				new Azera_Shop_Customizer_Upsell_Frontpage_Sections(
 					$manager, 'azera-shop-frontpage-instructions', array(
-						'upsell_text'               => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Static Front Page and under "Static Front Page" select "A static page". Finally, for "Front page" choose the page you previously created.','azera-shop' ) . '<br><br>' . __( 'Need further informations? Check this','azera-shop' ) . ' <a href="http://docs.themeisle.com/article/312-azera-documentation">' . __( 'doc','azera-shop' ) . '</a>',
-						'panel'                     => 'azera_shop_front_page_sections',
-						'priority'                  => 0,
+						'upsell_text' => __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Static Front Page and under "Static Front Page" select "A static page". Finally, for "Front page" choose the page you previously created.', 'azera-shop' ) . '<br><br>' . __( 'Need further informations? Check this', 'azera-shop' ) . ' <a href="http://docs.themeisle.com/article/312-azera-documentation">' . __( 'doc', 'azera-shop' ) . '</a>',
+						'panel'       => 'azera_shop_front_page_sections',
+						'priority'    => 0,
 					)
 				)
 			);
@@ -92,10 +92,10 @@ final class Azera_Shop_Customizer_Upsell {
 				new Azera_Shop_Customizer_Upsell_Frontpage_Sections(
 					$manager, 'azera-shop-order-upsell', array(
 						/* translators: Upsell link */
-						'upsell_text'               => sprintf( esc_html__( 'Check out the %1$s for full control over the frontpage SECTIONS ORDER!', 'azera-shop' ), sprintf( '<a href="%1$s" target="_blank"><b>%2$s</b></a>', esc_url( 'https://themeisle.com/plugins/azera-shop-plus/' ), esc_html__( 'PRO version', 'azera-shop' ) ) ),
-						'panel'                     => 'azera_shop_front_page_sections',
-						'priority'                  => 500,
-						'active_callback'   => 'azera_shop_show_on_front',
+						'upsell_text'     => sprintf( esc_html__( 'Check out the %1$s for full control over the frontpage SECTIONS ORDER!', 'azera-shop' ), sprintf( '<a href="%1$s" target="_blank"><b>%2$s</b></a>', esc_url( 'https://themeisle.com/plugins/azera-shop-plus/' ), esc_html__( 'PRO version', 'azera-shop' ) ) ),
+						'panel'           => 'azera_shop_front_page_sections',
+						'priority'        => 500,
+						'active_callback' => 'azera_shop_show_on_front',
 					)
 				)
 			);
@@ -104,9 +104,9 @@ final class Azera_Shop_Customizer_Upsell {
 				new Azera_Shop_Customizer_Upsell_Frontpage_Sections(
 					$manager, 'azera-shop-view-pro', array(
 						'upsell_title' => __( 'View PRO version', 'azera-shop' ),
-						'upsell_url' => 'https://themeisle.com/plugins/azera-shop-plus/',
-						'upsell_text' => __( 'Get it', 'azera-shop' ),
-						'priority'                  => 500,
+						'upsell_url'   => 'https://themeisle.com/plugins/azera-shop-plus/',
+						'upsell_text'  => __( 'Get it', 'azera-shop' ),
+						'priority'     => 500,
 					)
 				)
 			);

@@ -79,7 +79,7 @@ endif;
 		endforeach;
 	endif;
 	if ( $nr_actions_required == 0 ) :
-		echo '<p>' . __( 'Hooray! There are no required actions for you right now.','azera-shop' ) . '</p>';
+		echo '<p>' . __( 'Hooray! There are no required actions for you right now.', 'azera-shop' ) . '</p>';
 	endif;
 	?>
 

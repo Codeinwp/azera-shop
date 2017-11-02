@@ -231,4 +231,4 @@ function azera_shop_category_transient_flusher() {
 	delete_transient( 'azera_shop_categories' );
 }
 add_action( 'edit_category', 'azera_shop_category_transient_flusher' );
-add_action( 'save_post',     'azera_shop_category_transient_flusher' );
+add_action( 'save_post', 'azera_shop_category_transient_flusher' );

@@ -43,7 +43,8 @@ class Azera_Shop_Woocommerce_Categories extends WP_Customize_Control {
 		$hierarchical = 1;      // 1 for yes, 0 for no
 		$title        = '';
 		$empty        = 0;
-		$args = array(
+
+		$args           = array(
 			'taxonomy'     => $taxonomy,
 			'orderby'      => $orderby,
 			'show_count'   => $show_count,
@@ -54,11 +55,11 @@ class Azera_Shop_Woocommerce_Categories extends WP_Customize_Control {
 		);
 		$all_categories = get_categories( $args );
 		echo '<select class="azera_shop_cat_select">';
-		echo '<option class="main-cat" ' . selected( $this->value(),'all' ) . ' value="all">' . esc_html__( 'All Categories','azera-shop' ) . '</option>';
+		echo '<option class="main-cat" ' . selected( $this->value(), 'all' ) . ' value="all">' . esc_html__( 'All Categories', 'azera-shop' ) . '</option>';
 		foreach ( $all_categories as $cat ) {
 			if ( $cat->category_parent == 0 ) {
 				$category_id = $cat->term_id;
-				echo '<option ' . selected( $this->value(),$cat->slug ) . ' class="main-cat" value="' . $cat->slug . '">' . $cat->name . '</option>';
+				echo '<option ' . selected( $this->value(), $cat->slug ) . ' class="main-cat" value="' . $cat->slug . '">' . $cat->name . '</option>';
 				$args2 = array(
 					'taxonomy'     => $taxonomy,
 					'child_of'     => 0,
@@ -70,10 +71,11 @@ class Azera_Shop_Woocommerce_Categories extends WP_Customize_Control {
 					'title_li'     => $title,
 					'hide_empty'   => $empty,
 				);
+
 				$sub_cats = get_categories( $args2 );
 				if ( $sub_cats ) {
 					foreach ( $sub_cats as $sub_category ) {
-						echo '<option ' . selected( $this->value(),$cat->slug ) . ' value="' . $cat->slug . '">' . $sub_category->name . '</option>';
+						echo '<option ' . selected( $this->value(), $cat->slug ) . ' value="' . $cat->slug . '">' . $sub_category->name . '</option>';
 					}
 				}
 			}

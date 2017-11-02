@@ -12,9 +12,9 @@
 
 	<div class="azera-shop-tab-pane-half azera-shop-tab-pane-first-half">
 
-		<p><strong><?php esc_html_e( 'Found a bug? Want to contribute with a fix or create a new feature?','azera-shop' ); ?></strong></p>
+		<p><strong><?php esc_html_e( 'Found a bug? Want to contribute with a fix or create a new feature?', 'azera-shop' ); ?></strong></p>
 
-		<p><?php esc_html_e( 'GitHub is the place to go!','azera-shop' ); ?></p>
+		<p><?php esc_html_e( 'GitHub is the place to go!', 'azera-shop' ); ?></p>
 
 		<p>
 			<a href="https://github.com/Codeinwp/azera-shop/" class="github-button button button-primary"><?php esc_html_e( 'Azera Shop on GitHub', 'azera-shop' ); ?></a>
