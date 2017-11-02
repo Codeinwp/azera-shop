@@ -13,10 +13,10 @@ azera_shop_wrapper_start( 'col-md-8 post-list', true );
 echo '<main';
 
 if ( have_posts() ) {
-	echo 'itemscope itemtype="http://schema.org/Blog"';
+	echo ' itemscope itemtype="http://schema.org/Blog"';
 }
 
-echo 'id="main" class="site-main" role="main">';
+echo ' id="main" class="site-main" role="main">';
 
 if ( have_posts() ) : ?>
 
