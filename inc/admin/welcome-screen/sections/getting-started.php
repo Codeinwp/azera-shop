@@ -22,7 +22,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<?php endif; ?>
 		</h1>
 
-		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','azera-shop' ); ?></p>
+		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.', 'azera-shop' ); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Azera Shop and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Azera Shop, as much as we enjoy creating great products.', 'azera-shop' ); ?>
 
 	</div>

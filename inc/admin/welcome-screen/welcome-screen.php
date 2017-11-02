@@ -99,7 +99,7 @@ class azera_shop_Welcome {
 					'nr_actions_required' => $nr_actions_required,
 					'ajaxurl' => admin_url( 'admin-ajax.php' ),
 					'template_directory' => get_template_directory_uri(),
-					'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.','azera-shop' ),
+					'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.', 'azera-shop' ),
 				)
 			);
 		}
@@ -182,11 +182,11 @@ class azera_shop_Welcome {
 		?>
 
 		<ul class="azera-shop-nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','azera-shop' ); ?></a></li>
-			<li role="presentation" class="azera-shop-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions recommended','azera-shop' ); ?></a></li>
-			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','azera-shop' ); ?></a></li>
-			<li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab"><?php esc_html_e( 'Support','azera-shop' ); ?></a></li>
-			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Change log','azera-shop' ); ?></a></li>
+			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started', 'azera-shop' ); ?></a></li>
+			<li role="presentation" class="azera-shop-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions recommended', 'azera-shop' ); ?></a></li>
+			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute', 'azera-shop' ); ?></a></li>
+			<li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab"><?php esc_html_e( 'Support', 'azera-shop' ); ?></a></li>
+			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Change log', 'azera-shop' ); ?></a></li>
 		</ul>
 
 		<div class="azera-shop-tab-content">

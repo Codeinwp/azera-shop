@@ -23,7 +23,7 @@ if ( ! function_exists( 'azera_shop_sanitize_repeater' ) ) {
 	 * @param string $input Control input in json format.
 	 */
 	function azera_shop_sanitize_repeater( $input ) {
-		$input_decoded = json_decode( $input,true );
+		$input_decoded = json_decode( $input, true );
 
 		if ( ! empty( $input_decoded ) ) {
 			foreach ( $input_decoded as $boxk => $box ) {

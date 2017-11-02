@@ -12,38 +12,36 @@
  */
 
 get_header();
-azera_shop_wrapper_start( 'col-md-8', false ); ?>
+azera_shop_wrapper_start( 'col-md-8', false );
 
-	<main 
+echo '<main';
+if ( have_posts() ) {
+	echo 'itemscope itemtype="http://schema.org/Blog"';}
+echo 'id="main" class="site-main" role="main">';
+
+if ( have_posts() ) : ?>
+
+	<?php ;/* Start the Loop */ ?>
 	<?php
-	if ( have_posts() ) {
-		echo 'itemscope itemtype="http://schema.org/Blog"';}
-?>
- id="main" class="site-main" role="main">
+	while ( have_posts() ) :
+		the_post();
+		?>
 
-		<?php if ( have_posts() ) : ?>
+		<?php
+		get_template_part( 'content' );
+		?>
 
-			<?php ;/* Start the Loop */ ?>
-			<?php
-			while ( have_posts() ) :
-				the_post();
-?>
+	<?php endwhile; ?>
 
-				<?php
-				get_template_part( 'content' );
-				?>
+	<?php the_posts_navigation(); ?>
 
-			<?php endwhile; ?>
+<?php else : ?>
 
-			<?php the_posts_navigation(); ?>
+	<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php else : ?>
+<?php endif; ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 azera_shop_wrapper_end( true );
