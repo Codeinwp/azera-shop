@@ -1,13 +1,14 @@
 
-### 1.1.12 - 02/11/2017
-**Changes:** 
-- Development
 
-### 1.1.11 - 02/11/2017
-**Changes:** 
-- New WooCommerce Sidebar for the Shop page
-- Fixed compatibility issues with latest WooCommerce release
-
+### 1.1.12 - 02/11/2017
+
+**Changes:** 
+
+- New WooCommerce Sidebar for the Shop page
+
+- Fixed compatibility issues with latest WooCommerce release
+
+
 
 ### 1.1.10 - 03/08/2017
 
