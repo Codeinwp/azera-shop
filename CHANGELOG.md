@@ -1,4 +1,8 @@
 
+### 1.1.12 - 02/11/2017
+**Changes:** 
+- Development
+
 ### 1.1.11 - 02/11/2017
 **Changes:** 
 - New WooCommerce Sidebar for the Shop page
