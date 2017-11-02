@@ -12,9 +12,9 @@ azera_shop_wrapper_start();
 
 echo '<main';
 if ( have_posts() ) {
-	echo 'itemscope itemtype="http://schema.org/Blog"';
+	echo ' itemscope itemtype="http://schema.org/Blog"';
 }
-echo 'id="main" class="site-main" role="main">';
+echo ' id="main" class="site-main" role="main">';
 
 if ( have_posts() ) : ?>
 

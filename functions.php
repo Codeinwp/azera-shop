@@ -411,7 +411,7 @@ function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	<div class="content-wrap">
 	<div class="container <?php echo $class_to_add; ?>">
 	<?php
-	if ( azera_shop_woo_sidebar_position() && is_shop() ) {
+	if ( azera_shop_woo_sidebar_position() && function_exists( 'is_shop' ) && is_shop() ) {
 		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
@@ -471,7 +471,7 @@ function azera_shop_woo_sidebar_position( $position = false ) {
  */
 function azera_shop_wrapper_start_trigger_shop_page() {
 
-	if ( is_active_sidebar( 'sidebar-woocommerce' ) && is_shop() ) {
+	if ( is_active_sidebar( 'sidebar-woocommerce' ) && function_exists( 'is_shop' ) && is_shop() ) {
 		azera_shop_wrapper_start( 'col-md-8', false );
 	} else {
 		azera_shop_wrapper_start( 'col-md-12', false );
@@ -487,7 +487,7 @@ function azera_shop_wrapper_end_shop_page() {
 	?>
 	</div>
 	<?php
-	if ( ! azera_shop_woo_sidebar_position() && is_shop() ) {
+	if ( ! azera_shop_woo_sidebar_position() && function_exists( 'is_shop' ) && is_shop() ) {
 		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
