@@ -1,5 +1,11 @@
 <?php
 /**
+ * Notification class used for notification of retirement in customizer
+ *
+ * @package azera-shop
+ */
+
+/**
  * Class Ti_Notify
  */
 class Ti_Notify extends WP_Customize_Section {
@@ -11,16 +17,24 @@ class Ti_Notify extends WP_Customize_Section {
      * @var    string
      */
     public $type = 'ti-notify';
+
+    /**
+     * Text.
+     *
+     * @since  1.1.13
+     * @access public
+     * @var    string
+     */
     public $text = '';
     /**
      * Add custom parameters to pass to the JS via JSON.
      *
      * @since  1.1.13
      * @access public
-     * @return void
+     * @return json
      */
     public function json() {
-        $json = parent::json();
+        $json         = parent::json();
         $json['text'] = $this->text;
         return $json;
     }
@@ -31,7 +45,8 @@ class Ti_Notify extends WP_Customize_Section {
      * @access public
      * @return void
      */
-    protected function render_template() { ?>
+    protected function render_template() {
+ ?>
         <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
             <h3 class="accordion-section-title">
 				<span class="section-title">

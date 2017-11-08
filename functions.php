@@ -1163,17 +1163,19 @@ function azera_shop_customize_register_notification( $wp_customize ) {
             'ti-notify',
             array(
                 /* translators: Link to the recommended theme */
-                'text'     => sprintf( __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.','azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) ),
+                'text'     => sprintf( __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) ),
                 'priority' => 0,
             )
         )
     );
-    $wp_customize->add_setting( 'azera-shop-notify') ;
-    $wp_customize->add_control( 'azera-shop-notify', array(
-        'label'    => __( 'Notification', 'azera-shop' ),
-        'section'  => 'ti-notify',
-        'priority' => 1,
-    ) );
+    $wp_customize->add_setting( 'azera-shop-notify' );
+    $wp_customize->add_control(
+        'azera-shop-notify', array(
+			'label'    => __( 'Notification', 'azera-shop' ),
+			'section'  => 'ti-notify',
+			'priority' => 1,
+        )
+    );
 }
 add_action( 'customize_register', 'azera_shop_customize_register_notification' );
 
@@ -1184,7 +1186,7 @@ function azera_shop_admin_notice() {
     global $pagenow;
     if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
         echo '<div class="updated notice is-dismissible"><p>';
-        printf( /* translators: link to the recommended theme */ __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.','azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) );
+        printf( /* translators: link to the recommended theme */ __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) );
         echo '</p></div>';
     }
 }
