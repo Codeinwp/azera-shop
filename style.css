@@ -2387,7 +2387,7 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce ul.products li.product a:nth-child(1),
-.woocommerce .products .product a:nth-child(1) {
+.woocommerce .products .product.type-product a:nth-child(1) {
 	float: left;
 	position: relative;
 	width: 100%;
@@ -2530,15 +2530,6 @@ div.wpcf7-mail-sent-ng {
 	float: left;
 	width: 100%;
 	margin-top: 25px;
-}
-
-.woocommerce h2:after {
-	display: block;
-	width: 80px;
-	height: 2px;
-	margin-top: 5px;
-	background: #ececec;
-	content: "";
 }
 
 .woocommerce h2 {
