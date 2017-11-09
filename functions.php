@@ -1148,3 +1148,49 @@ function azera_shop_starter_content() {
 }
 add_action( 'after_setup_theme', 'azera_shop_starter_content' );
 
+/**
+ * Notice in Customize to announce the theme is not maintained anymore
+ */
+function azera_shop_customize_register_notification( $wp_customize ) {
+
+    require_once( 'inc/class/class-ti-notify.php' );
+
+    $wp_customize->register_section_type( 'Ti_Notify' );
+
+    $wp_customize->add_section(
+        new Ti_Notify(
+            $wp_customize,
+            'ti-notify',
+            array(
+                /* translators: Link to the recommended theme */
+                'text'     => sprintf( __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' ) ),
+                'priority' => 0,
+            )
+        )
+    );
+    $wp_customize->add_setting( 'azera-shop-notify', array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control(
+        'azera-shop-notify', array(
+			'label'    => __( 'Notification', 'azera-shop' ),
+			'section'  => 'ti-notify',
+			'priority' => 1,
+        )
+    );
+}
+add_action( 'customize_register', 'azera_shop_customize_register_notification' );
+
+/**
+ * Notice in admin dashboard to announce the theme is not maintained anymore
+ */
+function azera_shop_admin_notice() {
+    global $pagenow;
+    if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
+        echo '<div class="updated notice is-dismissible"><p>';
+        printf( /* translators: link to the recommended theme */ __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' ) );
+        echo '</p></div>';
+    }
+}
+add_action( 'admin_notices', 'azera_shop_admin_notice', 99 );
+
