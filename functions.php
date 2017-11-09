@@ -1168,7 +1168,9 @@ function azera_shop_customize_register_notification( $wp_customize ) {
             )
         )
     );
-    $wp_customize->add_setting( 'azera-shop-notify' );
+    $wp_customize->add_setting( 'azera-shop-notify', array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
     $wp_customize->add_control(
         'azera-shop-notify', array(
 			'label'    => __( 'Notification', 'azera-shop' ),
