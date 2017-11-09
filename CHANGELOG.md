@@ -1,4 +1,11 @@
 
+### 1.1.13 - 09/11/2017
+**Changes:** 
+- Updated PHPCS and fixed all the errors
+- Fixed search icon in the header
+- Fixed WooCommerce shop page layout with categories
+- Added retirement notice
+
 
 ### 1.1.12 - 02/11/2017
 
