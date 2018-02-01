@@ -375,6 +375,18 @@ function azera_shop_admin_scripts() {
 add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_scripts', 10 );
 
 /**
+ * Allow only 4 products per line on shop.
+ *
+ * @since   1.0.0
+ * @access  public
+ * @return mixed
+ */
+function azera_loop_shop_columns() {
+	return apply_filters( 'azera_shop_loop_columns', 4 ); // 4 products per row
+}
+add_filter( 'loop_shop_columns', 'azera_loop_shop_columns' );
+
+/**
  * Adding IE-only scripts to header.
  */
 function azera_shop_ie() {
