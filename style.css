@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/azera-shop/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Azera Shop is an elegant free WooCommerce WordPress theme, perfect for building an one page online store. Azera Shop is ecommerce ( Woo Commerce ) Compatible, WPML, RTL,Photo Gallery Grid, Contact Form 7, Meta Slider,SiteOrigin Page Builder, SEO Friendly and with parallax effect, full screen image is one of the best e-commerce themes and a good storefront alternative. The flat and simple design based on bootstrap template can work great for any business / startup, blog or photography site.
-Version: 1.1.9
+Version: 1.1.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azera-shop
@@ -354,6 +354,10 @@ strong,
 	color: #666;
 	font-family: "Open Sans", Helvetica Neue, Sans-serif;
 	font-size: 16px !important;
+}
+
+.bypostauthor {
+	position: static;
 }
 
 
@@ -1463,7 +1467,6 @@ Search form Header
 	width: 33px;
 	color: #999;
 	font: normal normal normal 14px/1 FontAwesome;
-	font-family: "Glyphicons Halflings";
 	font-size: inherit;
 	font-weight: 400;
 	font-style: normal;
@@ -2384,7 +2387,7 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce ul.products li.product a:nth-child(1),
-.woocommerce .products .product a:nth-child(1) {
+.woocommerce .products .product.type-product a:nth-child(1) {
 	float: left;
 	position: relative;
 	width: 100%;
@@ -2527,15 +2530,6 @@ div.wpcf7-mail-sent-ng {
 	float: left;
 	width: 100%;
 	margin-top: 25px;
-}
-
-.woocommerce h2:after {
-	display: block;
-	width: 80px;
-	height: 2px;
-	margin-top: 5px;
-	background: #ececec;
-	content: "";
 }
 
 .woocommerce h2 {
@@ -3243,6 +3237,10 @@ div.wpcf7-mail-sent-ng {
 .woocommerce-page #primary {
 	padding-right: 0;
 	padding-left: 0;
+}
+
+.woocommerce-page #secondary {
+	margin: 100px 0;
 }
 
 .woocommerce div.product form.cart .variations label {

@@ -12,29 +12,37 @@
  */
 
 get_header();
-azera_shop_wrapper_start( 'col-md-8 post-list', true ); ?>
+azera_shop_wrapper_start( 'col-md-8 post-list', true );
 
-	<main <?php if ( have_posts() ) { echo 'itemscope itemtype="http://schema.org/Blog"';} ?> id="main" class="site-main" role="main">
+echo '<main';
+if ( have_posts() ) {
+	echo ' itemscope itemtype="http://schema.org/Blog"';
+}
+echo ' id="main" class="site-main" role="main">';
 
-		<?php if ( have_posts() ) : ?>
+if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php ;/* Start the Loop */ ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 
-				<?php
-				get_template_part( 'content' ); ?>
+		<?php
+		get_template_part( 'content' );
+		?>
 
-			<?php endwhile; ?>
+	<?php endwhile; ?>
 
-			<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
+	<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
 
-		<?php else : ?>
+<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+	<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; ?>
+<?php endif; ?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 azera_shop_wrapper_end( true );

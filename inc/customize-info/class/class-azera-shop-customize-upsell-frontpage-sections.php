@@ -57,10 +57,10 @@ class Azera_Shop_Customizer_Upsell_Frontpage_Sections extends WP_Customize_Secti
 	 * @return array
 	 */
 	public function json() {
-		$json = parent::json();
-		$json['upsell_text']                = wp_kses_post( $this->upsell_text );
-		$json['upsell_title']                = wp_kses_post( $this->upsell_title );
-		$json['upsell_url']                = esc_url( $this->upsell_url );
+		$json                 = parent::json();
+		$json['upsell_text']  = wp_kses_post( $this->upsell_text );
+		$json['upsell_title'] = wp_kses_post( $this->upsell_title );
+		$json['upsell_url']   = esc_url( $this->upsell_url );
 		return $json;
 	}
 

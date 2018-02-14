@@ -48,14 +48,14 @@ function azera_shop_after_footer_trigger() {
  * Post date box - on content-search
  */
 function azera_shop_post_date_search_box_trigger() {
-	do_action( 'azera_shop_post_date_box','post-date' );
+	do_action( 'azera_shop_post_date_box', 'post-date' );
 }
 
 /**
  * Post date box - on index
  */
 function azera_shop_post_date_index_box_trigger() {
-	do_action( 'azera_shop_post_date_box','post-date entry-published updated' );
+	do_action( 'azera_shop_post_date_box', 'post-date entry-published updated' );
 }
 
 /**

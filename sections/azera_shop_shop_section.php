@@ -7,12 +7,12 @@
 
 if ( class_exists( 'WooCommerce' ) ) {
 
-	$azera_shop_shop_section_title = get_theme_mod( 'azera_shop_shop_section_title', esc_html__( 'Shop','azera-shop' ) );
-	$azera_shop_shop_section_subtitle = get_theme_mod( 'azera_shop_shop_section_subtitle', esc_html__( 'Showcase your work effectively and in an attractive form that your prospective clients will love.','azera-shop' ) );
-	$nb_of_products = get_theme_mod( 'azera_shop_number_of_products',3 );
-	$cat = get_theme_mod( 'azera_shop_woocomerce_categories','all' );
+	$azera_shop_shop_section_title    = get_theme_mod( 'azera_shop_shop_section_title', esc_html__( 'Shop', 'azera-shop' ) );
+	$azera_shop_shop_section_subtitle = get_theme_mod( 'azera_shop_shop_section_subtitle', esc_html__( 'Showcase your work effectively and in an attractive form that your prospective clients will love.', 'azera-shop' ) );
+	$nb_of_products                   = get_theme_mod( 'azera_shop_number_of_products', 3 );
+	$cat                              = get_theme_mod( 'azera_shop_woocomerce_categories', 'all' );
 ?>
-<section class="shop" id="shop" role="region" aria-label="<?php esc_html_e( 'Shop','azera-shop' ); ?>">
+<section class="shop" id="shop" role="region" aria-label="<?php esc_html_e( 'Shop', 'azera-shop' ); ?>">
 	<div class="section-overlay-layer">
 		<div class="container">
 
@@ -46,25 +46,27 @@ if ( class_exists( 'WooCommerce' ) ) {
 						<?php
 						if ( $cat == 'all' ) {
 							$args = array(
-								'post_type' => 'product',
-								'stock' => 1,
+								'post_type'      => 'product',
+								'stock'          => 1,
 								'posts_per_page' => $nb_of_products,
-								'orderby' => 'date',
-								'order' => 'DESC',
+								'orderby'        => 'date',
+								'order'          => 'DESC',
 							);
 						} else {
 							$args = array(
-								'post_type' => 'product',
-								'stock' => 1,
+								'post_type'      => 'product',
+								'stock'          => 1,
 								'posts_per_page' => $nb_of_products,
-								'orderby' => 'date',
-								'order' => 'DESC',
-								'product_cat' => $cat,
+								'orderby'        => 'date',
+								'order'          => 'DESC',
+								'product_cat'    => $cat,
 							);
 						}
 						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post();
-							global $product; ?>
+						while ( $loop->have_posts() ) :
+							$loop->the_post();
+							global $product;
+							?>
 
 							<div class="col-md-4 col-sm-6 home-shop-product-wrap-all">
 
@@ -72,8 +74,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 									<div class="home-shop-product-img">
 										<?php
 										if ( has_post_thumbnail( $loop->post->ID ) ) {
-											echo get_the_post_thumbnail( $loop->post->ID,'azera_shop_home_prod' );
-										} else { 											echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="Placeholder" />';
+											echo get_the_post_thumbnail( $loop->post->ID, 'azera_shop_home_prod' );
+										} else {
+											echo '<img src="' . wc_placeholder_img_src() . '" alt="Placeholder" />';
 										}
 										?>
 									</div>

@@ -9,9 +9,13 @@ $azera_shop_header_logo        = get_theme_mod( 'azera_shop_header_logo' );
 $azera_website_name            = get_bloginfo( 'name', 'display' );
 $azera_website_description     = get_bloginfo( 'description' );
 $azera_shop_header_title       = get_theme_mod( 'azera_shop_header_title', $azera_website_name );
+$azera_shop_header_title       = apply_filters( 'azera_shop_translate_single_string', $azera_shop_header_title, 'Big Title Section' );
 $azera_shop_header_subtitle    = get_theme_mod( 'azera_shop_header_subtitle', $azera_website_description );
+$azera_shop_header_subtitle    = apply_filters( 'azera_shop_translate_single_string', $azera_shop_header_subtitle, 'Big Title Section' );
 $azera_shop_header_button_text = get_theme_mod( 'azera_shop_header_button_text', esc_html__( 'GET STARTED', 'azera-shop' ) );
+$azera_shop_header_button_text = apply_filters( 'azera_shop_translate_single_string', $azera_shop_header_button_text, 'Big Title Section' );
 $azera_shop_header_button_link = get_theme_mod( 'azera_shop_header_button_link', '#' );
+$azera_shop_header_button_link = apply_filters( 'azera_shop_translate_single_string', $azera_shop_header_button_link, 'Big Title Section' );
 $azera_shop_enable_move        = get_theme_mod( 'azera_shop_enable_move' );
 $azera_shop_first_layer        = get_theme_mod( 'azera_shop_first_layer', azera_shop_get_file( '/images/background1.png' ) );
 $azera_shop_second_layer       = get_theme_mod( 'azera_shop_second_layer', azera_shop_get_file( '/images/background2.png' ) );
@@ -63,7 +67,8 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 				echo '<div id="azera_only_logo" class="navbar-header"><img src="" alt=""></div>';
 				echo '</div>';
 				echo '</div>';
-			} ?>
+			}
+			?>
 			<div class="row">
 				<?php
 				if ( ! empty( $azera_shop_header_layout ) && ( $azera_shop_header_layout == 'layout2' ) ) {
@@ -75,7 +80,8 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 
 				<!-- HEADING AND BUTTONS -->
 				<?php
-				if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle ) || ! empty( $azera_shop_header_button_text ) ) { ?>
+				if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle ) || ! empty( $azera_shop_header_button_text ) ) {
+				?>
 					<div id="intro-section" class="intro-section">
 
 						<!-- WELCOM MESSAGE -->
@@ -119,7 +125,6 @@ if ( ! empty( $azera_shop_header_title ) || ! empty( $azera_shop_header_subtitle
 		</div>
 	</div>
 	</div>
-	
 	</div><!-- .header-section-inner-wrap -->
 
 	<?php

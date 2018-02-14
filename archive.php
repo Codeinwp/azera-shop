@@ -8,36 +8,46 @@
  */
 
 get_header();
-azera_shop_wrapper_start( 'col-md-8 post-list', true ); ?>
+azera_shop_wrapper_start( 'col-md-8 post-list', true );
 
-	<main <?php if ( have_posts() ) { echo 'itemscope itemtype="http://schema.org/Blog"';} ?> id="main" class="site-main" role="main">
+echo '<main';
 
-		<?php if ( have_posts() ) : ?>
+if ( have_posts() ) {
+	echo ' itemscope itemtype="http://schema.org/Blog"';
+}
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+echo ' id="main" class="site-main" role="main">';
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+if ( have_posts() ) : ?>
 
-				<?php
-				get_template_part( 'content' ); ?>
+	<header class="page-header">
+		<?php
+		the_archive_title( '<h1 class="page-title">', '</h1>' );
+		the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		?>
+	</header><!-- .page-header -->
 
-			<?php endwhile; ?>
+	<?php ;/* Start the Loop */ ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 
-			<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
+		<?php
+		get_template_part( 'content' );
+		?>
 
-		<?php else : ?>
+	<?php endwhile; ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+	<?php echo apply_filters( 'azera_shop_post_navigation_filter', get_the_posts_navigation() ); ?>
 
-		<?php endif; ?>
+<?php else : ?>
 
-	</main><!-- #main -->
+	<?php get_template_part( 'content', 'none' ); ?>
+
+<?php endif; ?>
+
+</main><!-- #main -->
 
 <?php
 azera_shop_wrapper_end( true );

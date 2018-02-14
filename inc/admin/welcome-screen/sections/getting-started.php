@@ -10,18 +10,19 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<div class="azera-shop-tab-pane-center">
 		<?php
-		$azera_shop_theme = wp_get_theme(); 
-		$azera_shop_version = $azera_shop_theme->get('Version'); ?>
+		$azera_shop_theme = wp_get_theme();
+		$azera_shop_version = $azera_shop_theme->get( 'Version' );
+		?>
 		<h1 class="azera-shop-welcome-title">
 			<?php printf( __( 'Welcome to %1$s!', 'azera-shop' ), $azera_shop_theme->get( 'Name' ) ); ?> 
-			<?php if( !empty( $azera_shop_version ) ): ?> 
+			<?php if ( ! empty( $azera_shop_version ) ) : ?> 
 				<sup id="azera-shop-theme-version">
 					<?php echo esc_attr( $azera_shop_version ); ?> 
 				</sup>
 			<?php endif; ?>
 		</h1>
 
-		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','azera-shop'); ?></p>
+		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.', 'azera-shop' ); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Azera Shop and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Azera Shop, as much as we enjoy creating great products.', 'azera-shop' ); ?>
 
 	</div>
@@ -89,7 +90,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<hr />
 
-	<?php if( current_user_can( 'activate_plugins' ) ){ ?> 
+	<?php if ( current_user_can( 'activate_plugins' ) ) { ?> 
 
 		<div class="azera-shop-tab-pane-center">
 			<h1><?php esc_html_e( 'Recommended plugins', 'azera-shop' ); ?></h1>
@@ -99,20 +100,20 @@ $customizer_url = admin_url() . 'customize.php' ;
 		
 			<!-- Azera Shop Companion -->
 			<h4><?php esc_html_e( 'Azera Shop Companion', 'azera-shop' ); ?></h4>
-			<p><?php printf(  __('The %1$s plugin is a simple, easy and in the same time quite powerful plugins that adds options for Our Services, Our Team and Testimonials sections on frontpage.', 'azera-shop' ), 'Azera Shop Companion' ); ?></p>
+			<p><?php printf( __( 'The %1$s plugin is a simple, easy and in the same time quite powerful plugins that adds options for Our Services, Our Team and Testimonials sections on frontpage.', 'azera-shop' ), 'Azera Shop Companion' ); ?></p>
 
 			<?php if ( is_plugin_active( 'azera-shop-companion/azera-shop-companion.php' ) ) { ?>
 
 					<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
 
 				<?php
-			}
-			else { ?>
+} else {
+?>
 
 					<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=azera-shop-companion' ), 'install-plugin_azera-shop-companion' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %1$s', 'azera-shop' ), 'Azera Shop Companion' ); ?></a></p>
 
 				<?php
-			}
+}
 			?>
 			<hr />
 
@@ -125,13 +126,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 					<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
 
 				<?php
-			}
-			else { ?>
+} else {
+?>
 
 					<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=intergeo-maps' ), 'install-plugin_intergeo-maps' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Intergeo Maps', 'azera-shop' ); ?></a></p>
 
 				<?php
-			}
+}
 
 			?>
 		</div>
@@ -149,13 +150,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 					<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
 
 				<?php
-			}
-			else { ?>
+} else {
+?>
 
 					<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Pirate Forms', 'azera-shop' ); ?></a></p>
 
 				<?php
-			}
+}
 
 			?>
 
@@ -169,13 +170,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
 
 				<?php
-			}
-			else { ?>
+} else {
+?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=adblock-notify-by-bweb' ), 'install-plugin_adblock-notify-by-bweb' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'azera-shop' ); ?> Adblock Notify</a></p>
 
 				<?php
-			} 
+}
 			?>
 
 			<hr />
@@ -188,18 +189,18 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="azera-shop-w-activated button"><?php esc_html_e( 'Already activated', 'azera-shop' ); ?></span></p>
 
 				<?php
-			}
-			else { ?>
+} else {
+?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=feedzy-rss-feeds' ), 'install-plugin_feedzy-rss-feeds' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'azera-shop' ); ?> FEEDZY RSS Feeds</a></p>
 
 				<?php
-			}
+}
 			?>
 
 		</div>
 	<?php
-	}
+}
 	?>
 	<div class="azera-shop-clear"></div>
 

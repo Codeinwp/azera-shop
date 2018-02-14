@@ -7,11 +7,16 @@
  * @package azera-shop
  */
 get_header();
-azera_shop_wrapper_start(); ?>
 
-	<main <?php if ( have_posts() ) { echo 'itemscope itemtype="http://schema.org/Blog"';} ?> id="main" class="site-main" role="main">
+azera_shop_wrapper_start();
 
-		<?php if ( have_posts() ) : ?>
+echo '<main';
+if ( have_posts() ) {
+	echo ' itemscope itemtype="http://schema.org/Blog"';
+}
+echo ' id="main" class="site-main" role="main">';
+
+if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
@@ -20,8 +25,11 @@ azera_shop_wrapper_start(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php ;/* Start the Loop */ ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+?>
 				<?php
 
 					/**

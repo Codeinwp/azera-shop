@@ -16,22 +16,27 @@ if ( ! azera_shop_general_repeater_is_empty( $azera_shop_logos ) ) {
 				foreach ( $azera_shop_logos_decoded as $azera_shop_logo ) {
 					$image = ! empty( $azera_shop_logo->image_url ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_logo->image_url, 'Logos Section' ) : '';
 					$link  = ! empty( $azera_shop_logo->link ) ? apply_filters( 'azera_shop_translate_single_string', $azera_shop_logo->link, 'Logos Section' ) : '';
-					if ( ! empty( $image ) ) { ?>
+					if ( ! empty( $image ) ) {
+					?>
 						<li>
 							<?php
-							if ( ! empty( $link ) ) { ?>
+							if ( ! empty( $link ) ) {
+							?>
 								<a href="<?php echo esc_url( $link ); ?>" title="">
 									<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr__( 'Logo', 'azera-shop' ); ?>">
 								</a>
 								<?php
-							} else { ?>
+							} else {
+							?>
 								<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr__( 'Logo', 'azera-shop' ); ?>">
 								<?php
-							} ?>
+							}
+							?>
 						</li>
 						<?php
 					}
-				} ?>
+				}
+				?>
 			</ul>
 		</div>
 	</div>
