@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/azera-shop/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Azera Shop is an elegant free WooCommerce WordPress theme, perfect for building an one page online store. Azera Shop is ecommerce ( Woo Commerce ) Compatible, WPML, RTL,Photo Gallery Grid, Contact Form 7, Meta Slider,SiteOrigin Page Builder, SEO Friendly and with parallax effect, full screen image is one of the best e-commerce themes and a good storefront alternative. The flat and simple design based on bootstrap template can work great for any business / startup, blog or photography site.
-Version: 1.1.13
+Version: 1.1.14
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azera-shop
@@ -3387,6 +3387,112 @@ div.wpcf7-mail-sent-ng {
 	min-width: 30px;
 	background: #f7f8fa;
 }
+
+/* WooCommerce 3.3.1 */
+.woocommerce .products.columns-6 .azera_shop_grid_col_6,
+.woocommerce-page .products.columns-6 .azera_shop_grid_col_6 {
+	float: left;
+	width: 15%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+.woocommerce .products.columns-6 .azera_shop_grid_col_6:nth-of-type(6n+1),
+.woocommerce-page .products.columns-6 .azera_shop_grid_col_6:nth-of-type(6n+1) {
+	margin-left: 0;
+}
+.woocommerce .products.columns-6 .azera_shop_grid_col_6:nth-of-type(6n+6),
+.woocommerce-page .products.columns-6 .azera_shop_grid_col_6:nth-of-type(6n+6) {
+	margin-right: 0;
+}
+
+.woocommerce .products.columns-5 .azera_shop_grid_col_5,
+.woocommerce-page .products.columns-5 .azera_shop_grid_col_5 {
+	float: left;
+	width: 18%;
+	margin-left: 1.25%;
+	margin-right: 1.25%;
+}
+.woocommerce .products.columns-5 .azera_shop_grid_col_5:nth-of-type(5n+1),
+.woocommerce-page .products.columns-5 .azera_shop_grid_col_5:nth-of-type(5n+1) {
+	margin-left: 0;
+}
+.woocommerce .products.columns-5 .azera_shop_grid_col_5:nth-of-type(5n+5),
+.woocommerce-page .products.columns-5 .azera_shop_grid_col_5:nth-of-type(5n+5) {
+	margin-right: 0;
+}
+
+.woocommerce .products.columns-4 .azera_shop_grid_col_4,
+.woocommerce-page .products.columns-4 .azera_shop_grid_col_4 {
+	width: 22.5%;
+	margin-left: 1.66%;
+	margin-right: 1.66%;
+}
+.woocommerce .products.columns-4 .azera_shop_grid_col_4:nth-of-type(4n+1),
+.woocommerce-page .products.columns-4 .azera_shop_grid_col_4:nth-of-type(4n+1) {
+	margin-left: 0;
+}
+.woocommerce .products.columns-4 .azera_shop_grid_col_4:nth-of-type(4n+4),
+.woocommerce-page .products.columns-4 .azera_shop_grid_col_4:nth-of-type(4n+4) {
+	margin-right: 0;
+}
+
+.woocommerce .products.columns-3 .azera_shop_grid_col_3,
+.woocommerce-page .products.columns-3 .azera_shop_grid_col_3 {
+	width: 32%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+.woocommerce .products.columns-3 .azera_shop_grid_col_3:nth-of-type(3n+1),
+.woocommerce-page .products.columns-3 .azera_shop_grid_col_3:nth-of-type(3n+1) {
+	margin-left: 0;
+}
+.woocommerce .products.columns-3 .azera_shop_grid_col_3:nth-of-type(3n+3),
+.woocommerce-page .products.columns-3 .azera_shop_grid_col_3:nth-of-type(3n+3) {
+	margin-right: 0;
+}
+
+.woocommerce .products.columns-2 .azera_shop_grid_col_2,
+.woocommerce-page .products.columns-2 .azera_shop_grid_col_2 {
+	width: 48%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+.woocommerce .products.columns-2 .azera_shop_grid_col_2:nth-of-type(2n+1),
+.woocommerce-page .products.columns-2 .azera_shop_grid_col_2:nth-of-type(2n+1) {
+	margin-left: 0;
+}
+.woocommerce .products.columns-2 .azera_shop_grid_col_2:nth-of-type(2n+2),
+.woocommerce-page .products.columns-2 .azera_shop_grid_col_2:nth-of-type(2n+2) {
+	margin-right: 0;
+}
+
+.woocommerce .products.columns-1 .azera_shop_grid_col_1,
+.woocommerce-page .products.columns-1 .azera_shop_grid_col_1 {
+	width: 100%;
+}
+@media (max-width: 992px) {
+	.woocommerce .products.columns-1 .azera_shop_grid_col_2,
+	.woocommerce-page .products.columns-1 .azera_shop_grid_col_2 {
+		width: 100%;
+	}
+}
+@media (max-width: 750px) {
+	.woocommerce .products[class*="columns-"] .azera_shop_grid_col_2,
+	.woocommerce-page .products[class*="columns-"] .azera_shop_grid_col_2 {
+		width: 48%;
+	}
+	.woocommerce .products.columns-1 .azera_shop_grid_col_2,
+	.woocommerce-page .products.columns-1 .azera_shop_grid_col_2 {
+		width: 100%;
+	}
+}
+@media (max-width: 477px) {
+	.woocommerce .products[class*="columns-"] .azera_shop_grid_col_1,
+	.woocommerce-page .products[class*="columns-"] .azera_shop_grid_col_1 {
+		width: 100%;
+	}
+}
+/* End of WooCommerce 3.3.1 */
 
 
 /*---------------------------------------
