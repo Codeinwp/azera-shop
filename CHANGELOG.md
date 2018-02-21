@@ -1,4 +1,8 @@
 
+### 1.1.14 - 21/02/2018
+**Changes:** 
+- Fixed compatibility issues with WooCommerce 3.3
+
 ### 1.1.13 - 09/11/2017
 
 **Changes:** 
