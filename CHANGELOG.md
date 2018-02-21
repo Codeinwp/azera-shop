@@ -1,4 +1,29 @@
 
+### 1.1.9 - 10/05/2017
+**Changes:** 
+- Small fixes for the color control in customizer
+
+### 1.1.8 - 19/04/2017
+**Changes:** 
+- Improved compatibility with WPML and Polylang
+- Fixed issues with missing image in Testimonials and Our team sections
+- Update repeater control to fix issues in Mozilla Firefox
+
+### 1.1.7 - 07/04/2017
+**Changes:** 
+- Fixed compatibility issues with WooCommerce 3.0.0
+- Fixed grunt issues
+
+### 1.1.6 - 13/03/2017
+**Changes:** 
+- Added started content for new users
+- Fixed travis issues
+- Added a notification in Customize to suggest the Azera Shop Companion plugin
+
+### 1.1.5 - 18/01/2017
+**Changes:** 
+- Fixes for Azera Shop Plus plugin
+
 ### 1.1.2 - 15/12/2016
 **Changes:** 
 - Make theme ready for Plus version
