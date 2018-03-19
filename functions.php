@@ -525,8 +525,8 @@ function azera_shop_register_required_plugins() {
 			'required' => false,
 		),
 		array(
-			'name'     => 'Azera Shop Companion',
-			'slug'     => 'azera-shop-companion',
+			'name'     => 'Orbit Fox',
+			'slug'     => 'themeisle-companion',
 			'required' => false,
 		),
 	);
