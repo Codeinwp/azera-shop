@@ -167,10 +167,10 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 
 			$config_customizer = array(
 				'recommended_plugins'       => array(
-					'azera-shop-companion' => array(
+					'themeisle-companion' => array(
 						'recommended' => true,
 						/* translators: Theme companion install link */
-						'description' => sprintf( esc_html__( 'If you want to take full advantage of the options this theme has to offer, please install and activate %s', 'azera-shop' ), sprintf( '<strong>%s</strong>', 'Azera Shop Companion' ) ),
+						'description' => sprintf( esc_html__( 'If you want to take full advantage of the options this theme has to offer, please install and activate %s', 'azera-shop' ), sprintf( '<strong>%s</strong>', 'Orbit Fox' ) ),
 					),
 				),
 				'recommended_actions'       => array(),
@@ -525,8 +525,8 @@ function azera_shop_register_required_plugins() {
 			'required' => false,
 		),
 		array(
-			'name'     => 'Azera Shop Companion',
-			'slug'     => 'azera-shop-companion',
+			'name'     => 'Orbit Fox',
+			'slug'     => 'themeisle-companion',
 			'required' => false,
 		),
 	);
