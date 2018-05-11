@@ -2248,6 +2248,10 @@ div.wpcf7-mail-sent-ng {
 	height: 20px;
 }
 
+.woocommerce .comment-form p.stars {
+	padding-left: 100px;
+}
+
 .product .comment-form .star-rating span {
 	float: left;
 	overflow: hidden;
@@ -2255,7 +2259,7 @@ div.wpcf7-mail-sent-ng {
 	padding-top: 16px;
 }
 
-.product .comment-form .hreview-aggregate .star-rating {
+.product .comment-form .review-aggregate .star-rating {
 	margin: 10px 0 0 0;
 }
 
