@@ -1168,9 +1168,11 @@ function azera_shop_customize_register_notification( $wp_customize ) {
             )
         )
     );
-    $wp_customize->add_setting( 'azera-shop-notify', array(
-        'sanitize_callback' => 'sanitize_text_field',
-    ) );
+    $wp_customize->add_setting(
+        'azera-shop-notify', array(
+			'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
     $wp_customize->add_control(
         'azera-shop-notify', array(
 			'label'    => __( 'Notification', 'azera-shop' ),
@@ -1194,3 +1196,44 @@ function azera_shop_admin_notice() {
 }
 add_action( 'admin_notices', 'azera_shop_admin_notice', 99 );
 
+/**
+ * Add a dismissible notice about Neve in the dashboard
+ */
+function azera_shop_neve_notice() {
+	global $current_user;
+	$user_id        = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'azera_shop_ignore_neve_notice' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+            /* translators: Install Neve link */
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?azera_shop_nag_ignore_neve=0'
+		);
+	$message = sprintf(
+        /* translators: Install Neve link */
+		esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'azera-shop' ),
+		sprintf(
+            /* translators: Install Neve link */
+			'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+			esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
+			esc_html__( 'our newest theme', 'azera-shop' )
+		)
+	);
+	printf( '<div class="notice updated" style="position:relative; padding-right: 35px;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
+}
+add_action( 'admin_notices', 'azera_shop_neve_notice' );
+/**
+ * Update the azera_shop_ignore_neve_notice option to true, to dismiss the notice from the dashboard
+ */
+function azera_shop_nag_ignore_neve() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['azera_shop_nag_ignore_neve'] ) && '0' == $_GET['azera_shop_nag_ignore_neve'] ) {
+		add_user_meta( $user_id, 'azera_shop_ignore_neve_notice', 'true', true );
+	}
+}
+add_action( 'admin_init', 'azera_shop_nag_ignore_neve' );
