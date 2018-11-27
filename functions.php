@@ -313,7 +313,7 @@ function azera_shop_scripts() {
 			azera_shop_get_file( '/js/plugin.home.js' ),
 			array(
 				'jquery',
-				'azera-shop-custom-all'
+				'azera-shop-custom-all',
 			),
 			'1.0.1',
 			true
@@ -395,7 +395,7 @@ function azera_shop_admin_scripts() {
 		azera_shop_get_file( '/js/azera_shop_customizer.js' ),
 		array(
 			'jquery',
-			'jquery-ui-draggable'
+			'jquery-ui-draggable',
 		),
 		'1.0.0',
 		true
@@ -424,7 +424,7 @@ add_action( 'woocommerce_after_main_content', 'azera_shop_wrapper_end_shop_page'
  * Wrapper start for content.
  *
  * @param string $class class name.
- * @param bool $is_blog if is blog.
+ * @param bool   $is_blog if is blog.
  */
 function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	$page_bg_image_url = get_background_image();
@@ -673,10 +673,10 @@ function azera_shop_related_products_args( $args ) {
 /**
  * Video container.
  *
- * @param string $htmlhtml to add.
- * @param string $url url.
+ * @param string $html html to add.
+ * @param string $url  url.
  * @param string $attr attribute name.
- * @param int $post_id id of the post.
+ * @param int    $post_id id of the post.
  *
  * @return string
  */
@@ -692,8 +692,8 @@ add_filter( 'embed_oembed_html', 'azera_shop_responsive_embed', 10, 4 );
  * Comments callback function
  *
  * @param string $comment comment content.
- * @param array $args arguments.
- * @param int $depth depth of the comments.
+ * @param array  $args arguments.
+ * @param int    $depth depth of the comments.
  */
 function azera_shop_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -1067,7 +1067,7 @@ if ( ! function_exists( 'azera_shop_footer_powered_by' ) ) {
         <div class="powered-by">
 			<?php
 			printf(
-			/* translators: 1 - theme name , 2 - WordPress link */
+			    /* translators: 1 - theme name , 2 - WordPress link */
 				__( '%1$s powered by %2$s', 'azera-shop' ),
 				sprintf( '<a href="https://themeisle.com/themes/azera-shop/" rel="nofollow">%s</a>', esc_html__( 'Azera Shop', 'azera-shop' ) ),
 				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )
@@ -1239,8 +1239,12 @@ function azera_shop_admin_notice() {
 	global $pagenow;
 	if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
 		echo '<div class="updated notice is-dismissible"><p>';
-		printf( /* translators: link to the recommended theme */
-			__( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' ) );
+		printf(
+            /* translators: link to the recommended theme */
+			__( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ),
+            sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ),
+            sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' )
+        );
 		echo '</p></div>';
 	}
 }
@@ -1259,15 +1263,15 @@ function azera_shop_neve_notice() {
 	}
 	$dismiss_button =
 		sprintf(
-		/* translators: Install Neve link */
+		    /* translators: Install Neve link */
 			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
 			'?azera_shop_nag_ignore_neve=0'
 		);
-	$message        = sprintf(
-	/* translators: Install Neve link */
+	$message = sprintf(
+	    /* translators: Install Neve link */
 		esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'azera-shop' ),
 		sprintf(
-		/* translators: Install Neve link */
+		    /* translators: Install Neve link */
 			'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
 			esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
 			esc_html__( 'our newest theme', 'azera-shop' )
