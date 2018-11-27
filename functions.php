@@ -316,7 +316,8 @@ function azera_shop_scripts() {
 				'azera-shop-custom-all'
 			),
 			'1.0.1',
-			true );
+			true,
+        );
 
 	}
 
@@ -397,7 +398,7 @@ function azera_shop_admin_scripts() {
 			'jquery-ui-draggable'
 		),
 		'1.0.0',
-		true
+		true,
 	);
 }
 
@@ -672,7 +673,7 @@ function azera_shop_related_products_args( $args ) {
 /**
  * Video container.
  *
- * @param string $html html to add.
+ * @param string $htmlhtml to add.
  * @param string $url url.
  * @param string $attr attribute name.
  * @param int $post_id id of the post.
@@ -1163,7 +1164,8 @@ function azera_shop_starter_content() {
 	 * Starter Content Support
 	 */
 	add_theme_support(
-		'starter-content', array(
+		'starter-content',
+		array(
 			'posts' => array(
 				'home' => array(
 					'template' => 'template-frontpage.php',
@@ -1214,13 +1216,13 @@ function azera_shop_customize_register_notification( $wp_customize ) {
 	);
 	$wp_customize->add_setting(
 		'azera-shop-notify',
-        array(
+		array(
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		'azera-shop-notify',
-        array(
+		array(
 			'label'    => __( 'Notification', 'azera-shop' ),
 			'section'  => 'ti-notify',
 			'priority' => 1,
