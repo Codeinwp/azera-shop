@@ -204,7 +204,8 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Azera_Shop_Image_Picker(
-			$wp_customize, 'azera_shop_header_layout',
+			$wp_customize,
+			'azera_shop_header_layout',
 			array(
 				'label'                           => __( 'Layout', 'azera-shop' ),
 				'section'                         => 'azera_shop_header_content',
@@ -226,7 +227,8 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
-			$wp_customize, 'azera_shop_header_logo',
+			$wp_customize,
+			'azera_shop_header_logo',
 			array(
 				'label'    => esc_html__( 'Header Top Logo', 'azera-shop' ),
 				'section'  => 'azera_shop_header_content',
@@ -485,7 +487,8 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Azera_Shop_Woocommerce_Categories(
-			$wp_customize, 'azera_shop_woocomerce_categories',
+			$wp_customize,
+			'azera_shop_woocomerce_categories',
 			array(
 				'label'           => __( 'Display products from', 'azera-shop' ),
 				'section'         => 'azera_shop_shop_section',
@@ -516,7 +519,8 @@ function azera_shop_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Azera_Shop_General_Repeater(
-			$wp_customize, 'azera_shop_shortcodes_settings',
+			$wp_customize,
+			'azera_shop_shortcodes_settings',
 			array(
 				'label'                        => esc_html__( 'Edit the shortcode options', 'azera-shop' ),
 				'section'                      => 'azera_shop_shortcodes_section',

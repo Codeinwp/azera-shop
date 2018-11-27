@@ -308,10 +308,15 @@ function azera_shop_scripts() {
 	$azera_shop_enable_move = get_theme_mod( 'azera_shop_enable_move' );
 	if ( ! empty( $azera_shop_enable_move ) && $azera_shop_enable_move && is_page_template( 'template-frontpage.php' ) ) {
 
-		wp_enqueue_script( 'azera-shop-home-plugin', azera_shop_get_file( '/js/plugin.home.js' ), array(
-			'jquery',
-			'azera-shop-custom-all'
-		), '1.0.1', true );
+		wp_enqueue_script(
+			'azera-shop-home-plugin',
+			azera_shop_get_file( '/js/plugin.home.js' ),
+			array(
+				'jquery',
+				'azera-shop-custom-all'
+			),
+			'1.0.1',
+			true );
 
 	}
 
@@ -384,10 +389,16 @@ function azera_shop_admin_scripts() {
 	wp_enqueue_style( 'azera-shop-admin-fontawesome', azera_shop_get_file( '/css/font-awesome.min.css' ), array(), '4.5.0' );
 	wp_enqueue_style( 'azera-shop-admin-stylesheet', azera_shop_get_file( '/css/admin-style.css' ), '1.0.0' );
 
-	wp_enqueue_script( 'azera-shop-customizer-script', azera_shop_get_file( '/js/azera_shop_customizer.js' ), array(
-		'jquery',
-		'jquery-ui-draggable'
-	), '1.0.0', true );
+	wp_enqueue_script(
+		'azera-shop-customizer-script',
+		azera_shop_get_file( '/js/azera_shop_customizer.js' ),
+		array(
+			'jquery',
+			'jquery-ui-draggable'
+		),
+		'1.0.0',
+		true
+	);
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_scripts', 10 );
@@ -733,7 +744,8 @@ function azera_shop_comment( $comment, $args, $depth ) {
 					<?php
 					comment_reply_link(
 						array_merge(
-							$args, array(
+							$args,
+							array(
 								'depth'     => $depth,
 								'max_depth' => $args['max_depth'],
 							)
@@ -1201,12 +1213,14 @@ function azera_shop_customize_register_notification( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_setting(
-		'azera-shop-notify', array(
+		'azera-shop-notify',
+        array(
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
-		'azera-shop-notify', array(
+		'azera-shop-notify',
+        array(
 			'label'    => __( 'Notification', 'azera-shop' ),
 			'section'  => 'ti-notify',
 			'priority' => 1,
