@@ -316,7 +316,7 @@ function azera_shop_scripts() {
 				'azera-shop-custom-all'
 			),
 			'1.0.1',
-			true,
+			true
         );
 
 	}
@@ -398,7 +398,7 @@ function azera_shop_admin_scripts() {
 			'jquery-ui-draggable'
 		),
 		'1.0.0',
-		true,
+		true
 	);
 }
 
