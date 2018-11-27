@@ -12,10 +12,12 @@
  */
 function azera_shop_jetpack_setup() {
 	add_theme_support(
-		'infinite-scroll', array(
+		'infinite-scroll',
+		array(
 			'container' => 'main',
 			'footer'    => 'page',
 		)
 	);
 }
+
 add_action( 'after_setup_theme', 'azera_shop_jetpack_setup' );
