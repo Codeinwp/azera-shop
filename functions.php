@@ -1245,25 +1245,6 @@ function azera_shop_customize_register_notification( $wp_customize ) {
 add_action( 'customize_register', 'azera_shop_customize_register_notification' );
 
 /**
- * Notice in admin dashboard to announce the theme is not maintained anymore
- */
-function azera_shop_admin_notice() {
-	global $pagenow;
-	if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
-		echo '<div class="updated notice is-dismissible"><p>';
-		printf(
-            /* translators: link to the recommended theme */
-			__( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ),
-            sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ),
-            sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' )
-        );
-		echo '</p></div>';
-	}
-}
-
-add_action( 'admin_notices', 'azera_shop_admin_notice', 99 );
-
-/**
  * Add a dismissible notice about Neve in the dashboard
  */
 function azera_shop_neve_notice() {
