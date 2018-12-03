@@ -1,4 +1,8 @@
 
+ ### v1.1.17 - 2018-12-03 
+ **Changes:** 
+ * Added missing grunt generate tsk
+ 
 ### 1.1.15 - 11/05/2018
 **Changes:** 
 - Compatibility with the Orbit Fox plugin
