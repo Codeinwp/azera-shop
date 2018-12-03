@@ -1281,13 +1281,10 @@ function azera_shop_neve_notice() {
 		);
 	$message = sprintf(
 	    /* translators: Install Neve link */
-		esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'azera-shop' ),
-		sprintf(
-		    /* translators: Install Neve link */
-			'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
-			esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
-			esc_html__( 'our newest theme', 'azera-shop' )
-		)
+		esc_html__( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ),
+        /* translators: Install Neve link */
+        sprintf( '<a href="' . admin_url( 'theme-install.php?theme=neve' ) . '">%s</a>', 'Neve' ),
+        sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' )
 	);
 	printf( '<div class="notice updated" style="position:relative; padding-right: 35px;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
 }
