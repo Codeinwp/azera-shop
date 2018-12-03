@@ -307,7 +307,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title', 'azera-shop' ), $this->id, 'azera_shop_title_control' ),
 									'class' => 'customizer-repeater-title-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'azera_shop_title_control' ),
-								), $title
+								),
+                                $title
 							);
 						}
 
@@ -317,7 +318,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle', 'azera-shop' ), $this->id, 'azera_shop_subtitle_control' ),
 									'class' => 'customizer-repeater-subtitle-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'azera_shop_subtitle_control' ),
-								), $subtitle
+								),
+                                $subtitle
 							);
 						}
 
@@ -327,7 +329,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text', 'azera-shop' ), $this->id, 'azera_shop_text_control' ),
 									'class' => 'customizer-repeater-text-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', 'textarea', $this->id, 'azera_shop_text_control' ),
-								), $text
+								),
+                                $text
 							);
 						}
 
@@ -338,7 +341,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 									'class'             => 'customizer-repeater-link-control',
 									'sanitize_callback' => 'esc_url_raw',
 									'type'              => apply_filters( 'repeater_input_types_filter', '', $this->id, 'azera_shop_link_control' ),
-								), $link
+								),
+                                $link
 							);
 						}
 
@@ -348,7 +352,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode', 'azera-shop' ), $this->id, 'azera_shop_shortcode_control' ),
 									'class' => 'customizer-repeater-shortcode-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'azera_shop_shortcode_control' ),
-								), $shortcode
+								),
+                                $shortcode
 							);
 						}
 

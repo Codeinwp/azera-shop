@@ -334,7 +334,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 								array(
 									'label' => __( 'Title', 'azera-shop' ),
 									'class' => 'azera_shop_title_control',
-								), $title
+								),
+                                $title
 							);
 						}
 
@@ -343,7 +344,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 								array(
 									'label' => __( 'Subtitle', 'azera-shop' ),
 									'class' => 'azera_shop_subtitle_control',
-								), $subtitle
+								),
+                                $subtitle
 							);
 						}
 
@@ -353,7 +355,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 									'label' => __( 'Text', 'azera-shop' ),
 									'class' => 'azera_shop_text_control',
 									'type'  => 'textarea',
-								), $text
+								),
+                                $text
 							);
 						}
 
@@ -363,7 +366,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 									'label'             => __( 'Link', 'azera-shop' ),
 									'class'             => 'azera_shop_link_control',
 									'sanitize_callback' => 'esc_url',
-								), $link
+								),
+                                $link
 							);
 						}
 
@@ -372,7 +376,8 @@ class Azera_Shop_General_Repeater extends WP_Customize_Control {
 								array(
 									'label' => __( 'Shortcode', 'azera-shop' ),
 									'class' => 'azera_shop_shortcode_control',
-								), $shortcode
+								),
+                                $shortcode
 							);
 						}
 						?>

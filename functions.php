@@ -62,12 +62,13 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 				'azera_shop_footer_menu' => esc_html__( 'Footer Menu', 'azera-shop' ),
 			)
 		);
-        /**
-         * Switch default core markup for search form, comment form, and comments
-         */
+		/**
+		 * Switch default core markup for search form, comment form, and comments
+		 */
 
 		add_theme_support(
-			'html5', array(
+			'html5',
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -78,8 +79,10 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
-			'custom-background', apply_filters(
-				'azera_shop_custom_background_args', array(
+			'custom-background',
+			apply_filters(
+				'azera_shop_custom_background_args',
+				array(
 					'default-repeat'     => 'no-repeat',
 					'default-position-x' => 'center',
 					'default-attachment' => 'fixed',
@@ -94,8 +97,10 @@ if ( ! function_exists( 'azera_shop_setup' ) ) :
 		*/
 
 		add_theme_support(
-			'custom-header', apply_filters(
-				'azera_shop_custom_header_args', array(
+			'custom-header',
+			apply_filters(
+				'azera_shop_custom_header_args',
+				array(
 					'default-image' => azera_shop_get_file( '/images/background-images/background.jpg' ),
 					'width'         => 1000,
 					'height'        => 680,
@@ -266,6 +271,7 @@ function azera_shop_widgets_init() {
 	);
 
 }
+
 add_action( 'widgets_init', 'azera_shop_widgets_init' );
 
 /**
@@ -303,7 +309,9 @@ function azera_shop_scripts() {
 	wp_enqueue_script( 'azera-shop-custom-all', azera_shop_get_file( '/js/custom.all.js' ), array( 'jquery' ), '2.0.2', true );
 
 	wp_localize_script(
-		'azera-shop-custom-all', 'screenReaderText', array(
+		'azera-shop-custom-all',
+		'screenReaderText',
+		array(
 			'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'azera-shop' ) . '</span>',
 			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'azera-shop' ) . '</span>',
 		)
@@ -312,7 +320,16 @@ function azera_shop_scripts() {
 	$azera_shop_enable_move = get_theme_mod( 'azera_shop_enable_move' );
 	if ( ! empty( $azera_shop_enable_move ) && $azera_shop_enable_move && is_page_template( 'template-frontpage.php' ) ) {
 
-		wp_enqueue_script( 'azera-shop-home-plugin', azera_shop_get_file( '/js/plugin.home.js' ), array( 'jquery', 'azera-shop-custom-all' ), '1.0.1', true );
+		wp_enqueue_script(
+			'azera-shop-home-plugin',
+			azera_shop_get_file( '/js/plugin.home.js' ),
+			array(
+				'jquery',
+				'azera-shop-custom-all',
+			),
+			'1.0.1',
+			true
+        );
 
 	}
 
@@ -329,10 +346,12 @@ function azera_shop_scripts() {
 		}
 
 		wp_localize_script(
-			'azera-shop-custom-home', 'viewcart', array(
+			'azera-shop-custom-home',
+			'viewcart',
+			array(
 				'view_cart_label' => esc_html__( 'View cart', 'azera-shop' ),
-                'view_cart_link'  => $azera_shop_cart_url,
-            )
+				'view_cart_link'  => $azera_shop_cart_url,
+			)
 		);
 
 	}
@@ -343,6 +362,7 @@ function azera_shop_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'azera_shop_scripts' );
 
 /**
@@ -382,8 +402,18 @@ function azera_shop_admin_scripts() {
 	wp_enqueue_style( 'azera-shop-admin-fontawesome', azera_shop_get_file( '/css/font-awesome.min.css' ), array(), '4.5.0' );
 	wp_enqueue_style( 'azera-shop-admin-stylesheet', azera_shop_get_file( '/css/admin-style.css' ), '1.0.0' );
 
-	wp_enqueue_script( 'azera-shop-customizer-script', azera_shop_get_file( '/js/azera_shop_customizer.js' ), array( 'jquery', 'jquery-ui-draggable' ), '1.0.0', true );
+	wp_enqueue_script(
+		'azera-shop-customizer-script',
+		azera_shop_get_file( '/js/azera_shop_customizer.js' ),
+		array(
+			'jquery',
+			'jquery-ui-draggable',
+		),
+		'1.0.0',
+		true
+	);
 }
+
 add_action( 'customize_controls_enqueue_scripts', 'azera_shop_admin_scripts', 10 );
 
 /**
@@ -394,6 +424,7 @@ function azera_shop_ie() {
 	echo '<script src="' . azera_shop_get_file( '/js/html5shiv.min.js' ) . '"></script>' . "\n";
 	echo '<![endif]-->' . "\n";
 }
+
 add_action( 'wp_head', 'azera_shop_ie' );
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
@@ -404,8 +435,8 @@ add_action( 'woocommerce_after_main_content', 'azera_shop_wrapper_end_shop_page'
 /**
  * Wrapper start for content.
  *
- * @param string $class     class name.
- * @param bool   $is_blog     if is blog.
+ * @param string $class class name.
+ * @param bool   $is_blog if is blog.
  */
 function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	$page_bg_image_url = get_background_image();
@@ -413,39 +444,39 @@ function azera_shop_wrapper_start( $class = 'col-md-12', $is_blog = false ) {
 	if ( ! empty( $page_bg_image_url ) && ! is_page_template( 'template-frontpage.php' ) ) {
 		$class_to_add = 'content-background';
 	} ?>
-	</div>
-	</header>
+    </div>
+    </header>
 	<?php
 	if ( $is_blog == true ) {
 		do_action( 'blog_header' );
 	}
 	?>
-	<div class="content-wrap">
-	<div class="container <?php echo $class_to_add; ?>">
+    <div class="content-wrap">
+    <div class="container <?php echo $class_to_add; ?>">
 	<?php
 	if ( azera_shop_woo_sidebar_position() && function_exists( 'is_shop' ) && is_shop() ) {
 		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
-	<div id="primary" class="content-area <?php echo esc_attr( $class ); ?>">
+    <div id="primary" class="content-area <?php echo esc_attr( $class ); ?>">
 	<?php
 }
 
 /**
  * Wrapper end for content.
  *
- * @param bool $has_sidebar     if is sidebar then get sidebar.
+ * @param bool $has_sidebar if is sidebar then get sidebar.
  */
 function azera_shop_wrapper_end( $has_sidebar = false ) {
 	?>
-	</div>
+    </div>
 	<?php
 	if ( $has_sidebar == true ) {
 		get_sidebar();
 	}
 	?>
-	</div>
-	</div>
+    </div>
+    </div>
 	<?php
 }
 
@@ -473,6 +504,7 @@ function azera_shop_woo_sidebar_position( $position = false ) {
 	if ( $position ) {
 		return true;
 	}
+
 	return false;
 }
 
@@ -497,14 +529,14 @@ function azera_shop_wrapper_start_trigger_shop_page() {
  */
 function azera_shop_wrapper_end_shop_page() {
 	?>
-	</div>
+    </div>
 	<?php
 	if ( ! azera_shop_woo_sidebar_position() && function_exists( 'is_shop' ) && is_shop() ) {
 		azera_shop_display_woocommerce_sidebar();
 	}
 	?>
-	</div>
-	</div>
+    </div>
+    </div>
 	<?php
 }
 
@@ -598,6 +630,7 @@ function azera_shop_php_style() {
 	wp_add_inline_style( 'azera-shop-style', $custom_css );
 
 }
+
 add_action( 'wp_enqueue_scripts', 'azera_shop_php_style', 100 );
 
 $pro_functions_path = azera_shop_get_file( '/pro/functions.php' );
@@ -608,7 +641,7 @@ if ( file_exists( $pro_functions_path ) ) {
 /**
  * Get file.
  *
- * @param string $file      link of the file.
+ * @param string $file link of the file.
  *
  * @return mixed
  */
@@ -638,28 +671,30 @@ add_filter( 'woocommerce_output_related_products_args', 'azera_shop_related_prod
 /**
  * Related produts arguments.
  *
- * @param array $args       array with arguments.
+ * @param array $args array with arguments.
  *
  * @return mixed
  */
 function azera_shop_related_products_args( $args ) {
 	$args['posts_per_page'] = 4;
 	$args['columns']        = 4;
+
 	return $args;
 }
 
 /**
  * Video container.
  *
- * @param string $html          html to add.
- * @param string $url           url.
- * @param string $attr          attribute name.
- * @param int    $post_id       id of the post.
+ * @param string $html html to add.
+ * @param string $url  url.
+ * @param string $attr attribute name.
+ * @param int    $post_id id of the post.
  *
  * @return string
  */
 function azera_shop_responsive_embed( $html, $url, $attr, $post_id ) {
 	$return = '<div class="parallax-one-video-container">' . $html . '</div>';
+
 	return $return;
 }
 
@@ -668,9 +703,9 @@ add_filter( 'embed_oembed_html', 'azera_shop_responsive_embed', 10, 4 );
 /**
  * Comments callback function
  *
- * @param string $comment       comment content.
- * @param array  $args           arguments.
- * @param int    $depth            depth of the comments.
+ * @param string $comment comment content.
+ * @param array  $args arguments.
+ * @param int    $depth depth of the comments.
  */
 function azera_shop_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -679,55 +714,59 @@ function azera_shop_comment( $comment, $args, $depth ) {
 		case 'pingback':
 		case 'trackback':
 			?>
-			<li class="post pingback">
-			<p><?php _e( 'Pingback:', 'azera-shop' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' ); ?></p>
+            <li class="post pingback">
+            <p><?php _e( 'Pingback:', 'azera-shop' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' ); ?></p>
 			<?php
 			break;
 
 		default:
 			?>
-			<li itemscope itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment-body">
-				<footer>
-					<div itemscope itemprop="creator" itemtype="http://schema.org/Person" class="comment-author vcard" >
+            <li itemscope itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+            <article id="comment-<?php comment_ID(); ?>" class="comment-body">
+                <footer>
+                    <div itemscope itemprop="creator" itemtype="http://schema.org/Person" class="comment-author vcard">
 						<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
 						<?php
 						/* translators: comment author */
 						printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'azera-shop' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) );
 						?>
-					</div><!-- .comment-author .vcard -->
+                    </div><!-- .comment-author .vcard -->
 					<?php if ( $comment->comment_approved == '0' ) : ?>
-						<em><?php _e( 'Your comment is awaiting moderation.', 'azera-shop' ); ?></em>
-						<br />
+                        <em><?php _e( 'Your comment is awaiting moderation.', 'azera-shop' ); ?></em>
+                        <br/>
 					<?php endif; ?>
-					<div class="comment-metadata">
-						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-permalink" itemprop="url">
-							<time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'azera-shop' ) ); ?>" itemprop="commentTime">
+                    <div class="comment-metadata">
+                        <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"
+                           class="comment-permalink" itemprop="url">
+                            <time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>"
+                                  title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'azera-shop' ) ); ?>"
+                                  itemprop="commentTime">
 								<?php
 								/* translators: 1 - comment date, 2 - comment time */
 								printf( __( '%1$s at %2$s', 'azera-shop' ), get_comment_date(), get_comment_time() );
 								?>
-							</time>
-						</a>
+                            </time>
+                        </a>
 						<?php edit_comment_link( __( '(Edit)', 'azera-shop' ), ' ' ); ?>
-					</div><!-- .comment-meta .commentmetadata -->
-				</footer>
+                    </div><!-- .comment-meta .commentmetadata -->
+                </footer>
 
-				<div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
+                <div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
 
-				<div class="reply">
+                <div class="reply">
 					<?php
 					comment_reply_link(
 						array_merge(
-							$args, array(
+							$args,
+							array(
 								'depth'     => $depth,
 								'max_depth' => $args['max_depth'],
 							)
 						)
 					);
 					?>
-				</div><!-- .reply -->
-			</article><!-- #comment-## -->
+                </div><!-- .reply -->
+            </article><!-- #comment-## -->
 
 			<?php
 			break;
@@ -783,7 +822,7 @@ if ( function_exists( 'pll_register_string' ) || has_action( 'wpml_register_sing
 	$azera_shop_shortcodes_section = get_theme_mod( 'azera_shop_shortcodes_settings' );
 	if ( ! empty( $azera_shop_shortcodes_section ) ) {
 		$azera_shop_shortcodes_section_decoded = json_decode( $azera_shop_shortcodes_section );
-		foreach ( $azera_shop_shortcodes_section_decoded  as $azera_shop_shortcodes_box ) {
+		foreach ( $azera_shop_shortcodes_section_decoded as $azera_shop_shortcodes_box ) {
 			$id        = '';
 			$title     = '';
 			$subtitle  = '';
@@ -872,8 +911,8 @@ if ( function_exists( 'pll_register_string' ) || has_action( 'wpml_register_sing
 	}
 
 	/**
-     * Contact
-     */
+	 * Contact
+	 */
 
 	$azera_shop_contact = get_theme_mod( 'azera_shop_contact_info_content' );
 	if ( ! empty( $azera_shop_contact ) ) {
@@ -953,12 +992,13 @@ function azera_shop_get_template_part( $template ) {
 /**
  * More link.
  *
- * @param string $more      more text.
+ * @param string $more more text.
  *
  * @return string
  */
 function azera_shop_excerpt_more( $more ) {
 	global $post;
+
 	return '<a class="moretag" href="' . get_permalink( $post->ID ) . '"><span class="screen-reader-text">' . esc_html__( 'Read more about ', 'azera-shop' ) . esc_html( get_the_title() ) . '</span>[&#8230;]</a>';
 }
 
@@ -969,7 +1009,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'azera_shop_woocommerce_header_
 /**
  * Ensure cart contents update when products are added to the cart via AJAX)
  *
- * @param array $fragments      array with content to add.
+ * @param array $fragments array with content to add.
  *
  * @return mixed
  */
@@ -977,10 +1017,11 @@ function azera_shop_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 
-	<a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'azera-shop' ); ?>" class="cart-contents">
-		<span class="fa fa-shopping-cart"></span>
-		<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
-	</a>
+    <a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'azera-shop' ); ?>"
+       class="cart-contents">
+        <span class="fa fa-shopping-cart"></span>
+        <span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
+    </a>
 
 	<?php
 
@@ -1035,16 +1076,16 @@ if ( ! function_exists( 'azera_shop_footer_powered_by' ) ) {
 	 */
 	function azera_shop_footer_powered_by() {
 		?>
-		<div class="powered-by">
+        <div class="powered-by">
 			<?php
 			printf(
-				/* translators: 1 - theme name , 2 - WordPress link */
+			    /* translators: 1 - theme name , 2 - WordPress link */
 				__( '%1$s powered by %2$s', 'azera-shop' ),
 				sprintf( '<a href="https://themeisle.com/themes/azera-shop/" rel="nofollow">%s</a>', esc_html__( 'Azera Shop', 'azera-shop' ) ),
 				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'azera-shop' ) )
 			);
 			?>
-		</div>
+        </div>
 		<?php
 	}
 }
@@ -1058,22 +1099,22 @@ if ( ! function_exists( 'azera_shop_post_entry_meta' ) ) {
 	 */
 	function azera_shop_post_entry_meta() {
 		?>
-		<div class="entry-meta single-entry-meta">
+        <div class="entry-meta single-entry-meta">
 			<span class="author-link" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 				<span itemprop="name" class="post-author author vcard">
 					<i class="fa fa-user" aria-hidden="true"></i><a
-						href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" itemprop="url"
-						rel="author"><?php the_author(); ?></a>
+                            href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" itemprop="url"
+                            rel="author"><?php the_author(); ?></a>
 				</span>
 			</span>
-			<time class="post-time posted-on published" datetime="<?php the_time( 'c' ); ?>" itemprop="datePublished">
-				<i class="fa fa-clock-o" aria-hidden="true"></i><?php the_time( get_option( 'date_format' ) ); ?>
-			</time>
-			<a href="<?php comments_link(); ?>" class="post-comments">
-				<i class="fa fa-comment-o"
-				   aria-hidden="true"></i><?php comments_number( esc_html__( 'No comments', 'azera-shop' ), esc_html__( 'One comment', 'azera-shop' ), esc_html__( '% comments', 'azera-shop' ) ); ?>
-			</a>
-		</div><!-- .entry-meta -->
+            <time class="post-time posted-on published" datetime="<?php the_time( 'c' ); ?>" itemprop="datePublished">
+                <i class="fa fa-clock-o" aria-hidden="true"></i><?php the_time( get_option( 'date_format' ) ); ?>
+            </time>
+            <a href="<?php comments_link(); ?>" class="post-comments">
+                <i class="fa fa-comment-o"
+                   aria-hidden="true"></i><?php comments_number( esc_html__( 'No comments', 'azera-shop' ), esc_html__( 'One comment', 'azera-shop' ), esc_html__( '% comments', 'azera-shop' ) ); ?>
+            </a>
+        </div><!-- .entry-meta -->
 		<?php
 	}
 }
@@ -1087,15 +1128,16 @@ if ( ! function_exists( 'azera_shop_post_date_box_function' ) ) {
 	 */
 	function azera_shop_post_date_box_function( $class ) {
 		?>
-		<div class="
+        <div class="
 		<?php
 		if ( ! empty( $class ) ) {
-			echo $class; }
-?>
+			echo $class;
+		}
+		?>
 ">
-			<span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop' ) ); ?></span>
-			<span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop' ) ); ?></span>
-		</div>
+            <span class="post-date-day"><?php the_time( _x( 'd', 'post day fomat', 'azera-shop' ) ); ?></span>
+            <span class="post-date-month"><?php the_time( _x( 'M', 'post month fomat', 'azera-shop' ) ); ?></span>
+        </div>
 		<?php
 	}
 }
@@ -1110,6 +1152,7 @@ add_action( 'azera_shop_post_date_box', 'azera_shop_post_date_box_function', 10,
 function azera_shop_header_layout() {
 	return 'layout2';
 }
+
 add_filter( 'azera_shop_header_layout_filter', 'azera_shop_header_layout' );
 
 /**
@@ -1120,6 +1163,7 @@ add_filter( 'azera_shop_header_layout_filter', 'azera_shop_header_layout' );
 function azera_shop_remove_default() {
 	return '';
 }
+
 add_filter( 'azera_shop_header_logo_filter', 'azera_shop_remove_default' );
 
 /**
@@ -1132,9 +1176,10 @@ function azera_shop_starter_content() {
 	 * Starter Content Support
 	 */
 	add_theme_support(
-		'starter-content', array(
-			'posts'     => array(
-				'home'    => array(
+		'starter-content',
+		array(
+			'posts' => array(
+				'home' => array(
 					'template' => 'template-frontpage.php',
 				),
 				'blog',
@@ -1142,15 +1187,15 @@ function azera_shop_starter_content() {
 
 			'nav_menus' => array(
 				'primary' => array(
-					'name'     => __( 'Primary Menu', 'azera-shop' ),
-					'items'    => array(
+					'name'  => __( 'Primary Menu', 'azera-shop' ),
+					'items' => array(
 						'page_home',
 						'page_blog',
 					),
 				),
 			),
 
-			'options'   => array(
+			'options' => array(
 				'show_on_front'  => 'page',
 				'page_on_front'  => '{{home}}',
 				'page_for_posts' => '{{blog}}',
@@ -1158,6 +1203,7 @@ function azera_shop_starter_content() {
 		)
 	);
 }
+
 add_action( 'after_setup_theme', 'azera_shop_starter_content' );
 
 /**
@@ -1165,44 +1211,76 @@ add_action( 'after_setup_theme', 'azera_shop_starter_content' );
  */
 function azera_shop_customize_register_notification( $wp_customize ) {
 
-    require_once( 'inc/class/class-ti-notify.php' );
+	require_once( 'inc/class/class-ti-notify.php' );
 
-    $wp_customize->register_section_type( 'Ti_Notify' );
+	$wp_customize->register_section_type( 'Ti_Notify' );
 
-    $wp_customize->add_section(
-        new Ti_Notify(
-            $wp_customize,
-            'ti-notify',
-            array(
-                /* translators: Link to the recommended theme */
-                'text'     => sprintf( __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' ) ),
-                'priority' => 0,
-            )
-        )
-    );
-    $wp_customize->add_setting( 'azera-shop-notify', array(
-        'sanitize_callback' => 'sanitize_text_field',
-    ) );
-    $wp_customize->add_control(
-        'azera-shop-notify', array(
+	$wp_customize->add_section(
+		new Ti_Notify(
+			$wp_customize,
+			'ti-notify',
+			array(
+				/* translators: Link to the recommended theme */
+				'text'     => sprintf( __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' ) ),
+				'priority' => 0,
+			)
+		)
+	);
+	$wp_customize->add_setting(
+		'azera-shop-notify',
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'azera-shop-notify',
+		array(
 			'label'    => __( 'Notification', 'azera-shop' ),
 			'section'  => 'ti-notify',
 			'priority' => 1,
-        )
-    );
+		)
+	);
 }
+
 add_action( 'customize_register', 'azera_shop_customize_register_notification' );
 
 /**
- * Notice in admin dashboard to announce the theme is not maintained anymore
+ * Add a dismissible notice about Neve in the dashboard
  */
-function azera_shop_admin_notice() {
-    global $pagenow;
-    if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
-        echo '<div class="updated notice is-dismissible"><p>';
-        printf( /* translators: link to the recommended theme */ __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' ) );
-        echo '</p></div>';
-    }
+function azera_shop_neve_notice() {
+	global $current_user;
+	$user_id        = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'azera_shop_ignore_neve_notice' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+		    /* translators: Install Neve link */
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?azera_shop_nag_ignore_neve=0'
+		);
+	$message = sprintf(
+	    /* translators: Install Neve link */
+		esc_html__( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s or our best woocommerce theme %2$s.', 'azera-shop' ),
+        /* translators: Install Neve link */
+        sprintf( '<a href="' . admin_url( 'theme-install.php?theme=neve' ) . '">%s</a>', 'Neve' ),
+        sprintf( '<a href="' . admin_url( 'theme-install.php?theme=shop-isle' ) . '">%s</a>', 'Shop Isle' )
+	);
+	printf( '<div class="notice updated" style="position:relative; padding-right: 35px;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
 }
-add_action( 'admin_notices', 'azera_shop_admin_notice', 99 );
 
+add_action( 'admin_notices', 'azera_shop_neve_notice' );
+/**
+ * Update the azera_shop_ignore_neve_notice option to true, to dismiss the notice from the dashboard
+ */
+function azera_shop_nag_ignore_neve() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['azera_shop_nag_ignore_neve'] ) && '0' == $_GET['azera_shop_nag_ignore_neve'] ) {
+		add_user_meta( $user_id, 'azera_shop_ignore_neve_notice', 'true', true );
+	}
+}
+
+add_action( 'admin_init', 'azera_shop_nag_ignore_neve' );

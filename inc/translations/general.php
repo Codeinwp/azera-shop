@@ -94,7 +94,8 @@ if ( ! function_exists( 'azera_shop_filter_translations' ) ) {
 	 */
 	function azera_shop_filter_translations( $array ) {
 		return array_merge(
-			$array, array(
+			$array,
+			array(
 				'translations/translations-logos-section',
 				'translations/translations-contact-section',
 				'translations/translations-shortcode-section',
