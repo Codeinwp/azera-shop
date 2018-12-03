@@ -1,4 +1,13 @@
 
+### 1.1.15 - 11/05/2018
+**Changes:** 
+- Compatibility with the Orbit Fox plugin
+- Fixed problem with the products review stars display
+
+### 1.1.14 - 21/02/2018
+**Changes:** 
+- Fixed compatibility issues with WooCommerce 3.3
+
 ### 1.1.13 - 09/11/2017
 
 **Changes:** 
