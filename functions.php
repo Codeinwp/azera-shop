@@ -5,6 +5,18 @@
  * @package azera-shop
  */
 
+/**
+ * Themeisle SDK filter.
+ *
+ * @param array $products products array.
+ *
+ * @return array
+ */
+function azera_shop_filter_sdk( $products ) {
+    $products[] = get_template_directory() . '/style.css';
+    return $products;
+}
+add_filter( 'themeisle_sdk_products', 'azera_shop_filter_sdk' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
